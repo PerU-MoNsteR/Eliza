@@ -19,7 +19,7 @@ requirements_path = path.join(
 
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
-GIT_REPO_NAME = "DARKCOBRA"
+GIT_REPO_NAME = "eliza"
 UPSTREAM_REPO_URL = "https://github.com/The-Avengers-leader/ELIZA.git"
 
 async def gen_chlog(repo, diff):
@@ -127,7 +127,7 @@ async def upstream(ups):
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait ser😅😅...`')
     else:
-        await ups.edit('`Updating your (ELIZA) please weit for 5 mins then type .alive or .help or .king or .alive or .awake to see if I am online or not...thanks for using me...❤`')
+        await ups.edit('`Updating your (ELIZA) please weit for 5 mins then type .alive or .help or .king or .alive or  to see if I am working or not...thanks for using me...❤`')
     # We're in a Heroku Dyno, handle it's memez.
     if Var.HEROKU_API_KEY is not None:
         import heroku3
