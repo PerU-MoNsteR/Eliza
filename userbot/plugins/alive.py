@@ -11,13 +11,13 @@ pm_caption += f"🔸🔹 **ɱყ ცơʂʂ**           :   {DEFAULTUSER}\n"
 
 pm_caption += "🔹🔸 тєℓєтнσи νєяѕισи   :   1.15.0 \n"
 
-pm_caption += "🔸🔹 σffι¢ιαℓ ¢нαииєℓ   :   [ᴊᴏɪɴ](https://t.me/pyfilesforbot)\n"
+pm_caption += "🔸🔹 σffι¢ιαℓ ¢нαииєℓ   :   [ᴊᴏɪɴ](https://t.me/eliza_support_channel)\n"
 
 pm_caption += "🔹🔸 σffι¢ιαℓ gяσυρ     :   [ᴊᴏɪɴ](https://t.me/eliza_support)\n"
 
-pm_caption += "🔸🔹 ℓι¢єиѕє            :   [ӀíϲҽղՏҽ](https://github.com/lakshya-man05/eliza)\n"
+pm_caption += "🔸🔹 ℓι¢єиѕє            :   [ӀíϲҽղՏҽ](https:/The-Avengers-leader/github.com//Eliza)\n"
 
-pm_caption += "🔹🔸 ¢σρуяιgнт          :   [ELIZA](https://github.com/lakshya-man05)\n"
+pm_caption += "🔹🔸 ¢σρуяιgнт          :   [ELIZA](https:/The-Avengers-leader/github.com/)\n"
 
 pm_caption += " [...▄███▄███▄\n....█████████\n.......▀█████▀\n............▀█▀\n](https://t.me/eliza_suport)\n"
 #@command(outgoing=True, pattern="^.alive$")
