@@ -1,6 +1,4 @@
-# Ported here by @hellboi_atul
-# credit CAT USERBOT
-# 🔨🛠DARK COBRA🎼🎧🎧
+
 import glob
 
 #    Copyright (C) 2020  sandeep.n(π.$)
