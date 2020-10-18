@@ -15,7 +15,7 @@ from userbot import ALIVE_NAME
 
 BIO_MSG = Config.BIO_MSG
 if BIO_MSG is None:
-  BIO_MSG = "I am a pro @Dark_cobra_support"
+  BIO_MSG = "I am a pro @eliza_support"
 
 DEL_TIME_OUT = 60
 
