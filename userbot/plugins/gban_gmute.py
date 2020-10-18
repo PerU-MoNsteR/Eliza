@@ -1,5 +1,4 @@
-# GOT FROM HERE https://t.me/pldhsys/358 ( JAVES USERBOT ) ( MAIN CREATOR )
-# PORTED BY @STARKXD
+
 from userbot import bot, CMD_HELP
 import asyncio
 from telethon import events
