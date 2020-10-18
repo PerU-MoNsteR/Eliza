@@ -1,7 +1,6 @@
-# plugin made by @hellboi_atul bug fixes by @Mrconfused 
-# Copyright (C) DARK COBRA 2020.
-# if you change these lines you are gay...bc fuck off!
-# leechers stay away😑...if you use this code without credit...u gay bitch fuck off...!
+ 
+# Copyright (C) ELIZA 2020.
+
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
@@ -55,7 +54,7 @@ async def FindMusicPleaseBot(gaana):
 
         await gaana.edit("`Sending Your Music...weit!Ã°ÂÂÂ`")
 
-        await bot.send_file(gaana.chat_id, cobra)
+        await bot.send_file(gaana.chat_id, eliza)
 
         await bot.send_read_acknowledge(conv.chat_id)
 
