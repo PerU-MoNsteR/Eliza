@@ -1,4 +1,4 @@
-# to DARK COBRA by @hellboi_atul
+# 
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 #
