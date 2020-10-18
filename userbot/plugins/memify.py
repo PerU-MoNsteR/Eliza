@@ -119,7 +119,7 @@ async def _(event):
                 event.chat_id,
                 requires_file_name,
                 supports_streaming=False,
-                caption="@Dark_cobra_support OOF @Dark_cobra_support group",
+                caption="@eliza_support OOF @eliza_support",
                 # Courtesy: @DARK_COBRA_SUPPORT
             )
             await event.delete()
