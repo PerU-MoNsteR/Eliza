@@ -1,6 +1,6 @@
-#"""Update UserBot Code (FOR DARKCOBRA USERBOT)
+#"""Update UserBot Code (FOR ELIZA  USERBOT)
 #Syntax: .update
-#\nAll Credits goes to © @hellboi_atul
+#\nAll Credits goes to © @monster_is_back
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
 from os import remove, execle, path, makedirs, getenv, environ
@@ -20,7 +20,7 @@ requirements_path = path.join(
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "DARKCOBRA"
-UPSTREAM_REPO_URL = "https://github.com/DARK-COBRA/DARKCOBRA.git"
+UPSTREAM_REPO_URL = "https://github.com/The-Avengers-leader/ELIZA.git"
 
 async def gen_chlog(repo, diff):
     ch_log = ''
@@ -127,7 +127,7 @@ async def upstream(ups):
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait ser😅😅...`')
     else:
-        await ups.edit('`Updating your DC(DARK COBRA) please weit for 5 mins then type .alive or .help or .king or .allive or .awake to see if I am online or not...thanks for using me...❤`')
+        await ups.edit('`Updating your (ELIZA) please weit for 5 mins then type .alive or .help or .king or .alive or .awake to see if I am online or not...thanks for using me...❤`')
     # We're in a Heroku Dyno, handle it's memez.
     if Var.HEROKU_API_KEY is not None:
         import heroku3
