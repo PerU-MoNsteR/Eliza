@@ -15,7 +15,7 @@ pm_caption += "🔸🔹 σffι¢ιαℓ ¢нαииєℓ   :   [ᴊᴏɪɴ](https
 
 pm_caption += "🔹🔸 σffι¢ιαℓ gяσυρ     :   [ᴊᴏɪɴ](https://t.me/eliza_support)\n"
 
-pm_caption += "🔸🔹 ℓι¢єиѕє            :   [ӀíϲҽղՏҽ](https:/The-Avengers-leader/github.com//Eliza)\n"
+pm_caption += "🔸🔹 ℓι¢єиѕє            :   [ӀíϲҽղՏҽ](https://github.com/The-Avengers-leader/Eliza/blob/master/LICENSE)\n"
 
 pm_caption += "🔹🔸 ¢σρуяιgнт          :   [ELIZA](https:/The-Avengers-leader/github.com/)\n"
 
