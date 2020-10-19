@@ -17,7 +17,7 @@ pm_caption += "🔹🔸 σffι¢ιαℓ gяσυρ     :   [ᴊᴏɪɴ](https://t
 
 pm_caption += "🔸🔹 ℓι¢єиѕє            :   [ӀíϲҽղՏҽ](https://github.com/The-Avengers-leader/Eliza/blob/master/LICENSE)\n"
 
-pm_caption += "🔹🔸 ¢σρуяιgнт          :   [ELIZA](https:/The-Avengers-leader/github.com/)\n"
+pm_caption += "🔹🔸 ¢σρуяιgнт          :   [ELIZA](https:/The-Avengers-leader/github.com/Eliza)\n"
 
 pm_caption += " [...▄███▄███▄\n....█████████\n.......▀█████▀\n............▀█▀\n](https://t.me/eliza_suport)\n"
 #@command(outgoing=True, pattern="^.alive$")
