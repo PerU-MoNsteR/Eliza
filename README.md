@@ -2,32 +2,15 @@
 This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners...
 # For any query:-
 ### [Join Here For Any Query](https://t.me/ELIZAuserbot_support)
-# FORK AT YOUR OWN RISK
 
-# CREDITS
+### The Easy Way to deploy the bot
+Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku just click on fork and star just below
 
+[![Get string session](https://repl.it/badge/github/suhaash02/Eliza)]()
 
-
-
-## Installing
-
-## Tap this img to deploy eliza in heroku
-### The Easy Way
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza/tree/Webo)
 
 
-
-# Generate String Session From Below Links:-
-
-### [String #1](# eliza
-This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners....
-# The owner would not be responsible for any kind of bans due to the bot...
-# For any query:-
-### [Join Here For Any Query](https://t.me/eliza_support)
-# FORK AT YOUR OWN RISK
-## Installing
-### The Easy Way
-# Generate String Session From Below Links:-
-### [String #1]()
 ## The Normal Way
 Simply clone the repository and run the main file:
 ```sh
