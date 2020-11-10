@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/The-Avengers-leader/Eliza/",
-  "website": "https://github.com/The-Avengers-leader/",
+  "repository": "https://github.com/suhaash02/Eliza/",
+  "website": "https://github.com/suhaash02/",
   "success_url": "https://t.me/eliza_support",
   "env": {
     "ENV": {
@@ -28,7 +28,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @The_Avengers_leader.",
+      "description": "Fill your Full name or Username like @roy.",
       "value": "",
       "required": false
     },
@@ -92,7 +92,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://generatestringsession.theavengers.repl.run/ ",
+      "description": "Get this value by running https://generatestringsession.suhaash02.repl.run/ ",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -101,7 +101,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: The_Avengers_leader/The_Avengers_leader, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example:suhaash02/suhaash02, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
