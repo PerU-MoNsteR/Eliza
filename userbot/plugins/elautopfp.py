@@ -2,7 +2,7 @@
 Time In Profile Pic.....
 Command: `.epp`
 
-Custom / Modified Plugin for some magical effects by this Legendary Guy @Sur_vivor 
+Custom / Modified Plugin for some magical effects by this Legendary Guy @PerU_MoNster
 
 
 #curse: who ever edits this credit section will goto hell
@@ -25,7 +25,7 @@ import random, re
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/b20273be27aeea4e8fcac.jpg",
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/2765633721f6e21a0df9e.jpg",
                         ]
 @borg.on(admin_cmd(pattern="epp ?(.*)"))
 async def autopic(event):
@@ -42,7 +42,7 @@ async def autopic(event):
     
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
-        current_time = datetime.now().strftime("@Sur_vivor \n \nTime: %H:%M:%S \nDate: %d/%m/%y")
+        current_time = datetime.now().strftime("@PerU_MoNster \n \nTime: %H:%M:%S \nDate: %d/%m/%y")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 23)
