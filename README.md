@@ -10,6 +10,17 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza/tree/Webo)
 
+<p align="center">
+  <a href="https://github.com/suhaash02/Eliza/fork">
+    <img src="https://img.shields.io/github/forks/suhaash02/Eliza?label=Fork&style=social">
+    
+  </a>
+  <a href="https://github.com/suhaash02/Eliza">
+    <img src="https://img.shields.io/github/stars/suhaash02/Eliza?style=social">
+  </a>
+</p>
+
+[![Elizalogo](https://telegra.ph/file/7e1e89621fabbf02596f8.jpg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza)
 
 ## The Normal Way
 Simply clone the repository and run the main file:
