@@ -127,7 +127,7 @@ async def upstream(ups):
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait sir😅😅...`')
     else:
-        await ups.edit('`Updating your (ELIZA) please weit for 5 mins then type .alive or .help or .king or .alive or  to see if I am working or not...thanks for using me...❤`')
+        await ups.edit('`Updating your (ELIZA) please wait for 2 mins then type .alive or .help or .ping or .alive or  to see if I am working or not...thanks for using me`')
     # We're in a Heroku Dyno, handle it's memez.
     if Var.HEROKU_API_KEY is not None:
         import heroku3
