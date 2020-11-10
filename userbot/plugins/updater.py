@@ -46,7 +46,7 @@ async def updateme_requirements():
 @borg.on(admin_cmd(pattern="update ?(.*)"))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
-    await ups.edit("`Searching for new updates, please we its sir...`")
+    await ups.edit("`Searching for new updates, please wait sir...`")
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_updateme = False
