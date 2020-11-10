@@ -4,7 +4,7 @@ from datetime import datetime
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import admin_cmd, edit_or_reply
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@PerU_MoNster"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PerU_MoNster"
 
 
 @borg.on(admin_cmd(pattern=f"pingy$", outgoing=True))
@@ -64,7 +64,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__pong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{@PerU_MoNster}]"
+        f"__pong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{PerU_MoNster}]"
     )
 
 
