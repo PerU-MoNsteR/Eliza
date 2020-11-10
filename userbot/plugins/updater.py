@@ -1,6 +1,6 @@
 #"""Update UserBot Code (FOR ELIZA  USERBOT)
 #Syntax: .update
-#\nAll Credits goes to © @roy
+#\nAll Credits goes to © @ro
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
 from os import remove, execle, path, makedirs, getenv, environ
