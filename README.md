@@ -20,7 +20,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
   </a>
 </p>
 
-[![Elizalogo](https://telegra.ph/file/7e1e89621fabbf02596f8.jpg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza)
+[![Elizalogo](https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza)
 
 ## The Normal Way
 Simply clone the repository and run the main file:
