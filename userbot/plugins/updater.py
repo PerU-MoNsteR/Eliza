@@ -20,7 +20,7 @@ requirements_path = path.join(
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "eliza"
-UPSTREAM_REPO_URL = "https://github.com/suhaash02/Eliza.git"
+UPSTREAM_REPO_URL = "https://github.com/suhaash02/Eliza"
 
 async def gen_chlog(repo, diff):
     ch_log = ''
