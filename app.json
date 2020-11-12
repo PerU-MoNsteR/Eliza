@@ -61,6 +61,11 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+     "COMMAND_HAND_LER": {
+      "description": "For customized command handler change it \. or \> or \, or leave blank",
+      "value": "",
+      "required": false
+    },
     "REM_BG_API_KEY": {
       "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
       "value": "",
