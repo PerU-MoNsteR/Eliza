@@ -34,22 +34,22 @@
     },
     "ALIVE_MSG": {
       "description": "Set Custom awake Message When entering .awake command.",
-      "value": "",
+      "value": "welcome",
       "required": true
     },
     "ALIVE_PHOTTO": {
       "description": "put here any telegraph media link for alive pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg",
       "required": true
     },
     "BIO_MSG": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
-      "value": "",
+      "value": "Inspire to aspire before we aspire",
       "required": false
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg",
       "required": true
     },
     "PM_PERMIT_GROUP_ID": {
@@ -92,7 +92,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://generatestringsession.suhaash02.repl.run/ ",
+      "description": "Get this value by running https://repl.it/@SuhaashL/generatestring#main.py  just go here and click run and get string ",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
