@@ -1,3 +1,4 @@
+  
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
@@ -29,7 +30,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS** In ELIZA",
+                        caption="**COMMANDS** ELIZA",
                         reply_to=reply_to_id
                     )
                     await event.delete()
@@ -46,7 +47,7 @@ async def cmd_list(event):
                 await event.edit(input_str + " is not a valid plugin!")
         else:
             help_string = f"""Userbot Helper.. Provided by ✨{DEFAULTUSER}✨ \n
-`Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
+`Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
@@ -73,7 +74,7 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot Powered by @eliza support""")
+    await event.edit("""Telethon UserBot powered by @Eliza""")
 
 
 @borg.on(admin_cmd(pattern="syntax (.*)"))
@@ -84,7 +85,7 @@ async def _(event):
 
     if plugin_name in CMD_LIST:
         help_string = CMD_LIST[plugin_name].__doc__
-        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           @eliza_support"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           @Eliza_support"
         
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
