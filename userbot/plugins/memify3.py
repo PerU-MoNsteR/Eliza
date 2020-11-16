@@ -5,10 +5,10 @@ memify plugin
 import asyncio
 import os
 import random
-import CMD_HELP
+from userbot.utils import admin_cmd
+
 from ..utils import admin_cmd, sudo_cmd
 from . import (
-    CMD_HELP,
     LOGS,
     add_frame,
     asciiart,
