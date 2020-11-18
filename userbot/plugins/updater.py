@@ -66,11 +66,11 @@ async def upstream(ups):
         origin = repo.create_remote('upstream', off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head('Webo', origin.refs.Webo)
-        repo.heads.Webo.set_tracking_branch(origin.refs.Webo)
-        repo.heads.Webo.checkout(True)
+        repo.create_head('master', origin.refs.Webo)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
     ac_br = repo.active_branch.name
-    if ac_br != 'Webo':
+    if ac_br != 'master':
         await ups.edit(
             f'**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). '
             'in that case, Updater is unable to identify '
@@ -140,7 +140,7 @@ async def upstream(ups):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         await ups.edit("Updating and Deploying New Update. Please wait for 2 minutes then use `.alive` ")
-        remote.push(refspec="HEAD:refs/heads/Webo", force=True)
+        remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
         try:
             ups_rem.pull(ac_br)
