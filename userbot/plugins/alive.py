@@ -10,9 +10,6 @@ pm_caption = " Eliza is working successfully \n\n"
 
 pm_caption += f" **••Mу Bσѕѕ••**     :   {DEFAULTUSER}\n"
 
-pm_captionn += " **Pутнση Vєяѕιση**  : `3.8.5`\n"
-
-
 pm_caption += " **тєℓєтнσи νєяѕισи** :   1.15.0 \n"
 
 pm_caption += " **σffι¢ιαℓ ¢нαииєℓ** :   [ᴊᴏɪɴ](https://t.me/eliza_support_channel)\n"
