@@ -93,7 +93,9 @@
        "value": ""
     }, 
     "STRING_SESSION": {
+
       "description": "Get this value by running https://repl.it/@SuhaashL/generatestring#main.py  just go here and click run and get string ",
+
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {

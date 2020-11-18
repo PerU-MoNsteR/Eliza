@@ -2,7 +2,7 @@
 Time In Profile Pic.....
 Command: `.epp`
 
-Custom / Modified Plugin for some magical effects by this Legendary Guy @Sur_vivor 
+Custom / Modified Plugin for some magical effects by this Legendary Guy @PerU_MoNster
 
 
 #curse: who ever edits this credit section will goto hell

@@ -3,13 +3,15 @@ from telethon import events
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "avengers User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@PerU_MoNster"
 PM_IMG = "https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg"
+
 pm_caption = " Eliza is working successfully \n\n"
 
 pm_caption += f" **••Mу Bσѕѕ••**     :   {DEFAULTUSER}\n"
 
 pm_captionn += " **Pутнση Vєяѕιση**  : `3.8.5`\n"
+
 
 pm_caption += " **тєℓєтнσи νєяѕισи** :   1.15.0 \n"
 

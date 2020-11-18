@@ -1,6 +1,8 @@
 #"""Update UserBot Code (ELIZA USERBOT)
 #Syntax: .update
+
 #\nAll Credits goes to © @ROY
+
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
 from os import remove, execle, path, makedirs, getenv, environ, execl
@@ -18,6 +20,7 @@ HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
+
 
 async def gen_chlog(repo, diff):
     ch_log = ''
@@ -41,6 +44,7 @@ async def update_requirements():
 @borg.on(admin_cmd(pattern="update ?(.*)", outgoing=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
+
     conf = ups.pattern_match.group(1)
     await ups.edit("Checking for updates, please wait....")
     off_repo = UPSTREAM_REPO_URL
@@ -139,8 +143,10 @@ async def upstream(ups):
             remote.set_url(heroku_git_url)
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
+
         await ups.edit("Updating and Deploying New Update. Please wait for 2 minutes then use `.alive` ")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
+
     else:
         try:
             ups_rem.pull(ac_br)

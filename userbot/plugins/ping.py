@@ -60,11 +60,13 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
+
     event = await edit_or_reply(event, "__**( pong!__**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
         f"__pong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}]"
+
     )
 
 
