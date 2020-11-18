@@ -30,7 +30,7 @@ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRE
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
 USER_BOT_NO_WARN = ("`Hello, This is ELIZA⚠️.You have found your way here to my master,`"
-                   f"{DEFAULTUSER}'s inbox. Kuch kaam dhandaa nai hai kya aapko..\n"
+                   f"{DEFAULTUSER}'s inbox. do your work..\n"
                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n"
                     "`Leave your Name,Reason and 10k$ and hopefully you'll get a reply within 100 light years.`⭕️\n\n"
                     "❤️ Register Your Request! ❤️\nSend /start To Register Your Request!! 🔥\n"
@@ -234,7 +234,7 @@ async def hehehe(event):
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
-            await borg.send_message(chat, "**Boss Meet My Creator he made me..he is the best you know..@The_Avengers_leader **")
+            await borg.send_message(chat, "**Boss Meet My Creator he made me..he is the best you know..@peru_monster **")
             
             
             

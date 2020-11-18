@@ -92,7 +92,7 @@ async def carbon_api(e):
 
    code = quote_plus(pcode) # Converting to urlencoded
 
-   await e.edit("`Meking Carbon...\n25%`")
+   await e.edit("`Making Carbon...\n25%`")
 
    url = CARBON.format(code=code, lang=CARBONLANG)
 
@@ -140,7 +140,7 @@ async def carbon_api(e):
 
    sleep(2.5)
 
-   await e.edit("`Done Dana Done...\n100%`")
+   await e.edit("`Done...\n100%`")
 
    file = './carbon.png'
 
@@ -152,7 +152,7 @@ async def carbon_api(e):
 
          file,
 
-         caption="<< Here's your carbon, \n Carbonised by [DARKCOBRA](https://www.github.com/hellboi-atul/hellboi-atul)>> ",
+         caption="<< Here's your carbon, \n Carbonised by [eliza](https://www.github.com/suhaash02/suhaash02)>> ",
 
          force_document=True,
 

@@ -32,7 +32,7 @@ def get_video_thumb(file, output=None, width=320):
         return output
 
 
-@borg.on(admin_cmd(pattern="savethumbnail"))
+@borg.on(admin_cmd(pattern="savethumb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -65,13 +65,13 @@ async def _(event):
         os.remove(downloaded_file_name)
         await event.edit(
             "Custom video / file thumbnail saved. " + \
-            "This image will be used in the upload, till `.clearthumbnail`."
+            "This image will be used in the upload, till `.clearthumb`."
         )
     else:
         await event.edit("Reply to a photo to save custom thumbnail")
 
 
-@borg.on(admin_cmd(pattern="clearthumbnail"))
+@borg.on(admin_cmd(pattern="clearthumb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -80,7 +80,7 @@ async def _(event):
     await event.edit("✅ Custom thumbnail cleared succesfully.")
 
 
-@borg.on(admin_cmd(pattern="getthumbnail"))
+@borg.on(admin_cmd(pattern="getthumb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,4 +117,4 @@ async def _(event):
         )
         await event.edit(caption_str)
     else:
-        await event.edit("Reply `.gethumbnail` as a reply to a media")
+        await event.edit("Reply `.gethumb` as a reply to a media")
