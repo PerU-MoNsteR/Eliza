@@ -35,7 +35,7 @@ async def _(event):
             logger.info(d.stringify())
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit(""" [Deleted Account](tg://user?id=689811472) stats obtained in {} seconds..\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    await event.edit(""" [My](tg://user?id=689811472) stats obtained in {} seconds..\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Users:\t{}
 Groups:\t{}
 Super Groups:\t{}
