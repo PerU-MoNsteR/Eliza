@@ -2,7 +2,9 @@
 FROM suhaash02/eliza:latest
 
 #clonning repo 
+
 RUN git clone https://github.com/suhaash02/Eliza.git /root/userbot
+
 #working directory 
 WORKDIR /root/userbot
 
