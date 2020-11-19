@@ -103,12 +103,12 @@ async def _(event):
             "😧",
             "😡",
             "😢",
-            "‎**Repo of catuserbot**",
+            "‎**Repo of Eliza userbot**",
             "😁",
             "😧",
             "😡",
             "😢",
-            "[CAT IS BEST](https://github.com/Sur-vivor/CatUserbot)",
+            "[Eliza IS BEST](https://github.com/suhaash02/Eliza)",
             "__**Good to See you Guys....**__"
         ]
     for i in animation_ttl:
