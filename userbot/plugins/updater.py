@@ -6,15 +6,15 @@
 This module updates the userbot based on upstream revision
 Ported from Kensurbot
 """
+from os import remove, execle, path, makedirs, getenv, environ, execl
+from shutil import rmtree
 import asyncio
 import sys
-from os import environ, execle, path, remove
-
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from userbot import CMD_HELP, bot
+from userbot.utils import admin_cmd
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import CMD_HELP, runcmd
 
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
