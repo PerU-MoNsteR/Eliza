@@ -1,9 +1,9 @@
+
 import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
-from userbot.helpers import functions as darkdef
-
+from userbot.helper import functions as darkdef
 from var import Var
 
 os.system("pip install --upgrade pip")
@@ -47,7 +47,7 @@ if bool(ENV):
     else:
         basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
                     level=INFO)
-    LOGS = getLogger(name)
+    LOGS = getLogger(__name__)
 
     # Check if the config was edited by using the already used variable.
     # Basically, its the 'virginity check' for the config file ;)
@@ -129,9 +129,9 @@ if bool(ENV):
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/suhaash02/Eliza")
+    "https://github.com/suhaash02/Eliza.git")
 
-# Last.fm Module
+    # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
     DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
@@ -184,3 +184,4 @@ LASTMSG = {}
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
+
