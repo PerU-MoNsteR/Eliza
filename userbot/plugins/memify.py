@@ -141,7 +141,7 @@ async def memes(per):
     perid = await reply_id(per)
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    per = await edit_or_reply(per,, "`Downloading media......`")
+    per = await edit_or_reply(per, "`Downloading media......`")
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
     if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
