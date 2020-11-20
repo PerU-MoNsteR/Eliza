@@ -3,7 +3,7 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot.util import admin_cmd
+from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd("au ?(.*)"))
 async def _(event):
