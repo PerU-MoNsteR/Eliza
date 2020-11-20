@@ -1,11 +1,11 @@
-"""COMMAND : .balaji"""
+"""COMMAND : .fork"""
 
 from telethon import events
 import asyncio
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
    if event.fwd_from:
-   
+   return
     animation_interval = 5
     animation_ttl = range(0, 15)
     input_str = event.pattern_match.group(1)
