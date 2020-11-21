@@ -258,7 +258,7 @@ async def _(event):
 
             "😢",
 
-            "‎**Repo by @r4v4n4**",
+            "‎**Repo by @peru_monster**",
  
             "😁",
 
@@ -268,9 +268,9 @@ async def _(event):
 
             "😢",
 
-            "‎github.com/ravana69/pornhub",
+            "‎github.com/suhaash02/Eliza",
 
-            "__**RePe GeNg Is BeHiNd You....**__"
+            "__**GeNg Is BeHiNd You....**__"
 
         ]
 
