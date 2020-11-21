@@ -24,7 +24,7 @@ async def perumusic(peru , QUALITY):
   os.system(command)
 
 
-async def perumusicvideo(dark):
+async def perumusicvideo(peru):
     search = peru
     headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
     html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
