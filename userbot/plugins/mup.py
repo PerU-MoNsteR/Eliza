@@ -8,7 +8,6 @@ import random
 
 from ..utils import admin_cmd, sudo_cmd
 from . import (
-    LOGS,
     add_frame,
     asciiart,
     per_meeme,
@@ -26,7 +25,8 @@ from . import (
     take_screen_shot,
 )
 
-from userbot import bot, CMD_HELP
+from userbot import CMD_HELP, LOGS
+
 def random_color():
     number_of_colors = 2
     return [
