@@ -8,7 +8,6 @@ import random
 
 from ..utils import admin_cmd, sudo_cmd
 from . import (
-    CMD_HELP,
     LOGS,
     add_frame,
     asciiart,
@@ -27,7 +26,7 @@ from . import (
     take_screen_shot,
 )
 
-
+from userbot import bot, CMD_HELP
 def random_color():
     number_of_colors = 2
     return [
@@ -37,7 +36,6 @@ def random_color():
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="(mmf|mms) ?(.*)"))
-@bot.on(sudo_cmd(pattern="(mmf|mms) ?(.*)", allow_sudo=True))
 async def memes(per):
     cmd = per.pattern_match.group(1)
     perinput = per.pattern_match.group(2)
@@ -131,7 +129,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="ascii ?(.*)"))
-@bot.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
 async def memes(per):
     perinput = per.pattern_match.group(1)
     reply = await per.get_reply_message()
@@ -206,7 +203,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(pattern="invert$", outgoing=True))
-@bot.on(sudo_cmd(pattern="invert$", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -288,7 +284,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="solarize$"))
-@bot.on(sudo_cmd(pattern="solarize$", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -370,7 +365,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="mirror$"))
-@bot.on(sudo_cmd(pattern="mirror$", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -452,7 +446,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="flip$"))
-@bot.on(sudo_cmd(pattern="flip$", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -534,7 +527,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="gray$"))
-@bot.on(sudo_cmd(pattern="gray$", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -616,7 +608,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="zoom ?(.*)"))
-@bot.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -705,7 +696,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="frame ?(.*)"))
-@bot.on(sudo_cmd(pattern="frame ?(.*)", allow_sudo=True))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
