@@ -62,7 +62,7 @@ async def _(event):
 
                 directory_name + ".zip",
 
-                caption="Zipped By [𝔻𝔸ℝ𝕂ℂ𝕆𝔹ℝ𝔸](https://github.com/hellboi-atul/hellboi-atul)",
+                caption="Zipped By [Eliza](https://github.com/suhaash02/suhaash02)",
 
                 force_document=True,
 
