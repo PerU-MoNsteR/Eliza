@@ -1,6 +1,6 @@
-from userbot import darkdef
+from userbot import perudef
 
 
-darkmusic = darkdef.darkmusic 
-darkmusicvideo = darkdef.darkmusicvideo
+perumusic = perudef.perumusic 
+perumusicvideo = perudef.perumusicvideo
 
