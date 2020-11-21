@@ -1,24 +1,3 @@
-"""Get Telegram User Information
-Syntax: .whois @username/userid"""
-
-
-
-
-import html
-import os
-
-from requests import get
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
-
-from .. import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from ..utils import admin_cmd, edit_or_reply
-
-
-
-
 
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
@@ -231,7 +210,7 @@ async def fetch_info(replied_user, event):
     )
     username = "@{}".format(username) if username else ("This User has no Username")
     user_bio = "This User has no About" if not user_bio else user_bio
-    caption = "<b>USER INFO from DARK COBRA's database :</b>\n\n"
+    caption = "<b>USER INFO from Eliza's database :</b>\n\n"
     caption += f"👤First Name: {first_name} {last_name}\n"
     caption += f"🤵Username: {username}\n"
     caption += f"🔖ID: <code>{user_id}</code>\n"
