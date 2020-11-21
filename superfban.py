@@ -6,7 +6,7 @@ from random import choice
 import re
 from telethon import events
 from userbot import bot
-from userbot import CMD_HELP , catdef
+from userbot import CMD_HELP , perudef
 from userbot.utils import admin_cmd , sudo_cmd
 import pybase64
 
@@ -28,7 +28,7 @@ async def waifu(animu):
     except:
         pass   
     await animu.delete()
-    await catdef.waifutxt(text, animu.chat_id , reply_to_id, bot, borg)
+    await perudef.waifutxt(text, animu.chat_id , reply_to_id, bot, borg)
 
 @borg.on(sudo_cmd(allow_sudo = True, pattern="sttxt(?: |$)(.*)"))
 async def waifu(animu):
