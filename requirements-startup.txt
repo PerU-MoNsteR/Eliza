@@ -60,3 +60,4 @@ youtube-dl
 covid
 tswift
 colour
+wand
