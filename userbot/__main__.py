@@ -42,10 +42,10 @@ for name in files:
         if shortname.replace(".py", "") not in Config.NO_LOAD:
             load_module(shortname.replace(".py", ""))
 
-LOGS.info("Yay your userbot is officially working.!!!")
+LOGS.info("Efforts never fail, thank @peru_monster for this awesome Eliza userbot!!")
 LOGS.info(
-    "Congratulation, now type .alive to see message if bot is live\n"
-    "If you need assistance, head to "
+    "hurrah all completed now, type .alive to see message if bot is live\n"
+    "for queries contact me here https://t.me/Eliza_userbot_group"
 )
 
 if len(argv) not in (1, 3, 4):
