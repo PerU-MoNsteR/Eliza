@@ -2,7 +2,7 @@
 # (c) Shrimadhav U K
 
 from telethon import events, functions, types
-from uniborg.util import admin_cmd
+from ..utils import admin_cmd
 
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
