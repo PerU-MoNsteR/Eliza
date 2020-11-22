@@ -1,6 +1,3 @@
-from .helpers import *
-from userbot.helpers import functions as perudef
-  
 import os
 import sys
 import time
@@ -78,7 +75,7 @@ if bool(ENV):
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     UPSTREAM_REPO_URL = os.environ.get(
-        "UPSTREAM_REPO_URL", "https://github.com/sandy1709/catuserbot.git"
+        "UPSTREAM_REPO_URL", "https://github.com/suhaash02/Eliza.git"
     )
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
