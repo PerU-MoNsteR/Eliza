@@ -59,6 +59,7 @@ validators
 wikipedia>=1.4.0
 youtube-dl
 covid
+spamwatch
 tswift
 colour
 wand
