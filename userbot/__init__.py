@@ -67,6 +67,8 @@ if bool(ENV):
     GOOGLE_CHROME_BIN = os.environ.get(
         "GOOGLE_CHROME_BIN", "/app/.apt/usr/bin/google-chrome"
     )
+    CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
+
     # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
     # Youtube API key
