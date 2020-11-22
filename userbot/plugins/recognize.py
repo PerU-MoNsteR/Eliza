@@ -23,7 +23,7 @@ async def _(event):
     if reply_message.sender.bot:
        await event.edit("Reply to actual users message.")
        return
-    cat = await event.edit("recognizeing this media")
+    perumonster = await event.edit("recognizeing this media")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=461083923))
@@ -31,13 +31,13 @@ async def _(event):
               response = await response 
           except YouBlockedUserError: 
               await event.reply("unblock @Rekognition_Bot and try again")
-              await cat.delete()
+              await perumonster.delete()
               return
           if response.text.startswith("See next message."):
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=461083923))
               response = await response
-              cat = response.message.message
-              await event.edit(cat)
+              perumonster = response.message.message
+              await event.edit(perumonster)
       
           else:
               await event.edit("sorry, I couldnt find it")
