@@ -1,59 +1,58 @@
-from userbot import bot
-from sys import argv
-import sys
-from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-import os
-from telethon import TelegramClient
-from var import Var
-from userbot.utils import load_module
-from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS
+import glob
 from pathlib import Path
-import asyncio
+from sys import argv
+
 import telethon.utils
+from telethon import TelegramClient
+
+from . import LOGS, bot
+from .Config import Config
+from .utils import load_module
+
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
-    bot.me = await bot.get_me() 
+    bot.me = await bot.get_me()
     bot.uid = telethon.utils.get_peer_id(bot.me)
-
 
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.tgbot = None
-    if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("Initiating Inline Bot")
+    if Config.TG_BOT_USER_NAME_BF_HER is not None:
+        LOGS.info("Initiating Inline Bot")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH
-        ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
-        print("Initialisation finished with no errors")
-        print("Starting Userbot")
-        bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
-        print("Startup Completed")
+            "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
+        ).start(bot_token=Config.TG_BOT_TOKEN_BF_HER)
+        LOGS.info("Initialisation finished with no errors")
+        LOGS.info("Starting Userbot")
+        bot.loop.run_until_complete(add_bot(Config.TG_BOT_USER_NAME_BF_HER))
+        LOGS.info("Startup Completed")
     else:
         bot.start()
-    
 
-import glob
-path = 'userbot/plugins/*.py'
+path = "userbot/plugins/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
         path1 = Path(f.name)
         shortname = path1.stem
-        load_module(shortname.replace(".py", ""))
+        if shortname.replace(".py", "") not in Config.NO_LOAD:
+            load_module(shortname.replace(".py", ""))
 
-import userbot._core
-
-print("ELIZA  IS WORKING FOR YOU, you should Thank {@peru_monste} for this awesome bot made by him..")
+LOGS.info("Yay your userbot is officially working.!!!")
+LOGS.info(
+    "Congratulation, now type .alive to see message if bot is live\n"
+    "If you need assistance, head to "
+)
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
+    bot.tgbot = None
     bot.run_until_disconnected()
+
 
 
