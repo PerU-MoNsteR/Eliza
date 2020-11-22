@@ -12,9 +12,9 @@ pm_caption += f" **••Mу Bσѕѕ••**     :   {DEFAULTUSER}\n"
 
 pm_caption += " **тєℓєтнσи νєяѕισи** :   1.15.0 \n"
 
-pm_caption += " **σffι¢ιαℓ ¢нαииєℓ** :   [ᴊᴏɪɴ](https://t.me/eliza_support_channel)\n"
+pm_caption += " **σffι¢ιαℓ ¢нαииєℓ** :   [ᴊᴏɪɴ](https://t.me/Eliza_Userbot_Support)\n"
 
-pm_caption += " σffι¢ιαℓ gяσυρ       :   [ᴊᴏɪɴ](https://t.me/eliza_support)\n"
+pm_caption += " σffι¢ιαℓ gяσυρ       :   [ᴊᴏɪɴ](https://t.me/Eliza_userbot_group)\n"
 
 pm_caption += " ℓι¢єиѕє              :   [ӀíϲҽղՏҽ](https://github.com/suhaash02/Eliza/blob/master/LICENSE)\n"
 
