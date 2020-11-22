@@ -17,7 +17,11 @@ import subprocess
 import sys
 import traceback
 import datetime
+from telethon.tl.tlobject import TLObject
+from telethon.tl.types import MessageEntityPre
+from telethon.utils import add_surrogate
 
+from ..Config import Config
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 
 from typing import List
@@ -451,3 +455,11 @@ async def edit_or_reply(event, text):
             return await reply_to.reply(text)
         return await event.reply(text)
     return await event.edit(text)
+
+async def reply_id(event):
+    reply_to_id = None
+    if event.sender_id in Config.SUDO_USERS:
+        reply_to_id = event.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    return reply_to_id
