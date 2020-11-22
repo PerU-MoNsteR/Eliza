@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from collections import deque
 import importlib.util
 import random
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Webo"
 
 @borg.on(admin_cmd(pattern="stupid$"))
 async def _(event):
