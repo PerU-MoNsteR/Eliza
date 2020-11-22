@@ -170,6 +170,8 @@ class Config((object)):
     DEEP_AI = os.environ.get("DEEP_AI", None)
     # can get from https://coffeehouse.intellivoid.net/
     LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
+    #autobio
+    BIO_MSG = os.environ.get("ALIVE_MSG", None)
 
 
 class Production(Config):
