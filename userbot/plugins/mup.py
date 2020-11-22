@@ -7,7 +7,7 @@ import os
 import random
 
 from ..utils import admin_cmd, sudo_cmd
-from . import (
+from userbot import (
     add_frame,
     asciiart,
     per_meeme,
