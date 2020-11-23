@@ -11,7 +11,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from userbot.utils import admin_cmd
 import time
-from userbot import ALIVE_NAME
+from . import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
 
