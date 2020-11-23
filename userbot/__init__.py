@@ -14,7 +14,7 @@ from telethon.sessions import StringSession
 from var import Var
 
 StartTime = time.time()
-Elizaversion = "2.0.1"
+elizaversion = "2.0.2"
 
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
