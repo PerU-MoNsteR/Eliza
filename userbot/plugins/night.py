@@ -5,7 +5,7 @@ import datetime
 from telethon import events
 from telethon.tl import functions, types
 from userbot.utils import admin_cmd
-from userbot . ALIVE_NAME
+from . import ALIVE_NAME
 
 global USER_night  # pylint:disable=E0602
 global night_time  # pylint:disable=E0602
