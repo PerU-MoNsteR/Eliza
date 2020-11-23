@@ -8,10 +8,10 @@ from hachoir.parser import createParser
 from PIL import Image, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, TMP_DOWNLOAD_DIRECTORY, bot
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 
-Converted = TMP_DOWNLOAD_DIRECTORY + "sticker.webp"
+Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
 
 
 @register(outgoing=True, pattern=r"^\.(mirror|flip|ghost|bw|poster)$")
