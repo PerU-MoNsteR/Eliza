@@ -13,7 +13,7 @@ async def _(e):
     await edit_or_reply(e, txt)
 
 
-@borb.on(admin_cmd(outgoing=True, pattern="shg$"))
+@borg.on(admin_cmd(outgoing=True, pattern="shg$"))
 @borg.on(sudo_cmd(pattern="shg$", allow_sudo=True))
 async def shrugger(e):
     txt = random.choice(permemes.SHGS)
