@@ -1,34 +1,36 @@
+if Config.PLUGIN_CHANNEL:
+    import os
+    from pathlib import Path
 
-from userbot import bot
-from telethon import events
-from telethon import functions, types
-from telethon.tl.types import InputMessagesFilterDocument
-from userbot.utils import command, remove_plugin, load_module
-from var import Var
-from pathlib import Path
-from userbot import LOAD_PLUG
-import sys
-import asyncio
-import traceback
-import os
-from userbot.utils import admin_cmd
+    from telethon.tl.types import InputMessagesFilterDocument
 
-@borg.on(admin_cmd(pattern="extdl$", outgoing=True))
-async def install(event):
-    if event.fwd_from:
-        return
-    chat = Var.PLUGIN_CHANNEL
-    documentss = await borg.get_messages(chat, None , filter=InputMessagesFilterDocument)
-    total = int(documentss.total)
-    total_doxx = range(0, total)
-    await event.delete()
-    for ixo in total_doxx:
-        mxo = documentss[ixo].id
-        downloaded_file_name = await event.client.download_media(await borg.get_messages(chat, ids=mxo), "userbot/plugins/")
-        if "(" not in downloaded_file_name:
-            path1 = Path(downloaded_file_name)
-            shortname = path1.stem
-            load_module(shortname.replace(".py", ""))
-            await borg.send_message(event.chat_id, "Installed Plugin `{}` successfully.".format(os.path.basename(downloaded_file_name)))
-        else:
-            await borg.send_message(event.chat_id, "Plugin `{}` has been pre-installed and cannot be installed.".format(os.path.basename(downloaded_file_name)))
+    from ..utils import load_module
+    from . import BOTLOG_CHATID
+
+    async def install():
+        documentss = await bot.get_messages(
+            Config.PLUGIN_CHANNEL, None, filter=InputMessagesFilterDocument
+        )
+        total = int(documentss.total)
+        for module in range(total):
+            plugin_to_install = documentss[module].id
+            downloaded_file_name = await bot.download_media(
+                await bot.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
+                "userbot/plugins/",
+            )
+            if "(" not in downloaded_file_name:
+                path1 = Path(downloaded_file_name)
+                shortname = path1.stem
+                load_module(shortname.replace(".py", ""))
+                await bot.send_message(
+                    BOTLOG_CHATID,
+                    f"Installed Plugin `{os.path.basename(downloaded_file_name)}` successfully.",
+                ),
+            else:
+                await bot.send_message(
+                    BOTLOG_CHATID,
+                    f"Plugin `{os.path.basename(downloaded_file_name)}` has been pre-installed and cannot be installed.",
+                )
+                os.remove(downloaded_file_name)
+
+    bot.loop.create_task(install())
