@@ -25,11 +25,11 @@ from telethon import events, functions, types
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, TMP_DOWNLOAD_DIRECTORY, bot
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from userbot.utils import progress
 
-Glitched = TMP_DOWNLOAD_DIRECTORY + "glitch.gif"
+Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
 
 EMOJI_PATTERN = re.compile(
     "["
