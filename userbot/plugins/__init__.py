@@ -18,7 +18,6 @@ from ..Config import Config
 
 # =================== CONSTANT ===================
 USERID = bot.uid
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Eliza"
 
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
