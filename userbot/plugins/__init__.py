@@ -3,6 +3,7 @@ from userbot import perudef
 perumusic = perudef.perumusic 
 perumusicvideo = perudef.perumusicvideo
 
+  
 import math
 import os
 import re
@@ -17,7 +18,12 @@ from .. import *
 from ..Config import Config
 
 # =================== CONSTANT ===================
-USERID = bot.uid
+
+USERID = Config.OWNER_ID or bot.uid
+ALIVE_NAME = Config.ALIVE_NAME
+AUTONAME = Config.AUTONAME
+DEFAULT_BIO = Config.DEFAULT_BIO
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
@@ -56,10 +62,10 @@ if Config.SPAMWATCH_API:
 else:
     spamwatch = None
 
-web_users = [bot.uid]
+cat_users = [bot.uid]
 if Config.SUDO_USERS:
     for user in Config.SUDO_USERS:
-        web_users.append(user)
+        cat_users.append(user)
 
 
 # ================================================
@@ -87,18 +93,6 @@ def check(web):
     except:
         hi = False
     return bool(hi)
-
-
-# UniBorg Telegram UseRBot
-# Copyright (C) 2020 @UniBorg
-# This code is licensed under
-# the "you can't use this for anything - public or private,
-# unless you know the two prime factors to the number below" license
-# 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
-# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
-# uniborg
-
 
 def check_data_base_heal_th():
     # https://stackoverflow.com/a/41961968
