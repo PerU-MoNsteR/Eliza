@@ -2,19 +2,28 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
-""" Userbot module for getting the weather of a city. """
 
+import io
 import json
-import requests
+import logging
 from datetime import datetime
-from pytz import country_timezones as c_tz, timezone as tz, country_names as c_n
 
-from userbot import OPEN_WEATHER_MAP_APPID as OWM_API, CMD_HELP
-from userbot.events import register, errors_handler
+import aiohttp
+import requests
+from pytz import country_names as c_n
+from pytz import country_timezones as c_tz
+from pytz import timezone as tz
+
+from .. import CMD_HELP
+from ..utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
+
+logging.basicConfig(
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 
 # ===== CONSTANT =====
 DEFCITY = 'Ahmedabad'
+OWM_API = Config.OPEN_WEATHER_MAP_APPID
 
 
 # ====================
