@@ -9,10 +9,11 @@ Available Commands:
 import asyncio
 import re
 import userbot.plugins.sql_helper.blacklist_sql as sql
-from telethon import events, utils
+from telethon import events
 from telethon.tl import types, functions
-from userbot.utils import admin_cmd
 
+from .. import CMD_HELP
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @borg.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
