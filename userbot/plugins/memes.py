@@ -1,29 +1,21 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
-#
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
-#
-#
-
-""" Userbot module for having some fun with people. """
-
 import asyncio
 import random
 import re
-import time
-from userbot import ALIVE_NAME
-
-from collections import deque
 
 import requests
-
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-
 from cowpy import cow
+from telethon import functions, types
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import ChannelParticipantsAdmins, MessageEntityMentionName
 
-from userbot import CMD_HELP,YOUTUBE_API_KEY
-from userbot.utils import register,admin_cmd
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, permemes
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "eliza"
+
 
 # ================= CONSTANT =================
 RENDISTR = [
