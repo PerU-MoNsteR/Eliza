@@ -1,7 +1,7 @@
 import asyncio
 from telethon import events
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from . import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@PerU_MoNster"
 PM_IMG = "https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg"
