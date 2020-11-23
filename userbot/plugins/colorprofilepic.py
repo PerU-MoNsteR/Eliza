@@ -10,7 +10,7 @@ from pySmartDL import SmartDL
 
 from telethon.tl import functions
 
-from userbot import ALIVE_NAME
+from . import ALIVE_NAME
 
 from userbot.utils import admin_cmd
 
