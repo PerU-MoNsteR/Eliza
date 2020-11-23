@@ -63,3 +63,4 @@ spamwatch
 tswift
 colour
 wand
+git+https://github.com/LonamiWebs/Telethon
