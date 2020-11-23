@@ -1,6 +1,6 @@
 
 from userbot import CMD_LIST
-from . import ALIVE_NAME
+from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 from platform import uname
 import sys
