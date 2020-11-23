@@ -21,7 +21,7 @@ import math
 from pySmartDL import SmartDL
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from . import LOGS, CMD_HELP, TMP_DOWNLOAD_DIRECTORY
 from userbot.utils import register
 from userbot.utils import admin_cmd, humanbytes, progress, time_formatter
 from userbot.uniborgConfig import Config
