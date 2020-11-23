@@ -24,7 +24,7 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-from userbot import bot, CMD_HELP , AUTONAME , DEFAULT_BIO , ALIVE_NAME
+from . import bot, CMD_HELP , AUTONAME , DEFAULT_BIO , ALIVE_NAME
 
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "Eliza is best"
