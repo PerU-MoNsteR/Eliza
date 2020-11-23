@@ -5,7 +5,7 @@ if Config.PLUGIN_CHANNEL:
     from telethon.tl.types import InputMessagesFilterDocument
 
     from ..utils import load_module
-    from . import BOTLOG_CHATID
+    from userbot import BOTLOG_CHATID
 
     async def install():
         documentss = await bot.get_messages(
