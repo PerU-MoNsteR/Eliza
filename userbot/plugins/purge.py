@@ -2,16 +2,15 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
-""" Userbot module for purging unneeded messages(usually spam or ot). """
+
 
 from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
+from ..utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
 from . import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import register, errors_handler
-from userbot.utils import admin_cmd
+
 
 
 #@register(outgoing=True, pattern="^.purge$")
