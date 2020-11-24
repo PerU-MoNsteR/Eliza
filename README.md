@@ -3,7 +3,7 @@
 
 This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners...
 # For any query:-
-### [Join Here For Any Query](https://t.me/ELIZAuserbot_support)
+### [Join Here For Any Query](https://t.me/Eliza_userbot_support)
 
 ### The Easy Way to deploy the bot
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku just click on fork and star just below
@@ -24,6 +24,10 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
     <img src="https://img.shields.io/github/stars/suhaash02/Eliza?style=social">
   </a>
 </p>
+
+ ![Repo Size](https://img.shields.io/github/repo-size/suhaash02/SessionMakerBot)
+
+
 
 [![Elizalogo](https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza)
 
