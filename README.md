@@ -25,7 +25,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
   </a>
 </p>
 
- ![Repo Size](https://img.shields.io/github/repo-size/suhaash02/SessionMakerBot)
+ ![Repo Size](https://img.shields.io/github/repo-size/suhaash02/Eliza)
 
 
 
