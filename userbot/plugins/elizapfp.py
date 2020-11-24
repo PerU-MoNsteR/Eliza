@@ -219,7 +219,8 @@ async def autopic(event):
             await asyncio.sleep(30)
         except:
             return
-  import os
+        
+import os   
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
