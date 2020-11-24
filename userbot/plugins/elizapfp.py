@@ -469,5 +469,3 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(120) #Edit this to your required needs
-         except:
-            return
