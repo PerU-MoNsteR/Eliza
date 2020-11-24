@@ -396,7 +396,7 @@ import random, re
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
-         TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/2765633721f6e21a0df9e.jpg",
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/2765633721f6e21a0df9e.jpg",
                         ]
 @borg.on(admin_cmd(pattern="epp ?(.*)"))
 async def autopic(event):
