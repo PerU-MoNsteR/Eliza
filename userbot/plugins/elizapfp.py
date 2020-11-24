@@ -153,8 +153,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(60)
-         except:
-            return
+       
  
 """
 Time In Profile Pic.....
