@@ -382,15 +382,15 @@ async def autopic(event):
         except:
             return
     
-      import os
-      from datetime import datetime
-      from PIL import Image, ImageDraw, ImageFont
-      from pySmartDL import SmartDL
-      from telethon.tl import functions
-      from uniborg.util import admin_cmd
-      import asyncio
-      import shutil 
-      import random, re
+   import os
+   from datetime import datetime
+   from PIL import Image, ImageDraw, ImageFont
+   from pySmartDL import SmartDL
+   from telethon.tl import functions
+   from uniborg.util import admin_cmd
+   import asyncio
+   import shutil 
+   import random, re
 
 
        FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
