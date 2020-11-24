@@ -321,7 +321,7 @@ async def autopic(event):
         except:
             return
         
-  import os
+import os
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
