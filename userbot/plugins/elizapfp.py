@@ -382,18 +382,18 @@ async def autopic(event):
         except:
             return
     
-   import os
-   from datetime import datetime
-   from PIL import Image, ImageDraw, ImageFont
-   from pySmartDL import SmartDL
-   from telethon.tl import functions
-   from uniborg.util import admin_cmd
-   import asyncio
-   import shutil 
-   import random, re
+import os
+from datetime import datetime
+from PIL import Image, ImageDraw, ImageFont
+from pySmartDL import SmartDL
+from telethon.tl import functions
+from uniborg.util import admin_cmd
+import asyncio
+import shutil 
+import random, re
 
 
-       FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
          TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/2765633721f6e21a0df9e.jpg",
