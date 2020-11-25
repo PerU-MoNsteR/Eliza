@@ -29,7 +29,7 @@ from . import CMD_HELP, TMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from userbot.utils import progress
 
-Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
+Glitched = TMP_DOWNLOAD_DIRECTORY + "glitch.gif"
 
 EMOJI_PATTERN = re.compile(
     "["
