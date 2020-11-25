@@ -11,7 +11,7 @@ import time
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from . import ALIVE_NAME
 
 BIO_MSG = Config.BIO_MSG
 if BIO_MSG is None:
@@ -27,7 +27,7 @@ async def _(event):
     while True:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
+        bio = f"📅{DMY} {BIO_MSG} ⌚️{HM}"
         logger.info(bio)
         try:
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
