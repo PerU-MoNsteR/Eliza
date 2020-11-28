@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/suhaash02/Eliza/",
-  "website": "https://github.com/suhaash02/",
-  "success_url": "https://t.me/eliza_support",
+  "repository": "https://github.com/PerU-MoNsteR/Eliza/",
+  "website": "https://github.com/PerU-MoNsteR/",
+  "success_url": "https://t.me/Eliza_userbot_support",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -104,7 +104,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example:suhaash02/suhaash02, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: PerU-MoNsteR/PerU-MoNsteR, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
