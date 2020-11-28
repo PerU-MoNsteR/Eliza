@@ -38,8 +38,8 @@ async def _(event):
             "`Forking Eliza... 52%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 90.7 MiB / 108.7 MiB `",
             "`Forking Eliza... 84%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️\n\nFile Size: 100.7 MiB / 108.7 MiB `",
             "`Forking Eliza... 100%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\nFile Size: 108.7 MiB / 108.7 MiB\n\nTask Completed... `",
-            "`Fork Deploying...`\n\n@Eliza_support_group ( `Custom Built By` @peru_monster ) \n`Verified Account:` ☑️\n`Repo: https://github.com/suhaash02/Eliza`\n\n`Python` `Loading...`\n[GCC 7.4.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
-            "`Fork Deployed...`\n\n@Eliza_support_group ( `Custom Built By` @peru_monster ) \n`Verified Account:` ✅\n`Repo:` https://github.com/suhaash02/Eliza\n\n`Python` 3.8.6 (default, jan 2020, 01:19:52)\n[GCC 8.4.0]\n`Telethon` 1.16.0\n\n`Custom Built Fork:` https://github.com/suhaash02/Eliza"
+            "`Fork Deploying...`\n\n@Eliza_support_group ( `Custom Built By` @peru_monster ) \n`Verified Account:` ☑️\n`Repo: https://github.com/PerU-MoNsteR/Eliza`\n\n`Python` `Loading...`\n[GCC 7.4.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
+            "`Fork Deployed...`\n\n@Eliza_support_group ( `Custom Built By` @peru_monster ) \n`Verified Account:` ✅\n`Repo:` https://github.com/PerU-MoNsteR/Eliza\n\n`Python` 3.8.6 (default, jan 2020, 01:19:52)\n[GCC 8.4.0]\n`Telethon` 1.16.0\n\n`Custom Built Fork:` https://github.com/PerU-MoNsteR/Eliza"
         ]
 
         for i in animation_ttl:
