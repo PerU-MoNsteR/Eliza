@@ -1,5 +1,5 @@
 # ELIZA
-###rewrited by @peru_monster
+#rewrited by @peru_monster
 
 This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners...
 # For any query:-
@@ -9,32 +9,32 @@ This is a userbot made for telegram. I made this userbot with help of all other 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku just click on fork and star just below
 
 
-[![Get string session](https://repl.it/badge/github/suhaash02/Eliza)](https://repl.it/@SuhaashL/generatestring#main.py)
+[![Get string session](https://repl.it/badge/github/PerU-MoNsteR/Eliza)](https://repl.it/@SuhaashL/generatestring#main.py)
 
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza/tree/master)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/PerU-MoNsteR/Eliza/tree/master)
 
 
 <p align="center">
-  <a href="https://github.com/suhaash02/Eliza/fork">
-    <img src="https://img.shields.io/github/forks/suhaash02/Eliza?label=Fork&style=social">
+  <a href="https://github.com/PerU-MoNsteR/Eliza/fork">
+    <img src="https://img.shields.io/github/forks/PerU-MoNsteR/Eliza?label=Fork&style=social">
     
   </a>
   <a href="https://github.com/suhaash02/Eliza">
-    <img src="https://img.shields.io/github/stars/suhaash02/Eliza?style=social">
+    <img src="https://img.shields.io/github/stars/PerU-MoNsteR/Eliza?style=social">
   </a>
 </p>
 
- ![Repo Size](https://img.shields.io/github/repo-size/suhaash02/Eliza)
+ ![Repo Size](https://img.shields.io/github/repo-size/PerU-MoNsteR/Eliza)
 
 
 
-[![Elizalogo](https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg)](https://heroku.com/deploy?template=https://github.com/suhaash02/Eliza)
+[![Elizalogo](https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg)](https://heroku.com/deploy?template=https://github.com/PerU-MoNsteR/Eliza)
 
 ## The Normal Way
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github.com/suhaash02/Eliza
+git clone https://github.com/PerU-MoNsteR/Eliza
 cd eliza
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
