@@ -20,8 +20,8 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
     <img src="https://img.shields.io/github/forks/PerU-MoNsteR/Eliza?label=Fork&style=social">
     
   </a>
-  <a href="https://github.com/suhaash02/Eliza">
-    <img src="https://img.shields.io/github/stars/PerU-MoNsteR/Eliza?style=social">
+  <a href="https://github.com/PerU-MoNsteR/Eliza">
+    <img src="https://img.shields.io/github/stars/PerU-MoNsteR?style=social">
   </a>
 </p>
 
