@@ -18,7 +18,7 @@
 
 from sqlalchemy import Column, Integer, String
 
-from . import BASE, SESSION
+from userbot import BASE, SESSION
 
 
 class Users(BASE):
