@@ -86,6 +86,7 @@ class Config((object)):
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
     # in alive message pic
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
+    
     # in pm permit pic
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
@@ -107,6 +108,12 @@ class Config((object)):
     COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r"\.")
     HELP_INLINETYPE = os.environ.get("HELP_INLINETYPE", None)
+    # SUDOUSERS
+    SUDO_USERS = os.environ.get("SUDO_USERS", None)
+    # CommandHandler
+    CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "!")
+
     # specify list of users allowed to use bot
     # WARNING: be careful who you grant access to your bot.
     # malicious users could do ".exec rm -rf /*"
