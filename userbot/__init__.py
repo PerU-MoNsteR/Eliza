@@ -95,12 +95,18 @@ if bool(ENV):
     G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./downloads")
+    # SUDOUSERS
+    SUDO_USERS = os.environ.get("SUDO_USERS", None)
+    # CommandHandler
+    CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "!")
     # time.py
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
+    
 
 # Global Variables
 COUNT_MSG = 0
