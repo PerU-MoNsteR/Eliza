@@ -5,7 +5,7 @@
 #
 import os
 
-from jarvis.utils import admin_cmd, eor, sudo_cmd
+from userbot.utils import admin_cmd, eor, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern=r"reveal", outgoing=True))
