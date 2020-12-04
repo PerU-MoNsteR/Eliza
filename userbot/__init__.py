@@ -10,7 +10,7 @@ from pySmartDL import SmartDL
 from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-from .function import elizafunction as topfunc
+from .functions import elizafunction as topfunc
 
 from var import Var
 
