@@ -14,7 +14,7 @@
 
 from sqlalchemy import Column, String
 
-from . import BASE, SESSION
+from userbot import BASE, SESSION
 
 
 class Blockedid(BASE):
