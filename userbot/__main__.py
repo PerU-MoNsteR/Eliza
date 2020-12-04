@@ -45,7 +45,7 @@ for name in files:
 LOGS.info("Efforts never fail, thank @peru_monster for this awesome Eliza userbot!!")
 LOGS.info(
     "hurrah all completed now, type .alive to see message if bot is live\n"
-    "for queries contact me here https://t.me/Eliza_userbot_group"
+    "for queries contact me here https://t.me/Elizasupport01"
 )
 
 if len(argv) not in (1, 3, 4):
