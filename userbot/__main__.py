@@ -41,6 +41,19 @@ for name in files:
         shortname = path1.stem
         if shortname.replace(".py", "") not in Config.NO_LOAD:
             load_module(shortname.replace(".py", ""))
+            
+path = "userbot/plugins/assistant/*.py"
+files = glob.glob(path)
+for name in files:
+    with open(name) as f:
+        path1 = Path(f.name)
+        shortname = path1.stem
+        start_assistant(shortname.replace(".py", ""))
+
+print("you assisatant is also ready with your eliza bot.")
+
+if len(argv) not in (1, 3, 4):
+    bot.disconnect()
 
 LOGS.info("Efforts never fail, thank @peru_monster for this awesome Eliza userbot!!")
 LOGS.info(
