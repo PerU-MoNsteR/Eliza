@@ -42,7 +42,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, "", inputString)
 
 
-@peru.on(admin_cmd(pattern="tweet(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="tweet(?: |$)(.*)"))
 async def tweet(okie):
     # """Creates random anime sticker!"""
     what = okie.pattern_match.group(1)

@@ -75,7 +75,7 @@ def get_provider(url):
     return url
 
 
-@peru.on(admin_cmd(pattern="watch (.*)"))
+@borg.on(admin_cmd(pattern="watch (.*)"))
 async def _(event):
     if event.fwd_from:
         return

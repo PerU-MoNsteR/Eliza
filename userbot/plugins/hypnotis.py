@@ -10,7 +10,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"hypno"))
+@borg.on(admin_cmd(pattern=r"hypno"))
 async def _(event):
 
     if event.fwd_from:

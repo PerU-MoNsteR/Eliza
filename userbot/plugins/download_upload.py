@@ -89,7 +89,7 @@ def time_formatter(milliseconds: int) -> str:
 
 
 # @register(pattern=r".download(?: |$)(.*)", outgoing=True)
-@peru.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -165,7 +165,7 @@ async def _(event):
 
 
 @register(pattern=r".uploadir (.*)", outgoing=True)
-# @peru.on(admin_cmd(pattern="uploadir (.*)", allow_sudo=True))
+# @borg.on(admin_cmd(pattern="uploadir (.*)", allow_sudo=True))
 async def uploadir(udir_event):
     """
     #For .uploadir command, allows you to upload everything from a folder in the server"""
@@ -247,9 +247,9 @@ async def uploadir(udir_event):
         await udir_event.edit("404: Directory Not Found")
 
 
-# @peru.on(admin_cmd(pattern="upload (.*)", allow_sudo=True)
+# @borg.on(admin_cmd(pattern="upload (.*)", allow_sudo=True)
 # @register(pattern=r".upload (.*)", outgoing=True)
-@peru.on(admin_cmd(pattern="upload (.*)", outgoing=True))
+@borg.on(admin_cmd(pattern="upload (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -332,7 +332,7 @@ def extract_w_h(file):
         return width, height
 
 
-# @peru.on(admin_cmd(pattern="uploadas(stream|vn|all) (.*)", allow_sudo=True))
+# @borg.on(admin_cmd(pattern="uploadas(stream|vn|all) (.*)", allow_sudo=True))
 @register(pattern=r".uploadas(stream|vn|all) (.*)", outgoing=True)
 async def uploadas(uas_event):
     """

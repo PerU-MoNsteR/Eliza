@@ -29,7 +29,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, "", inputString)
 
 
-@peru.on(admin_cmd(pattern="mev(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="mev(?: |$)(.*)"))
 async def nope(per):
     bell = per.pattern_match.group(1)
     if not bell:

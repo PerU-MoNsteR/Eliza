@@ -17,7 +17,7 @@ FONT_FILE_TO_USE = "Fonts/digital.ttf"
 DEFAULTUSER = str(ALIVE_NAME)
 
 
-@peru.on(admin_cmd(pattern="cpp ?(.*)"))
+@borg.on(admin_cmd(pattern="cpp ?(.*)"))
 async def autopic(event):
 
     await event.edit("colour profile pic have been enabled")

@@ -4,7 +4,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("warn1"))
+@borg.on(admin_cmd("warn1"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +28,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("warn2"))
+@borg.on(admin_cmd("warn2"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("warn3"))
+@borg.on(admin_cmd("warn3"))
 async def _(event):
     if event.fwd_from:
         return
@@ -74,7 +74,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("warn0"))
+@borg.on(admin_cmd("warn0"))
 async def _(event):
     if event.fwd_from:
         return
@@ -96,7 +96,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("ocb"))
+@borg.on(admin_cmd("ocb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -113,7 +113,7 @@ async def _(event):
     await event.delete()
 
 
-@peru.on(admin_cmd("fw"))
+@borg.on(admin_cmd("fw"))
 async def _(event):
     if event.fwd_from:
         return

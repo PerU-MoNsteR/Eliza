@@ -8,7 +8,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="gaana ?(.*)"))
+@borg.on(admin_cmd(pattern="gaana ?(.*)"))
 async def FindMusicPleaseBot(gaana):
 
     song = gaana.pattern_match.group(1)

@@ -4,7 +4,7 @@ import random
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"gf$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"gf$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -39,7 +39,7 @@ async def _(event):
         await event.edit(animation_chars[i % 21])
 
 
-@peru.on(admin_cmd(pattern=r"xtx$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"xtx$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -166,7 +166,7 @@ async def _(event):
         )
 
 
-@peru.on(admin_cmd(pattern=r"pyavam$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"pyavam$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

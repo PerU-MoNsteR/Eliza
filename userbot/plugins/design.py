@@ -4,7 +4,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("join"))
+@borg.on(admin_cmd("join"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
     await event.delete()
 
 
-@peru.on(admin_cmd("pay"))
+@borg.on(admin_cmd("pay"))
 async def _(event):
     if event.fwd_from:
         return

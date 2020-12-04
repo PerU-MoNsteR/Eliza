@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("grab ?(.*)"))
+@borg.on(admin_cmd("grab ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

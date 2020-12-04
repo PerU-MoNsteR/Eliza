@@ -7,7 +7,7 @@ from PIL import Image, ImageColor
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="color (.*)"))
+@borg.on(admin_cmd(pattern="color (.*)"))
 async def _(event):
     if event.fwd_from:
         return

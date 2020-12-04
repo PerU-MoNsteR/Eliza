@@ -17,7 +17,7 @@ if BIO_MSG is None:
 DEL_TIME_OUT = 60
 
 
-@peru.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

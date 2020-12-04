@@ -29,7 +29,7 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@peru.on(
+@borg.on(
     admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True)
 )
 async def variable(var):
@@ -114,7 +114,7 @@ async def variable(var):
             return await var.edit(f"**{variable}**  `is not exists`")
 
 
-@peru.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))
+@borg.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -175,7 +175,7 @@ async def dyno_usage(dyno):
     )
 
 
-@peru.on(admin_cmd(pattern="logs$", outgoing=True))
+@borg.on(admin_cmd(pattern="logs$", outgoing=True))
 async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)

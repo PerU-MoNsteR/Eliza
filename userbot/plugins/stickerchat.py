@@ -68,7 +68,7 @@ if 1 == 1:
     )
     client = borg
 
-    @peru.on(admin_cmd(pattern="chat(.*)"))
+    @borg.on(admin_cmd(pattern="chat(.*)"))
     async def quotecmd(message):  # noqa: C901
         """Quote a message.
         Usage: .quote [template]

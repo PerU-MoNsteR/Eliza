@@ -7,7 +7,7 @@ from userbot.utils import admin_cmd, load_module
 from var import Var
 
 
-@peru.on(admin_cmd(pattern="extdl$", outgoing=True))
+@borg.on(admin_cmd(pattern="extdl$", outgoing=True))
 async def install(event):
     if event.fwd_from:
         return

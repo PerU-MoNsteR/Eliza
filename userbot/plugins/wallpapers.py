@@ -62,7 +62,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="wallpapers ?(.*)"))
+@borg.on(admin_cmd(pattern="wallpapers ?(.*)"))
 async def main(event):
     await event.edit("**uploading wallpapers \ndone check ur DP.**")
     while True:

@@ -13,7 +13,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("unoob"))
+@borg.on(admin_cmd("unoob"))
 async def _(event):
 
     if event.fwd_from:
@@ -44,7 +44,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
 
-@peru.on(admin_cmd("menoob"))
+@borg.on(admin_cmd("menoob"))
 async def _(event):
 
     if event.fwd_from:
@@ -75,7 +75,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
 
-@peru.on(admin_cmd("upro"))
+@borg.on(admin_cmd("upro"))
 async def _(event):
 
     if event.fwd_from:
@@ -105,7 +105,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
 
-@peru.on(admin_cmd("mepro"))
+@borg.on(admin_cmd("mepro"))
 async def _(event):
 
     if event.fwd_from:

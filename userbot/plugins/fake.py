@@ -19,7 +19,7 @@ from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="fake ?(.*)"))
+@borg.on(admin_cmd(pattern="fake ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

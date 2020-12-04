@@ -48,7 +48,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="actressdp ?(.*)"))
+@borg.on(admin_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
@@ -120,7 +120,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="actressdp ?(.*)"))
+@borg.on(admin_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
@@ -193,7 +193,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="animedp ?(.*)"))
+@borg.on(admin_cmd(pattern="animedp ?(.*)"))
 async def main(event):
 
     await event.edit("**Starting Anime Profile Pic...\n\nDone !!! Check Your DP.🏻**")
@@ -263,7 +263,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="avengersdp ?(.*)"))
+@borg.on(admin_cmd(pattern="avengersdp ?(.*)"))
 async def main(event):
 
     await event.edit("**Starting Avengers Profile Pic...\n\nDone !!!**")
@@ -329,7 +329,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="gamerdp ?(.*)"))
+@borg.on(admin_cmd(pattern="gamerdp ?(.*)"))
 async def main(event):
 
     await event.edit(
@@ -417,7 +417,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="marveldp ?(.*)"))
+@borg.on(admin_cmd(pattern="marveldp ?(.*)"))
 async def main(event):
 
     await event.edit("**Starting Marvel Profile Pic's...\n\nDone !!! Check Your DP.**")
@@ -466,7 +466,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="predatordp ?(.*)"))
+@borg.on(admin_cmd(pattern="predatordp ?(.*)"))
 async def main(event):
     await event.edit("**Starting predator Profile Pic.**")  # Owner @NihiNivi
     while True:
@@ -529,7 +529,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "friday.jpg")
 
 
-@peru.on(admin_cmd(pattern="spacedp ?(.*)"))
+@borg.on(admin_cmd(pattern="spacedp ?(.*)"))
 async def main(event):
 
     await event.edit(
@@ -598,7 +598,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="fire ?(.*)"))
+@borg.on(admin_cmd(pattern="fire ?(.*)"))
 async def main(event):
 
     await event.edit(

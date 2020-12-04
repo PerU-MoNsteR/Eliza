@@ -21,7 +21,7 @@ DEFAULTUSER = (
 )
 
 
-@peru.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
+@borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_night(event):
     global USER_night  # pylint:disable=E0602
     global night_time  # pylint:disable=E0602
@@ -46,7 +46,7 @@ async def set_not_night(event):
         night_time = None  # pylint:disable=E0602
 
 
-@peru.on(admin_cmd(pattern=r"night ?(.*)"))
+@borg.on(admin_cmd(pattern=r"night ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def _(event):
             logger.warn(str(e))  # pylint:disable=E0602
 
 
-@peru.on(
+@borg.on(
     events.NewMessage(  # pylint:disable=E0602
         incoming=True, func=lambda e: bool(e.mentioned or e.is_private)
     )

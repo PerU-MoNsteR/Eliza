@@ -5,7 +5,7 @@ import random
 from telethon import events
 
 
-@peru.on(events.NewMessage(pattern=r"\.snow", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.snow", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

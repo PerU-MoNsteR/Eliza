@@ -37,7 +37,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))

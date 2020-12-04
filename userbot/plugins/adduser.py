@@ -6,7 +6,7 @@ from telethon import functions
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="edd ?(.*)"))
+@borg.on(admin_cmd(pattern="edd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

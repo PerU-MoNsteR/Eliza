@@ -7,7 +7,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="imagetosticker ?(.*)"))
+@borg.on(admin_cmd(pattern="imagetosticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

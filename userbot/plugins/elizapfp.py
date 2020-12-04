@@ -95,7 +95,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="gamerpfp ?(.*)"))
+@borg.on(admin_cmd(pattern="gamerpfp ?(.*)"))
 async def main(event):
     await event.edit("**Starting Gamer Profile Pic.**")  # Owner @NihiNivi
     while True:
@@ -154,7 +154,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="indiandp ?(.*)"))
+@borg.on(admin_cmd(pattern="indiandp ?(.*)"))
 async def main(event):
 
     await event.edit(
@@ -212,7 +212,7 @@ TELEGRAPH_MEDIA_LINKS = [
 ]
 
 
-@peru.on(admin_cmd(pattern="perupfp ?(.*)"))
+@borg.on(admin_cmd(pattern="perupfp ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)
@@ -319,7 +319,7 @@ TELEGRAPH_MEDIA_LINKS = [
 ]
 
 
-@peru.on(admin_cmd(pattern="rpc ?(.*)"))
+@borg.on(admin_cmd(pattern="rpc ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)
@@ -387,7 +387,7 @@ TELEGRAPH_MEDIA_LINKS = [
 ]
 
 
-@peru.on(admin_cmd(pattern="survivorpfp ?(.*)"))
+@borg.on(admin_cmd(pattern="survivorpfp ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)
@@ -441,7 +441,7 @@ TELEGRAPH_MEDIA_LINKS = [
 ]
 
 
-@peru.on(admin_cmd(pattern="epp ?(.*)"))
+@borg.on(admin_cmd(pattern="epp ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)
@@ -514,7 +514,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="batmanpfp ?(.*)"))
+@borg.on(admin_cmd(pattern="batmanpfp ?(.*)"))
 async def main(event):
     await event.edit("**Starting batman Profile Pic.**")  # Owner @NihiNivi
     while True:

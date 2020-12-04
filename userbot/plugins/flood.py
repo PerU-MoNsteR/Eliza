@@ -6,7 +6,7 @@ from collections import deque
 from telethon import events
 
 
-@peru.on(events.NewMessage(pattern=r".floodwarn", outgoing=True))
+@borg.on(events.NewMessage(pattern=r".floodwarn", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

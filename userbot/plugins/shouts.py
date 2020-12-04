@@ -6,7 +6,7 @@ originaly from : @corsicanu_bot
 from telethon import events
 
 
-@peru.on(events.NewMessage(pattern=r"\.shouts", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.shouts", outgoing=True))
 async def shout(args):
     if args.fwd_from:
         return

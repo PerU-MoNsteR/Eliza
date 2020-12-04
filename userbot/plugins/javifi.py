@@ -10,7 +10,7 @@ bluebot = "@ceowhitehatcracks"
 freebot = "@ceowhitehatcracks"
 
 
-@peru.on(admin_cmd("jav ?(.*)"))
+@borg.on(admin_cmd("jav ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

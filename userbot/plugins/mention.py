@@ -4,7 +4,7 @@
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("mention (.*)"))
+@borg.on(admin_cmd("mention (.*)"))
 async def _(event):
     if event.fwd_from:
         return

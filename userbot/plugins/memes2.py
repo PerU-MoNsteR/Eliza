@@ -28,20 +28,20 @@ GAMBAR_TITIT = """
 # ===========================================
 
 
-@peru.on(admin_cmd(pattern=r"hf$"))
+@borg.on(admin_cmd(pattern=r"hf$"))
 async def facepalm(e):
     """ Facepalm  🤦‍♂ """
     await e.edit("🤦‍♂")
 
 
-@peru.on(admin_cmd(pattern=r"corona$"))
+@borg.on(admin_cmd(pattern=r"corona$"))
 async def iqless(e):
     await e.edit(
         "Antivirus scan was completed \n⚠️ Warning! This  donkey has Corona Virus"
     )
 
 
-@peru.on(admin_cmd(pattern=r"ggl (.*)"))
+@borg.on(admin_cmd(pattern=r"ggl (.*)"))
 async def let_me_google_that_for_you(lmgtfy_q):
     textx = await lmgtfy_q.get_reply_message()
     qry = lmgtfy_q.pattern_match.group(1)
@@ -60,7 +60,7 @@ async def let_me_google_that_for_you(lmgtfy_q):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="fail$"))
+@borg.on(admin_cmd(outgoing=True, pattern="fail$"))
 async def fail(e):
     await e.edit(
         "`\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ `"
@@ -70,7 +70,7 @@ async def fail(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="lol$"))
+@borg.on(admin_cmd(outgoing=True, pattern="lol$"))
 async def lol(e):
     await e.edit(
         "`\n╱┏┓╱╱╱╭━━━╮┏┓╱╱╱╱ `"
@@ -80,7 +80,7 @@ async def lol(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="rock$"))
+@borg.on(admin_cmd(outgoing=True, pattern="rock$"))
 async def lol(e):
     await e.edit(
         "`\n┈╭╮┈┈┈┈┈┈┈┈┈┈┈┈ `"
@@ -93,7 +93,7 @@ async def lol(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="lool$"))
+@borg.on(admin_cmd(outgoing=True, pattern="lool$"))
 async def lool(e):
     await e.edit(
         "`\n╭╭━━━╮╮┈┈┈┈┈┈┈┈┈┈\n┈┃╭━━╯┈┈┈┈▕╲▂▂╱▏┈\n┈┃┃╱▔▔▔▔▔▔▔▏╱▋▋╮┈`"
@@ -102,7 +102,7 @@ async def lool(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="nih$"))
+@borg.on(admin_cmd(outgoing=True, pattern="nih$"))
 async def nih(e):
     await e.edit(
         "`\n(\_/)`"
@@ -115,7 +115,7 @@ async def nih(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="hoi$"))
+@borg.on(admin_cmd(outgoing=True, pattern="hoi$"))
 async def gtfo(e):
     await e.edit(
         "`\n█████████`"
@@ -128,7 +128,7 @@ async def gtfo(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="ml(?: |$)(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="ml(?: |$)(.*)"))
 async def gtfo(e):
     message = e.pattern_match.group(1)
     await e.edit(
@@ -142,22 +142,22 @@ async def gtfo(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="taco$"))
+@borg.on(admin_cmd(outgoing=True, pattern="taco$"))
 async def taco(e):
     await e.edit("\n{\__/}" "\n(●_●)" "\n( >🌮 Want a taco?")
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="paw$"))
+@borg.on(admin_cmd(outgoing=True, pattern="paw$"))
 async def paw(e):
     await e.edit("`(=ↀωↀ=)")
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="tf$"))
+@borg.on(admin_cmd(outgoing=True, pattern="tf$"))
 async def tf(e):
     await e.edit("(̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄  ")
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="gay$"))
+@borg.on(admin_cmd(outgoing=True, pattern="gay$"))
 async def gey(e):
     await e.edit(
         "`\n┈┈┈╭━━━━━╮┈┈┈┈┈\n┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈`"
@@ -167,7 +167,7 @@ async def gey(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="bot$"))
+@borg.on(admin_cmd(outgoing=True, pattern="bot$"))
 async def bot(e):
     await e.edit(
         "` \n   ╲╲╭━━━━╮ \n╭╮┃▆┈┈▆┃╭╮ \n┃╰┫▽▽▽┣╯┃ \n╰━┫△△△┣━╯`"
@@ -175,7 +175,7 @@ async def bot(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="hai$"))
+@borg.on(admin_cmd(outgoing=True, pattern="hai$"))
 async def hey(e):
     await e.edit(
         "\n┈┈┈╱▔▔▔▔╲┈╭━━━━━\n┈┈▕▂▂▂▂▂▂▏┃HELLO!┊😀`"
@@ -184,7 +184,7 @@ async def hey(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="nou$"))
+@borg.on(admin_cmd(outgoing=True, pattern="nou$"))
 async def nou(e):
     await e.edit(
         "`\n┈╭╮╭╮\n┈┃┃┃┃\n╭┻┗┻┗╮`"
@@ -194,7 +194,7 @@ async def nou(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="mf$"))
+@borg.on(admin_cmd(outgoing=True, pattern="mf$"))
 async def gtfo(e):
     await e.edit(
         "\n......................................../´¯/) "
@@ -225,7 +225,7 @@ async def gtfo(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="sayhi$"))
+@borg.on(admin_cmd(outgoing=True, pattern="sayhi$"))
 async def shalom(e):
     await e.edit(
         "\n💛💛💛💛💛💛💛💛💛"
@@ -244,7 +244,7 @@ async def shalom(e):
     )
 
 
-@peru.on(admin_cmd(outgoing=True, pattern=r"(?:penis|dick)\s?(.)?"))
+@borg.on(admin_cmd(outgoing=True, pattern=r"(?:penis|dick)\s?(.)?"))
 async def emoji_penis(e):
     emoji = e.pattern_match.group(1)
     titid = GAMBAR_TITIT
@@ -253,7 +253,7 @@ async def emoji_penis(e):
     await e.edit(titid)
 
 
-@peru.on(admin_cmd(pattern=f"muth", outgoing=True))
+@borg.on(admin_cmd(pattern=f"muth", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -305,7 +305,7 @@ for emoji in emojis:
     unpacked_emojis += f"`{emoji}`\n"
 
 
-@peru.on(admin_cmd(pattern="emoji ?(.*)"))
+@borg.on(admin_cmd(pattern="emoji ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

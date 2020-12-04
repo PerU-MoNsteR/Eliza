@@ -6,7 +6,7 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from ..utils import admin_cmd
 
 
-@peru.on(admin_cmd("listmyusernames"))
+@borg.on(admin_cmd("listmyusernames"))
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())

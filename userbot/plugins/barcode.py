@@ -12,7 +12,7 @@ from barcode.writer import ImageWriter
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="barcode ?(.*)"))
+@borg.on(admin_cmd(pattern="barcode ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

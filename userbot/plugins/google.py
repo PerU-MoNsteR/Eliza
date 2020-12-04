@@ -23,7 +23,7 @@ def progress(current, total):
     )
 
 
-@peru.on(admin_cmd(pattern="google search (.*)"))
+@borg.on(admin_cmd(pattern="google search (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,7 +53,7 @@ async def _(event):
     await event.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
-@peru.on(admin_cmd(pattern="google image (.*)"))
+@borg.on(admin_cmd(pattern="google image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -97,7 +97,7 @@ async def _(event):
     await event.delete()
 
 
-@peru.on(admin_cmd(pattern="google reverse search"))
+@borg.on(admin_cmd(pattern="google reverse search"))
 async def _(event):
     if event.fwd_from:
         return

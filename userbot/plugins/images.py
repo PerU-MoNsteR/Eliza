@@ -11,7 +11,7 @@ from userbot.google_imgs import googleimagesdownload
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="img ?(.*)"))
+@borg.on(admin_cmd(pattern="img ?(.*)"))
 async def img_sampler(event):
     await event.edit("`Processing...`")
     reply = await event.get_reply_message()

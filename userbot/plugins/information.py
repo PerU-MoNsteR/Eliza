@@ -11,7 +11,7 @@ from telethon.utils import get_input_location
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("info ?(.*)"))
+@borg.on(admin_cmd("info ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

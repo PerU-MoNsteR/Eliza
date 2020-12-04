@@ -8,7 +8,7 @@ import speedtest
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("speedtest ?(.*)"))
+@borg.on(admin_cmd("speedtest ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

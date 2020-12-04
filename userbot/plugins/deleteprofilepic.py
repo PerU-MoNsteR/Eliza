@@ -3,7 +3,7 @@ from telethon.tl.types import InputPhoto
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="delpfp ?(.*)"))
+@borg.on(admin_cmd(pattern="delpfp ?(.*)"))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]

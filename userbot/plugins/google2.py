@@ -20,7 +20,7 @@ def progress(current, total):
     )
 
 
-@peru.on(admin_cmd(pattern="gs (.*)"))
+@borg.on(admin_cmd(pattern="gs (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ async def _(event):
     )
 
 
-@peru.on(admin_cmd(pattern="grs"))
+@borg.on(admin_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return

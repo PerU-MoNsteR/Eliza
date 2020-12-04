@@ -8,7 +8,7 @@ import random
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"habuse(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern=r"habuse(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

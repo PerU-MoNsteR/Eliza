@@ -17,8 +17,8 @@ from humanize import naturalsize
 from uniborg.util import admin_cmd
 
 
-# @peru.on(events.NewMessage(pattern=r"^.direct(?: |$)([\s\S]*)", outgoing=True))
-@peru.on(admin_cmd(pattern=r"direct(?: |$)([\s\S]*)"))
+# @borg.on(events.NewMessage(pattern=r"^.direct(?: |$)([\s\S]*)", outgoing=True))
+@borg.on(admin_cmd(pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     """ direct links generator """
     await request.edit("`Processing...`")

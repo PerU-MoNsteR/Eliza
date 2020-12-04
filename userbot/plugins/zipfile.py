@@ -6,7 +6,7 @@ import zipfile
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="compress ?(.*)"))
+@borg.on(admin_cmd(pattern="compress ?(.*)"))
 async def _(event):
 
     if event.fwd_from:

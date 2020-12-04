@@ -12,7 +12,7 @@ def get_who_string(who):
     return who_string
 
 
-@peru.on(events.NewMessage(pattern=r"\.urid", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.urid", outgoing=True))
 async def _(event):
     if not event.message.is_reply:
         who = await event.get_chat()
@@ -27,7 +27,7 @@ async def _(event):
     await event.edit(get_who_string(who), parse_mode="html")
 
 
-@peru.on(events.NewMessage(pattern=r"\.members", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.members", outgoing=True))
 async def _(event):
     members = [get_who_string(m) async for m in borg.iter_participants(event.chat_id)]
 

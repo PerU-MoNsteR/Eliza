@@ -18,7 +18,7 @@ pm_caption += " σffι¢ιαℓ gяσυρ       :   [ᴊᴏɪɴ](https://t.me/El
 pm_caption += " ℓι¢єиѕє              :   [ӀíϲҽղՏҽ](https://github.com/suhaash02/Eliza/blob/master/LICENSE)\n"
 
 # @command(outgoing=True, pattern="^.alive$")
-@peru.on(admin_cmd(pattern=r"alive"))
+@borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     await alive.get_chat()
     await alive.delete()

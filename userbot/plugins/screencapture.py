@@ -8,7 +8,7 @@ import requests
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("screencapture (.*)"))
+@borg.on(admin_cmd("screencapture (.*)"))
 async def _(event):
     if event.fwd_from:
         return

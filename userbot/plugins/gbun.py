@@ -7,7 +7,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="gbun"))
+@borg.on(admin_cmd(pattern="gbun"))
 async def gbun(event):
     if event.fwd_from:
         return

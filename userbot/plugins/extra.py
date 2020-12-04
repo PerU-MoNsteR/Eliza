@@ -8,7 +8,7 @@ from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("leave$"))
+@borg.on(admin_cmd("leave$"))
 async def leave(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`I iz Leaving dis Lol Group kek!`")
@@ -19,7 +19,7 @@ async def leave(e):
             await e.edit("`But Boss! This is Not A Chat`")
 
 
-@peru.on(admin_cmd(";__;$"))
+@borg.on(admin_cmd(";__;$"))
 # @register(outgoing=True, pattern="^;__;$")
 async def fun(e):
     t = ";__;"
@@ -28,7 +28,7 @@ async def fun(e):
         await e.edit(t)
 
 
-@peru.on(admin_cmd("yo$"))
+@borg.on(admin_cmd("yo$"))
 # @register(outgoing=True, pattern="^yo$")
 async def Ooo(e):
     t = "yo"
@@ -37,7 +37,7 @@ async def Ooo(e):
         await e.edit(t)
 
 
-@peru.on(admin_cmd("Oof$"))
+@borg.on(admin_cmd("Oof$"))
 # @register(outgoing=True, pattern="^Oof$")
 async def Oof(e):
     t = "Oof"
@@ -46,21 +46,21 @@ async def Oof(e):
         await e.edit(t)
 
 
-@peru.on(admin_cmd("ccry$"))
+@borg.on(admin_cmd("ccry$"))
 # @register(outgoing=True, pattern="^.cry$")
 async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(;´༎ຶД༎ຶ)")
 
 
-@peru.on(admin_cmd("fp$"))
+@borg.on(admin_cmd("fp$"))
 # @register(outgoing=True, pattern="^.fp$")
 async def facepalm(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("🤦‍♂")
 
 
-@peru.on(admin_cmd("moon$"))
+@borg.on(admin_cmd("moon$"))
 # @register(outgoing=True, pattern="^.mmoon$")
 async def _(event):
     if event.fwd_from:
@@ -72,21 +72,21 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd("source$"))
+@borg.on(admin_cmd("source$"))
 # @register(outgoing=True, pattern="^.source$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("/Spandey112/SensibleUserbot")
 
 
-@peru.on(admin_cmd("readme$"))
+@borg.on(admin_cmd("readme$"))
 # @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("/Spandey112/SensibleUserbot/blob/master/README.md")
 
 
-@peru.on(admin_cmd("heart$"))
+@borg.on(admin_cmd("heart$"))
 # @register(outgoing=True, pattern="^.heart$")
 async def _(event):
     if event.fwd_from:
@@ -98,7 +98,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd("fap$"))
+@borg.on(admin_cmd("fap$"))
 # @register(outgoing=True, pattern="^.fap$")
 async def _(event):
     if event.fwd_from:

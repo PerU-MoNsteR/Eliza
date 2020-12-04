@@ -6,7 +6,7 @@ import requests
 from ..utils import admin_cmd
 
 
-@peru.on(admin_cmd("meaning (.*)"))
+@borg.on(admin_cmd("meaning (.*)"))
 async def _(event):
     if event.fwd_from:
         return

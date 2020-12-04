@@ -1,7 +1,7 @@
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"hhi ?(.*)"))  # initially made by @peru_monster
+@borg.on(admin_cmd(pattern=r"hhi ?(.*)"))  # initially made by @peru_monster
 async def hhi(event):
     giveVar = event.text
     a = giveVar[5:6]
@@ -16,7 +16,7 @@ async def hhi(event):
 
 
 # later made by me
-@peru.on(admin_cmd(pattern=r"gws?(.*)"))
+@borg.on(admin_cmd(pattern=r"gws?(.*)"))
 async def gws(event):
     giveVar = event.text
     """m = giveVar[5:-1]
@@ -30,7 +30,7 @@ async def gws(event):
     await event.edit(f"{a}{a}{a}{a}{a}{a}{a} \n{a} {m} {a}\n{a}{a}{a}{a}{a}{a}{a}")
 
 
-@peru.on(admin_cmd(pattern=r"hii ?(.*)"))
+@borg.on(admin_cmd(pattern=r"hii ?(.*)"))
 async def hii(event):
     giveVar = event.text
     a = giveVar[5:6]
@@ -44,7 +44,7 @@ async def hii(event):
     )
 
 
-@peru.on(admin_cmd(pattern=r"hlo ?(.*)"))
+@borg.on(admin_cmd(pattern=r"hlo ?(.*)"))
 async def hlo(event):
     giveVar = event.text
     a = giveVar[5:6]
@@ -58,7 +58,7 @@ async def hlo(event):
     )
 
 
-@peru.on(admin_cmd(pattern=r"bye ?(.*)"))
+@borg.on(admin_cmd(pattern=r"bye ?(.*)"))
 async def bye(event):
     giveVar = event.text
     a = giveVar[5:6]

@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"mm ?(.*)"))
+@borg.on(admin_cmd(pattern=r"mm ?(.*)"))
 async def handler(event):
 
     if event.fwd_from:

@@ -5,7 +5,7 @@ from telethon import events
 from userbot.utils import admin_cmd
 
 
-@peru.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -45,7 +45,7 @@ async def _(event):
             await event.edit(animation_chars[i % 15])
 
 
-@peru.on(admin_cmd("nope"))
+@borg.on(admin_cmd("nope"))
 async def _(event):
     if event.fwd_from:
         return

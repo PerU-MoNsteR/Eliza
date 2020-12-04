@@ -10,7 +10,7 @@ import requests
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("ggl (.*)"))
+@borg.on(admin_cmd("ggl (.*)"))
 async def _(event):
     if event.fwd_from:
         return

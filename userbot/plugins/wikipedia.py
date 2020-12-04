@@ -7,7 +7,7 @@ import wikipedia
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="wikipedia (.*)"))
+@borg.on(admin_cmd(pattern="wikipedia (.*)"))
 async def _(event):
     if event.fwd_from:
         return

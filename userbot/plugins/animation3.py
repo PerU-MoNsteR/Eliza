@@ -7,7 +7,7 @@ from userbot.utils import admin_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Cat"
 
 
-@peru.on(admin_cmd(pattern=r"star$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"star$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -18,7 +18,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd(pattern=r"boxs"))
+@borg.on(admin_cmd(pattern=r"boxs"))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd(pattern=f"rain$", outgoing=True))
+@borg.on(admin_cmd(pattern=f"rain$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -40,7 +40,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd(pattern=r"clol$"))
+@borg.on(admin_cmd(pattern=r"clol$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,7 +51,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd(pattern=r"odra$"))
+@borg.on(admin_cmd(pattern=r"odra$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@peru.on(admin_cmd(pattern=r"deploy$"))
+@borg.on(admin_cmd(pattern=r"deploy$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -88,7 +88,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@peru.on(admin_cmd(pattern="dump ?(.*)"))
+@borg.on(admin_cmd(pattern="dump ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)
@@ -127,7 +127,7 @@ async def _(message):
                 return
 
 
-@peru.on(admin_cmd(pattern="fleaveme$"))
+@borg.on(admin_cmd(pattern="fleaveme$"))
 async def _(event):
     animation_interval = 1
     animation_ttl = range(0, 10)
@@ -152,7 +152,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@peru.on(admin_cmd(pattern="loveu", outgoing=True))
+@borg.on(admin_cmd(pattern="loveu", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -201,7 +201,7 @@ async def _(event):
         await event.edit(animation_chars[i % 35])
 
 
-@peru.on(admin_cmd(pattern=f"plane", outgoing=True))
+@borg.on(admin_cmd(pattern=f"plane", outgoing=True))
 async def _(event):
     if event.fwd_from:
         retun
@@ -223,7 +223,7 @@ async def _(event):
     await event.delete()
 
 
-@peru.on(admin_cmd(pattern=r"police"))
+@borg.on(admin_cmd(pattern=r"police"))
 async def _(event):
     if event.fwd_from:
         return
@@ -249,7 +249,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@peru.on(admin_cmd(pattern=f"jio$", outgoing=True))
+@borg.on(admin_cmd(pattern=f"jio$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -282,7 +282,7 @@ async def _(event):
         await event.edit(animation_chars[i % 19])
 
 
-@peru.on(admin_cmd(pattern=f"solarsystem", outgoing=True))
+@borg.on(admin_cmd(pattern=f"solarsystem", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

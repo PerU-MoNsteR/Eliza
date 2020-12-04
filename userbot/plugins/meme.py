@@ -9,7 +9,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"meme"))
+@borg.on(admin_cmd(pattern=r"meme"))
 async def meme(event):
     if event.fwd_from:
         return
@@ -56,7 +56,7 @@ usage:- .flower
 """
 
 
-@peru.on(admin_cmd(pattern=r"flower"))
+@borg.on(admin_cmd(pattern=r"flower"))
 async def meme(event):
     if event.fwd_from:
         return

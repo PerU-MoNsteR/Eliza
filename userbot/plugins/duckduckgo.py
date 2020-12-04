@@ -3,7 +3,7 @@
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd("ducduckgo (.*)"))
+@borg.on(admin_cmd("ducduckgo (.*)"))
 async def _(event):
     if event.fwd_from:
         return

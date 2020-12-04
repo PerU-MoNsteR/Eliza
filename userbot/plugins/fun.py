@@ -87,7 +87,7 @@ INSULT_STRINGS = [
 # ===========================================
 
 
-@peru.on(admin_cmd(pattern="run ?(.*)"))
+@borg.on(admin_cmd(pattern="run ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -97,7 +97,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="metoo ?(.*)"))
+@borg.on(admin_cmd(pattern="metoo ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -107,7 +107,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="rapee ?(.*)"))
+@borg.on(admin_cmd(pattern="rapee ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,7 +117,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="insultt ?(.*)"))
+@borg.on(admin_cmd(pattern="insultt ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -127,7 +127,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="proo ?(.*)"))
+@borg.on(admin_cmd(pattern="proo ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -137,7 +137,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="abusee ?(.*)"))
+@borg.on(admin_cmd(pattern="abusee ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -147,7 +147,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@peru.on(admin_cmd(pattern="geyy ?(.*)"))
+@borg.on(admin_cmd(pattern="geyy ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

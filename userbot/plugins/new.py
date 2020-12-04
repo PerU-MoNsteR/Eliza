@@ -90,7 +90,7 @@ def yaml_format(obj, indent=0):
     return "".join(result)
 
 
-@peru.on(events.NewMessage(pattern=r"\.new", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.new", outgoing=True))
 async def _(event):
     if not event.message.is_reply:
         return

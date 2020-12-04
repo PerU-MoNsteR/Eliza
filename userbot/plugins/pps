@@ -35,7 +35,7 @@ if 1 == 1:
     name = "Profile Photos"
     client = borg
 
-    @peru.on(admin_cmd(pattern="PPS(.*)"))
+    @borg.on(admin_cmd(pattern="PPS(.*)"))
     async def PPScmd(event):
 #        """Gets the profile photos of replied users, channels or chats"""
         id = "".join(event.raw_text.split(maxsplit=2)[1:])

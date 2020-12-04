@@ -10,7 +10,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("sdd ?(.*)"))
+@borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

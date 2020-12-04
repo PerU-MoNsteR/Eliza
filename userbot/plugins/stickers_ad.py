@@ -16,7 +16,7 @@ from telethon.tl.types import InputStickerSetShortName, MessageMediaPhoto
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="akang ?(.*)"))
+@borg.on(admin_cmd(pattern="akang ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

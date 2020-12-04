@@ -16,7 +16,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"smoon"))
+@borg.on(admin_cmd(pattern=r"smoon"))
 async def _(event):
 
     if event.fwd_from:
@@ -51,7 +51,7 @@ async def _(event):
         await event.edit(animation_chars[i % 8])
 
 
-@peru.on(admin_cmd(pattern=r"tmoon"))
+@borg.on(admin_cmd(pattern=r"tmoon"))
 async def _(event):
 
     if event.fwd_from:

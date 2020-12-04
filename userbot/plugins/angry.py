@@ -5,7 +5,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("angry"))
+@borg.on(admin_cmd("angry"))
 async def _(event):
     if event.fwd_from:
         return

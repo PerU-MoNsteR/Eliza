@@ -20,7 +20,7 @@ BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 BOTLOG = True
 
 
-@peru.on(admin_cmd(pattern="clone ?(.*)"))
+@borg.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -69,7 +69,7 @@ async def _(event):
         )
 
 
-@peru.on(admin_cmd(pattern="revert$"))
+@borg.on(admin_cmd(pattern="revert$"))
 async def _(event):
     if event.fwd_from:
         return

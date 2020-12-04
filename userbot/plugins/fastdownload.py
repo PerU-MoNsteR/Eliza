@@ -18,7 +18,7 @@ aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800, secret=""))
 EDIT_SLEEP_TIME_OUT = 10
 
 
-@peru.on(admin_cmd(pattern="fdownload ?(.*)"))
+@borg.on(admin_cmd(pattern="fdownload ?(.*)"))
 async def magnet_download(event):
     if event.fwd_from:
         return

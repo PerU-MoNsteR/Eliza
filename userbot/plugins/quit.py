@@ -8,7 +8,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("quit", outgoing=True))
+@borg.on(admin_cmd("quit", outgoing=True))
 async def leave(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(

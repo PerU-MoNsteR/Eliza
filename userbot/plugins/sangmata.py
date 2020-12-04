@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("sg ?(.*)"))
+@borg.on(admin_cmd("sg ?(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -66,7 +66,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@peru.on(admin_cmd("fakemail ?(.*)"))
+@borg.on(admin_cmd("fakemail ?(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -128,7 +128,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@peru.on(admin_cmd("ub ?(.*)"))
+@borg.on(admin_cmd("ub ?(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -190,7 +190,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@peru.on(admin_cmd("gid ?(.*)"))
+@borg.on(admin_cmd("gid ?(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -252,7 +252,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@peru.on(admin_cmd("urban ?(.*)"))
+@borg.on(admin_cmd("urban ?(.*)"))
 async def _(event):
 
     if event.fwd_from:

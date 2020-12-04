@@ -81,7 +81,7 @@ async def get_file_name(content):
     return file_name
 
 
-@peru.on(events.NewMessage(pattern=r"\.gdl", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.gdl", outgoing=True))
 async def g_download(event):
     if event.fwd_from:
         return

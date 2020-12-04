@@ -16,7 +16,7 @@ if 1 == 1:
 
     client = borg
 
-    @peru.on(admin_cmd(pattern="poto(.*)"))
+    @borg.on(admin_cmd(pattern="poto(.*)"))
     async def potocmd(event):
 
         """Gets the profile photos of replied users, channels or chats"""

@@ -7,7 +7,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@PerU_MoNster"
 
 
 @command(pattern="^.help ?(.*)")
-# @peru.on(admin_cmd(pattern=r"help ?(.*)"))
+# @borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in (
         "/",
@@ -62,7 +62,7 @@ async def cmd_list(event):
             await event.delete()
 
 
-@peru.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -70,7 +70,7 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@peru.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -80,7 +80,7 @@ async def _(event):
     await event.edit("""Telethon UserBot powered by @Eliza""")
 
 
-@peru.on(admin_cmd(pattern="syntax (.*)"))
+@borg.on(admin_cmd(pattern="syntax (.*)"))
 async def _(event):
     if event.fwd_from:
         return

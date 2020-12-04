@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd
 
 
 # @command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
-@peru.on(admin_cmd(pattern=r"gmute ?(\d+)?"))
+@borg.on(admin_cmd(pattern=r"gmute ?(\d+)?"))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -53,7 +53,7 @@ async def startgmute(event):
 
 
 # @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?")
-@peru.on(admin_cmd(pattern=r"ungmute ?(\d+)?"))
+@borg.on(admin_cmd(pattern=r"ungmute ?(\d+)?"))
 async def endgmute(event):
     private = False
     if event.fwd_from:

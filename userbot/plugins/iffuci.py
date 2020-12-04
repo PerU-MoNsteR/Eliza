@@ -17,7 +17,7 @@ def progress(current, total):
     )
 
 
-@peru.on(admin_cmd(pattern="iffuci ?(.*)"))
+@borg.on(admin_cmd(pattern="iffuci ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

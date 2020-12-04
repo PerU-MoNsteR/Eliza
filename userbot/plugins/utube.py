@@ -27,7 +27,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, "", inputString)
 
 
-@peru.on(admin_cmd(pattern="utube(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="utube(?: |$)(.*)"))
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:
@@ -46,7 +46,7 @@ async def nope(doit):
     await doit.delete()
 
 
-@peru.on(admin_cmd(pattern="uta(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="uta(?: |$)(.*)"))
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:

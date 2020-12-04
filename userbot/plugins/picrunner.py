@@ -64,7 +64,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@peru.on(admin_cmd(pattern="ppr ?(.*)"))
+@borg.on(admin_cmd(pattern="ppr ?(.*)"))
 async def main(event):
     await event.edit(
         "**Starting Profile Pic Runner by @Sur_vivor..**"

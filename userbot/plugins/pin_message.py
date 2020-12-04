@@ -5,7 +5,7 @@ from telethon.tl import functions
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd("cpin ?(.*)"))
+@borg.on(admin_cmd("cpin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

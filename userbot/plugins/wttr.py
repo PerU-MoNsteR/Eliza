@@ -13,7 +13,7 @@ import aiohttp
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="weather (.*)"))
+@borg.on(admin_cmd(pattern="weather (.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -82,7 +82,7 @@ async def _(event):
         await event.edit(response_api["message"])
 
 
-@peru.on(admin_cmd(pattern="wttr (.*)"))
+@borg.on(admin_cmd(pattern="wttr (.*)"))
 async def _(event):
 
     if event.fwd_from:

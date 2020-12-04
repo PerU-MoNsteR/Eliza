@@ -16,7 +16,7 @@ RUNSREACTS = [
 ]
 
 
-@peru.on(admin_cmd(pattern="congo"))
+@borg.on(admin_cmd(pattern="congo"))
 async def _(event):
     if event.fwd_from:
         return

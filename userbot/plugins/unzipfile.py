@@ -20,7 +20,7 @@ if not os.path.isdir(extracted):
     os.makedirs(extracted)
 
 
-@peru.on(admin_cmd(pattern="unzip"))
+@borg.on(admin_cmd(pattern="unzip"))
 async def _(event):
     if event.fwd_from:
         return

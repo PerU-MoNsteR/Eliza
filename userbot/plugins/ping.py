@@ -7,7 +7,7 @@ from ..utils import admin_cmd, edit_or_reply
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Eliza"
 
 
-@peru.on(admin_cmd(pattern=f"pingy$", outgoing=True))
+@borg.on(admin_cmd(pattern=f"pingy$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -55,7 +55,7 @@ async def _(event):
     )
 
 
-@peru.on(admin_cmd(pattern="ping$"))
+@borg.on(admin_cmd(pattern="ping$"))
 async def _(event):
     if event.fwd_from:
         return

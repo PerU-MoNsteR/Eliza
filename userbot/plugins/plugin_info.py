@@ -9,7 +9,7 @@ from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="plinfo(?: |$)(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="plinfo(?: |$)(.*)"))
 async def info(event):
     """ For .plinfo command,"""
     args = event.pattern_match.group(1).lower()

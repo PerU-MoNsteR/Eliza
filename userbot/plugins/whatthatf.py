@@ -1,7 +1,7 @@
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="f"))
+@borg.on(admin_cmd(pattern="f"))
 async def payf(event):
     paytext = event.pattern_match.group(1)
     pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(

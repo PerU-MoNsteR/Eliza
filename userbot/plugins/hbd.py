@@ -6,7 +6,7 @@ from ..utils import admin_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 
-@peru.on(admin_cmd(pattern="hbty$"))
+@borg.on(admin_cmd(pattern="hbty$"))
 async def _(event):
     if event.fwd_from:
         return

@@ -17,7 +17,7 @@ if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
 
-@peru.on(admin_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
 async def pipcheck(pip):
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
@@ -64,7 +64,7 @@ async def pipcheck(pip):
         await pip.edit("`Use .help system to see an example`")
 
 
-@peru.on(admin_cmd(pattern="suicide$"))
+@borg.on(admin_cmd(pattern="suicide$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -100,7 +100,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="plugins$"))
+@borg.on(admin_cmd(pattern="plugins$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -136,7 +136,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="date$"))
+@borg.on(admin_cmd(pattern="date$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -172,7 +172,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="env$"))
+@borg.on(admin_cmd(pattern="env$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -208,7 +208,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="fast$"))
+@borg.on(admin_cmd(pattern="fast$"))
 async def _(event):
     await event.edit("calculating...")
     if event.fwd_from:
@@ -245,7 +245,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="fortune$"))
+@borg.on(admin_cmd(pattern="fortune$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -281,7 +281,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="qquote$"))
+@borg.on(admin_cmd(pattern="qquote$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -317,7 +317,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="fakeid$"))
+@borg.on(admin_cmd(pattern="fakeid$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -353,7 +353,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="kwot$"))
+@borg.on(admin_cmd(pattern="kwot$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -389,7 +389,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@peru.on(admin_cmd(pattern="qpro$"))
+@borg.on(admin_cmd(pattern="qpro$"))
 async def _(event):
     if event.fwd_from:
         return

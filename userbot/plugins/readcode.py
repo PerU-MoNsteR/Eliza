@@ -8,8 +8,8 @@ import os
 from userbot.utils import admin_cmd, eor, sudo_cmd
 
 
-@peru.on(admin_cmd(pattern=r"read", outgoing=True))
-@peru.on(sudo_cmd(pattern=r"read", allow_sudo=True))
+@borg.on(admin_cmd(pattern=r"read", outgoing=True))
+@borg.on(sudo_cmd(pattern=r"read", allow_sudo=True))
 async def _(event):
     b = await event.client.download_media(await event.get_reply_message())
     a = open(b, "r")

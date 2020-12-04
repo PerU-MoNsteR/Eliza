@@ -1,7 +1,7 @@
 from uniborg.util import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"gaali"))
+@borg.on(admin_cmd(pattern=r"gaali"))
 async def test(event):
     if event.fwd_from:
         return

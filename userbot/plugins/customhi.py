@@ -1,7 +1,7 @@
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern=r"hhi ?(.*)"))
+@borg.on(admin_cmd(pattern=r"hhi ?(.*)"))
 async def hhi(event):
     giveVar = event.text
     web = giveVar[5:6]

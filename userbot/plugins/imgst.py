@@ -5,7 +5,7 @@ from userbot import bot
 from userbot.utils import admin_cmd
 
 
-@peru.on(admin_cmd(pattern="itos ?(.*)"))
+@borg.on(admin_cmd(pattern="itos ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -38,7 +38,7 @@ async def _(event):
         await bot.send_read_acknowledge(conv.chat_id)
 
 
-@peru.on(admin_cmd(pattern="stoi ?(.*)"))
+@borg.on(admin_cmd(pattern="stoi ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

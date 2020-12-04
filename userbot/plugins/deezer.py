@@ -25,7 +25,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, "", inputString)
 
 
-@peru.on(admin_cmd(pattern="deezer(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="deezer(?: |$)(.*)"))
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:
