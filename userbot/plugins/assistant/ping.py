@@ -9,7 +9,7 @@ from datetime import datetime
 
 from telethon import events
 
-from jarvis import Lastupdate, bot
+from userbot import Lastupdate, bot
 
 
 def get_readable_time(seconds: int) -> str:
@@ -48,5 +48,5 @@ async def _(event):
     uptime = get_readable_time((time.time() - Lastupdate))
     await tgbot.send_message(
         event.chat_id,
-        f"**╔═══╗╔══╗╔═╗─╔╗╔═══╗\n║╔═╗║╚╣─╝║║╚╗║║║╔═╗║\n║╚═╝║─║║─║╔╗╚╝║║║─╚╝\n║╔══╝─║║─║║╚╗║║║║╔═╗\n║║───╔╣─╗║║─║║║║╚╩═║\n╚╝───╚══╝╚╝─╚═╝╚═══╝**\n ➲ `{ms}` \n ➲ `{uptime}`",
+        f"**pong**\n ➲ `{ms}` \n ➲ `{uptime}`",
     )
