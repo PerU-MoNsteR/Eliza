@@ -527,4 +527,9 @@ async def waifutxt(text, chat_id, reply_to_id, bot, borg):
         await bot.send_file(int(chat_id), peru, reply_to=reply_to_id)
         await peru.delete()
 
+          
+
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(EMOJI_PATTERN, "", inputString)
     
