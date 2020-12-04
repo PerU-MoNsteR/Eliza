@@ -13,9 +13,7 @@ from telethon.tl.types import (
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
 NO_ADMIN = "`I am not an admin nub nibba!`"
-NO_PERM = (
-    "`I don't have sufficient permissions!`"
-)
+NO_PERM = "`I don't have sufficient permissions!`"
 NO_SQL = "`Running on Non-SQL mode!`"
 
 CHAT_PP_CHANGED = "`Chat Picture Changed`"

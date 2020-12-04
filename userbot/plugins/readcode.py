@@ -1,6 +1,6 @@
 #  (c)2020 Jarvis-Works
 #
-#thanks @sppidy
+# thanks @sppidy
 # By @buddhhu, @Itzsjdude ,@xditya
 #
 import os

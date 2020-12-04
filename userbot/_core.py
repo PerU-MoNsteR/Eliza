@@ -3,10 +3,10 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from userbot import ALIVE_NAME
-from userbot import bot 
-from userbot.utils import admin_cmd, load_module, remove_plugin, sudo_cmd
+from userbot import ALIVE_NAME, bot
+from userbot.utils import admin_cmd
 from userbot.utils import edit_or_reply as eor
+from userbot.utils import load_module, remove_plugin, sudo_cmd
 
 DELETE_TIMEOUT = 5
 thumb_image_path = "./eliza/eliza.jpg"

@@ -1,4 +1,3 @@
-
 import glob
 
 #    Copyright (C) 2020  sandeep.n(π.$)
@@ -19,7 +18,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply
-from . import perumusic, perumusicvideo
+from . import perumusic
 
 
 @borg.on(admin_cmd(pattern="song( (.*)|$)"))

@@ -86,7 +86,7 @@ class Config((object)):
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
     # in alive message pic
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
-    
+
     # in pm permit pic
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
@@ -177,10 +177,12 @@ class Config((object)):
     DEEP_AI = os.environ.get("DEEP_AI", None)
     # can get from https://coffeehouse.intellivoid.net/
     LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
-    #autobio
+    # autobio
     BIO_MSG = os.environ.get("ALIVE_MSG", None)
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Eliza")
-    HASH_TO_TORRENT_API = os.environ.get("HASH_TO_TORRENT_API", "https://example.com/torrent/{}")
+    HASH_TO_TORRENT_API = os.environ.get(
+        "HASH_TO_TORRENT_API", "https://example.com/torrent/{}"
+    )
     G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
     # TG API limit. An album can have atmost 10 media!
     GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
@@ -199,7 +201,8 @@ class Config((object)):
     MONGO_URI = os.environ.get("MONGO_URI", None)
     TAG_FEATURE = os.environ.get("TAG_FEATURE", "ENABLE")
     ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
-        
+
+
 class Production(Config):
     LOGGER = False
 
@@ -364,4 +367,3 @@ else:
         DB_URI = None
         # Add your UniBorg Vars Here
 """
-    

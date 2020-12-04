@@ -6,12 +6,11 @@ import asyncio
 import os
 import random
 
-from ..utils import admin_cmd, sudo_cmd
 from userbot import (
+    CMD_HELP,
+    LOGS,
     add_frame,
     asciiart,
-    per_meeme,
-    per_meme,
     convert_toimage,
     convert_tosticker,
     crop,
@@ -19,13 +18,16 @@ from userbot import (
     grayscale,
     invert_colors,
     mirror_file,
+    per_meeme,
+    per_meme,
     reply_id,
     runcmd,
     solarize,
     take_screen_shot,
 )
 
-from userbot import CMD_HELP, LOGS
+from ..utils import admin_cmd
+
 
 def random_color():
     number_of_colors = 2
@@ -51,9 +53,7 @@ async def memes(per):
             top = perinput
             bottom = ""
     else:
-        await edit_or_reply(
-            per, "```give some text```"
-        )
+        await edit_or_reply(per, "```give some text```")
         return
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
@@ -701,7 +701,7 @@ async def memes(per):
     if not (reply and (reply.media)):
         await edit_or_reply(per, "`Reply to supported Media...`")
         return
-    catinput = per.pattern_match.group(1)
+    per.pattern_match.group(1)
     if not perinput:
         perinput = 50
     if ";" in str(perinput):

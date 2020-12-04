@@ -191,9 +191,7 @@ async def upstream(ups):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
-        await ups.edit(
-            "`Bot is restarting... Wait for 3 minutes!`"
-        )
+        await ups.edit("`Bot is restarting... Wait for 3 minutes!`")
         args = [sys.executable, "-m", "jarvis"]
         execle(sys.executable, *args, environ)
         return

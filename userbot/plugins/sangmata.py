@@ -1,331 +1,314 @@
-import datetime
-
 from telethon import events
-
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
 from userbot.utils import admin_cmd
 
 
-
 @borg.on(admin_cmd("sg ?(.*)"))
-
 async def _(event):
 
     if event.fwd_from:
 
-        return 
+        return
 
     if not event.reply_to_msg_id:
 
-       await event.edit("```Reply to any user message.```")
+        await event.edit("```Reply to any user message.```")
 
-       return
+        return
 
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
 
     if not reply_message.text:
 
-       await event.edit("```reply to text message```")
+        await event.edit("```reply to text message```")
 
-       return
+        return
 
     chat = "@SangMataInfo_bot"
 
-    sender = reply_message.sender
+    reply_message.sender
 
     if reply_message.sender.bot:
 
-       await event.edit("```Reply to actual users message.```")
+        await event.edit("```Reply to actual users message.```")
 
-       return
+        return
 
     await event.edit("```Processing```")
 
     async with borg.conversation(chat) as conv:
 
-          try:     
+        try:
 
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=461843263)
+            )
 
-              await borg.forward_messages(chat, reply_message)
+            await borg.forward_messages(chat, reply_message)
 
-              response = await response 
+            response = await response
 
-          except YouBlockedUserError: 
+        except YouBlockedUserError:
 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
 
-              return
+            return
 
-          if response.text.startswith("Forward"):
+        if response.text.startswith("Forward"):
 
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+            await event.edit(
+                "```can you kindly disable your forward privacy settings for good?```"
+            )
 
-          else: 
+        else:
 
-             await event.edit(f"{response.message.message}")
-
-
-
-
-
-
-
+            await event.edit(f"{response.message.message}")
 
 
 @borg.on(admin_cmd("fakemail ?(.*)"))
-
 async def _(event):
 
     if event.fwd_from:
 
-        return 
+        return
 
     if not event.reply_to_msg_id:
 
-       await event.edit("```Reply to any user message.```")
+        await event.edit("```Reply to any user message.```")
 
-       return
+        return
 
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
 
     if not reply_message.text:
 
-       await event.edit("```reply to text message```")
+        await event.edit("```reply to text message```")
 
-       return
+        return
 
     chat = "@fakemailbot"
 
-    sender = reply_message.sender
+    reply_message.sender
 
     if reply_message.sender.bot:
 
-       await event.edit("```Reply to actual users message.```")
+        await event.edit("```Reply to actual users message.```")
 
-       return
+        return
 
     await event.edit("```Processing```")
 
     async with borg.conversation(chat) as conv:
 
-          try:     
+        try:
 
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=177914997)
+            )
 
-              await borg.forward_messages(chat, reply_message)
+            await borg.forward_messages(chat, reply_message)
 
-              response = await response 
+            response = await response
 
-          except YouBlockedUserError: 
+        except YouBlockedUserError:
 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
 
-              return
+            return
 
-          if response.text.startswith("send"):
+        if response.text.startswith("send"):
 
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+            await event.edit(
+                "```can you kindly disable your forward privacy settings for good?```"
+            )
 
-          else: 
+        else:
 
-             await event.edit(f"{response.message.message}")
-
-
-
-
-
-
-
-
-
+            await event.edit(f"{response.message.message}")
 
 
 @borg.on(admin_cmd("ub ?(.*)"))
-
 async def _(event):
 
     if event.fwd_from:
 
-        return 
+        return
 
     if not event.reply_to_msg_id:
 
-       await event.edit("```Reply to any user message.```")
+        await event.edit("```Reply to any user message.```")
 
-       return
+        return
 
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
 
     if not reply_message.text:
 
-       await event.edit("```reply to text message```")
+        await event.edit("```reply to text message```")
 
-       return
+        return
 
     chat = "@uploadbot"
 
-    sender = reply_message.sender
+    reply_message.sender
 
     if reply_message.sender.bot:
 
-       await event.edit("```Reply to actual users message.```")
+        await event.edit("```Reply to actual users message.```")
 
-       return
+        return
 
     await event.edit("```Processing```")
 
     async with borg.conversation(chat) as conv:
 
-          try:     
+        try:
 
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=97342984))
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=97342984)
+            )
 
-              await borg.forward_messages(chat, reply_message)
+            await borg.forward_messages(chat, reply_message)
 
-              response = await response 
+            response = await response
 
-          except YouBlockedUserError: 
+        except YouBlockedUserError:
 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
 
-              return
+            return
 
-          if response.text.startswith("Hi!,"):
+        if response.text.startswith("Hi!,"):
 
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+            await event.edit(
+                "```can you kindly disable your forward privacy settings for good?```"
+            )
 
-          else: 
+        else:
 
-             await event.edit(f"{response.message.message}")
-
-
-
-
-
+            await event.edit(f"{response.message.message}")
 
 
 @borg.on(admin_cmd("gid ?(.*)"))
-
 async def _(event):
 
     if event.fwd_from:
 
-        return 
+        return
 
     if not event.reply_to_msg_id:
 
-       await event.edit("```Reply to any user message.```")
+        await event.edit("```Reply to any user message.```")
 
-       return
+        return
 
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
 
     if not reply_message.text:
 
-       await event.edit("```reply to text message```")
+        await event.edit("```reply to text message```")
 
-       return
+        return
 
     chat = "@getidsbot"
 
-    sender = reply_message.sender
+    reply_message.sender
 
     if reply_message.sender.bot:
 
-       await event.edit("```Reply to actual users message.```")
+        await event.edit("```Reply to actual users message.```")
 
-       return
+        return
 
     await event.edit("```Processing```")
 
     async with borg.conversation(chat) as conv:
 
-          try:     
+        try:
 
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=186675376))
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=186675376)
+            )
 
-              await borg.forward_messages(chat, reply_message)
+            await borg.forward_messages(chat, reply_message)
 
-              response = await response 
+            response = await response
 
-          except YouBlockedUserError: 
+        except YouBlockedUserError:
 
-              await event.reply("```oh  shit```")
+            await event.reply("```oh  shit```")
 
-              return
+            return
 
-          if response.text.startswith("Hello,"):
+        if response.text.startswith("Hello,"):
 
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+            await event.edit(
+                "```can you kindly disable your forward privacy settings for good?```"
+            )
 
-          else: 
+        else:
 
-             await event.edit(f"{response.message.message}")
+            await event.edit(f"{response.message.message}")
 
-
-
-                
-
-                
 
 @borg.on(admin_cmd("urban ?(.*)"))
-
 async def _(event):
 
     if event.fwd_from:
 
-        return 
+        return
 
     if not event.reply_to_msg_id:
 
-       await event.edit("```Reply to any user message.```")
+        await event.edit("```Reply to any user message.```")
 
-       return
+        return
 
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
 
     if not reply_message.text:
 
-       await event.edit("```reply to text message```")
+        await event.edit("```reply to text message```")
 
-       return
+        return
 
     chat = "@UrbanDictionaryBot"
 
-    sender = reply_message.sender
+    reply_message.sender
 
     if reply_message.sender.bot:
 
-       await event.edit("```Reply to actual users message.```")
+        await event.edit("```Reply to actual users message.```")
 
-       return
+        return
 
     await event.edit("```Processing```")
 
     async with borg.conversation(chat) as conv:
 
-          try:     
+        try:
 
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=185693644))
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=185693644)
+            )
 
-              await borg.forward_messages(chat, reply_message)
+            await borg.forward_messages(chat, reply_message)
 
-              response = await response 
+            response = await response
 
-          except YouBlockedUserError: 
+        except YouBlockedUserError:
 
-              await event.reply("```oh shitt ```")
+            await event.reply("```oh shitt ```")
 
-              return
+            return
 
-          if response.text.startswith("Hello,"):
+        if response.text.startswith("Hello,"):
 
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+            await event.edit(
+                "```can you kindly disable your forward privacy settings for good?```"
+            )
 
-          else: 
+        else:
 
-             await event.edit(f"{response.message.message}")
+            await event.edit(f"{response.message.message}")

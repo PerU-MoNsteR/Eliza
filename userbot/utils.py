@@ -574,7 +574,7 @@ def start_assistant(shortname):
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.assistant" + shortname] = mod
 
-        
+
 async def eor(event, text):
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()

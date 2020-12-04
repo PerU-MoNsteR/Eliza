@@ -1,4 +1,3 @@
-
 import base64
 import os
 
@@ -6,7 +5,8 @@ from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import admin_cmd, edit_or_reply
+
 from . import *
 
 
@@ -101,7 +101,7 @@ async def perbot(permemes):
         os.remove(download_location)
         return
     cat = f"https://telegra.ph{response[0]}"
-    cat = await trash(per)
+    await trash(per)
     await permemmes.delete()
     await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
 

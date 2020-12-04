@@ -11,7 +11,9 @@ pm_caption += " **Telethon Version:** `1.17.0` \n"
 pm_caption += " **Python:** `3.8.6` \n"
 pm_caption += f" **Version** : `{elizaversion}`\n"
 pm_caption += f" **My Boss** : {DEFAULTUSER} \n"
-pm_caption += " **License** : [Here](github.com/PerU-MoNsteR/Eliza/blob/master/LICENSE)\n"
+pm_caption += (
+    " **License** : [Here](github.com/PerU-MoNsteR/Eliza/blob/master/LICENSE)\n"
+)
 pm_caption += " **Copyright** : By [PerU_MonSteR](GitHub.com/PerU-MoNsteR)\n"
 
 # only Owner Can Use it

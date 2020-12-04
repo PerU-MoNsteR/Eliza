@@ -9,21 +9,22 @@ from . import LOGS, bot
 from .Config import Config
 from .utils import load_module
 """
-  
+
 import os
 from pathlib import Path
 from sys import argv
-from .Config import Config
 
 import telethon.utils
 from telethon import TelegramClient
-from . import LOGS, bot
 
-from .utils import load_module, start_assistant
 from var import Var
+
+from . import bot
+from .utils import load_module, start_assistant
 
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
+
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -81,7 +82,6 @@ else:
     bot.run_until_disconnected()
 
 
-
 """before assisstant
     async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -129,4 +129,3 @@ else:
     bot.tgbot = None
     bot.run_until_disconnected()
 """
-
