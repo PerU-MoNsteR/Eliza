@@ -46,7 +46,7 @@ async def start(event):
             vent,
             message=f"Hi Master, It's Me {bot_id}, Your Assistant ! \nWhat You Wanna Do today ?",
             buttons=[
-                [custom.Button.inline("Show Users 🔥", data="users")],
+                [custom.Button.inline("Show Users ", data="users")],
                 [custom.Button.inline("Commands For Assistant", data="gibcmd")],
                 [
                     Button.url(
