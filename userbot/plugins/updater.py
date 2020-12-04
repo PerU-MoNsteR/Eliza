@@ -18,7 +18,6 @@ from . import CMD_HELP, runcmd
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
 )
@@ -28,6 +27,7 @@ HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "Eliza"
 UPSTREAM_REPO_URL = "https://github.com/PerU-MoNsteR/Eliza"
 
+xxxx = COMMAND_HAND_LER if COMMAND_HAND_LER else "."
 
 
 async def gen_chlog(repo, diff):
