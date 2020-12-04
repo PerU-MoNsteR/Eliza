@@ -213,7 +213,7 @@ async def perbot(permemes):
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await catmemmes.edit("ERROR: " + str(exc))
+        await permemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
     per = f"https://telegra.ph{response[0]}"
