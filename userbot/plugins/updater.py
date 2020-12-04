@@ -8,10 +8,12 @@ Ported by @peru_monster
 # credits to @AvinashReddy3108
 
 
-
 import asyncio
 import sys
 from os import environ, execle, path, remove
+
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import CMD_HELP, runcmd
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
@@ -122,15 +124,15 @@ async def upstream(ups):
         )
         if len(changelog_str) > 4096:
             await ups.edit("`Changelog is too big, view the file to see it.`")
-            file = open("output.txt", "w+")
+            file = open("eliza output.txt", "w+")
             file.write(changelog_str)
             file.close()
             await ups.client.send_file(
                 ups.chat_id,
-                "output.txt",
+                "eliza output.txt",
                 reply_to=ups.id,
             )
-            remove("output.txt")
+            remove("eliza output.txt")
         else:
             await ups.edit(changelog_str)
         await ups.respond(f"Do `{xxxx}update now` to update")
@@ -164,7 +166,7 @@ async def upstream(ups):
             repo.__del__()
             return
         await ups.edit(
-            "`Userbot dyno build in progress, please wait for it to complete.`"
+            "`Userbot build in progress, please wait for it to complete.`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
