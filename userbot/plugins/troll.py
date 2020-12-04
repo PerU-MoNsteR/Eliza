@@ -23,7 +23,6 @@ from . import *
 
 
 @bot.on(admin_cmd(pattern="threats$"))
-@bot.on(sudo_cmd(pattern="threats$", allow_sudo=True))
 async def catbot(catmemes):
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
@@ -72,7 +71,6 @@ async def catbot(catmemes):
 
 
 @bot.on(admin_cmd(pattern="trash$"))
-@bot.on(sudo_cmd(pattern="trash$", allow_sudo=True))
 async def catbot(catmemes):
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
@@ -121,7 +119,6 @@ async def catbot(catmemes):
 
 
 @bot.on(admin_cmd(pattern="trap$"))
-@bot.on(sudo_cmd(pattern="trap$", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
@@ -180,7 +177,6 @@ async def catbot(catmemes):
 
 
 @bot.on(admin_cmd(pattern="phub$"))
-@bot.on(sudo_cmd(pattern="phub$", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
