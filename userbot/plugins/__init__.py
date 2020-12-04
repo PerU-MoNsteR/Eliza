@@ -15,6 +15,8 @@ from validators.url import url
 
 from .. import *
 from ..Config import Config
+findnemo = topfunc.stark_finder
+idgen = topfunc.id_generator
 
 # =================== CONSTANT ===================
 USERID = bot.uid
