@@ -8,7 +8,7 @@ from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("tti ?(.*)"))
+@peru.on(admin_cmd("tti ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
             await event.edit("**Error:** `unblock` @HK_tiktok_BOT `and retry!`")
 
 
-@borg.on(admin_cmd("ttv ?(.*)"))
+@peru.on(admin_cmd("ttv ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
             await event.edit("**Error:** `unblock` @HK_tiktok_BOT `and retry!`")
 
 
-@borg.on(admin_cmd("wttv ?(.*)"))
+@peru.on(admin_cmd("wttv ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

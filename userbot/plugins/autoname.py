@@ -13,7 +13,7 @@ DEL_TIME_OUT = 60
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FRIDAY"
 
 
-@borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
+@peru.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

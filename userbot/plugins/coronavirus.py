@@ -6,7 +6,7 @@ from covid import Covid
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="corona (.*)"))
+@peru.on(admin_cmd(pattern="corona (.*)"))
 async def _(event):
 
     covid = Covid()

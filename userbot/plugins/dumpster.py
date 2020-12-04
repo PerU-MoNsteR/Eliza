@@ -3,7 +3,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="dump ?(.*)"))
+@peru.on(admin_cmd(pattern="dump ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)

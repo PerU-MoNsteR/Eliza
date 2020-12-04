@@ -6,7 +6,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="lovestory"))
+@peru.on(admin_cmd(pattern="lovestory"))
 async def _(event):
 
     if event.fwd_from:

@@ -63,7 +63,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@borg.on(admin_cmd(pattern="per ?(.*)"))
+@peru.on(admin_cmd(pattern="per ?(.*)"))
 async def main(event):
     await event.edit(
         "**Starting Profile Pic plugin made by by @peru_monster..**"

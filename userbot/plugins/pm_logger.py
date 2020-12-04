@@ -44,7 +44,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@peru.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
     if Config.NC_LOG_P_M_S and not sender.bot:
@@ -61,7 +61,7 @@ async def monito_p_m_s(event):
                 print(e)
 
 
-@borg.on(admin_cmd(pattern="elog ?(.*)"))
+@peru.on(admin_cmd(pattern="elog ?(.*)"))
 async def set_no_log_p_m(event):
     if Config.PM_LOGGR_BOT_API_ID is not None:
         event.pattern_match.group(1)
@@ -74,7 +74,7 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(pattern="nlog ?(.*)"))
+@peru.on(admin_cmd(pattern="nlog ?(.*)"))
 async def set_no_log_p_m(event):
     if Config.PM_LOGGR_BOT_API_ID is not None:
         event.pattern_match.group(1)

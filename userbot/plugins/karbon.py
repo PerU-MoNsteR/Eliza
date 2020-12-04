@@ -22,7 +22,7 @@ from userbot.utils import admin_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
-@borg.on(admin_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("🔲🔲🔲🔲🔲")
@@ -86,7 +86,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@borg.on(admin_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("📛📛📛📛📛")
@@ -150,7 +150,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@borg.on(admin_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("🎛🎛🎛🎛🎛")
@@ -214,7 +214,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@borg.on(admin_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("🌚🌚🌚🌚🌚")
@@ -278,7 +278,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@borg.on(admin_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     RED = random.randint(0, 256)
     GREEN = random.randint(0, 256)
@@ -345,7 +345,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@borg.on(admin_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     RED = random.randint(0, 256)
     GREEN = random.randint(0, 256)
@@ -445,8 +445,8 @@ async def carbon_api(e):
 
 
 """
-@borg.on(admin_cmd(pattern=f"karpp", allow_sudo=True))
-@borg.on(events.NewMessage(pattern=r"\.karpp", outgoing=True))
+@peru.on(admin_cmd(pattern=f"karpp", allow_sudo=True))
+@peru.on(events.NewMessage(pattern=r"\.karpp", outgoing=True))
 async def carbon_api(e):
  while True:
    kpp= 'karbonpp.png'

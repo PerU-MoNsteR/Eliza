@@ -9,7 +9,7 @@ import requests
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="co$", outgoing=True))
+@peru.on(admin_cmd(pattern="co$", outgoing=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await event.edit("Add VAR DEEP_AI get Api Key from https://deepai.org/")

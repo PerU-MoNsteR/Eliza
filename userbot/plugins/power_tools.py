@@ -12,7 +12,7 @@ import sys
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="restart"))
+@peru.on(admin_cmd(pattern="restart"))
 async def _(event):
     await asyncio.sleep(2)
     await event.edit("Restarting  ▰▰▰▱▱▱▱▱▱▱...")
@@ -28,7 +28,7 @@ async def _(event):
     quit()
 
 
-@borg.on(admin_cmd(pattern="shutdown"))
+@peru.on(admin_cmd(pattern="shutdown"))
 async def _(event):
     if event.fwd_from:
         return

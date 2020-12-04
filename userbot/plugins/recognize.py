@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="recognize ?(.*)"))
+@peru.on(admin_cmd(pattern="recognize ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

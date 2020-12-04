@@ -24,7 +24,7 @@ def dogbin(magnets):
     return urls
 
 
-@borg.on(admin_cmd(pattern="tsearch ?(.*)"))
+@peru.on(admin_cmd(pattern="tsearch ?(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return

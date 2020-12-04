@@ -17,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-@borg.on(admin_cmd(pattern="status"))
+@peru.on(admin_cmd(pattern="status"))
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915

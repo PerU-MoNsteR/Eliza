@@ -6,7 +6,7 @@ from userbot.utils import admin_cmd
 
 
 # @register(outgoing=True, pattern="^.q(?: |$)(.*)")
-@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
+@peru.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return

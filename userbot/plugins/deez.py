@@ -2,7 +2,7 @@ import requests
 from telethon import events
 
 
-@borg.on(
+@peru.on(
     events.NewMessage(
         pattern="https://?(.*)",
     )

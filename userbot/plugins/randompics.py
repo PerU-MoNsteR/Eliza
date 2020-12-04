@@ -73,7 +73,7 @@ TELEGRAPH_MEDIA_LINKS = [
 ]
 
 
-@borg.on(admin_cmd(pattern="rpc ?(.*)"))
+@peru.on(admin_cmd(pattern="rpc ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)

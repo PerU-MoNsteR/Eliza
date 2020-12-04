@@ -9,7 +9,7 @@ from datetime import datetime
 from uniborg.util import admin_cmd, progress
 
 
-@borg.on(admin_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
+@peru.on(admin_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

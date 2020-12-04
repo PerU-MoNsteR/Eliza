@@ -14,7 +14,7 @@ from pySmartDL import SmartDL
 from userbot.utils import admin_cmd, humanbytes, progress
 
 
-@borg.on(admin_cmd(pattern="dwl ?(.*)"))
+@peru.on(admin_cmd(pattern="dwl ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

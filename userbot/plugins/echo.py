@@ -31,7 +31,7 @@ from ..utils import admin_cmd, edit_or_reply
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 
 
-@borg.on(admin_cmd(pattern="addecho$"))
+@peru.on(admin_cmd(pattern="addecho$"))
 async def echo(webo):
     if webo.fwd_from:
         return
@@ -54,7 +54,7 @@ async def echo(webo):
         await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
 
 
-@borg.on(admin_cmd(pattern="rmecho$"))
+@peru.on(admin_cmd(pattern="rmecho$"))
 async def echo(webo):
     if webo.fwd_from:
         return
@@ -77,7 +77,7 @@ async def echo(webo):
         await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
 
 
-@borg.on(admin_cmd(pattern="listecho$"))
+@peru.on(admin_cmd(pattern="listecho$"))
 async def echo(webo):
     if webo.fwd_from:
         return
@@ -106,7 +106,7 @@ async def echo(webo):
         await edit_or_reply(webo, output_str)
 
 
-@borg.on(events.NewMessage(incoming=True))
+@peru.on(events.NewMessage(incoming=True))
 async def samereply(webo):
     if webo.chat_id in Config.UB_BLACK_LIST_CHAT:
         return

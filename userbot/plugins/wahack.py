@@ -11,7 +11,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=f"wahack", outgoing=True))
+@peru.on(admin_cmd(pattern=f"wahack", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

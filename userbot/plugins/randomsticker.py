@@ -14,7 +14,7 @@ from telethon import events, functions, types, utils
 def choser(cmd, pack, blacklist={}):
     docs = None
 
-    @borg.on(events.NewMessage(pattern=rf"\.{cmd}", outgoing=True))
+    @peru.on(events.NewMessage(pattern=rf"\.{cmd}", outgoing=True))
     async def handler(event):
         await event.delete()
 

@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from userbot.utils import admin_cmd, humanbytes
 
 
-@borg.on(
+@peru.on(
     admin_cmd(pattern="movie (torrentz2\.eu|idop\.se) (.*)")  # pylint:disable=E0602
 )
 async def _(event):

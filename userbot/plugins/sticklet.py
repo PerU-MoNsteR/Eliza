@@ -14,7 +14,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="sticklet (.*)"))
+@peru.on(admin_cmd(pattern="sticklet (.*)"))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)

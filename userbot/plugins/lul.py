@@ -6,7 +6,7 @@ from collections import deque
 from ..utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"lul"))
+@peru.on(admin_cmd(pattern=r"lul"))
 async def _(event):
     if event.fwd_from:
         return

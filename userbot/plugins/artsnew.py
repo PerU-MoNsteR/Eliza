@@ -4,7 +4,7 @@ from userbot.utils import admin_cmd
 n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 # @command(outgoing=True, pattern="^.ded$")
-@borg.on(admin_cmd(pattern=r"ded"))
+@peru.on(admin_cmd(pattern=r"ded"))
 async def bluedevilded(ded):
     await ded.edit(
         n + " ==             |\n　　　　　|"
@@ -82,36 +82,36 @@ E = (
 )
 
 
-@borg.on(admin_cmd(pattern=r"monster"))
+@peru.on(admin_cmd(pattern=r"monster"))
 async def bluedevilmonster(monster):
     await monster.edit(M)
 
 
-@borg.on(admin_cmd(pattern=r"pig"))
+@peru.on(admin_cmd(pattern=r"pig"))
 async def bluedevilpig(pig):
     await pig.edit(P)
 
 
-@borg.on(admin_cmd(pattern=r"kiler"))
+@peru.on(admin_cmd(pattern=r"kiler"))
 async def bluedevilkiller(kiler):
     await kiler.edit(K)
 
 
-@borg.on(admin_cmd(pattern=r"gun"))
+@peru.on(admin_cmd(pattern=r"gun"))
 async def bluedevilgun(gun):
     await gun.edit(G)
 
 
-@borg.on(admin_cmd(pattern=r"dog"))
+@peru.on(admin_cmd(pattern=r"dog"))
 async def bluedevildog(dog):
     await dog.edit(D)
 
 
-@borg.on(admin_cmd(pattern=r"hello"))
+@peru.on(admin_cmd(pattern=r"hello"))
 async def bluedevilhello(hello):
     await hello.edit(H)
 
 
-@borg.on(admin_cmd(pattern=r"hmf"))
+@peru.on(admin_cmd(pattern=r"hmf"))
 async def bluedevilhmf(hmf):
     await hmf.edit(E)

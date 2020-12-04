@@ -50,8 +50,8 @@ async def updateme_requirements():
         return repr(e)
 
 
-@borg.on(admin_cmd(pattern="update ?(.*)"))
-@borg.on(admin_cmd(pattern="update ?(.*)", allow_sudo=True))
+@peru.on(admin_cmd(pattern="update ?(.*)"))
+@peru.on(admin_cmd(pattern="update ?(.*)", allow_sudo=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Searching for new updates, if any...`")

@@ -8,7 +8,7 @@ from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 
 
 # @command(outgoing=True, pattern=r"^.mute ?(\d+)?")
-@borg.on(admin_cmd(pattern="mute ?(\d+)?"))
+@peru.on(admin_cmd(pattern="mute ?(\d+)?"))
 async def startmute(event):
     private = False
     if event.fwd_from:
@@ -95,7 +95,7 @@ async def startmute(event):
 
 
 # @command(outgoing=True, pattern=r"^.unmute ?(\d+)?")
-@borg.on(admin_cmd(pattern="unmute ?(\d+)?"))
+@peru.on(admin_cmd(pattern="unmute ?(\d+)?"))
 async def endmute(event):
     private = False
     if event.fwd_from:

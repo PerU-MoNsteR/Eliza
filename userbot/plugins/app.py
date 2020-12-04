@@ -7,8 +7,8 @@ import requests
 from telethon import *
 
 
-@borg.on(events.NewMessage(pattern=".app (.*)"))
-@borg.on(events.MessageEdited(pattern=".app (.*)"))
+@peru.on(events.NewMessage(pattern=".app (.*)"))
+@peru.on(events.MessageEdited(pattern=".app (.*)"))
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
@@ -76,8 +76,8 @@ async def apk(e):
         await e.edit("Exception Occured:- " + str(err))
 
 
-@borg.on(events.NewMessage(pattern=".appr (.*)"))
-@borg.on(events.MessageEdited(pattern=".appr (.*)"))
+@peru.on(events.NewMessage(pattern=".appr (.*)"))
+@peru.on(events.MessageEdited(pattern=".appr (.*)"))
 async def apkr(e):
     try:
         app_name = e.pattern_match.group(1)

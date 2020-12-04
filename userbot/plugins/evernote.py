@@ -1,7 +1,7 @@
 from telethon import events
 
 
-@borg.on(events.NewMessage(pattern=r"^.note (.*)", outgoing=True))
+@peru.on(events.NewMessage(pattern=r"^.note (.*)", outgoing=True))
 async def test(event):
     if event.fwd_from:
         return

@@ -7,7 +7,7 @@ from . import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Webo"
 
 
-@borg.on(admin_cmd(pattern="stupid$"))
+@peru.on(admin_cmd(pattern="stupid$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -36,7 +36,7 @@ async def _(event):
         await event.edit(animation_chars[i % 14])
 
 
-@borg.on(admin_cmd(pattern=f"bombs$", outgoing=True))
+@peru.on(admin_cmd(pattern=f"bombs$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-@borg.on(admin_cmd(pattern=r"call$"))
+@peru.on(admin_cmd(pattern=r"call$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,7 +94,7 @@ async def _(event):
         await event.edit(animation_chars[i % 18])
 
 
-@borg.on(admin_cmd(pattern=f"kill$", outgoing=True))
+@peru.on(admin_cmd(pattern=f"kill$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -120,7 +120,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@borg.on(admin_cmd(pattern="wtf$"))
+@peru.on(admin_cmd(pattern="wtf$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -140,7 +140,7 @@ async def _(event):
         await event.edit(animation_chars[i % 5])
 
 
-@borg.on(admin_cmd(pattern="ding$"))
+@peru.on(admin_cmd(pattern="ding$"))
 async def _(event):
     animation_interval = 0.3
     animation_ttl = range(0, 30)
@@ -165,7 +165,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@borg.on(admin_cmd(pattern=f"hypno$", outgoing=True))
+@peru.on(admin_cmd(pattern=f"hypno$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -194,7 +194,7 @@ async def _(event):
         await event.edit(animation_chars[i % 15])
 
 
-@borg.on(admin_cmd(pattern="gangasta$"))
+@peru.on(admin_cmd(pattern="gangasta$"))
 async def _(event):
     await event.edit("EVERyBOdy")
     await asyncio.sleep(0.3)
@@ -213,7 +213,7 @@ async def _(event):
     await event.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
 
 
-@borg.on(admin_cmd(pattern=f"charging$"))
+@peru.on(admin_cmd(pattern=f"charging$"))
 async def timer_blankx(e):
     txt = (
         e.text[10:]

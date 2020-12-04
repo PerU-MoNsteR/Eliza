@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd
 # ===================================================================================
 
 
-@borg.on(admin_cmd(r"circle$"))
+@peru.on(admin_cmd(r"circle$"))
 async def _(event):
     if event.fwd_from:
         return

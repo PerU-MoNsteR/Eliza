@@ -12,7 +12,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot.utils import admin_cmd
 
 """
-@borg.on(admin_cmd(pattern="promote ?(.*)"))
+@peru.on(admin_cmd(pattern="promote ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,7 +44,7 @@ async def _(event):
 """
 
 
-@borg.on(admin_cmd(pattern="prankpromote ?(.*)"))
+@peru.on(admin_cmd(pattern="prankpromote ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

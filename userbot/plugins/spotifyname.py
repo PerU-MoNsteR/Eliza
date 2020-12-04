@@ -114,8 +114,8 @@ async def dirtyfix():
     await update_spotify_info()
 
 
-@borg.on(admin_cmd(pattern=f"ensp", allow_sudo=True))
-@borg.on(events.NewMessage(pattern=r"\.ensp ?(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"ensp", allow_sudo=True))
+@peru.on(events.NewMessage(pattern=r"\.ensp ?(.*)", outgoing=True))
 async def set_biostgraph(setstbio):
     setrecursionlimit(700000)
     if not SPOTIFYCHECK:
@@ -127,8 +127,8 @@ async def set_biostgraph(setstbio):
         await setstbio.edit(SPO_BIO_RUNNING)
 
 
-@borg.on(admin_cmd(pattern=f"disp", allow_sudo=True))
-@borg.on(events.NewMessage(pattern=r"\.disp ?(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern=f"disp", allow_sudo=True))
+@peru.on(events.NewMessage(pattern=r"\.disp ?(.*)", outgoing=True))
 async def set_biodgraph(setdbio):
     global SPOTIFYCHECK
     global RUNNING

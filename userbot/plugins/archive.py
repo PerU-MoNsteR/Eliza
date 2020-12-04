@@ -30,7 +30,7 @@ if not os.path.isdir(extracted):
     os.makedirs(extracted)
 
 
-@borg.on(admin_cmd(pattern="compress"))
+@peru.on(admin_cmd(pattern="compress"))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-@borg.on(admin_cmd(pattern=("rar ?(.*)")))
+@peru.on(admin_cmd(pattern=("rar ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -131,7 +131,7 @@ async def _(event):
         )
 
 
-@borg.on(admin_cmd(pattern=("7z ?(.*)")))
+@peru.on(admin_cmd(pattern=("7z ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -181,7 +181,7 @@ async def _(event):
         await event.edit("Local file compressed to `{}`".format(directory_name + ".7z"))
 
 
-@borg.on(admin_cmd(pattern=("tar ?(.*)")))
+@peru.on(admin_cmd(pattern=("tar ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -267,7 +267,7 @@ async def create_archive(input_directory):
     return return_name
 
 
-@borg.on(admin_cmd(pattern="unzip"))
+@peru.on(admin_cmd(pattern="unzip"))
 async def _(event):
     if event.fwd_from:
         return
@@ -359,7 +359,7 @@ async def _(event):
         os.remove(downloaded_file_name)
 
 
-@borg.on(admin_cmd(pattern="unrar"))
+@peru.on(admin_cmd(pattern="unrar"))
 async def _(event):
     if event.fwd_from:
         return
@@ -450,7 +450,7 @@ async def _(event):
         os.remove(downloaded_file_name)
 
 
-@borg.on(admin_cmd(pattern="untar"))
+@peru.on(admin_cmd(pattern="untar"))
 async def _(event):
     if event.fwd_from:
         return

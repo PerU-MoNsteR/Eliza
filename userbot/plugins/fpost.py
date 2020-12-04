@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd
 msg_cache = {}
 
 
-@borg.on(admin_cmd(pattern=r"fpost\s+(.*)"))
+@peru.on(admin_cmd(pattern=r"fpost\s+(.*)"))
 async def _(event):
     await event.delete()
     text = event.pattern_match.group(1)

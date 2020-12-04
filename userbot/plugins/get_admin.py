@@ -9,7 +9,7 @@ from telethon.tl.types import (
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
+@peru.on(admin_cmd("get_ad?(m)in ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

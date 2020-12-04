@@ -12,7 +12,7 @@ import os
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="ls ?(.*)"))
+@peru.on(admin_cmd(pattern="ls ?(.*)"))
 async def lst(event):
     if event.fwd_from:
         return

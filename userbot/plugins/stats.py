@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd
 """Type `.stats` and see Magic."""
 
 
-@borg.on(admin_cmd(pattern="stats"))
+@peru.on(admin_cmd(pattern="stats"))
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915

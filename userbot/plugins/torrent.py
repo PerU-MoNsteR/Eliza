@@ -23,7 +23,7 @@ aria2_is_running = os.system(cmd)
 aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800, secret=""))
 
 
-@borg.on(admin_cmd(pattern=r"magnet"))
+@peru.on(admin_cmd(pattern=r"magnet"))
 async def magnet_download(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def magnet_download(event):
     await progress_status(gid=new_gid, event=event, previous=None)
 
 
-@borg.on(admin_cmd(pattern=r"tor"))
+@peru.on(admin_cmd(pattern=r"tor"))
 async def torrent_download(event):
     if event.fwd_from:
         return
@@ -65,7 +65,7 @@ async def torrent_download(event):
     await progress_status(gid=gid, event=event, previous=None)
 
 
-@borg.on(admin_cmd(pattern=r"url"))
+@peru.on(admin_cmd(pattern=r"url"))
 async def magnet_download(event):
     if event.fwd_from:
         return
@@ -86,7 +86,7 @@ async def magnet_download(event):
         await progress_status(gid=new_gid, event=event, previous=None)
 
 
-@borg.on(admin_cmd(pattern=r"ariaRM"))
+@peru.on(admin_cmd(pattern=r"ariaRM"))
 async def remove_all(event):
     if event.fwd_from:
         return
@@ -100,7 +100,7 @@ async def remove_all(event):
     await event.edit("`Removed All Downloads.`")
 
 
-@borg.on(admin_cmd(pattern=r"show"))
+@peru.on(admin_cmd(pattern=r"show"))
 async def show_all(event):
     if event.fwd_from:
         return

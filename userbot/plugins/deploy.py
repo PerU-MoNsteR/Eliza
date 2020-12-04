@@ -14,7 +14,7 @@ from userbot import AUTONAME
 DEFAULTUSER = str(AUTONAME) if AUTONAME else "eliza"
 
 
-@borg.on(admin_cmd(pattern=r"deploy"))
+@peru.on(admin_cmd(pattern=r"deploy"))
 async def _(event):
 
     if event.fwd_from:

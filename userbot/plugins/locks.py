@@ -9,7 +9,7 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 # @register(outgoing=True, pattern=r"^.lock ?(.*)")
-@borg.on(admin_cmd(pattern=r"lock ?(.*)"))
+@peru.on(admin_cmd(pattern=r"lock ?(.*)"))
 @errors_handler
 async def locks(event):
     input_str = event.pattern_match.group(1).lower()

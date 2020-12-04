@@ -21,7 +21,7 @@ BASE_URL = "https://headp.at/pats/{}"
 PAT_IMAGE = "pat.jpg"
 
 
-@borg.on(admin_cmd(pattern="pat ?(.*)", outgoing=True))
+@peru.on(admin_cmd(pattern="pat ?(.*)", outgoing=True))
 async def lastfm(event):
     if event.fwd_from:
         return

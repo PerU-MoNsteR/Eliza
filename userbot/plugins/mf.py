@@ -8,7 +8,7 @@ from telethon import functions
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("(.*)"))
+@peru.on(admin_cmd("(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,7 +27,7 @@ async def _(event):
             await event.edit(animation_chars[i % 27])
 
 
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@peru.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@peru.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

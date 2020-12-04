@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="calc"))
+@peru.on(admin_cmd(pattern="calc"))
 async def _(event):
     if event.fwd_from or event.via_bot_id:
         return

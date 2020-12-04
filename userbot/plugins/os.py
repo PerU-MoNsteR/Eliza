@@ -3,7 +3,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"macos"))
+@peru.on(admin_cmd(pattern=r"macos"))
 async def _(event):
 
     if event.fwd_from:
@@ -37,7 +37,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@borg.on(admin_cmd(pattern=r"windows"))
+@peru.on(admin_cmd(pattern=r"windows"))
 async def _(event):
 
     if event.fwd_from:
@@ -71,7 +71,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@borg.on(admin_cmd(pattern=r"linux"))
+@peru.on(admin_cmd(pattern=r"linux"))
 async def _(event):
 
     if event.fwd_from:
@@ -105,7 +105,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@borg.on(admin_cmd(pattern=r"stock"))
+@peru.on(admin_cmd(pattern=r"stock"))
 async def _(event):
 
     if event.fwd_from:
@@ -139,7 +139,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@borg.on(admin_cmd(pattern=r"os"))
+@peru.on(admin_cmd(pattern=r"os"))
 async def _(event):
 
     if event.fwd_from:

@@ -76,7 +76,7 @@ async def formatJSON(outData):
         return msg
 
 
-@borg.on(admin_cmd(pattern="anilist ?(.*)"))
+@peru.on(admin_cmd(pattern="anilist ?(.*)"))
 async def anilist(event):
     if event.fwd_from:
         return

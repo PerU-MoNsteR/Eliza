@@ -5,7 +5,7 @@ from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="frwd"))
+@peru.on(admin_cmd(pattern="frwd"))
 async def _(event):
     if event.fwd_from:
         return

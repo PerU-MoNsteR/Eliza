@@ -15,7 +15,7 @@ import requests
 from uniborg.util import admin_cmd, progress
 
 
-@borg.on(admin_cmd(pattern="verystream ?(.*)", allow_sudo=True))
+@peru.on(admin_cmd(pattern="verystream ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

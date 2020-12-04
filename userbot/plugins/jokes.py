@@ -8,7 +8,7 @@ from userbot import LOGS
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="join"))
+@peru.on(admin_cmd(pattern="join"))
 async def _(event):
     if event.fwd_from:
         return
@@ -25,7 +25,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="pay"))
+@peru.on(admin_cmd(pattern="pay"))
 async def _(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="climb"))
+@peru.on(admin_cmd(pattern="climb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -59,7 +59,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="aag"))
+@peru.on(admin_cmd(pattern="aag"))
 async def _(event):
     if event.fwd_from:
         return
@@ -76,7 +76,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="push"))
+@peru.on(admin_cmd(pattern="push"))
 async def _(event):
     if event.fwd_from:
         return
@@ -93,7 +93,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="work"))
+@peru.on(admin_cmd(pattern="work"))
 async def _(event):
     if event.fwd_from:
         return
@@ -110,7 +110,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="suckit"))
+@peru.on(admin_cmd(pattern="suckit"))
 async def _(event):
     if event.fwd_from:
         return
@@ -127,7 +127,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="ohh"))
+@peru.on(admin_cmd(pattern="ohh"))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +144,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="lovestory"))
+@peru.on(admin_cmd(pattern="lovestory"))
 async def _(event):
     if event.fwd_from:
         return
@@ -173,7 +173,7 @@ async def _(event):
         await event.edit(animation_chars[i % 103])
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="bf"))
+@peru.on(admin_cmd(outgoing=True, pattern="bf"))
 async def pressf(f):
     """Pays respects"""
     args = f.text.split()
@@ -196,7 +196,7 @@ async def pressf(f):
         await f.edit("`" + out + "`")
 
 
-@borg.on(admin_cmd(pattern="session$"))
+@peru.on(admin_cmd(pattern="session$"))
 async def _(event):
     if event.fwd_from:
         return

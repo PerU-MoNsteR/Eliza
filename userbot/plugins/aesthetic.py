@@ -17,8 +17,8 @@ def aesthetify(string):
         yield chr(c)
 
 
-@borg.on(admin_cmd(pattern="ae\s+(.+)"))
-@borg.on(events.MessageEdited(pattern=r".ae\s+(.+)", outgoing=True))
+@peru.on(admin_cmd(pattern="ae\s+(.+)"))
+@peru.on(events.MessageEdited(pattern=r".ae\s+(.+)", outgoing=True))
 async def _(event):
     text = event.pattern_match.group(1)
     text = "".join(aesthetify(text))

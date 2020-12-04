@@ -3,7 +3,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"quickheal"))
+@peru.on(admin_cmd(pattern=r"quickheal"))
 async def _(event):
 
     if event.fwd_from:

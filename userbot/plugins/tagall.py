@@ -6,7 +6,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"tagall", outgoing=True))
+@peru.on(admin_cmd(pattern=r"tagall", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -18,7 +18,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern=r"administrator", outgoing=True))
+@peru.on(admin_cmd(pattern=r"administrator", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

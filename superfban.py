@@ -7,7 +7,7 @@ from userbot import CMD_HELP, bot, perudef
 from userbot.utils import admin_cmd, sudo_cmd
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="sttxt(?: |$)(.*)"))
+@peru.on(admin_cmd(outgoing=True, pattern="sttxt(?: |$)(.*)"))
 async def waifu(animu):
     text = animu.pattern_match.group(1)
     reply_to_id = animu.message
@@ -32,7 +32,7 @@ async def waifu(animu):
     await perudef.waifutxt(text, animu.chat_id, reply_to_id, bot, borg)
 
 
-@borg.on(sudo_cmd(allow_sudo=True, pattern="sttxt(?: |$)(.*)"))
+@peru.on(sudo_cmd(allow_sudo=True, pattern="sttxt(?: |$)(.*)"))
 async def waifu(animu):
     text = animu.pattern_match.group(1)
     reply_to_id = animu.message

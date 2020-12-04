@@ -9,7 +9,7 @@ from telethon.tl.types import MessageEntityMentionName
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="link(?: |$)(.*)"))
+@peru.on(admin_cmd(pattern="link(?: |$)(.*)"))
 async def permalink(mention):
     """ For .link command, generates a link to the user's PM with a custom text. """
     user, custom = await get_user_from_event(mention)

@@ -21,7 +21,7 @@ from ..utils import admin_cmd, edit_or_reply
 from . import perumusic
 
 
-@borg.on(admin_cmd(pattern="song( (.*)|$)"))
+@peru.on(admin_cmd(pattern="song( (.*)|$)"))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -71,7 +71,7 @@ async def _(event):
     os.system("rm -rf ./temp/*.webp")
 
 
-@borg.on(admin_cmd(pattern="song320( (.*)|$)"))
+@peru.on(admin_cmd(pattern="song320( (.*)|$)"))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -121,7 +121,7 @@ async def _(event):
     os.system("rm -rf ./temp/*.webp")
 
 
-@borg.on(admin_cmd(pattern="vs( (.*)|$)"))
+@peru.on(admin_cmd(pattern="vs( (.*)|$)"))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
