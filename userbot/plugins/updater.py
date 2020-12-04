@@ -15,8 +15,8 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from jarvis import CMD_HNDLR
-from jarvis.events import admin_cmd
+from userbot import CMD_HNDLR
+from userbot.events import admin_cmd
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
