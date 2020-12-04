@@ -14,7 +14,7 @@ PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
 NO_ADMIN = "`I am not an admin nub nibba!`"
 NO_PERM = (
-    "`I don't have sufficient permissions! This is so sed. Alexa play Tera Baap Aaya`"
+    "`I don't have sufficient permissions!`"
 )
 NO_SQL = "`Running on Non-SQL mode!`"
 
@@ -69,7 +69,7 @@ async def ban(event):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await event.reply("I Am Not Admin 🥺.")
+        await event.reply("I Am Not Admin ")
         return
 
     user, reason = await get_user_from_event(event)
@@ -80,7 +80,7 @@ async def ban(event):
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await event.reply("No Permission Sar 🤭.")
+        await event.reply("No Permission Sir.")
         return
     # Helps ban group join spammers more easily
     try:
@@ -113,7 +113,7 @@ async def nothanos(event):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
+        await event.reply("i am not an admin")
         return
     user = await get_user_from_event(event)
     user = user[0]
@@ -123,9 +123,9 @@ async def nothanos(event):
         return
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS))
-        await event.reply("`Unbanned Successfully. Granting another chance.🚶`")
+        await event.reply("`Unbanned Successfully.`")
     except BadRequestError:
-        await event.reply("`No Permission 🤭`")
+        await event.reply("`No Permission `")
         return
 
 
@@ -149,7 +149,7 @@ async def promote(event):
 
     # If not admin and not creator, also return
     if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
+        await event.reply("i am not an admin")
         return
     new_rights = ChatAdminRights(
         add_admins=False,
@@ -174,7 +174,7 @@ async def promote(event):
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
     except BadRequestError:
-        await event.reply("No Permission To Promote 🤭")
+        await event.reply("No Permission To Promote ")
         return
 
 
@@ -196,7 +196,7 @@ async def demote(event):
     creator = chat.creator
 
     if not admin and not creator:
-        await event.reply("I Am Not Admin 🤭")
+        await event.reply("I Am Not Admin ")
         return
 
     rank = "mememaster"  # dummy rank, lol.
@@ -222,9 +222,9 @@ async def demote(event):
     # If we catch BadRequestError from Telethon
     # Assume we don't have permission to demote
     except BadRequestError:
-        await event.reply("Me No Permission 🤔")
+        await event.reply("i have no permission")
         return
-    await event.reply("`Demoted this Guy Successfully!`")
+    await event.reply("`Demoted Successfully!`")
 
 
 @tgbot.on(events.NewMessage(pattern="^/pin(?: |$)(.*)"))
@@ -246,7 +246,7 @@ async def pin(event):
 
     # If not admin and not creator, return
     if not admin and not creator:
-        await event.reply("I Need Administration Permission 🤔")
+        await event.reply("I Need Administration Permission ")
         return
 
     to_pin = event.reply_to_msg_id
@@ -262,7 +262,7 @@ async def pin(event):
     try:
         await event.client(UpdatePinnedMessageRequest(event.to_id, to_pin, is_silent))
     except BadRequestError:
-        await event.reply("No Permission 🥺")
+        await event.reply("No Permission ")
         return
     await event.reply("`Pinned Successfully!`")
     user = await get_user_from_id(msg.from_id, msg)
