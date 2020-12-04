@@ -83,7 +83,7 @@ async def help(event):
             message="You Can Deploy Eliza bot and  On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
                 [Button.url("repo", "https://github.com/PerU-MoNsteR/Eliza")],
-                [Button.url("Need Help ", "t.me/elizasupport")],
+                [Button.url("Need Help ", "t.me/elizasupport01")],
             ],
         )
 
