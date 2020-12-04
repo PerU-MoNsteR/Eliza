@@ -17,7 +17,7 @@ import os
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from userbot.import CMD_HELP
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import *
 
