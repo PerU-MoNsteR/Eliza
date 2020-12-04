@@ -35,4 +35,4 @@ async def _(event):
     try:
         await tgbot.send_message(event.chat_id, output_str)
     except Exception:
-        await tgbot.send_message(event.chat_id, "Something Went Wrong 🤔")
+        await tgbot.send_message(event.chat_id, "Something Went Wrong ")
