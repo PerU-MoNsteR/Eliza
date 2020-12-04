@@ -1,9 +1,9 @@
 from telethon import events, utils
 from telethon.tl import types
 
-from jarvis import bot
-from jarvis.jconfig import Config
-from jarvis.plugins.sql_helper.snips_sql import (
+from userbot import bot
+from userbot.jconfig import Config
+from userbot.plugins.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
