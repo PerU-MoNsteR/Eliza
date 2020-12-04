@@ -71,7 +71,7 @@ async def bot(permemes):
 
 
 @bot.on(admin_cmd(pattern="trash$"))
-async def bot(permemes):
+async def perbot(permemes):
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
@@ -119,7 +119,7 @@ async def bot(permemes):
 
 
 @bot.on(admin_cmd(pattern="trap$"))
-async def bot(permemes):
+async def perbot(permemes):
     input_str = permemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "|" in input_str:
@@ -177,7 +177,7 @@ async def bot(permemes):
 
 
 @bot.on(admin_cmd(pattern="phub$"))
-async def catbot(permemes):
+async def perbot(permemes):
     input_str = permemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "|" in input_str:
