@@ -10,6 +10,7 @@ from pySmartDL import SmartDL
 from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
+from .function import elizafunction as topfunc
 
 from var import Var
 
@@ -86,6 +87,8 @@ if bool(ENV):
     LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
     LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
     LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
+    #for assistant
+    OWNER_ID = os.environ.get("OWNER_ID", None)
     # Google Drive Module
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
