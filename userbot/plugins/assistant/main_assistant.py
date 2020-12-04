@@ -18,14 +18,14 @@ import re
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
-from jarvis import bot
-from jarvis.plugins.sql_helper.blacklist_assistant import (
+from userbot import bot
+from userbot.plugins.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from jarvis.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
-from jarvis.plugins.sql_helper.idadder_sql import (
+from userbot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
+from userbot.plugins.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
@@ -34,13 +34,13 @@ from jarvis.plugins.sql_helper.idadder_sql import (
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
-    starkbot = await tgbot.get_me()
-    bot_id = starkbot.first_name
-    bot_username = starkbot.username
+    perubot = await tgbot.get_me()
+    bot_id = perubot.first_name
+    bot_username = perubot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [JARVIS Userbot](t.me/JarvisOT)"
+    starttext = f"Hello, {firstname} ! I Am {bot_id}, An Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \n"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -50,7 +50,7 @@ async def start(event):
                 [custom.Button.inline("Commands For Assistant", data="gibcmd")],
                 [
                     Button.url(
-                        "Add Me to Group 👥", f"t.me/{bot_username}?startgroup=true"
+                        "Add Me to Group ", f"t.me/{bot_username}?startgroup=true"
                     )
                 ],
             ],
@@ -65,8 +65,8 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("Deploy your JARVIS 🇮🇳", data="deploy")],
-                [Button.url("Help Me ❓", "t.me/JarvisOT")],
+                [custom.Button.inline("Deploy your Eliza", data="deploy")],
+                [Button.url("Help Me ", "t.me/elizasupport01")],
             ],
         )
 
@@ -80,10 +80,10 @@ async def help(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message="You Can Deploy JARVIS In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
+            message="You Can Deploy Eliza bot and  On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Deploy Tutorial 📺", "https://youtu.be/Qsx3LZzsh7s")],
-                [Button.url("Need Help ❓", "t.me/JarvisSupportOT")],
+                [Button.url("repo", "https://github.com/PerU-MoNsteR/Eliza")],
+                [Button.url("Need Help ", "t.me/elizasupport")],
             ],
         )
 
@@ -203,7 +203,7 @@ async def starkisnoob(event):
         await event.reply("Already Blacklisted")
     elif not is_he_added(user_id):
         add_nibba_in_db(user_id)
-        await event.reply("Blacklisted This Dumb Person")
+        await event.reply("Blacklisted This Person")
         await tgbot.send_message(
             user_id, "You Have Been Blacklisted And You Can't Message My Master Now."
         )
@@ -219,10 +219,10 @@ async def starkisnoob(event):
         event.raw_text
         user_id, reply_message_id = his_userid(msg.id)
     if not is_he_added(user_id):
-        await event.reply("Not Even. Blacklisted 🤦🚶")
+        await event.reply("Not Even. Blacklisted ")
     elif is_he_added(user_id):
         removenibba(user_id)
-        await event.reply("DisBlacklisted This Dumb Person")
+        await event.reply("DisBlacklisted This Person")
         await tgbot.send_message(
             user_id, "Congo! You Have Been Unblacklisted By My Master."
         )
