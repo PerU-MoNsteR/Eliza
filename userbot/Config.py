@@ -201,7 +201,8 @@ class Config((object)):
     MONGO_URI = os.environ.get("MONGO_URI", None)
     TAG_FEATURE = os.environ.get("TAG_FEATURE", "ENABLE")
     ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
-
+    THUMB_IMAGE = os.environ.get(
+        "THUMB_IMAGE", "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg"
 
 class Production(Config):
     LOGGER = False

@@ -94,7 +94,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit(
-            "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
+            "`Userbot build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
