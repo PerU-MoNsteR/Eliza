@@ -4,7 +4,7 @@ import shlex
 from os import getcwd
 from os.path import basename, join
 from textwrap import wrap
-from typing import Optional, Tuple                                                        #base by jisan
+from typing import Optional, Tuple  # base by jisan
 
 import numpy as np
 
@@ -16,7 +16,6 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from wand.color import Color
 from wand.drawing import Drawing
-from wand.image import Image as catimage
 
 from . import unzip
 
@@ -145,8 +144,6 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         process.returncode,
         process.pid,
     )
-
-
 
 
 async def take_screen_shot(
