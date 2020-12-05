@@ -94,7 +94,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit(
-            "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
+            "`Userbot build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -200,7 +200,7 @@ async def upstream(event):
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`CATUSERBOT is`  **up-to-date**  `with`  "
+            "\n`your Eliza is`  has no new updates  `with`  "
             f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
@@ -208,7 +208,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            'do "[`.update now`] or [`.update deploy`]" to update.Check `.info updater` for details'
+            'do "[`.update now`] or [`.update deploy`]" to update.Check `.help updater` for details'
         )
 
     if force_update:
