@@ -45,7 +45,7 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    uptime = get_readable_time((time.time() - Lastupdate))
+    uptime = get_readable_time((time.time() - StartTime))
     await tgbot.send_message(
         event.chat_id,
         f"**pong**\n ➲ `{ms}` \n ➲ `{uptime}`",
