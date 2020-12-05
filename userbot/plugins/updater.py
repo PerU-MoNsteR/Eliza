@@ -200,8 +200,7 @@ async def upstream(event):
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`Eliza is`  has no new updates  `with`  "
-            f"**{UPSTREAM_REPO_BRANCH}**\n"
+            "\n`Eliza is`  has no new updates  `with`  " f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
