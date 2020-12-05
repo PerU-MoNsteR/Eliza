@@ -140,7 +140,6 @@ async def memes(per):
 
 
 @bot.on(admin_cmd(pattern="cfont (.*)"))
-@bot.on(sudo_cmd(pattern="cfont (.*)", allow_sudo=True))
 async def lang(event):
     global MY_FONTS
     input_str = event.pattern_match.group(1)
