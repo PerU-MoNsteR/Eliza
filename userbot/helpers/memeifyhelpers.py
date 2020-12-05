@@ -4,15 +4,19 @@ import shlex
 from os import getcwd
 from os.path import basename, join
 from textwrap import wrap
-from typing import Optional, Tuple
+from typing import Optional, Tuple                                                        #base by jisan
 
 import numpy as np
-from colour import Color as asciiColor
+
+try:
+    from colour import Color as asciiColor
+except:
+    os.system("pip install colour")
 from PIL import Image, ImageDraw, ImageFont
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from wand.color import Color
 from wand.drawing import Drawing
-from wand.image import Image as perimage
+from wand.image import Image as catimage
 
 from . import unzip
 
@@ -55,17 +59,17 @@ def get_warp_length(width):
     return int((20.0 / 1024.0) * (width + 0.0))
 
 
-async def per_meme(topString, bottomString, filename, endname):
+async def per_meme(CNG_FONTS, topString, bottomString, filename, endname):
     img = Image.open(filename)
     imageSize = img.size
     # find biggest font size that works
     fontSize = int(imageSize[1] / 5)
-    font = ImageFont.truetype("userbot/helpers/styles/impact.ttf", fontSize)
+    font = ImageFont.truetype(CNG_FONTS, fontSize)
     topTextSize = font.getsize(topString)
     bottomTextSize = font.getsize(bottomString)
     while topTextSize[0] > imageSize[0] - 20 or bottomTextSize[0] > imageSize[0] - 20:
         fontSize -= 1
-        font = ImageFont.truetype("userbot/helpers/styles/digital.ttf", fontSize)
+        font = ImageFont.truetype(CNG_FONTS, fontSize)
         topTextSize = font.getsize(topString)
         bottomTextSize = font.getsize(bottomString)
 
@@ -101,7 +105,7 @@ async def per_meme(topString, bottomString, filename, endname):
     img.save(endname)
 
 
-async def per_meeme(upper_text, lower_text, picture_name, endname):
+async def per_meeme(upper_text, lower_text, CNG_FONTS, picture_name, endname):
     main_image = perimage(filename=picture_name)
     main_image.resize(
         1024, int(((main_image.height * 1.0) / (main_image.width * 1.0)) * 1024.0)
@@ -110,7 +114,7 @@ async def per_meeme(upper_text, lower_text, picture_name, endname):
     lower_text = "\n".join(wrap(lower_text, get_warp_length(main_image.width))).upper()
     lower_margin = MARGINS[lower_text.count("\n")]
     text_draw = Drawing()
-    text_draw.font = join(getcwd(), "userbot/helpers/styles/digital.ttf")
+    text_draw.font = join(getcwd(), CNG_FONTS)
     text_draw.font_size = 100
     text_draw.text_alignment = "center"
     text_draw.stroke_color = Color("black")
@@ -143,8 +147,6 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
     )
 
 
-# For using gif , animated stickers and videos in some parts , this
-# function takes  take a screenshot and stores ported from userge
 
 
 async def take_screen_shot(
