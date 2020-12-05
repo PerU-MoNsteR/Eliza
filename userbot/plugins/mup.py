@@ -1,5 +1,5 @@
 """
-Created by @mrconfused and edited by @peru_monster
+modified by by @peru_monster and imported from catuserbot
 memify plugin
 """
 import asyncio
@@ -35,6 +35,17 @@ def random_color():
         "#" + "".join([random.choice("0123456789ABCDEF") for j in range(6)])
         for i in range(number_of_colors)
     ]
+
+MY_FONTS = "userbot/helpers/styles/italic.ttf"
+FONTS = "1. `DIGIT.ttf`\n2. `1942.ttf`\n3. `DisposableDroidBB_bld.ttf`\n4. `digital.ttf`\n5. `italic.ttf`"
+font_list = [
+    "DIGIT.ttf",
+    "1942.ttf",
+    "DisposableDroidBB_bld.ttf",
+    "digital.ttf",
+    "italic.ttf",
+]
+
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="(mmf|mms) ?(.*)"))
@@ -115,9 +126,9 @@ async def memes(per):
     meme_file = convert_toimage(meme_file)
     meme = "permeme.jpg"
     if max(len(top), len(bottom)) < 21:
-        await per_meme(top, bottom, meme_file, meme)
+        await per_meme(MY__FONTS, top, bottom, meme_file, meme)
     else:
-        await per_meeme(top, bottom, meme_file, meme)
+        await per_meeme(MY_FONTS, top, bottom, meme_file, meme)
     if cmd != "mmf":
         meme = await convert_tosticker(meme)
     await per.client.send_file(per.chat_id, meme, reply_to=perid)
@@ -126,6 +137,21 @@ async def memes(per):
     for files in (persticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
+            
+@bot.on(admin_cmd(pattern="cfont (.*)"))
+@bot.on(sudo_cmd(pattern="cfont (.*)", allow_sudo=True))
+async def lang(event):
+    global MY_FONTS
+    input_str = event.pattern_match.group(1)
+    if input_str not in font_list:
+        perevent = await edit_or_reply(event, "`Give me a correct font name...`")
+        await asyncio.sleep(1)
+        await perevent.edit(f"**Available Fonts names are here:-**\n\n{FONTS}")
+    else:
+        arg = f"userbot/helpers/styles/{input_str}"
+        MY_FONTS = arg
+        await edit_or_reply(event, f"**Fonts for Memify changed to :-** `{input_str}`")
+
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="ascii ?(.*)"))
