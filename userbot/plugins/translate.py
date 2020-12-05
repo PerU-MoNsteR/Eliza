@@ -3,16 +3,12 @@ Available Commands:
 .tr LanguageCode as reply to a message
 .tr LangaugeCode | text to translate"""
 
-from userbot.utils import admin_cmd
-from telethon import events
-
-
-
 from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, deEmojify
 
 TRT_LANG = "en"

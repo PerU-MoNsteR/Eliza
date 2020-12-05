@@ -12,11 +12,11 @@ import asyncio
 import sys
 from os import environ, execle, path, remove
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import CMD_HELP, runcmd
-
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+
+from userbot import CMD_HNDLR
+from userbot.events import admin_cmd
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -33,7 +33,7 @@ async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "On " + "%d/%m/%y" + " at " + "%H:%M:%S"
     for c in repo.iter_commits(diff):
-        ch_log += f"**#{c.count()}** : {c.committed_datetime.strftime(d_form)} : [{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}) by **{c.author}**\n"
+        ch_log += f"**#{c.count()}** : {c.committed_datetime.strftime(d_form)} : [{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}) by __{c.author}__\n"
     return ch_log
 
 
@@ -52,6 +52,7 @@ async def updateme_requirements():
 
 
 @borg.on(admin_cmd(pattern="update ?(.*)"))
+@borg.on(admin_cmd(pattern="update ?(.*)", allow_sudo=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Searching for new updates, if any...`")
@@ -76,7 +77,7 @@ async def upstream(ups):
             await ups.edit(
                 f"**Unfortunately, the directory {error} does not seem to be a git repository.\
                 \nOr Maybe it just needs a sync verification with {GIT_REPO_NAME}\
-            \nBut we can fix that by force updating the userbot using** `update now`."
+            \nBut we can fix that by force updating the userbot using** `.update now`."
             )
             return
         repo = Repo.init()
@@ -93,7 +94,7 @@ async def upstream(ups):
             f"**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
             "which branch is to be merged. "
-            "Please wait`"
+            "Please checkout to any official branch`"
         )
         repo.__del__()
         return
@@ -109,7 +110,7 @@ async def upstream(ups):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if not changelog and not force_updateme:
-        await ups.edit(
+        await ups.reply(
             f"\n`Your BOT is`  **up-to-date**  `with`  **[[{ac_br}]]({UPSTREAM_REPO_URL}/tree/{ac_br})**\n"
         )
         repo.__del__()
@@ -123,18 +124,18 @@ async def upstream(ups):
         )
         if len(changelog_str) > 4096:
             await ups.edit("`Changelog is too big, view the file to see it.`")
-            file = open("eliza output.txt", "w+")
+            file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
             await ups.client.send_file(
                 ups.chat_id,
-                "eliza output.txt",
+                "changelogs.txt",
                 reply_to=ups.id,
             )
-            remove("eliza output.txt")
+            remove("changelogs.txt")
         else:
-            await ups.edit(changelog_str)
-        await ups.respond(f"Do `{xxxx}update now` to update")
+            await ups.reply(changelog_str)
+        await ups.respond(f"Do `{CMD_HNDLR}update now` to update")
         return
 
     if force_updateme:
@@ -149,7 +150,7 @@ async def upstream(ups):
         heroku_app = None
         heroku_applications = heroku.apps()
         if not Var.HEROKU_APP_NAME:
-            await ups.edit(
+            await ups.reply(
                 "`Please set up the HEROKU_APP_NAME variable to be able to update userbot.`"
             )
             repo.__del__()
@@ -159,13 +160,13 @@ async def upstream(ups):
                 heroku_app = app
                 break
         if heroku_app is None:
-            await ups.edit(
+            await ups.reply(
                 f"{txt}\n`Invalid Heroku credentials for updating userbot dyno.`"
             )
             repo.__del__()
             return
         await ups.edit(
-            "`Userbot build in progress, please wait for it to complete.`"
+            "`Userbot dyno build in progress, please wait for it to complete.`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -183,7 +184,7 @@ async def upstream(ups):
             await ups.edit(f"{txt}\n`Here is the error log:\n{error}`")
             repo.__del__()
             return
-        await ups.edit("`Successfully Updated!\n" "Restarting, please wait...`")
+        await ups.edit("`Successfully Updated Restarting, please wait...`")
     else:
         # Classic Updater, pretty straightforward.
         try:
@@ -191,10 +192,7 @@ async def upstream(ups):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
-        await ups.edit(
-            "`Successfully Updated!\n" "Bot is restarting... Wait for a second!`"
-        )
-        # Spin a new instance of bot
-        args = [sys.executable, "-m", "userbot"]
+        await ups.edit("`Bot is restarting... Wait for 3 minutes!`")
+        args = [sys.executable, "-m", "jarvis"]
         execle(sys.executable, *args, environ)
         return

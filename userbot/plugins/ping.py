@@ -66,7 +66,6 @@ async def _(event):
     ms = (end - start).microseconds / 1000
     await event.edit(
         f"__pong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}]"
-
     )
 
 

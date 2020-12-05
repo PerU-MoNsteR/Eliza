@@ -1,52 +1,63 @@
-import requests , os, re
-from bs4 import BeautifulSoup
-from asyncio import sleep
-from random import choice
-from telethon import events
-from emoji import get_emoji_regexp
-from PIL import Image
-from validators.url import url
-from telethon.tl.types import Channel, PollAnswer
-
+import os
+import re
 import time
 import urllib.request
 import zipfile
+from random import choice
+
 import PIL.ImageOps
 import requests
+from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
+from telethon.tl.types import Channel, PollAnswer
+from validators.url import url
+
 from .resources.states import states
 
 
-async def perumusic(peru , QUALITY):
-  search = peru
-  headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
-  html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
-  soup = BeautifulSoup(html, 'html.parser')
-  for link in soup.find_all('a'):
-    if '/watch?v=' in link.get('href'):
-        # May change when Youtube Website may get updated in the future.
-        video_link = link.get('href') 
-        break
-  video_link =  'http://www.youtube.com/'+video_link
-  command = ('youtube-dl --extract-audio --audio-format mp3 --audio-quality ' + QUALITY + ' ' + video_link)	
-  os.system(command)
+async def perumusic(peru, QUALITY):
+    search = peru
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    }
+    html = requests.get(
+        "https://www.youtube.com/results?search_query=" + search, headers=headers
+    ).text
+    soup = BeautifulSoup(html, "html.parser")
+    for link in soup.find_all("a"):
+        if "/watch?v=" in link.get("href"):
+            # May change when Youtube Website may get updated in the future.
+            video_link = link.get("href")
+            break
+    video_link = "http://www.youtube.com/" + video_link
+    command = (
+        "youtube-dl --extract-audio --audio-format mp3 --audio-quality "
+        + QUALITY
+        + " "
+        + video_link
+    )
+    os.system(command)
 
 
 async def perumusicvideo(peru):
     search = peru
-    headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
-    html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
-    soup = BeautifulSoup(html, 'html.parser')
-    for link in soup.find_all('a'):
-        if '/watch?v=' in link.get('href'):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    }
+    html = requests.get(
+        "https://www.youtube.com/results?search_query=" + search, headers=headers
+    ).text
+    soup = BeautifulSoup(html, "html.parser")
+    for link in soup.find_all("a"):
+        if "/watch?v=" in link.get("href"):
             # May change when Youtube Website may get updated in the future.
-            video_link = link.get('href') 
-            break    
-    video_link =  'http://www.youtube.com/'+video_link
-    command = ('youtube-dl -f "[filesize<20M]" ' +video_link)  
+            video_link = link.get("href")
+            break
+    video_link = "http://www.youtube.com/" + video_link
+    command = 'youtube-dl -f "[filesize<20M]" ' + video_link
     os.system(command)
-    
-    
+
+
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -527,4 +538,7 @@ async def waifutxt(text, chat_id, reply_to_id, bot, borg):
         await bot.send_file(int(chat_id), peru, reply_to=reply_to_id)
         await peru.delete()
 
-    
+
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(EMOJI_PATTERN, "", inputString)

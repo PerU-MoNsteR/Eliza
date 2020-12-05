@@ -1,13 +1,12 @@
 # For @UniBorg
 # (c) Shrimadhav U K
 
-from telethon import events, functions, types
-from ..utils import admin_cmd
-
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
-@borg.on(admin_cmd("listmyusernames"))
+from ..utils import admin_cmd
 
+
+@borg.on(admin_cmd("listmyusernames"))
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())

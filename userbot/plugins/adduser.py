@@ -2,6 +2,7 @@
 Syntax: .edd <User(s)>"""
 
 from telethon import functions
+
 from userbot.utils import admin_cmd
 
 
@@ -17,21 +18,22 @@ async def _(event):
         if not event.is_channel and event.is_group:
             for user_id in to_add_users.split(" "):
                 try:
-                    await borg(functions.messages.AddChatUserRequest(
-                        chat_id=event.chat_id,
-                        user_id=user_id,
-                        fwd_limit=1000000
-                    ))
+                    await borg(
+                        functions.messages.AddChatUserRequest(
+                            chat_id=event.chat_id, user_id=user_id, fwd_limit=1000000
+                        )
+                    )
                 except Exception as e:
                     await event.reply(str(e))
             await event.edit("Added Successfully")
         else:
             for user_id in to_add_users.split(" "):
                 try:
-                    await borg(functions.channels.InviteToChannelRequest(
-                        channel=event.chat_id,
-                        users=[user_id]
-                    ))
+                    await borg(
+                        functions.channels.InviteToChannelRequest(
+                            channel=event.chat_id, users=[user_id]
+                        )
+                    )
                 except Exception as e:
                     await event.reply(str(e))
             await event.edit("ADDED the user to the chat successfully.")

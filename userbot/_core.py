@@ -3,14 +3,14 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from userbot import ALIVE_NAME
-from userbot import bot 
-from userbot.utils import admin_cmd, load_module, remove_plugin, sudo_cmd
+from userbot import ALIVE_NAME, bot
+from userbot.utils import admin_cmd
 from userbot.utils import edit_or_reply as eor
+from userbot.utils import load_module, remove_plugin, sudo_cmd
 
 DELETE_TIMEOUT = 5
-thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DarkCobra"
+thumb_image_path = "./eliza/eliza.jpg"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "eliza"
 
 
 @bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))

@@ -1,0 +1,22 @@
+  
+name: Fix
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "@peru.on"
+          replace: "@borg.on"
+      - name: Create Pull Request
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Replace Uniborg Dependencies'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: PerU-MoNsteR
+          commit_user_email: 71298965+PerU-MoNsteR@users.noreply.github.com
+          commit_author: PerU-MoNsteR <71298965+PerU-MoNsteR@users.noreply.github.com>

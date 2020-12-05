@@ -2,13 +2,12 @@
 Available Commands: .destroy
 by @peru_monster"""
 
-from telethon import events
-
 import asyncio
+
+from telethon import events
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-
 async def _(event):
 
     if event.fwd_from:
@@ -26,9 +25,9 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-        
             "`bot destroying syndrome successfully started!🤖🤖 `",
-            "` user's bot will be destroyed in... 🔥`",            "`10..⚙`",
+            "` user's bot will be destroyed in... 🔥`",
+            "`10..⚙`",
             "`9..⚙`",
             "`8..⚙`",
             "`7..⚙`",
@@ -41,9 +40,8 @@ async def _(event):
             "`🎆`",
             "`🌋`",
             "`B O O M`",
-            "`TARGET USERS BOT IS DESTROYED SUCCESSFULLY😈👿`",]
-            
-            
+            "`TARGET USERS BOT IS DESTROYED SUCCESSFULLY😈👿`",
+        ]
 
         for i in animation_ttl:
 

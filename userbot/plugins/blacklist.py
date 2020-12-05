@@ -6,11 +6,11 @@ Available Commands:
 .addblacklist
 .listblacklist
 .rmblacklist"""
-import asyncio
 import re
+
+from telethon import events
+
 import userbot.plugins.sql_helper.blacklist_sql as sql
-from telethon import events, utils
-from telethon.tl import types, functions
 from userbot.utils import admin_cmd
 
 
@@ -24,7 +24,7 @@ async def on_new_message(event):
         if re.search(pattern, name, flags=re.IGNORECASE):
             try:
                 await event.delete()
-            except Exception as e:
+            except Exception:
                 await event.reply("I do not have DELETE permission in this chat")
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
             break
@@ -33,10 +33,16 @@ async def on_new_message(event):
 @borg.on(admin_cmd("addblacklist ((.|\n)*)"))
 async def on_add_black_list(event):
     text = event.pattern_match.group(1)
-    to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
+    to_blacklist = list(
+        set(trigger.strip() for trigger in text.split("\n") if trigger.strip())
+    )
     for trigger in to_blacklist:
         sql.add_to_blacklist(event.chat_id, trigger.lower())
-    await event.edit("Added {} triggers to the blacklist in the current chat".format(len(to_blacklist)))
+    await event.edit(
+        "Added {} triggers to the blacklist in the current chat".format(
+            len(to_blacklist)
+        )
+    )
 
 
 @borg.on(admin_cmd("listblacklist"))
@@ -57,7 +63,7 @@ async def on_view_blacklist(event):
                 force_document=True,
                 allow_cache=False,
                 caption="BlackLists in the Current Chat",
-                reply_to=event
+                reply_to=event,
             )
             await event.delete()
     else:
@@ -67,7 +73,9 @@ async def on_view_blacklist(event):
 @borg.on(admin_cmd("rmblacklist ((.|\n)*)"))
 async def on_delete_blacklist(event):
     text = event.pattern_match.group(1)
-    to_unblacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
+    to_unblacklist = list(
+        set(trigger.strip() for trigger in text.split("\n") if trigger.strip())
+    )
     successful = 0
     for trigger in to_unblacklist:
         if sql.rm_from_blacklist(event.chat_id, trigger.lower()):

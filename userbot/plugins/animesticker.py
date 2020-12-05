@@ -1,27 +1,10 @@
-#imported from ppe-remix by @heyworld & @DeletedUser420
-#Translated & Updated by @Sur_vivor
-from asyncio import sleep
-from random import choice, getrandbits, randint
-import re
-from re import sub
+# imported from ppe-remix by @heyworld & @DeletedUser420
+# Translated & Updated by @Sur_vivor
 import random
-from os import execl
-import time
-from telethon import events
-from userbot import bot
-from collections import deque
-import requests
-import sys
-import os
-import io
-import html
-import json
-from PIL import ImageEnhance, ImageOps
+import re
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.events import register
-
-
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -35,19 +18,19 @@ EMOJI_PATTERN = re.compile(
     "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
     "\U0001FA00-\U0001FA6F"  # Chess Symbols
     "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-    "\U00002702-\U000027B0"  # Dingbats 
-    "]+")
+    "\U00002702-\U000027B0"  # Dingbats
+    "]+"
+)
 
 
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
-    return re.sub(EMOJI_PATTERN, '', inputString)
+    return re.sub(EMOJI_PATTERN, "", inputString)
 
 
 @register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
-
 async def waifu(animu):
-#"""Creates random anime sticker!"""
+    # """Creates random anime sticker!"""
 
     text = animu.pattern_match.group(1)
     if not text:
@@ -58,15 +41,14 @@ async def waifu(animu):
             return
     animus = [1, 3, 7, 9, 13, 22, 34, 35, 36, 37, 43, 44, 45, 52, 53, 55]
     sticcers = await bot.inline_query(
-        "stickerizerbot", f"#{random.choice(animus)}{(deEmojify(text))}")
-    await sticcers[0].click(animu.chat_id,
-                            reply_to=animu.reply_to_msg_id,
-                            silent=True if animu.is_reply else False,
-                            hide_via=True)
+        "stickerizerbot", f"#{random.choice(animus)}{(deEmojify(text))}"
+    )
+    await sticcers[0].click(
+        animu.chat_id,
+        reply_to=animu.reply_to_msg_id,
+        silent=True if animu.is_reply else False,
+        hide_via=True,
+    )
     await animu.delete()
-    
-    
-    CMD_HELP.update({
-    'waifu':
-    ".waifu : Anime that makes your writing fun."
-})
+
+    CMD_HELP.update({"waifu": ".waifu : Anime that makes your writing fun."})

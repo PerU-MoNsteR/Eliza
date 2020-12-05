@@ -1,4 +1,3 @@
-
 """Download & Upload Images on Telegram\n
 
 Syntax: `.img <Name>` or `.img (replied message)`
@@ -8,23 +7,15 @@ Syntax: `.img <Name>` or `.img (replied message)`
 """
 
 
-
-from userbot.google_imgs import googleimagesdownload
-
 import os
-
 import shutil
-
 from re import findall
 
+from userbot.google_imgs import googleimagesdownload
 from userbot.utils import admin_cmd
 
 
-
-
-
 @borg.on(admin_cmd(pattern="img ?(.*)"))
-
 async def img_sampler(event):
 
     await event.edit("`Processing...`")
@@ -41,11 +32,9 @@ async def img_sampler(event):
 
     else:
 
-    	await event.edit("`um, mind mentioning what I actually need to search for ;_;`")
+        await event.edit("`um, mind mentioning what I actually need to search for ;_;`")
 
-    	return
-
-        
+        return
 
     lim = findall(r"lim=\d+", query)
 
@@ -65,23 +54,14 @@ async def img_sampler(event):
 
     response = googleimagesdownload()
 
-
-
     # creating list of arguments
 
     arguments = {
-
         "keywords": query,
-
         "limit": lim,
-
         "format": "jpg",
-
-        "no_directory": "no_directory"
-
+        "no_directory": "no_directory",
     }
-
-
 
     # passing the arguments to the function
 
@@ -89,7 +69,9 @@ async def img_sampler(event):
 
     lst = paths[0][query]
 
-    await event.client.send_file(await event.client.get_input_entity(event.chat_id), lst)
+    await event.client.send_file(
+        await event.client.get_input_entity(event.chat_id), lst
+    )
 
     shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
 

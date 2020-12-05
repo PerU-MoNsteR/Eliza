@@ -1,17 +1,25 @@
 import os
+
 import requests
 from requests import exceptions, get
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import CMD_HELP
+
+
 def progress(current, total):
     logger.info(
         "Downloaded {} of {}\nCompleted {}".format(
             current, total, (current / total) * 100
         )
     )
+
+
 DOGBIN_URL = "https://del.dog/"
+
+
 @bot.on(admin_cmd(pattern="paste( (.*)|$)", outgoing=True))
 @bot.on(sudo_cmd(pattern="paste( (.*)|$)", allow_sudo=True))
 async def _(event):
@@ -55,6 +63,8 @@ async def _(event):
         await catevent.edit(
             f"**Pasted to dogbin : **[dog]({url})\n**Raw url :** [raw link](https://del.dog/raw/{r['key']})"
         )
+
+
 @bot.on(admin_cmd(pattern="neko( (.*)|$)", outgoing=True))
 @bot.on(sudo_cmd(pattern="neko( (.*)|$)", allow_sudo=True))
 async def _(event):
@@ -111,6 +121,8 @@ async def _(event):
         url = f"https://nekobin.com/{key}"
     reply_text = f"**Pasted to Nekobin : **[neko]({url})\n**Raw url : **[Raw](https://nekobin.com/raw/{key})"
     await catevent.edit(reply_text)
+
+
 @bot.on(admin_cmd(pattern="iffuci( (.*)|$)", outgoing=True))
 @bot.on(sudo_cmd(pattern="iffuci( (.*)|$)", allow_sudo=True))
 async def _(event):
@@ -151,6 +163,8 @@ async def _(event):
         )
     else:
         await catevent.edit("code is pasted to {}".format(url))
+
+
 @bot.on(admin_cmd(outgoing=True, pattern="getpaste( (.*)|$)"))
 @bot.on(sudo_cmd(allow_sudo=True, pattern="getpaste( (.*)|$)"))
 async def get_dogbin_content(dog_url):
@@ -189,6 +203,8 @@ async def get_dogbin_content(dog_url):
         return
     reply_text = "`Fetched dogbin URL content successfully!`\n\n`Content:` " + resp.text
     await catevent.edit(reply_text)
+
+
 @bot.on(admin_cmd(pattern="paster( (.*)|$)", outgoing=True))
 @bot.on(sudo_cmd(pattern="paster( (.*)|$)", allow_sudo=True))
 async def _(event):
@@ -240,6 +256,8 @@ async def _(event):
         await event.client.send_message(
             event.chat_id, response.message, reply_to=previous_message
         )
+
+
 CMD_HELP.update(
     {
         "pastebin": "**Plugin : **`pastebin`\

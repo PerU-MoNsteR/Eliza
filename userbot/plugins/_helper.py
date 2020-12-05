@@ -1,17 +1,22 @@
+from telethon import functions
 
-from userbot import CMD_LIST
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_LIST
 from userbot.utils import admin_cmd
-from platform import uname
-import sys
-from telethon import events, functions, __version__
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@PerU_MoNster"
 
+
 @command(pattern="^.help ?(.*)")
-#@borg.on(admin_cmd(pattern=r"help ?(.*)"))
+# @borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
-    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!", "-", "_"):
+    if not event.text[0].isalpha() and event.text[0] not in (
+        "/",
+        "#",
+        "@",
+        "!",
+        "-",
+        "_",
+    ):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
         if tgbotusername is None or input_str == "text":
@@ -30,10 +35,8 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-
                         caption="**COMMANDS** ELIZA",
-           
-                        reply_to=reply_to_id
+                        reply_to=reply_to_id,
                     )
                     await event.delete()
             else:
@@ -51,16 +54,14 @@ async def cmd_list(event):
             help_string = f"""Userbot Helper.. Provided by {DEFAULTUSER} \n
 `Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
+                tgbotusername, help_string
             )
             await results[0].click(
-                event.chat_id,
-                reply_to=event.reply_to_msg_id,
-                hide_via=True
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
-            
+
+
 @borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -77,7 +78,6 @@ async def _(event):
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @Eliza""")
-
 
 
 @borg.on(admin_cmd(pattern="syntax (.*)"))
