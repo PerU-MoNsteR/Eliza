@@ -139,7 +139,7 @@ async def memes(per):
             os.remove(files)
 
 
-@bot.on(admin_cmd(pattern="cfont (.*)"))
+@bot.on(admin_cmd(pattern="cstyle (.*)"))
 async def lang(event):
     global MY_FONTS
     input_str = event.pattern_match.group(1)
