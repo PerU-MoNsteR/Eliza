@@ -1,14 +1,10 @@
-"""
-# © StarkGang
-added speciality for sudos if u kang give me credits
-"""
+
 import asyncio
 
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 from userbot.utils import admin_cmd
 
 
-# @command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
 @borg.on(admin_cmd(pattern=r"gmute ?(\d+)?"))
 async def startgmute(event):
     private = False
@@ -17,7 +13,7 @@ async def startgmute(event):
     reply = await event.get_reply_message()
     user_id = reply.sender_id
     if user_id == (await borg.get_me()).id:
-        await event.edit(r"Boss!BTW!! Why would I Gmute You. You are my Boss😁!!")
+        await event.edit(r"Boss Why would I Gmute You. You are my Boss!!")
         return
     if user_id in Config.SUDO_USERS:
         await event.edit(
