@@ -1,18 +1,3 @@
-"""Emoji
-
-
-
-Available Commands:
-
-.hack
-
-
-
-by Deonnn
-
-"""
-
-
 import asyncio
 
 from telethon import events
