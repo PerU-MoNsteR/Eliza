@@ -28,7 +28,6 @@ GIT_REPO_NAME = "Eliza"
 UPSTREAM_REPO_URL = "https://github.com/PerU-MoNsteR/Eliza.git"
 
 
-
 async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "On " + "%d/%m/%y" + " at " + "%H:%M:%S"
