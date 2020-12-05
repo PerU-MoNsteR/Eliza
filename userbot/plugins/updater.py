@@ -15,8 +15,8 @@ from . import CMD_HELP, runcmd
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
-UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
-UPSTREAM_REPO_URL = Config.UPSTREAM_REPO_URL
+UPSTREAM_REPO_BRANCH = "master"
+UPSTREAM_REPO_URL = "https://github.com/PerU-MoNsteR/Eliza.git
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
