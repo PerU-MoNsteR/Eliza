@@ -16,6 +16,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from wand.color import Color
 from wand.drawing import Drawing
+from wand.image import Image as perimage
 
 from . import unzip
 
