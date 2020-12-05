@@ -51,9 +51,9 @@ class Development(Var):
   APP_ID = 6
   API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
 ```
-### uniborg Configuration
+#Uniborg Configuration
 
-The uniborg Config is situated in `userbot/uniborgConfig.py`.
+The Uniiborg Config is situated in `userbot/uniborgConfig.py`.
 
 **Heroku Configuration**
 Simply just leave the Config as it is.
