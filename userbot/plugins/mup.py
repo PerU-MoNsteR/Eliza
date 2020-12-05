@@ -36,6 +36,7 @@ def random_color():
         for i in range(number_of_colors)
     ]
 
+
 MY_FONTS = "userbot/helpers/styles/italic.ttf"
 FONTS = "1. `DIGIT.ttf`\n2. `1942.ttf`\n3. `DisposableDroidBB_bld.ttf`\n4. `digital.ttf`\n5. `italic.ttf`"
 font_list = [
@@ -45,7 +46,6 @@ font_list = [
     "digital.ttf",
     "italic.ttf",
 ]
-
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="(mmf|mms) ?(.*)"))
@@ -137,7 +137,8 @@ async def memes(per):
     for files in (persticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
-            
+
+
 @bot.on(admin_cmd(pattern="cfont (.*)"))
 @bot.on(sudo_cmd(pattern="cfont (.*)", allow_sudo=True))
 async def lang(event):
@@ -151,7 +152,6 @@ async def lang(event):
         arg = f"userbot/helpers/styles/{input_str}"
         MY_FONTS = arg
         await edit_or_reply(event, f"**Fonts for Memify changed to :-** `{input_str}`")
-
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="ascii ?(.*)"))
