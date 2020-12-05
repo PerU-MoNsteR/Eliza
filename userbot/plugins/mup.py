@@ -126,7 +126,7 @@ async def memes(per):
     meme_file = convert_toimage(meme_file)
     meme = "permeme.jpg"
     if max(len(top), len(bottom)) < 21:
-        await per_meme(MY__FONTS, top, bottom, meme_file, meme)
+        await per_meme(MY_FONTS, top, bottom, meme_file, meme)
     else:
         await per_meeme(MY_FONTS, top, bottom, meme_file, meme)
     if cmd != "mmf":
