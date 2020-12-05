@@ -231,9 +231,7 @@ async def timer_blankx(e):
         link_preview=True,
     )
 
-    
-    
-      
+
 """
 Available Commands: .destroy
 by @peru_monster"""
