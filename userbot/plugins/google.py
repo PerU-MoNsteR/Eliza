@@ -1,9 +1,4 @@
-""" Powered by @Google
-Available Commands:
-.google search <query>
-.google image <query>
-.google reverse search"""
-
+#plugin by @peru_monster
 import asyncio
 import os
 from datetime import datetime
@@ -23,7 +18,7 @@ def progress(current, total):
     )
 
 
-@borg.on(admin_cmd(pattern="google search (.*)"))
+@borg.on(admin_cmd(pattern="gs (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,7 +48,7 @@ async def _(event):
     await event.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
-@borg.on(admin_cmd(pattern="google image (.*)"))
+@borg.on(admin_cmd(pattern="gi (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -97,7 +92,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="google reverse search"))
+@borg.on(admin_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return
