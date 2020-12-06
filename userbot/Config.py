@@ -203,13 +203,15 @@ class Config((object)):
     ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
     THUMB_IMAGE = os.environ.get(
         "THUMB_IMAGE", "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg"
+        
+else:       
 
-class Production(Config):
-    LOGGER = False
+    class Production(Config):
+        LOGGER = False
 
 
-class Development(Config):
-    LOGGER = True
+    class Development(Config):
+        LOGGER = True
 
     """
     import os
