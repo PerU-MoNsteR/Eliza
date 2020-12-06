@@ -204,8 +204,6 @@ class Config((object)):
     THUMB_IMAGE = os.environ.get(
         "THUMB_IMAGE", "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg"
         
-else:       
-
     class Production(Config):
         LOGGER = False
 
