@@ -200,7 +200,7 @@ async def upstream(event):
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`Eliza is`  has no new updates  `with`  " f"**{UPSTREAM_REPO_BRANCH}**\n"
+            "\n`Eliza has no new updates with`" f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
@@ -257,20 +257,3 @@ async def upstream(event):
     await event.edit("`Deploying Webo branch, please wait....`")
     await deploy(event, repo, ups_rem, ac_br, txt)
 
-
-CMD_HELP.update(
-    {
-        "updater": "**Plugin : **`updater`"
-        "\n\n  •  **Syntax : **`.update`"
-        "\n  •  **Function :** Checks if the main userbot repository has any updates "
-        "and shows a changelog if so."
-        "\n\n  •  **Syntax : **`.update now`"
-        "\n  •  **Function :** Update your userbot, "
-        "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
-        "\n\n  •  **Syntax : **`.update deploy`"
-        "\n  •  **Function :** Deploy your userbot.So even you restart it doesnt go back to previous version"
-        "\nThis will triggered deploy always, even no updates."
-        "\n\n  •  **Syntax : **`.nopm`"
-        "\n  •  **Function :** Shift to webo branch"
-    }
-)
