@@ -204,12 +204,18 @@ class Config((object)):
     THUMB_IMAGE = os.environ.get(
         "THUMB_IMAGE", "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg"
         
-    class Production(Config):
+
+else:
+
+    class Config(object):
+        DB_URI = None
+        # Add your UniBorg Vars Here      
+   """ class Production(Config):
         LOGGER = False
 
 
     class Development(Config):
-        LOGGER = True
+        LOGGER = True"""
 
     """
     import os
