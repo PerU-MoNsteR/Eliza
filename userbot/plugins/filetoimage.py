@@ -1,4 +1,4 @@
-"""COMMAND : .ftoimg 
+"""COMMAND : .filetoimg 
 here file must be in image file """
 import asyncio
 from io import BytesIO
@@ -10,7 +10,7 @@ from telethon.tl.functions.messages import SendMediaRequest
 from userbot import utils
 
 
-@borg.on(utils.admin_cmd(pattern=r"filetoimage"))
+@borg.on(utils.admin_cmd(pattern=r"filetoimg"))
 async def on_file_to_photo(event):
     await event.edit("processing.....")
     await asyncio.sleep(2)
