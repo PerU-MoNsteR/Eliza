@@ -7,6 +7,35 @@ from . import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Webo"
 
 
+@borg.on(admin_cmd("angry"))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 1
+    animation_ttl = range(0, 14)
+
+    # await event.edit(input_str)
+    await event.edit("I am getting angry now")
+    animation_chars = [
+        "😡😡😡",
+        "I am angry with you",
+        "Just shut up",
+        "And RUN Away NOW",
+        "Or else",
+        "I would call CEO of Telegram",
+        "He is my friend warning you",
+        "My friend is also a hacker...",
+        "I would call him if you don't shup up",
+        "🤬🤬Warning you, Don't repeat it again and shup up now...🤬🤬",
+        "🤬🤬🤬🤬🤬",
+    ]
+
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 14])
+
+
+
 @borg.on(admin_cmd(pattern="stupid$"))
 async def _(event):
     if event.fwd_from:
