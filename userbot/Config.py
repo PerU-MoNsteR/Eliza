@@ -205,8 +205,14 @@ class Config((object)):
         "THUMB_IMAGE", "https://telegra.ph/file/0efd913d377fbb66d8a72.jpg"
         
 
-class Config(object):
-    DB_URI = None
+
+class Production(Config):
+    LOGGER = False
+
+
+class Development(Config):
+    LOGGER = True
+
         
         
         # Add your UniBorg Vars Here      
