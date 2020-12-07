@@ -1,7 +1,8 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# Copyright (C) 2020 The Eliza.
+# Licensed under the Eliza;
 # you may not use this file except in compliance with the License.
-# credits to @AvinashReddy3108
+# credits to @peru_monster
+
 import asyncio
 import sys
 from os import environ, execle, path, remove
@@ -200,7 +201,7 @@ async def upstream(event):
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`Eliza has no new updates with`" f"**{UPSTREAM_REPO_BRANCH}**\n"
+            "\n`Eliza has no new updates with  " f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
