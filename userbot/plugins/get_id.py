@@ -36,7 +36,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Bots in this Channel**: \n"
+    mentions = "**Bots in this Group**: \n"
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
