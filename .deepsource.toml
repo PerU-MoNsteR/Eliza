@@ -1,7 +1,7 @@
-version = 1
+version = 3.0
 
 [[analyzers]]
-name = "python"
+name = "python-3.9"
 enabled = true
 dependency_file_paths = ["requirements.txt"]
 
