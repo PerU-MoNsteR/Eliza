@@ -1,6 +1,4 @@
-""".admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-
 from userbot.utils import admin_cmd
 
 
@@ -22,12 +20,7 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
-
-
+    
 @borg.on(admin_cmd("warn2"))
 async def _(event):
     if event.fwd_from:
@@ -47,11 +40,6 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
-
-
 @borg.on(admin_cmd("warn3"))
 async def _(event):
     if event.fwd_from:
@@ -68,12 +56,6 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
-
-
 @borg.on(admin_cmd("warn0"))
 async def _(event):
     if event.fwd_from:
@@ -89,11 +71,6 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
-
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("ocb"))
