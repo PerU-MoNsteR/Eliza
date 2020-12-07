@@ -67,11 +67,7 @@ async def _(event):
     
     
     
- from telethon.tl.types import (
-    ChannelParticipantAdmin,
-    ChannelParticipantCreator,
-    ChannelParticipantsAdmins,
-)
+from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreator, ChannelParticipantsAdmins)
 
 from userbot.utils import admin_cmd
 
