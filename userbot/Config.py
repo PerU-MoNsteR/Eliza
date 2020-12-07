@@ -32,7 +32,14 @@ if ENV:
         # This is required for the hash to torrent file functionality to work.
         HASH_TO_TORRENT_API = os.environ.get(
             "HASH_TO_TORRENT_API", "https://example.com/torrent/{}"
-        )
+        ) 
+        # this should be a valid "regex" pattern
+        COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
+        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r"\.")
+        HELP_INLINETYPE = os.environ.get("HELP_INLINETYPE", None)
+        # specify list of users allowed to use bot
+        # WARNING: be careful who you grant access to your bot.
+        # malicious users could do ".exec rm -rf /*"
         # This is required for the @telegraph functionality.
         TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Eliza")
         # Get a Free API Key from OCR.Space
@@ -96,9 +103,6 @@ if ENV:
         EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", " ")
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
-        CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
-        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "!")
-        # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
         SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
