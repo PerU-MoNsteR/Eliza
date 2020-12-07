@@ -25,6 +25,7 @@ if ENV:
             "SCREEN_SHOT_LAYER_ACCESS_KEY", None
         )
         # string session for running on Heroku
+        PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         # some people upload their session files on GitHub or other third party hosting
         # websites, this might prevent the un-authorized use of the
         # confidential session files
