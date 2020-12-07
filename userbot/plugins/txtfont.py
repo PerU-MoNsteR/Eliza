@@ -3,7 +3,7 @@ import re
 
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-from . import CMD_HELP, fonts
+from . import fonts
 
 
 @bot.on(admin_cmd(pattern="str(?: |$)(.*)"))
@@ -171,7 +171,8 @@ async def stylish_generator(event):
             ]
             string = string.replace(normaltextcharacter, superscriptcharacter)
     await edit_or_reply(event, string)
-    
+
+
 import asyncio
 
 from uniborg.util import admin_cmd
@@ -208,6 +209,3 @@ async def _(event):
         except Exception as e:
             logger.warn(str(e))
         await asyncio.sleep(DELAY_BETWEEN_EDITS)
-
-
-

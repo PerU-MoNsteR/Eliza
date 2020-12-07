@@ -11,7 +11,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-from . import CMD_HELP, runcmd
+from . import runcmd
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
@@ -256,4 +256,3 @@ async def upstream(event):
     ups_rem.fetch(ac_br)
     await event.edit("`Deploying Webo branch, please wait....`")
     await deploy(event, repo, ups_rem, ac_br, txt)
-

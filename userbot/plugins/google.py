@@ -1,4 +1,4 @@
-#plugin by @peru_monster
+# plugin by @peru_monster
 import asyncio
 import os
 from datetime import datetime

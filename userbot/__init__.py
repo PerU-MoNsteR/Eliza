@@ -1,9 +1,9 @@
+import logging
 import os
 import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-import logging
 
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
@@ -12,8 +12,8 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from var import Var
 from userbot.Config import Config
+from var import Var
 
 from .functions import elizafunction as topfunc
 

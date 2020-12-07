@@ -21,7 +21,9 @@ if ENV:
         STRING_SESSION = os.environ.get("STRING_SESSION", None)
         # For Databases
         DB_URI = os.environ.get("DATABASE_URL", None)
-        SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
+        SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get(
+            "SCREEN_SHOT_LAYER_ACCESS_KEY", None
+        )
         # string session for running on Heroku
         # some people upload their session files on GitHub or other third party hosting
         # websites, this might prevent the un-authorized use of the
@@ -202,6 +204,7 @@ if ENV:
         # can get from https://coffeehouse.intellivoid.net/
         LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
         CHANGE_TIME = int(os.environ.get("CHANGE_TIME", 60))
+
 
 else:
 

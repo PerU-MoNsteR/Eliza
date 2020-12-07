@@ -27,8 +27,8 @@ async def _(event):
             )
     else:
         await event.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
-        
-        
+
+
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 
 from userbot.utils import admin_cmd
@@ -64,10 +64,13 @@ async def _(event):
     except Exception as e:
         mentions += " " + str(e) + "\n"
     await event.edit(mentions)
-    
-    
-    
-from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreator, ChannelParticipantsAdmins)
+
+
+from telethon.tl.types import (
+    ChannelParticipantAdmin,
+    ChannelParticipantCreator,
+    ChannelParticipantsAdmins,
+)
 
 from userbot.utils import admin_cmd
 
