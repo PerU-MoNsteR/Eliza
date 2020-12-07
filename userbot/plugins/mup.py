@@ -7,7 +7,6 @@ import os
 import random
 
 from userbot import (
-    CMD_HELP,
     LOGS,
     add_frame,
     asciiart,
