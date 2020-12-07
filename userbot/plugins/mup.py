@@ -1,5 +1,5 @@
 """
-modified by by @peru_monster and imported from catuserbot
+modified by by @peru_monster and imported from sandy1709
 memify plugin
 """
 import asyncio
@@ -38,13 +38,16 @@ def random_color():
 
 
 MY_FONTS = "userbot/helpers/styles/italic.ttf"
-FONTS = "1. `DIGIT.ttf`\n2. `1942.ttf`\n3. `DisposableDroidBB_bld.ttf`\n4. `digital.ttf`\n5. `italic.ttf`"
+FONTS = "1. `DIGIT.ttf`\n2. `1942.ttf`\n3. `DisposableDroidBB_bld.ttf`\n4. `digital.ttf`\n5. `italic.ttf`\n6. `monof55.ttf`\n7. `symbol.ttf`\n8. `RoadRage-Regular.ttf`"
 font_list = [
     "DIGIT.ttf",
     "1942.ttf",
     "DisposableDroidBB_bld.ttf",
     "digital.ttf",
     "italic.ttf",
+    "monof55.ttf",
+    "symbol.ttf",
+    "RoadRage-Regular.ttf",
 ]
 
 
@@ -308,7 +311,7 @@ async def memes(per):
             os.remove(files)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="solarize$"))
+@bot.on(admin_cmd(outgoing=True, pattern="solar$"))
 async def memes(per):
     reply = await per.get_reply_message()
     if not (reply and (reply.media)):
@@ -356,7 +359,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha solarizeing this video! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -367,7 +370,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha solarizeing this image! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video!! (」ﾟﾛﾟ)｣```"
         )
         meme_file = persticker
     try:
@@ -412,7 +415,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to mirror image of this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -426,7 +429,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to mirror image of this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -437,7 +440,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to mirror image of this video! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -448,7 +451,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to mirror image of this image! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this image! (」ﾟﾛﾟ)｣```"
         )
         meme_file = persticker
     try:
@@ -493,7 +496,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -507,7 +510,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -813,32 +816,3 @@ async def memes(per):
     for files in (persticker, meme_file):
         if files and os.path.exists(files):
             os.remove(files)
-
-
-CMD_HELP.update(
-    {
-        "memify": "**Plugin : **`memify`\
-    \n\n**Syntax :** `.mmf toptext ; bottomtext`\
-    \n**Function : **Creates a image meme with give text at specific locations and sends\
-    \n\n**Syntax : **`.mms toptext ; bottomtext`\
-    \n**Function : **Creates a sticker meme with give text at specific locations and sends\
-    \n\n**Syntax : **`.ascii`\
-    \n**Function : **reply to media file to get ascii image of that media\
-    \n\n**Syntax : **`.invert`\
-    \n**Function : **Inverts the colors in media file\
-    \n\n**Syntax : **`.solarize`\
-    \n**Function : **Watch sun buring ur media file\
-    \n\n**Syntax : **`.mirror`\
-    \n**Function : **shows you the reflection of the media file\
-    \n\n**Syntax : **`.flip`\
-    \n**Function : **shows you the upside down image of the given media file\
-    \n\n**Syntax : **`.gray`\
-    \n**Function : **makes your media file to black and white\
-    \n\n**Syntax : **`.zoom` or `.zoom range`\
-    \n**Function : **zooms your media file\
-    \n\n**Syntax : **`.frame` or `.frame range` or `.frame range ; fill`\
-    \n**Function : **make a frame for your media file\
-    \n**fill:** This defines the pixel fill value or color value to be applied. The default value is 0 which means the color is black.\
-    "
-    }
-)
