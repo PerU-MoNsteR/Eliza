@@ -35,7 +35,6 @@ async def _(event):
         await event.edit(animation_chars[i % 14])
 
 
-
 @borg.on(admin_cmd(pattern="stupid$"))
 async def _(event):
     if event.fwd_from:
