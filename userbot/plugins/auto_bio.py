@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd, eor, sudo_cmd
 DEL_TIME_OUT = 60
 
 
-@borg.on(admin_cmd(pattern="autobio"))  
+@borg.on(admin_cmd(pattern="autobio"))
 @borg.on(sudo_cmd(pattern="bio", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
