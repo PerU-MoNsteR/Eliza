@@ -4,9 +4,10 @@ Available Commands:
 .tr LangaugeCode | text to translate"""
 
 import emoji
-from userbot.utils import admin_cmd, eor, sudo_cmd
-
 from googletrans import Translator
+
+from userbot.utils import admin_cmd, eor
+
 
 @borg.on(admin_cmd("tr ?(.*)"))
 async def _(event):
