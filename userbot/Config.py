@@ -177,31 +177,31 @@ if ENV:
         # SpamWatch, CAS, SpamProtection ban Needed or not
         ANTISPAMBOT_BAN = os.environ.get("ANTISPAMBOT_BAN", False)
         # Deepai value can get from https://deepai.org/
-         DEEP_AI = os.environ.get("DEEP_AI", None)
-          # For custom stickerpack names
-         CUSTOM_STICKER_PACKNAME = os.environ.get("CUSTOM_STICKER_PACKNAME", None)
-         # Owner id to show profile link of given id as owner
-         OWNER_ID = os.environ.get("OWNER_ID", None)
-         if OWNER_ID:
-             OWNER_ID = int(OWNER_ID)
-         # Last.fm plugin
-         BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-         DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
-         LASTFM_API = os.environ.get("LASTFM_API", None)
-         LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
-         LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
-         LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
-         # time.py
-         COUNTRY = str(os.environ.get("COUNTRY", ""))
-         TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-         #  for updater plugin
-         UPSTREAM_REPO_URL = os.environ.get(
-             "UPSTREAM_REPO_URL", "https://github.com/PerU-MoNsteR/Eliza.git"
-         )
-         UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
-         # can get from https://coffeehouse.intellivoid.net/
-         LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
-         CHANGE_TIME = int(os.environ.get("CHANGE_TIME", 60))
+        DEEP_AI = os.environ.get("DEEP_AI", None)
+        # For custom stickerpack names
+        CUSTOM_STICKER_PACKNAME = os.environ.get("CUSTOM_STICKER_PACKNAME", None)
+        # Owner id to show profile link of given id as owner
+        OWNER_ID = os.environ.get("OWNER_ID", None)
+        if OWNER_ID:
+            OWNER_ID = int(OWNER_ID)
+        # Last.fm plugin
+        BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
+        DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
+        LASTFM_API = os.environ.get("LASTFM_API", None)
+        LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
+        LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
+        LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
+        # time.py
+        COUNTRY = str(os.environ.get("COUNTRY", ""))
+        TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
+        #  for updater plugin
+        UPSTREAM_REPO_URL = os.environ.get(
+            "UPSTREAM_REPO_URL", "https://github.com/PerU-MoNsteR/Eliza.git"
+        )
+        UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
+        # can get from https://coffeehouse.intellivoid.net/
+        LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
+        CHANGE_TIME = int(os.environ.get("CHANGE_TIME", 60))
 
 else:
 
