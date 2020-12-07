@@ -12,7 +12,7 @@ from userbot.utils import admin_cmd
 
 BIO_MSG = Config.BIO_MSG
 if BIO_MSG is None:
-    BIO_MSG = "I am a pro @eliza_support"
+    BIO_MSG = "I am a pro @elizasupport01"
 
 DEL_TIME_OUT = 60
 
