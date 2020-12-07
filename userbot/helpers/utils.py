@@ -16,7 +16,7 @@ from telethon import events
 from userbot import CMD_LIST, LOAD_PLUG, bot
 from var import Var
 
-from ..Config import Config
+from .Config import Config
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
