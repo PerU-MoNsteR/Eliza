@@ -274,7 +274,7 @@ def errors_handler(func):
             new = {"error": str(sys.exc_info()[1]), "date": datetime.datetime.now()}
 
             text = "**USERBOT CRASH REPORT**\n\n"
-            link = "[here](https://t.me/Eliza_support)"
+            link = "[here](https://t.me/Elizasupport01)"
             text += "If you wanna you can report it"
             text += f"- just forward here {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
@@ -555,7 +555,7 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"juserbot/plugins/assistant/{shortname}.py")
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
