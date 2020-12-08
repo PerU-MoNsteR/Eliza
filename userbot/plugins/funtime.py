@@ -15,7 +15,7 @@ async def hmm(web):
 
 
 @borg.on(admin_cmd(pattern="why$"))
-async def hmm(cat):
+async def hmm(web):
     if web.fwd_from:
         return
     whyweb = nekos.why()
@@ -24,7 +24,7 @@ async def hmm(cat):
 
 @bot.on(admin_cmd(pattern="fact$"))
 @bot.on(sudo_cmd(pattern="fact$", allow_sudo=True))
-async def hmm(cat):
+async def hmm(web):
     if web.fwd_from:
         return
     factweb = nekos.fact()
