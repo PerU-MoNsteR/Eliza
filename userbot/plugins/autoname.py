@@ -10,7 +10,7 @@ from uniborg.util import admin_cmd
 from userbot import ALIVE_NAME
 
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FRIDAY"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Eliza"
 
 
 @borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
@@ -20,7 +20,7 @@ async def _(event):
     while True:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        name = f"⌚{HM} 🔥{DEFAULTUSER}🔥 📅{DMY}"
+        name = f"⌚{HM} {DEFAULTUSER} 📅{DMY}"
         logger.info(name)
         try:
             await borg(
