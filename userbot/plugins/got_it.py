@@ -215,10 +215,8 @@ async def _(event):
     if x == 40:
 
         await event.edit('`"I wish I was the monster you think I am!"`')
-        
-        
-        
- 
+
+
 @borg.on(admin_cmd(pattern=r"gotm"))
 async def _(event):
 
@@ -441,4 +439,3 @@ async def _(event):
             "[For that friend of yours who does not like loud music and head banging...](https://telegra.ph/file/acbce070d3c52b921b2bd.jpg)",
             link_preview=True,
         )
-
