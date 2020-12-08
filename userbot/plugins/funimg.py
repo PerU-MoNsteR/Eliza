@@ -132,9 +132,7 @@ async def dc(event):
     r = requests.get(hehe)
     open("peru.png", "wb").write(r.content)
     hehe = "peru.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Done", reply_to=dc
-    )
+    await borg.send_file(event.chat_id, hehe, caption="Done", reply_to=dc)
     for files in (hehe, img):
         if files and os.path.exists(files):
             os.remove(files)
@@ -245,9 +243,7 @@ async def dc(event):
     r = requests.get(hehe)
     open("peru.png", "wb").write(r.content)
     hehe = "speru.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="see ", reply_to=dc
-    )
+    await borg.send_file(event.chat_id, hehe, caption="see ", reply_to=dc)
     for files in (hehe, img):
         if files and os.path.exists(files):
             os.remove(files)
