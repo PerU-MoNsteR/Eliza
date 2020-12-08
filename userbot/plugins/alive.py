@@ -7,7 +7,7 @@ PM_IMG = "https://telegra.ph/file/ced30b3600c5a4e6b2d8a.jpg"
 
 pm_caption = " Eliza is Ready to Rock \n\n"
 
-pm_caption += "System Status\n"   
+pm_caption += "System Status\n"
 
 pm_caption += f" **••Mу Bσѕѕ••**      :   {DEFAULTUSER}\n"
 
