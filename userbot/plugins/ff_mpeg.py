@@ -4,8 +4,8 @@ import asyncio
 import os
 import time
 from datetime import datetime
-
-from userbot.importprogress import reply_id
+from userbot.import media_type
+from userbot.import progress, reply_id
 from userbot.utils import admin_cmd
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/Eliza.media.ffmpeg"
@@ -33,11 +33,11 @@ async def ff_mpeg_trim_cmd(event):
                     ),
                 )
             except Exception as e:
-                await catevent.edit(str(e))
+                await noobevent.edit(str(e))
             else:
                 end = datetime.now()
                 ms = (end - start).seconds
-                await catevent.edit(
+                await noobevent.edit(
                     f"Saved file to `{downloaded_file_name}` in `{ms}` seconds."
                 )
         else:
