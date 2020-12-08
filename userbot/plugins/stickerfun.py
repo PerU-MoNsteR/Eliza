@@ -9,10 +9,11 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
-from . import bot
+
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import deEmojify, waifutxt
+from userbot.utils import admin_cmd, edit_or_reply
+
+from . import bot, deEmojify, waifutxt
 
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
