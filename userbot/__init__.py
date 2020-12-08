@@ -12,7 +12,7 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from userbot.Config import Config
+from .Config import Config
 from var import Var
 
 from .functions import elizafunction as topfunc
