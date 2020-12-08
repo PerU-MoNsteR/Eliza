@@ -1,9 +1,9 @@
-#idea from sandy
-#base by peru_monster
+# idea from sandy
+# base by peru_monster
 import nekos
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="tques$"))
