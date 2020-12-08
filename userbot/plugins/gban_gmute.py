@@ -13,7 +13,7 @@ async def gmute(userbot):
     else:
         friday = await lol.edit("Oh ! Wait Let Me Try")
     me = await userbot.client.get_me()
-    await friday.edit(f"Gmuting This Nigga")
+    await friday.edit(f"Gmuting....")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -31,10 +31,10 @@ async def gmute(userbot):
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit("**This Plugin Can't Work On P.V.T chats ! **")
+        return await friday.edit("**This Plugin Can't Work On private chats ! **")
     if user:
         if user.id == 1263617196:
-            return await friday.edit("**You Can't GMUTE a Dev**")
+            return await friday.edit("**You Can't GMUTE a admin**")
         try:
             from userbot.modules.sql_helper.globelmute_sql import globelmute
         except:
@@ -81,7 +81,7 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit(f"**This Plugin Won't Work In Pvt Groups / Chats?**")
+        return await friday.edit(f"This Plugin Won't Work In Pvt Groups / Chats?")
     if not user:
         return await friday.edit(f" **Reply to a user To Ungmute !**")
     try:
@@ -155,7 +155,7 @@ async def gspider(userbot):
     except:
         pass
     return await friday.edit(
-        f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
+        f"Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} "
     )
 
 
