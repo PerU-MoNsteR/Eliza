@@ -5,9 +5,8 @@ import os
 import time
 from datetime import datetime
 
+from userbot.importmedia_type import progress, reply_id
 from userbot.utils import admin_cmd
-
-from userbot.import media_type, progress, reply_id
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/Eliza.media.ffmpeg"
 
