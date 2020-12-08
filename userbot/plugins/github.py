@@ -11,8 +11,9 @@ from datetime import datetime
 import requests
 from github import Github
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import CMD_HELP, reply_id
+from userbot.utils import admin_cmd, edit_or_reply
+
+from . import reply_id
 
 GIT_TEMP_DIR = "./temp/"
 
