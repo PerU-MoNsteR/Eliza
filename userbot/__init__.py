@@ -12,9 +12,9 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
+from userbot.Config import Config
 from var import Var
 
-from userbot.Config import Config
 from .functions import elizafunction as topfunc
 
 StartTime = time.time()
