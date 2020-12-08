@@ -15,7 +15,7 @@ if not os.path.isdir(pathdc):
 @bot.on(admin_cmd(pattern=r"trig"))
 @bot.on(sudo_cmd(pattern=r"trig", allow_sudo=True))
 async def dc(event):
-    await event.edit("Making this image triggered")
+    await event.edit("triggering...")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -30,7 +30,7 @@ async def dc(event):
     r = requests.get(hmm)
     open("peru.gif", "wb").write(r.content)
     hehe = "peru.gif"
-    await borg.send_file(event.chat_id, hehe, caption="Got Triggered ", reply_to=dc)
+    await borg.send_file(event.chat_id, hehe, caption="Triggered master ", reply_to=dc)
     for files in (hehe, img):
         if files and os.path.exists(files):
             os.remove(files)
@@ -40,7 +40,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"wst"))
 @bot.on(sudo_cmd(pattern=r"wst", allow_sudo=True))
 async def dc(event):
-    await event.edit("Making this image triggered")
+    await event.edit("Making wasted image")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -55,7 +55,7 @@ async def dc(event):
     r = requests.get(hmm)
     open("peru.png", "wb").write(r.content)
     hehe = "peru.png"
-    await borg.send_file(event.chat_id, hehe, caption="Totally wasted", reply_to=dc)
+    await borg.send_file(event.chat_id, hehe, caption="now made wasted", reply_to=dc)
     for files in (hehe, img):
         if files and os.path.exists(files):
             os.remove(files)
@@ -65,7 +65,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"grey"))
 @bot.on(sudo_cmd(pattern=r"grey", allow_sudo=True))
 async def dc(event):
-    await event.edit("Stealing Color from this ")
+    await event.edit("Stealing colour ... ")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -81,7 +81,7 @@ async def dc(event):
     open("peru.png", "wb").write(r.content)
     hehe = "peru.png"
     await borg.send_file(
-        event.chat_id, hehe, caption="Ur Black nd White img here ", reply_to=dc
+        event.chat_id, hehe, caption="Stealed colours master ", reply_to=dc
     )
     for files in (hehe, img):
         if files and os.path.exists(files):
@@ -92,7 +92,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"blur"))
 @bot.on(sudo_cmd(pattern=r"blur", allow_sudo=True))
 async def dc(event):
-    await event.edit("Bluring Image")
+    await event.edit("Bluring...")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -105,9 +105,9 @@ async def dc(event):
     link = f"https://telegra.ph{url[0]}"
     hehe = f"https://some-random-api.ml/canvas/blur?avatar={link}"
     r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(event.chat_id, hehe, caption="Blured ", reply_to=dc)
+    open("peru.png", "wb").write(r.content)
+    hehe = "peru.png"
+    await borg.send_file(event.chat_id, hehe, caption="Blured master ", reply_to=dc)
     for files in (hehe, img):
         if files and os.path.exists(files):
             os.remove(files)
@@ -117,7 +117,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"invert"))
 @bot.on(sudo_cmd(pattern=r"invert", allow_sudo=True))
 async def dc(event):
-    await event.edit("Inverting Image")
+    await event.edit("Inverting ...")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -133,7 +133,7 @@ async def dc(event):
     open("peru.png", "wb").write(r.content)
     hehe = "peru.png"
     await borg.send_file(
-        event.chat_id, hehe, caption="Hmm  try to invert again", reply_to=dc
+        event.chat_id, hehe, caption="Done", reply_to=dc
     )
     for files in (hehe, img):
         if files and os.path.exists(files):
@@ -144,7 +144,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"igrey"))
 @bot.on(sudo_cmd(pattern=r"igery", allow_sudo=True))
 async def dc(event):
-    await event.edit("Don't know what i'm doing ")
+    await event.edit("grey?? ")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -169,7 +169,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"bright"))
 @bot.on(sudo_cmd(pattern=r"bright", allow_sudo=True))
 async def dc(event):
-    await event.edit("Adding Brightness ")
+    await event.edit("Brightness??? ")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -185,7 +185,7 @@ async def dc(event):
     open("peru.png", "wb").write(r.content)
     hehe = "peru.png"
     await borg.send_file(
-        event.chat_id, hehe, caption="Brightness increased ", reply_to=dc
+        event.chat_id, hehe, caption="Brightness is high now ", reply_to=dc
     )
     for files in (hehe, img):
         if files and os.path.exists(files):
@@ -230,7 +230,7 @@ async def hehe(event):
 @bot.on(admin_cmd(pattern=r"glass"))
 @bot.on(sudo_cmd(pattern=r"glass", allow_sudo=True))
 async def dc(event):
-    await event.edit("Framing image under Glass ")
+    await event.edit("Framing.. ")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -246,7 +246,7 @@ async def dc(event):
     open("peru.png", "wb").write(r.content)
     hehe = "speru.png"
     await borg.send_file(
-        event.chat_id, hehe, caption="Wow Image Trapped Under the glass ", reply_to=dc
+        event.chat_id, hehe, caption="see ", reply_to=dc
     )
     for files in (hehe, img):
         if files and os.path.exists(files):
@@ -257,7 +257,7 @@ async def dc(event):
 @bot.on(admin_cmd(pattern=r"blr"))
 @bot.on(sudo_cmd(pattern=r"blr", allow_sudo=True))
 async def dc(event):
-    await event.edit("Bluring Image")
+    await event.edit("Bluring Image...")
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
         img = await borg.download_media(dc.media, pathdc)
@@ -282,17 +282,17 @@ async def dc(event):
 CMD_HELP.update(
     {
         "imagefun": "__**PLUGIN NAME :** Image Fun _\
-    \n\n📌** CMD ★** `.trig (reply to image)`\
+    \n\n** CMD ★** `.trig (reply to image)`\
     \n**USAGE   ★  **Makes a Triggered Gif\
-    \n\n📌** CMD ★** `.wst(reply to image)`\
+    \n\n** CMD ★** `.wst(reply to image)`\
     \n**USAGE   ★  **Show A Wasted Image \
-    \n\n📌** CMD ★** `.grey(reply to image)`\
+    \n\n** CMD ★** `.grey(reply to image)`\
     \n**USAGE   ★  **Convert Colour image to Black nd white\
-    \n\n📌** CMD ★** `.ytc (Name).(text)(reply to image)`\
+    \n\n** CMD ★** `.ytc (Name).(text)(reply to image)`\
     \n**USAGE   ★  **Show A Youtube Comment of ur repled img and typed name. (note :- that dot . in middle is important)\
-    \n\n📌** CMD ★** `.invert`\
+    \n\n** CMD ★** `.invert`\
     \n**USAGE   ★  **Create a Negative image to return it back to normal use .invert again\
-    \n\n📌** CMD ★** `.blur / .igrey /.bright / .glass / .blr` \
+    \n\n** CMD ★** `.blur / .igrey /.bright / .glass / .blr` \
     \ncheck them on ur own \
     \n(note:- it work only on images, u can use .stoi to convert a sticker info image then u can use)"
     }
