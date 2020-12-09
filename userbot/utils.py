@@ -583,6 +583,7 @@ async def eor(event, text):
         return await event.reply(text)
     return await event.edit(text)
 
+
 def media_type(message):
     if message and message.photo:
         media = "Photo"
