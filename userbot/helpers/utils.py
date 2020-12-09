@@ -490,6 +490,7 @@ async def get_user_from_event(event, secondgroup=None):
             return None, None
     return user_obj, extra
 
+
 def install_pip(pipfile):
     process = Popen(["pip", "install", f"{pipfile}"], stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
