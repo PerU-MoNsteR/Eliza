@@ -23,7 +23,7 @@ auth_url = r["auth_url"]
 async def _(event):
     if event.fwd_from:
         return
-    catevent = await edit_or_reply(event, "`processing........`")
+    webevent = await edit_or_reply(event, "`processing........`")
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
     if BOTLOG:
@@ -44,7 +44,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await catevent.edit(
+            await webevent.edit(
                 f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
             )
             if downloaded_file_name.endswith((".webp")):
@@ -53,13 +53,13 @@ async def _(event):
                 start = datetime.now()
                 media_urls = upload_file(downloaded_file_name)
             except exceptions.TelegraphException as exc:
-                await catevent.edit("**Error : **" + str(exc))
+                await webevent.edit("**Error : **" + str(exc))
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await catevent.edit(
+                await webevent.edit(
                     "**Uploaded  [here](https://telegra.ph{})\
                     \n** In {} seconds **.\n**Uploaded by :-** {}".format(
                         media_urls[0], (ms + ms_two), (mention)
@@ -90,13 +90,13 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             cat = f"https://telegra.ph/{response['path']}"
-            await catevent.edit(
+            await webevent.edit(
                 f"**➥ Pasted to :-** [Telegraph]({cat})\
                  \n**➥ Pasted in {ms} seconds .**",
                 link_preview=True,
             )
     else:
-        await catevent.edit(
+        await webevent.edit(
             "`Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)`",
         )
 

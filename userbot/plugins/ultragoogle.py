@@ -27,7 +27,7 @@ opener.addheaders = [("User-agent", useragent)]
 
 @bot.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
 async def gsearch(q_event):
-    catevent = await edit_or_reply(q_event, "`searching........`")
+    webevent = await edit_or_reply(q_event, "`searching........`")
     match = q_event.pattern_match.group(1)
     page = re.findall(r"page=\d+", match)
     try:
@@ -48,7 +48,7 @@ async def gsearch(q_event):
             msg += f"👉[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await catevent.edit(
+    await webevent.edit(
         "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
     )
     if BOTLOG:
@@ -65,7 +65,7 @@ async def _(event):
     start = datetime.now()
     OUTPUT_STR = "Reply to an image to do Google Reverse Search"
     if event.reply_to_msg_id:
-        catevent = await edit_or_reply(event, "Pre Processing Media")
+        webevent = await edit_or_reply(event, "Pre Processing Media")
         previous_message = await event.get_reply_message()
         previous_message_text = previous_message.message
         BASE_URL = "http://www.google.com"
@@ -93,7 +93,7 @@ async def _(event):
             request_url = SEARCH_URL.format(BASE_URL, previous_message_text)
             google_rs_response = requests.get(request_url, allow_redirects=False)
             the_location = google_rs_response.headers.get("Location")
-        await catevent.edit("Found Google Result. Pouring some soup on it!")
+        await webevent.edit("Found Google Result. Pouring some soup on it!")
         headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
         }
@@ -115,7 +115,7 @@ async def _(event):
 <i>fetched in {ms} seconds</i>""".format(
             **locals()
         )
-    await catevent.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
+    await webevent.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
 @bot.on(admin_cmd(pattern=r"reverse(?: |$)(\d*)", outgoing=True))
@@ -131,11 +131,11 @@ async def _(img):
         await edit_or_reply(img, "`Reply to photo or sticker nigger.`")
         return
     if photo:
-        catevent = await edit_or_reply(img, "`Processing...`")
+        webevent = await edit_or_reply(img, "`Processing...`")
         try:
             image = Image.open(photo)
         except OSError:
-            await catevent.edit("`Unsupported , most likely.`")
+            await webevent.edit("`Unsupported , most likely.`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -151,16 +151,16 @@ async def _(img):
                 "\n`Parsing source now. Maybe.`"
             )
         else:
-            await catevent.edit("`Google told me to fuck off.`")
+            await webevent.edit("`Google told me to fuck off.`")
             return
         os.remove(name)
         match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
         guess = match["best_guess"]
         imgspage = match["similar_images"]
         if guess and imgspage:
-            await catevent.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
+            await webevent.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
         else:
-            await catevent.edit("`Can't find this piece of shit.`")
+            await webevent.edit("`Can't find this piece of shit.`")
             return
 
         lim = img.pattern_match.group(1) or 3
@@ -177,7 +177,7 @@ async def _(img):
             )
         except TypeError:
             pass
-        await catevent.edit(
+        await webevent.edit(
             f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})"
         )
 
