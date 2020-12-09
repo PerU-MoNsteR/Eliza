@@ -15,7 +15,7 @@ from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
+from telethon.utils import get_input_lowebion
 
 from . import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
 from ..utils import admin_cmd, edit_or_reply
@@ -40,7 +40,7 @@ async def _(event):
     # inspired by https://telegram.dog/afsaI181
     common_chats = replied_user.common_chats_count
     try:
-        dc_id, location = get_input_location(replied_user.profile_photo)
+        dc_id, lowebion = get_input_lowebion(replied_user.profile_photo)
     except:
         dc_id = "Couldn't fetch DC ID!"
     try:
@@ -114,7 +114,7 @@ async def get_full_user(event):
 
 @borg.on(admin_cmd(pattern="whois(?: |$)(.*)"))
 async def who(event):
-    cat = await edit_or_reply(
+    web = await edit_or_reply(
         event, "`Sit tight while I steal some data from This guuyyy...`"
     )
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -140,9 +140,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await cat.delete()
+        await web.delete()
     except TypeError:
-        await cat.edit(caption, parse_mode="html")
+        await web.edit(caption, parse_mode="html")
 
 
 async def get_user(event):
@@ -188,7 +188,7 @@ async def fetch_info(replied_user, event):
     first_name = replied_user.user.first_name
     last_name = replied_user.user.last_name
     try:
-        dc_id, location = get_input_location(replied_user.profile_photo)
+        dc_id, lowebion = get_input_lowebion(replied_user.profile_photo)
     except:
         dc_id = "Couldn't fetch DC ID!"
     common_chat = replied_user.common_chats_count

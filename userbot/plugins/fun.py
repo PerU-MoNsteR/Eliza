@@ -78,7 +78,7 @@ INSULT_STRINGS = [
     "`Go Green! Stop inhaling Oxygen.`",
     "`God was searching for you. You should leave to meet him.`",
     "`You should Volunteer for target in an firing range.`",
-    "`Try playing catch and throw with RDX its fun.`",
+    "`Try playing webch and throw with RDX its fun.`",
     "`People like you are the reason we have middle fingers.`",
     "`When your mom dropped you off at the school, she got a ticket for littering.`",
     "`You’re so ugly that when you cry, the tears roll down the back of your head…just to avoid your face.`",

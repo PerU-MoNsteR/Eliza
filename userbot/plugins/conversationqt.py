@@ -175,12 +175,12 @@ async def _(event):
     if x == 28:
 
         await event.edit(
-            '`"What are some good and bad things about the education system in your country?"`'
+            '`"What are some good and bad things about the eduwebion system in your country?"`'
         )
 
     if x == 29:
 
-        await event.edit('`"What do you think of online education?"`')
+        await event.edit('`"What do you think of online eduwebion?"`')
 
     if x == 30:
 
@@ -303,7 +303,7 @@ async def _(event):
     if x == 55:
 
         await event.edit(
-            '`"What is the most important change that should be made to your country’s education system?"`'
+            '`"What is the most important change that should be made to your country’s eduwebion system?"`'
         )
 
     if x == 56:

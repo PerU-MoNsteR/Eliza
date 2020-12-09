@@ -111,7 +111,7 @@ def load_module(shortname):
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
+        spec = importlib.util.spec_from_file_lowebion(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Successfully (re)imported " + shortname)
@@ -124,7 +124,7 @@ def load_module(shortname):
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
+        spec = importlib.util.spec_from_file_lowebion(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
         mod.tgbot = bot.tgbot
@@ -317,7 +317,7 @@ def errors_handler(func):
             process = await asyncio.create_subprocess_shell(
                 command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
             )
-            stdout, stderr = await process.communicate()
+            stdout, stderr = await process.communiwebe()
             result = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             ftext += result

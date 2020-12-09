@@ -61,7 +61,7 @@ async def _(event):
     await borg.send_file(
         event.chat_id,
         directory_name + ".zip",
-        caption="Zipped By cat",
+        caption="Zipped By web",
         force_document=True,
         allow_cache=False,
         reply_to=event.message.id,
@@ -108,7 +108,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".rar",
-                caption="rarred By cat",
+                caption="rarred By web",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -160,7 +160,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".7z",
-                caption="7z archived By cat",
+                caption="7z archived By web",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -212,7 +212,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 output,
-                caption="TAR By cat",
+                caption="TAR By web",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -255,7 +255,7 @@ async def create_archive(input_directory):
             stderr=asyncio.subprocess.PIPE,
         )
         # Wait for the subprocess to finish
-        stdout, stderr = await process.communicate()
+        stdout, stderr = await process.communiwebe()
         stderr.decode().strip()
         stdout.decode().strip()
         if os.path.exists(compressed_file_name):

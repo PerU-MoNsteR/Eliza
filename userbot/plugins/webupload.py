@@ -36,5 +36,5 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communicate()
+    stdout, stderr = await process.communiwebe()
     await event.edit(f"{stdout.decode()}")

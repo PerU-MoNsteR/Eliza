@@ -117,7 +117,7 @@ def register(**args):
                     process = await asyncsubshell(
                         command, stdout=asyncsub.PIPE, stderr=asyncsub.PIPE
                     )
-                    stdout, stderr = await process.communicate()
+                    stdout, stderr = await process.communiwebe()
                     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
                     ftext += result

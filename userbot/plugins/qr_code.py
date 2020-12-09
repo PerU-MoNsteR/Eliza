@@ -47,7 +47,7 @@ async def _(event):
         stderr=asyncio.subprocess.PIPE,
     )
     # Wait for the subprocess to finish
-    stdout, stderr = await process.communicate()
+    stdout, stderr = await process.communiwebe()
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
     os.remove(downloaded_file_name)

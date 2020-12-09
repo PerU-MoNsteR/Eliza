@@ -108,7 +108,7 @@ async def _(event):
     if x == 16:
 
         await event.edit(
-            '`"200 years ago, people would never have guessed that humans in the future would communicate by silently tapping on glass."`'
+            '`"200 years ago, people would never have guessed that humans in the future would communiwebe by silently tapping on glass."`'
         )
 
     if x == 17:
@@ -206,7 +206,7 @@ async def _(event):
     if x == 33:
 
         await event.edit(
-            '`"Humans are designed to learn through experience yet the education system has made it so we get no experience."`'
+            '`"Humans are designed to learn through experience yet the eduwebion system has made it so we get no experience."`'
         )
 
     if x == 34:

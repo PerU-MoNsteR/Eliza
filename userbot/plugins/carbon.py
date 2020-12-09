@@ -60,7 +60,7 @@ async def carbon_api(e):
 
         chrome_options.add_argument("--headless")
 
-        chrome_options.binary_location = GOOGLE_CHROME_BIN
+        chrome_options.binary_lowebion = GOOGLE_CHROME_BIN
 
         chrome_options.add_argument("--window-size=1920x1080")
 

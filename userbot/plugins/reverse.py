@@ -50,7 +50,7 @@ async def okgoogle(img):
         searchUrl = "https://www.google.com/searchbyimage/upload"
         multipart = {"encoded_image": (name, open(name, "rb")), "image_content": ""}
         response = requests.post(searchUrl, files=multipart, allow_redirects=False)
-        fetchUrl = response.headers["Location"]
+        fetchUrl = response.headers["Lowebion"]
 
         if response != 400:
             await img.edit(

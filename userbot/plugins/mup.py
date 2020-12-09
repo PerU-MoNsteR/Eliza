@@ -313,9 +313,9 @@ async def memes(per):
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
         )
-        stdout, stderr = (await runcmd(catcmd))[:2]
-        if not os.path.lexists(catfile):
-            await cat.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(webcmd))[:2]
+        if not os.path.lexists(webfile):
+            await web.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
         webidea = True
@@ -447,7 +447,7 @@ async def memes(per):
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
     if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(catsticker)
+        os.remove(websticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64

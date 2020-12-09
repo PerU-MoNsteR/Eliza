@@ -221,9 +221,9 @@ def user_input():
             type=str,
             required=False,
             choices=[
-                "labeled-for-reuse-with-modifications",
+                "labeled-for-reuse-with-modifiwebions",
                 "labeled-for-reuse",
-                "labeled-for-noncommercial-reuse-with-modification",
+                "labeled-for-noncommercial-reuse-with-modifiwebion",
                 "labeled-for-nocommercial-reuse",
             ],
         )
@@ -467,7 +467,7 @@ def user_input():
             "-sil",
             "--silent_mode",
             default=False,
-            help="Remains silent. Does not print notification messages on the terminal",
+            help="Remains silent. Does not print notifiwebion messages on the terminal",
             action="store_true",
         )
         parser.add_argument(
@@ -518,7 +518,7 @@ class googleimagesdownload:
                 req = urllib2.Request(url, headers=headers)
                 try:
                     response = urllib2.urlopen(req)
-                except URLError:  # Handling SSL certificate failed
+                except URLError:  # Handling SSL certifiwebe failed
                     context = ssl._create_unverified_context()
                     response = urlopen(req, context=context)
                 page = response.read()
@@ -547,7 +547,7 @@ class googleimagesdownload:
             browser = webdriver.Chrome(chromedriver, chrome_options=options)
         except Exception as e:
             print(
-                "Looks like we cannot locate the path the 'chromedriver' (use the '--chromedriver' "
+                "Looks like we cannot lowebe the path the 'chromedriver' (use the '--chromedriver' "
                 "argument to specify the path to the executable.) or google chrome browser is not "
                 "installed on your machine (exception: %s)" % e
             )
@@ -850,9 +850,9 @@ class googleimagesdownload:
             "usage_rights": [
                 arguments["usage_rights"],
                 {
-                    "labeled-for-reuse-with-modifications": "sur:fmc",
+                    "labeled-for-reuse-with-modifiwebions": "sur:fmc",
                     "labeled-for-reuse": "sur:fc",
-                    "labeled-for-noncommercial-reuse-with-modification": "sur:fm",
+                    "labeled-for-noncommercial-reuse-with-modifiwebion": "sur:fm",
                     "labeled-for-nocommercial-reuse": "sur:f",
                 },
             ],
@@ -1139,10 +1139,10 @@ class googleimagesdownload:
                 "URLError on an image...trying next one..." + " Error: " + str(e)
             )
 
-        except ssl.CertificateError as e:
+        except ssl.CertifiwebeError as e:
             download_status = "fail"
             download_message = (
-                "CertificateError on an image...trying next one..."
+                "CertifiwebeError on an image...trying next one..."
                 + " Error: "
                 + str(e)
             )
@@ -1353,10 +1353,10 @@ class googleimagesdownload:
             return_image_name = ""
             absolute_path = ""
 
-        except ssl.CertificateError as e:
+        except ssl.CertifiwebeError as e:
             download_status = "fail"
             download_message = (
-                "CertificateError on an image...trying next one..."
+                "CertifiwebeError on an image...trying next one..."
                 + " Error: "
                 + str(e)
             )

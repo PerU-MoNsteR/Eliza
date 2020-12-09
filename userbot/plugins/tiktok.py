@@ -55,8 +55,8 @@ async def _(event):
                 await borg.send_message(event.chat_id, "sorry . something went wrong")
                 return
             await conv.get_response()
-            cat3 = await conv.get_response()
-            await borg.send_file(event.chat_id, cat3)
+            web3 = await conv.get_response()
+            await borg.send_file(event.chat_id, web3)
             await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @HK_tiktok_BOT `and retry!`")
@@ -81,9 +81,9 @@ async def _(event):
             if details.text.startswith("Sorry"):
                 await borg.send_message(event.chat_id, "sorry . something went wrong")
                 return
-            cat2 = await conv.get_response()
+            web2 = await conv.get_response()
             await conv.get_response()
-            await borg.send_file(event.chat_id, cat2)
+            await borg.send_file(event.chat_id, web2)
             await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @HK_tiktok_BOT `and retry!`")

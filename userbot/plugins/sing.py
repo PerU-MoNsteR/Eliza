@@ -210,7 +210,7 @@ async def _(event):
         )
     if x == 11:
         await event.edit(
-            "🎶 What you don't understand is I'd catch a grenade for ya,yeah...yeah...\n Throw my hand on a blade for ya...yeah...yeah... \n I'd jump in front of a train for ya...yeah...yeah... \n You know I'd do anything for ya...yeah...yeah...🎶"
+            "🎶 What you don't understand is I'd webch a grenade for ya,yeah...yeah...\n Throw my hand on a blade for ya...yeah...yeah... \n I'd jump in front of a train for ya...yeah...yeah... \n You know I'd do anything for ya...yeah...yeah...🎶"
         )
     if x == 12:
         await event.edit(

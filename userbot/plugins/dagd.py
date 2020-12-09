@@ -45,7 +45,7 @@ async def _(event):
     r = requests.get(input_str, allow_redirects=False)
     if str(r.status_code).startswith("3"):
         await event.edit(
-            "Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Location"])
+            "Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Lowebion"])
         )
     else:
         await event.edit(

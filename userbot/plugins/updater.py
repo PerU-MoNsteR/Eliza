@@ -65,7 +65,7 @@ async def update_requirements():
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
         )
-        await process.communicate()
+        await process.communiwebe()
         return process.returncode
     except Exception as e:
         return repr(e)
@@ -77,7 +77,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
         heroku = heroku3.from_key(HEROKU_API_KEY)
         heroku_app = None
-        heroku_applications = heroku.apps()
+        heroku_appliwebions = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "`Please set up the` **HEROKU_APP_NAME** `Var`"
@@ -85,7 +85,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             repo.__del__()
             return
-        for app in heroku_applications:
+        for app in heroku_appliwebions:
             if app.name == HEROKU_APP_NAME:
                 heroku_app = app
                 break

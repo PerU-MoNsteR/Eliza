@@ -41,8 +41,8 @@ OAUTH_SCOPE = "https://www.googleapis.com/auth/drive.file"
 REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 # global variable to set Folder ID to upload to
 G_DRIVE_F_PARENT_ID = None
-# global variable to indicate mimeType of directories in gDrive
-G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
+# global variable to indiwebe mimeType of directories in gDrive
+G_DRIVE_DIR_MIME_TYPE = "appliwebion/vnd.google-apps.folder"
 
 
 @borg.on(admin_cmd(pattern="gdrive ?(.*)", allow_sudo=True))

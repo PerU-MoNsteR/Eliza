@@ -91,7 +91,7 @@ async def _(event):
             ms = (end - start).seconds
             web = f"https://telegra.ph/{response['path']}"
             await webevent.edit(
-                f"**➥ Pasted to :-** [Telegraph]({cat})\
+                f"**➥ Pasted to :-** [Telegraph]({web})\
                  \n**➥ Pasted in {ms} seconds .**",
                 link_preview=True,
             )

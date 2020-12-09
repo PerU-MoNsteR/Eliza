@@ -135,7 +135,7 @@ async def generate_credentials(gdrive):
         configs, SCOPES, redirect_uri=REDIRECT_URI
     )
     auth_url, _ = flow.authorization_url(access_type="offline", prompt="consent")
-    msg = await gdrive.respond("`Go to your BOTLOG group to authenticate token...`")
+    msg = await gdrive.respond("`Go to your BOTLOG group to authentiwebe token...`")
     async with gdrive.client.conversation(BOTLOG_CHATID) as conv:
         url_msg = await conv.send_message(
             "Please go to this URL:\n" f"{auth_url}\nauthorize then reply the code"
@@ -392,10 +392,10 @@ async def copy_dir(service, file_id, dir_id):
         return dir_id
     new_id = None
     for file in files:
-        if file["mimeType"] == "application/vnd.google-apps.folder":
+        if file["mimeType"] == "appliwebion/vnd.google-apps.folder":
             folder = await create_dir(service, file["name"], dir_id)
-            catdir_id = folder.get("id")
-            new_id = await copy_dir(service, file["id"], catdir_id)
+            webdir_id = folder.get("id")
+            new_id = await copy_dir(service, file["id"], webdir_id)
         else:
             await copy_file(service, file["id"], dir_id)
             await asyncio.sleep(0.5)
@@ -441,7 +441,7 @@ async def download_gdrive(gdrive, service, uri):
             .get(fileId=file_Id, fields="name, mimeType", supportsTeamDrives=True)
             .execute()
         )
-        if file["mimeType"] == "application/vnd.google-apps.folder":
+        if file["mimeType"] == "appliwebion/vnd.google-apps.folder":
             folder = await create_dir(service, file["name"])
             dir_id = folder.get("id")
             await copy_dir(service, file_Id, dir_id)
@@ -497,7 +497,7 @@ async def get_information(service, Id):
 async def create_dir(service, folder_name, dir_id=None):
     metadata = {
         "name": folder_name,
-        "mimeType": "application/vnd.google-apps.folder",
+        "mimeType": "appliwebion/vnd.google-apps.folder",
     }
     if not dir_id:
         try:
@@ -707,7 +707,7 @@ async def lists(gdrive):
                 break
 
             file_name = files.get("name")
-            if files.get("mimeType") == "application/vnd.google-apps.folder":
+            if files.get("mimeType") == "appliwebion/vnd.google-apps.folder":
                 link = files.get("webViewLink")
                 message += f"📁️ • [{file_name}]({link})\n"
             else:
@@ -750,7 +750,7 @@ async def lists(gdrive):
         outgoing=True,
     )
 )
-async def catlists(gdrive):
+async def weblists(gdrive):
     await lists(gdrive)
 
 
@@ -783,7 +783,7 @@ async def google_drive_managers(gdrive):
             name_or_id, _ = (name_or_id, "unknown")
         metadata = {
             "name": name_or_id,
-            "mimeType": "application/vnd.google-apps.folder",
+            "mimeType": "appliwebion/vnd.google-apps.folder",
         }
         try:
             if parent_Id is not None:
@@ -851,7 +851,7 @@ async def google_drive_managers(gdrive):
                     continue
             name = f.get("name")
             mimeType = f.get("mimeType")
-            if mimeType == "application/vnd.google-apps.folder":
+            if mimeType == "appliwebion/vnd.google-apps.folder":
                 status = "FOLDER - DELETION"
             else:
                 status = "FILE - DELETION"
@@ -893,7 +893,7 @@ async def google_drive_managers(gdrive):
             webViewLink = f.get("webViewLink")
             downloadURL = f.get("webContentLink")
             description = f.get("description")
-            if mimeType == "application/vnd.google-apps.folder":
+            if mimeType == "appliwebion/vnd.google-apps.folder":
                 status = "**FOLDER - EXIST **"
             else:
                 status = "**FILE - EXIST **"
@@ -902,7 +902,7 @@ async def google_drive_managers(gdrive):
                 f"**Name  : **`{name_or_id}`\n"
                 f"**ID    :** `{f_id}`\n"
             )
-            if mimeType != "application/vnd.google-apps.folder":
+            if mimeType != "appliwebion/vnd.google-apps.folder":
                 msg += f"**Size  :** `{humanbytes(f_size)}`\n"
                 msg += f"**Link  :** [{name_or_id}]({downloadURL})\n\n"
             else:
@@ -1168,7 +1168,7 @@ async def set_upload_folder(gdrive):
         try:
             parent_Id = ext_id.split("folders/")[1]
         except IndexError:
-            """ - Try catch again if URL open?id= - """
+            """ - Try webch again if URL open?id= - """
             try:
                 parent_Id = ext_id.split("open?id=")[1]
             except IndexError:

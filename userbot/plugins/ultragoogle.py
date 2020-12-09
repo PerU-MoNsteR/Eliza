@@ -85,19 +85,19 @@ async def _(event):
             google_rs_response = requests.post(
                 SEARCH_URL, files=multipart, allow_redirects=False
             )
-            the_location = google_rs_response.headers.get("Location")
+            the_lowebion = google_rs_response.headers.get("Lowebion")
             os.remove(downloaded_file_name)
         else:
             previous_message_text = previous_message.message
             SEARCH_URL = "{}/searchbyimage?image_url={}"
             request_url = SEARCH_URL.format(BASE_URL, previous_message_text)
             google_rs_response = requests.get(request_url, allow_redirects=False)
-            the_location = google_rs_response.headers.get("Location")
+            the_lowebion = google_rs_response.headers.get("Lowebion")
         await webevent.edit("Found Google Result. Pouring some soup on it!")
         headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
         }
-        response = requests.get(the_location, headers=headers)
+        response = requests.get(the_lowebion, headers=headers)
         soup = BeautifulSoup(response.text, "html.parser")
         # document.getElementsByClassName("r5a77d"): PRS
         prs_div = soup.find_all("div", {"class": "r5a77d"})[0]
@@ -111,7 +111,7 @@ async def _(event):
         ms = (end - start).seconds
         OUTPUT_STR = """{img_size}
 <b>Possible Related Search : </b> <a href="{prs_url}">{prs_text}</a> 
-<b>More Info : </b> Open this <a href="{the_location}">Link</a> 
+<b>More Info : </b> Open this <a href="{the_lowebion}">Link</a> 
 <i>fetched in {ms} seconds</i>""".format(
             **locals()
         )
@@ -144,7 +144,7 @@ async def _(img):
         searchUrl = "https://www.google.com/searchbyimage/upload"
         multipart = {"encoded_image": (name, open(name, "rb")), "image_content": ""}
         response = requests.post(searchUrl, files=multipart, allow_redirects=False)
-        fetchUrl = response.headers["Location"]
+        fetchUrl = response.headers["Lowebion"]
         if response != 400:
             await img.edit(
                 "`Image successfully uploaded to Google. Maybe.`"

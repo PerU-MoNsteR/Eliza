@@ -29,28 +29,28 @@ async def perbot(permemes):
         await permemes.client(per)
     except BaseException:
         pass
-    download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".webp")):
-        download_location = convert_toimage(download_location)
-    size = os.stat(download_location).st_size
-    if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
+    download_lowebion = await permemes.client.download_media(replied, "./temp/")
+    if download_lowebion.endswith((".webp")):
+        download_lowebion = convert_toimage(download_lowebion)
+    size = os.stat(download_lowebion).st_size
+    if download_lowebion.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
             await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
-            os.remove(download_location)
+            os.remove(download_lowebion)
             return
         await permemmes.edit("generating image..")
     else:
         await permemmes.edit("the replied file is not supported")
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     try:
-        response = upload_file(download_location)
-        os.remove(download_location)
+        response = upload_file(download_lowebion)
+        os.remove(download_lowebion)
     except exceptions.TelegraphException as exc:
         await permemmes.edit("ERROR: " + str(exc))
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     per = f"https://telegra.ph{response[0]}"
     per = await threats(per)
@@ -77,30 +77,30 @@ async def perbot(permemes):
         await permemes.client(per)
     except BaseException:
         pass
-    download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".webp")):
-        download_location = convert_toimage(download_location)
-    size = os.stat(download_location).st_size
-    if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
+    download_lowebion = await permemes.client.download_media(replied, "./temp/")
+    if download_lowebion.endswith((".webp")):
+        download_lowebion = convert_toimage(download_lowebion)
+    size = os.stat(download_lowebion).st_size
+    if download_lowebion.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
             await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
-            os.remove(download_location)
+            os.remove(download_lowebion)
             return
         await permemmes.edit("generating image..")
     else:
         await permemmes.edit("the replied file is not supported")
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     try:
-        response = upload_file(download_location)
-        os.remove(download_location)
+        response = upload_file(download_lowebion)
+        os.remove(download_lowebion)
     except exceptions.TelegraphException as exc:
         await permemmes.edit("ERROR: " + str(exc))
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
-    cat = f"https://telegra.ph{response[0]}"
+    web = f"https://telegra.ph{response[0]}"
     await trash(per)
     await permemmes.delete()
     await permemes.client.send_file(permemes.chat_id, per, reply_to=replied)
@@ -135,28 +135,28 @@ async def perbot(permemes):
         await permemes.client(per)
     except BaseException:
         pass
-    download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".webp")):
-        download_location = convert_toimage(download_location)
-    size = os.stat(download_location).st_size
-    if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
+    download_lowebion = await permemes.client.download_media(replied, "./temp/")
+    if download_lowebion.endswith((".webp")):
+        download_lowebion = convert_toimage(download_lowebion)
+    size = os.stat(download_lowebion).st_size
+    if download_lowebion.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
             await mempermes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
-            os.remove(download_location)
+            os.remove(download_lowebion)
             return
         await permemmes.edit("generating image..")
     else:
         await permemmes.edit("the replied file is not supported")
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     try:
-        response = upload_file(download_location)
-        os.remove(download_location)
+        response = upload_file(download_lowebion)
+        os.remove(download_lowebion)
     except exceptions.TelegraphException as exc:
         await permemmes.edit("ERROR: " + str(exc))
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     per = f"https://telegra.ph{response[0]}"
     per = await trap(text1, text2, per)
@@ -193,28 +193,28 @@ async def perbot(permemes):
         await permemes.client(per)
     except BaseException:
         pass
-    download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".webp")):
-        download_location = convert_toimage(download_location)
-    size = os.stat(download_location).st_size
-    if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
+    download_lowebion = await permemes.client.download_media(replied, "./temp/")
+    if download_lowebion.endswith((".webp")):
+        download_lowebion = convert_toimage(download_lowebion)
+    size = os.stat(download_lowebion).st_size
+    if download_lowebion.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
             await permemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
-            os.remove(download_location)
+            os.remove(download_lowebion)
             return
         await permemmes.edit("generating image.wait sir.")
     else:
         await permemmes.edit("the replied file is not supported")
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     try:
-        response = upload_file(download_location)
-        os.remove(download_location)
+        response = upload_file(download_lowebion)
+        os.remove(download_lowebion)
     except exceptions.TelegraphException as exc:
         await permemmes.edit("ERROR: " + str(exc))
-        os.remove(download_location)
+        os.remove(download_lowebion)
         return
     per = f"https://telegra.ph{response[0]}"
     per = await phcomment(per, text, username)

@@ -3,7 +3,7 @@ from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 from . import ALIVE_NAME, CMD_HELP
 
-DEF = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEF = str(ALIVE_NAME) if ALIVE_NAME else "web"
 
 
 @bot.on(admin_cmd(pattern="ded (.*)"))

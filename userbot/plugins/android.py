@@ -113,8 +113,8 @@ async def codename_info(request):
 
 
 @register(outgoing=True, pattern=r"^.specs(?: |)([\S]*)(?: |)([\s\S]*)")
-async def devices_specifications(request):
-    """ Mobile devices specifications """
+async def devices_specifiwebions(request):
+    """ Mobile devices specifiwebions """
     textx = await request.get_reply_message()
     brand = request.pattern_match.group(1).lower()
     device = request.pattern_match.group(2).lower()
@@ -128,7 +128,7 @@ async def devices_specifications(request):
         return
     all_brands = (
         BeautifulSoup(
-            get("https://www.devicespecifications.com/en/brand-more").content, "lxml"
+            get("https://www.devicespecifiwebions.com/en/brand-more").content, "lxml"
         )
         .find("div", {"class": "brand-listing-container-news"})
         .findAll("a")
@@ -158,9 +158,9 @@ async def devices_specifications(request):
     for url in device_page_url:
         info = BeautifulSoup(get(url).content, "lxml")
         reply = "\n**" + info.title.text.split("-")[0].strip() + "**\n\n"
-        info = info.find("div", {"id": "model-brief-specifications"})
-        specifications = re.findall(r"<b>.*?<br/>", str(info))
-        for item in specifications:
+        info = info.find("div", {"id": "model-brief-specifiwebions"})
+        specifiwebions = re.findall(r"<b>.*?<br/>", str(info))
+        for item in specifiwebions:
             title = re.findall(r"<b>(.*?)</b>", item)[0].strip()
             data = (
                 re.findall(r"</b>: (.*?)<br/>", item)[0]
@@ -212,7 +212,7 @@ CMD_HELP.update(
 \n\n.codename <brand> <device>\
 \nUsage: Search for android device codename.\
 \n\n.specs <brand> <device>\
-\nUsage: Get device specifications info.\
+\nUsage: Get device specifiwebions info.\
 \n\n.twrp <codename>\
 \nUsage: Get latest twrp download for android device."
     }
