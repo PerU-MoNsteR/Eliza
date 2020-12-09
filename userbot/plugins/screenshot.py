@@ -1,4 +1,4 @@
-"""Take screenshot of any catsite
+"""Take screenshot of any website
 Syntax: .sshot <Website URL>"""
 
 

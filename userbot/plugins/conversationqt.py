@@ -249,7 +249,7 @@ async def _(event):
     if x == 44:
 
         await event.edit(
-            '`"What catsite or app has completely changed your life for better or for worse?"`'
+            '`"What website or app has completely changed your life for better or for worse?"`'
         )
 
     if x == 45:

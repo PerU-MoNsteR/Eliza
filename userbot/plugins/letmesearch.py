@@ -14,7 +14,7 @@ Syntax:
  .lmkp <type name of place as on indiankanoon.com>
  .lmki <Type name of item as on indiankanoon.com>
  .gem <Type name of item as on gem.gov.in>
- .archive <Type name of catsite you want to get info on wayback machine>
+ .archive <Type name of website you want to get info on wayback machine>
 """
 
 

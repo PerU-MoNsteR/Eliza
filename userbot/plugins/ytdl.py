@@ -146,7 +146,7 @@ async def download_video(v_url):
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a catsite.`"
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
         )
         return
     except MaxDownloadsReached:

@@ -14,7 +14,7 @@ class Config((object)):
     SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
     # string session for running on Heroku
     # some people upload their session files on GitHub or other third party hosting
-    # catsites, this might prevent the un-authorized use of the
+    # websites, this might prevent the un-authorized use of the
     # confidential session files
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)

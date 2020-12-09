@@ -301,7 +301,7 @@ def user_input():
         parser.add_argument(
             "-ss",
             "--specific_site",
-            help="downloads images that are indexed from a specific catsite",
+            help="downloads images that are indexed from a specific website",
             type=str,
             required=False,
         )
