@@ -54,7 +54,7 @@ released a new version of the Affero GPL which permits relicensing under
 this license.
 
   The precise terms and conditions for copying, distribution and
-modifiwebion follow.
+modification follow.
 
                        TERMS AND CONDITIONS
 
@@ -81,7 +81,7 @@ on the Program.
 permission, would make you directly or secondarily liable for
 infringement under applicable copyright law, except executing it on a
 computer or modifying a private copy.  Propagation includes copying,
-distribution (with or without modifiwebion), making available to the
+distribution (with or without modification), making available to the
 public, and in some countries other activities as well.
 
   To "convey" a work means any kind of propagation that enables other
@@ -100,7 +100,7 @@ menu, a prominent item in the list meets this criterion.
   1. Source Code.
 
   The "source code" for a work means the preferred form of the work
-for making modifiwebions to it.  "Object code" means any non-source
+for making modifications to it.  "Object code" means any non-source
 form of a work.
 
   A "Standard Interface" means an interface that either is an official
@@ -129,7 +129,7 @@ which are not part of the work.  For example, Corresponding Source
 includes interface definition files associated with source files for
 the work, and the source code for shared libraries and dynamically
 linked subprograms that the work is specifically designed to require,
-such as by intimate data communiwebion or control flow between those
+such as by intimate data communication or control flow between those
 subprograms and other parts of the work.
 
   The Corresponding Source need not include anything that users
@@ -152,7 +152,7 @@ rights of fair use or other equivalent, as provided by copyright law.
   You may make, run and propagate covered works that you do not
 convey, without conditions so long as your license otherwise remains
 in force.  You may convey covered works to others for the sole purpose
-of having them make modifiwebions exclusively for you, or provide you
+of having them make modifications exclusively for you, or provide you
 with facilities for running those works, provided that you comply with
 the terms of this License in conveying all material for which you do
 not control copyright.  Those thus making or running the covered works
@@ -176,7 +176,7 @@ measures.
 circumvention of technological measures to the extent such circumvention
 is effected by exercising rights under this License with respect to
 the covered work, and you disclaim any intention to limit operation or
-modifiwebion of the work as a means of enforcing, against the work's
+modification of the work as a means of enforcing, against the work's
 users, your or third parties' legal rights to forbid circumvention of
 technological measures.
 
@@ -195,7 +195,7 @@ and you may offer support or warranty protection for a fee.
 
   5. Conveying Modified Source Versions.
 
-  You may convey a work based on the Program, or the modifiwebions to
+  You may convey a work based on the Program, or the modifications to
 produce it from the Program, in the form of source code under the
 terms of section 4, provided that you also meet all of these conditions:
 
@@ -301,7 +301,7 @@ and execute modified versions of a covered work in that User Product from
 a modified version of its Corresponding Source.  The information must
 suffice to ensure that the continued functioning of the modified object
 code is in no case prevented or interfered with solely because
-modifiwebion has been made.
+modification has been made.
 
   If you convey an object code work under this section in, or with, or
 specifically for use in, a User Product, and the conveying occurs as
@@ -318,9 +318,9 @@ been installed in ROM).
 requirement to continue to provide support service, warranty, or updates
 for a work that has been modified or installed by the recipient, or for
 the User Product in which it has been modified or installed.  Access to a
-network may be denied when the modifiwebion itself materially and
+network may be denied when the modification itself materially and
 adversely affects the operation of the network or violates the rules and
-protocols for communiwebion across the network.
+protocols for communication across the network.
 
   Corresponding Source conveyed, and Installation Information provided,
 in accord with this section must be in a format that is publicly
@@ -367,7 +367,7 @@ that material) supplement the terms of this License with terms:
     e) Declining to grant rights under trademark law for use of some
     trade names, trademarks, or service marks; or
 
-    f) Requiring indemnifiwebion of licensors and authors of that
+    f) Requiring indemnification of licensors and authors of that
     material by anyone who conveys the material (or modified versions of
     it) with contractual assumptions of liability to the recipient, for
     any liability that these contractual assumptions directly impose on
@@ -385,7 +385,7 @@ not survive such relicensing or conveying.
 
   If you add terms to a covered work in accord with this section, you
 must place, in the relevant source files, a statement of the
-additional terms that apply to those files, or a notice indiwebing
+additional terms that apply to those files, or a notice indicating
 where to find the applicable terms.
 
   Additional terms, permissive or non-permissive, may be stated in the
@@ -429,7 +429,7 @@ to receive a copy likewise does not require acceptance.  However,
 nothing other than this License grants you permission to propagate or
 modify any covered work.  These actions infringe copyright if you do
 not accept this License.  Therefore, by modifying or propagating a
-covered work, you indiwebe your acceptance of this License to do so.
+covered work, you indicate your acceptance of this License to do so.
 
   10. Automatic Licensing of Downstream Recipients.
 
@@ -467,7 +467,7 @@ owned or controlled by the contributor, whether already acquired or
 hereafter acquired, that would be infringed by some manner, permitted
 by this License, of making, using, or selling its contributor version,
 but do not include claims that would be infringed only as a
-consequence of further modifiwebion of the contributor version.  For
+consequence of further modification of the contributor version.  For
 purposes of this definition, "control" includes the right to grant
 patent sublicenses in a manner consistent with the requirements of
 this License.
@@ -649,7 +649,7 @@ Also add information on how to contact you by electronic and paper mail.
 
   If your software can interact with users remotely through a computer
 network, you should also make sure that it provides a way for users to
-get its source.  For example, if your program is a web appliwebion, its
+get its source.  For example, if your program is a cat application, its
 interface could display a "Source" link that leads users to an archive
 of the code.  There are many ways you could offer source, and different
 solutions will be better for different programs; see section 13 for the

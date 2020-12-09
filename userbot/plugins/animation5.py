@@ -3,7 +3,7 @@ import asyncio
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "web"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
 @borg.on(admin_cmd(pattern=f"loading$", outgoing=True))

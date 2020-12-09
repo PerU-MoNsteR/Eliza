@@ -131,7 +131,7 @@ async def sysdetails(sysd):
                 stderr=asyncPIPE,
             )
 
-            stdout, stderr = await fetch.communiwebe()
+            stdout, stderr = await fetch.communicate()
             result = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             await sysd.edit("`" + result + "`")
@@ -153,7 +153,7 @@ async def bot_ver(event):
             stdout=asyncPIPE,
             stderr=asyncPIPE,
         )
-        stdout, stderr = await ver.communiwebe()
+        stdout, stderr = await ver.communicate()
         verout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         rev = await asyncrunapp(
@@ -164,7 +164,7 @@ async def bot_ver(event):
             stdout=asyncPIPE,
             stderr=asyncPIPE,
         )
-        stdout, stderr = await rev.communiwebe()
+        stdout, stderr = await rev.communicate()
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         com = await asyncrunapp(
@@ -175,7 +175,7 @@ async def bot_ver(event):
             stdout=asyncPIPE,
             stderr=asyncPIPE,
         )
-        stdout, stderr = await com.communiwebe()
+        stdout, stderr = await com.communicate()
         comout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
@@ -205,7 +205,7 @@ async def pipcheck(pip):
             stderr=asyncPIPE,
         )
 
-        stdout, stderr = await pipc.communiwebe()
+        stdout, stderr = await pipc.communicate()
         pipout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         if pipout:
@@ -306,7 +306,7 @@ CMD_HELP.update(
         "sysd": ">`.sysd`"
         "\nUsage: Shows system information using neofetch."
         "\n\n>`.spc`"
-        "\nUsage: Show system specifiwebion.",
+        "\nUsage: Show system specification.",
         "botver": ">`.botver`" "\nUsage: Shows the userbot version.",
         "pip": ">`.pip <module(s)>`" "\nUsage: Does a search of pip modules(s).",
         "alive": ">`.alive | .on`"

@@ -222,7 +222,7 @@ INSULT_STRINGS = [
     "`Go Green! Stop inhaling Oxygen.`",
     "`God was searching for you. You should leave to meet him.`",
     "`You should Volunteer for target in an firing range.`",
-    "`Try playing webch and throw with RDX its fun.`",
+    "`Try playing catch and throw with RDX its fun.`",
     "`Jaana chodu chad jake land chaat`",
     "`Yaar ajab tere nkhare,gazab tera style hain, gand dhone ki tameez nahi, haath main mobile hai`",
     "`People like you are the reason we have middle fingers.`",

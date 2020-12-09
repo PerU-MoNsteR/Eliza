@@ -34,23 +34,23 @@ from telethon.tl.functions.upload import (
 )
 from telethon.tl.types import (
     Document,
-    InputDocumentFileLowebion,
+    InputDocumentFileLocation,
     InputFile,
     InputFileBig,
-    InputFileLowebion,
-    InputPeerPhotoFileLowebion,
-    InputPhotoFileLowebion,
+    InputFileLocation,
+    InputPeerPhotoFileLocation,
+    InputPhotoFileLocation,
     TypeInputFile,
 )
 
 log: logging.Logger = logging.getLogger("telethon")
 logging.basicConfig(level=logging.WARNING)
-TypeLowebion = Union[
+TypeLocation = Union[
     Document,
-    InputDocumentFileLowebion,
-    InputPeerPhotoFileLowebion,
-    InputFileLowebion,
-    InputPhotoFileLowebion,
+    InputDocumentFileLocation,
+    InputPeerPhotoFileLocation,
+    InputFileLocation,
+    InputPhotoFileLocation,
 ]
 
 
@@ -71,7 +71,7 @@ class DownloadSender:
     def __init__(
         self,
         sender: MTProtoSender,
-        file: TypeLowebion,
+        file: TypeLocation,
         offset: int,
         limit: int,
         stride: int,
@@ -175,7 +175,7 @@ class ParallelTransferrer:
         return math.ceil((file_size / full_size) * max_count)
 
     async def _init_download(
-        self, connections: int, file: TypeLowebion, part_count: int, part_size: int
+        self, connections: int, file: TypeLocation, part_count: int, part_size: int
     ) -> None:
         minimum, remainder = divmod(part_count, connections)
 
@@ -204,7 +204,7 @@ class ParallelTransferrer:
 
     async def _create_download_sender(
         self,
-        file: TypeLowebion,
+        file: TypeLocation,
         index: int,
         part_size: int,
         stride: int,
@@ -291,7 +291,7 @@ class ParallelTransferrer:
 
     async def download(
         self,
-        file: TypeLowebion,
+        file: TypeLocation,
         file_size: int,
         part_size_kb: Optional[float] = None,
         connection_count: Optional[int] = None,
@@ -369,15 +369,15 @@ async def _internal_transfer_to_telegram(
 
 async def download_file(
     client: TelegramClient,
-    lowebion: TypeLowebion,
+    location: TypeLocation,
     out: BinaryIO,
     progress_callback: callable = None,
 ) -> BinaryIO:
-    size = lowebion.size
-    dc_id, lowebion = utils.get_input_lowebion(lowebion)
+    size = location.size
+    dc_id, location = utils.get_input_location(location)
     # We lock the transfers because telegram has connection count limits
     downloader = ParallelTransferrer(client, dc_id)
-    downloaded = downloader.download(lowebion, size)
+    downloaded = downloader.download(location, size)
     async for x in downloaded:
         out.write(x)
         if progress_callback:

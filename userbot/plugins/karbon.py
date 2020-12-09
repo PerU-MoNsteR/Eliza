@@ -13,20 +13,20 @@ import random
 from time import sleep
 from urllib.parse import quote_plus
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium import catdriver
+from selenium.catdriver.chrome.options import Options
 
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "web"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
 @borg.on(admin_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("🔲🔲🔲🔲🔲")
-    CARBON = "https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwave-84&wt=none&l=appliwebion%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwave-84&wt=none&l=application%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -38,7 +38,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -47,7 +47,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔳🔳🔲🔲🔲")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -90,7 +90,7 @@ async def carbon_api(e):
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("📛📛📛📛📛")
-    CARBON = "https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=one-light&wt=none&l=appliwebion%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -102,7 +102,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -111,7 +111,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔘🔘📛📛📛")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -166,7 +166,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -175,7 +175,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔵🔵🎛🎛🎛")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -218,7 +218,7 @@ async def carbon_api(e):
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("🌚🌚🌚🌚🌚")
-    CARBON = "https://carbon.now.sh/?bg=rgba(29%2C40%2C104%2C1)&t=one-light&wt=none&l=appliwebion%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(29%2C40%2C104%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -230,7 +230,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -239,7 +239,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🌝🌝🌚🌚🌚")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -298,7 +298,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, O=OPC, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -307,7 +307,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("⬛⬛⬜⬜⬜")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -397,7 +397,7 @@ async def carbon_api(e):
     url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
@@ -406,7 +406,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("⬛⬛⬜⬜⬜")
 
-    driver = webdriver.Chrome(
+    driver = catdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -500,14 +500,14 @@ async def carbon_api(e):
      url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
      chrome_options = Options()
      chrome_options.add_argument("--headless")
-     chrome_options.binary_lowebion = Config.GOOGLE_CHROME_BIN
+     chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
      chrome_options.add_argument("--window-size=1920x1080")
      chrome_options.add_argument("--disable-dev-shm-usage")
      chrome_options.add_argument("--no-sandbox")
      chrome_options.add_argument('--disable-gpu')
      prefs = {'download.default_directory' : './'}
      chrome_options.add_experimental_option('prefs', prefs)
-     driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+     driver = catdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
      driver.get(url)
      download_path = './'
      driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')

@@ -1,6 +1,6 @@
 """Get weather data using OpenWeatherMap
-Syntax: .weather <Lowebion>
-.wttr <lowebion> """
+Syntax: .weather <Location>
+.wttr <location> """
 
 import io
 import time

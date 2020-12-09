@@ -61,7 +61,7 @@ async def _(event):
     await borg.send_file(
         event.chat_id,
         directory_name + ".zip",
-        caption="Zipped By web",
+        caption="Zipped By cat",
         force_document=True,
         allow_cache=False,
         reply_to=event.message.id,
@@ -108,7 +108,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".rar",
-                caption="rarred By web",
+                caption="rarred By cat",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -160,7 +160,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 directory_name + ".7z",
-                caption="7z archived By web",
+                caption="7z archived By cat",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -212,7 +212,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 output,
-                caption="TAR By web",
+                caption="TAR By cat",
                 force_document=True,
                 allow_cache=False,
                 reply_to=event.message.id,
@@ -255,7 +255,7 @@ async def create_archive(input_directory):
             stderr=asyncio.subprocess.PIPE,
         )
         # Wait for the subprocess to finish
-        stdout, stderr = await process.communiwebe()
+        stdout, stderr = await process.communicate()
         stderr.decode().strip()
         stdout.decode().strip()
         if os.path.exists(compressed_file_name):
@@ -308,7 +308,7 @@ async def _(event):
                 force_document = True
                 supports_streaming = False
                 document_attributes = []
-                if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
+                if single_file.endswith((".mp4", ".mp3", ".flac", ".catm")):
                     metadata = extractMetadata(createParser(single_file))
                     duration = 0
                     width = 0
@@ -399,7 +399,7 @@ async def _(event):
                 force_document = True
                 supports_streaming = False
                 document_attributes = []
-                if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
+                if single_file.endswith((".mp4", ".mp3", ".flac", ".catm")):
                     metadata = extractMetadata(createParser(single_file))
                     duration = 0
                     width = 0
@@ -500,7 +500,7 @@ async def _(event):
                 force_document = False
                 supports_streaming = True
                 document_attributes = []
-                if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
+                if single_file.endswith((".mp4", ".mp3", ".flac", ".catm")):
                     metadata = extractMetadata(createParser(single_file))
                     duration = 0
                     width = 0

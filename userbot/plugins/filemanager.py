@@ -34,7 +34,7 @@ async def _(event):
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in [FRIDAY](tg://leobrownlee/) DOWNLOADS Folder:**\n"
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
             out_file.name = "exec.text"
@@ -72,7 +72,7 @@ async def _(event):
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
             out_file.name = "exec.text"
@@ -106,7 +106,7 @@ async def _(event):
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in SAVED directory:**\n"
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
             out_file.name = "exec.text"
@@ -144,7 +144,7 @@ async def _(event):
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
             out_file.name = "exec.text"
@@ -182,7 +182,7 @@ async def _(event):
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
             out_file.name = "exec.text"

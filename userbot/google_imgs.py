@@ -145,7 +145,7 @@ def user_input():
             help="download images with specific format",
             type=str,
             required=False,
-            choices=["jpg", "gif", "png", "bmp", "svg", "webp", "ico"],
+            choices=["jpg", "gif", "png", "bmp", "svg", "catp", "ico"],
         )
         parser.add_argument(
             "-u", "--url", help="search with google image URL", type=str, required=False
@@ -221,9 +221,9 @@ def user_input():
             type=str,
             required=False,
             choices=[
-                "labeled-for-reuse-with-modifiwebions",
+                "labeled-for-reuse-with-modifications",
                 "labeled-for-reuse",
-                "labeled-for-noncommercial-reuse-with-modifiwebion",
+                "labeled-for-noncommercial-reuse-with-modification",
                 "labeled-for-nocommercial-reuse",
             ],
         )
@@ -301,7 +301,7 @@ def user_input():
         parser.add_argument(
             "-ss",
             "--specific_site",
-            help="downloads images that are indexed from a specific website",
+            help="downloads images that are indexed from a specific catsite",
             type=str,
             required=False,
         )
@@ -467,7 +467,7 @@ def user_input():
             "-sil",
             "--silent_mode",
             default=False,
-            help="Remains silent. Does not print notifiwebion messages on the terminal",
+            help="Remains silent. Does not print notification messages on the terminal",
             action="store_true",
         )
         parser.add_argument(
@@ -518,7 +518,7 @@ class googleimagesdownload:
                 req = urllib2.Request(url, headers=headers)
                 try:
                     response = urllib2.urlopen(req)
-                except URLError:  # Handling SSL certifiwebe failed
+                except URLError:  # Handling SSL certificate failed
                     context = ssl._create_unverified_context()
                     response = urlopen(req, context=context)
                 page = response.read()
@@ -533,21 +533,21 @@ class googleimagesdownload:
 
     # Download Page for more than 100 images
     def download_extended_page(self, url, chromedriver):
-        from selenium import webdriver
-        from selenium.webdriver.common.keys import Keys
+        from selenium import catdriver
+        from selenium.catdriver.common.keys import Keys
 
         if sys.version_info[0] < 3:
             reload(sys)
             sys.setdefaultencoding("utf8")
-        options = webdriver.ChromeOptions()
+        options = catdriver.ChromeOptions()
         options.add_argument("--no-sandbox")
         options.add_argument("--headless")
 
         try:
-            browser = webdriver.Chrome(chromedriver, chrome_options=options)
+            browser = catdriver.Chrome(chromedriver, chrome_options=options)
         except Exception as e:
             print(
-                "Looks like we cannot lowebe the path the 'chromedriver' (use the '--chromedriver' "
+                "Looks like we cannot locate the path the 'chromedriver' (use the '--chromedriver' "
                 "argument to specify the path to the executable.) or google chrome browser is not "
                 "installed on your machine (exception: %s)" % e
             )
@@ -660,7 +660,7 @@ class googleimagesdownload:
     # function to download single image
     def single_image(self, image_url):
         main_directory = "downloads"
-        extensions = (".jpg", ".gif", ".png", ".bmp", ".svg", ".webp", ".ico")
+        extensions = (".jpg", ".gif", ".png", ".bmp", ".svg", ".catp", ".ico")
         url = image_url
         try:
             os.makedirs(main_directory)
@@ -681,7 +681,7 @@ class googleimagesdownload:
         image_name = str(url[(url.rfind("/")) + 1 :])
         if "?" in image_name:
             image_name = image_name[: image_name.find("?")]
-        # if ".jpg" in image_name or ".gif" in image_name or ".png" in image_name or ".bmp" in image_name or ".svg" in image_name or ".webp" in image_name or ".ico" in image_name:
+        # if ".jpg" in image_name or ".gif" in image_name or ".png" in image_name or ".bmp" in image_name or ".svg" in image_name or ".catp" in image_name or ".ico" in image_name:
         if any(map(lambda extension: extension in image_name, extensions)):
             file_name = main_directory + "/" + image_name
         else:
@@ -850,9 +850,9 @@ class googleimagesdownload:
             "usage_rights": [
                 arguments["usage_rights"],
                 {
-                    "labeled-for-reuse-with-modifiwebions": "sur:fmc",
+                    "labeled-for-reuse-with-modifications": "sur:fmc",
                     "labeled-for-reuse": "sur:fc",
-                    "labeled-for-noncommercial-reuse-with-modifiwebion": "sur:fm",
+                    "labeled-for-noncommercial-reuse-with-modification": "sur:fm",
                     "labeled-for-nocommercial-reuse": "sur:f",
                 },
             ],
@@ -914,7 +914,7 @@ class googleimagesdownload:
                     "png": "ift:png",
                     "bmp": "ift:bmp",
                     "svg": "ift:svg",
-                    "webp": "webp",
+                    "catp": "catp",
                     "ico": "ift:ico",
                     "raw": "ift:craw",
                 },
@@ -949,7 +949,7 @@ class googleimagesdownload:
             url = (
                 "https://www.google.com/search?q="
                 + keywordem
-                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
+                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
         elif specific_site:
             url = (
@@ -957,7 +957,7 @@ class googleimagesdownload:
                 + quote(search_term.encode("utf-8"))
                 + "&as_sitesearch="
                 + specific_site
-                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch"
+                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch"
                 + params
                 + "&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
@@ -965,7 +965,7 @@ class googleimagesdownload:
             url = (
                 "https://www.google.com/search?q="
                 + quote(search_term.encode("utf-8"))
-                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch"
+                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch"
                 + params
                 + "&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
@@ -1139,10 +1139,10 @@ class googleimagesdownload:
                 "URLError on an image...trying next one..." + " Error: " + str(e)
             )
 
-        except ssl.CertifiwebeError as e:
+        except ssl.CertificateError as e:
             download_status = "fail"
             download_message = (
-                "CertifiwebeError on an image...trying next one..."
+                "CertificateError on an image...trying next one..."
                 + " Error: "
                 + str(e)
             )
@@ -1220,7 +1220,7 @@ class googleimagesdownload:
                     ".png",
                     ".bmp",
                     ".svg",
-                    ".webp",
+                    ".catp",
                     ".ico",
                 ]
                 # keep everything after the last '/'
@@ -1353,10 +1353,10 @@ class googleimagesdownload:
             return_image_name = ""
             absolute_path = ""
 
-        except ssl.CertifiwebeError as e:
+        except ssl.CertificateError as e:
             download_status = "fail"
             download_message = (
-                "CertifiwebeError on an image...trying next one..."
+                "CertificateError on an image...trying next one..."
                 + " Error: "
                 + str(e)
             )

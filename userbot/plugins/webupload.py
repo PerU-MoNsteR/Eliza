@@ -4,7 +4,7 @@ import time
 
 
 @command(
-    pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)"
+    pattern="^.catupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)"
 )
 async def _(event):
     if event.fwd_from:
@@ -36,5 +36,5 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")

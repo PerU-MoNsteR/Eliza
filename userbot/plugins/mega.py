@@ -2,7 +2,7 @@
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 #
-# Redistribution and use of this script, with or without modifiwebion, is
+# Redistribution and use of this script, with or without modification, is
 # permitted provided that the following conditions are met:
 #
 # 1. Redistributions of this script must retain the above copyright
@@ -40,7 +40,7 @@ TEMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
 async def subprocess_run(megadl, cmd):
     subproc = await asyncSubprocess(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
-    stdout, stderr = await subproc.communiwebe()
+    stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
         await megadl.edit(
@@ -174,7 +174,7 @@ async def mega_downloader(megadl):
 
 
 async def decrypt_file(megadl, file_path, temp_file_path, hex_key, hex_raw_key):
-    cmd = "web '{}' | openssl enc -d -aes-128-ctr -K {} -iv {} > '{}'".format(
+    cmd = "cat '{}' | openssl enc -d -aes-128-ctr -K {} -iv {} > '{}'".format(
         temp_file_path, hex_key, hex_raw_key, file_path
     )
     if await subprocess_run(megadl, cmd):

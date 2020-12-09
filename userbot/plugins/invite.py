@@ -16,7 +16,7 @@ async def _(event):
     else:
         logger.info(to_add_users)
         if not event.is_channel and event.is_group:
-            # https://lonamiwebs.github.io/Telethon/methods/messages/add_chat_user.html
+            # https://lonamicats.github.io/Telethon/methods/messages/add_chat_user.html
             for user_id in to_add_users.split(" "):
                 try:
                     await borg(
@@ -28,7 +28,7 @@ async def _(event):
                     await event.reply(str(e))
             await event.edit("Invited Successfully")
         else:
-            # https://lonamiwebs.github.io/Telethon/methods/channels/invite_to_channel.html
+            # https://lonamicats.github.io/Telethon/methods/channels/invite_to_channel.html
             for user_id in to_add_users.split(" "):
                 try:
                     await borg(

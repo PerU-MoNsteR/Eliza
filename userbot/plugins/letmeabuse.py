@@ -105,7 +105,7 @@ async def _(event):
             "Aaana kunna Big dick",
             "Achinga Kunnan A man with his dick like a beans",
             "Ajoli ka Thajoli Transexual",
-            "Andi pidiyan Dick webcher",
+            "Andi pidiyan Dick catcher",
             "Chandi Ass",
             "Chokka lingam Sabeel",
             "Ettukali Patti Pooran Spider Pussy Bitch",

@@ -25,7 +25,7 @@ DOGBIN_URL = "https://del.dog/"
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`pasting to del dog.....`")
+    catevent = await edit_or_reply(event, "`pasting to del dog.....`")
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     if input_str:
         message = input_str
@@ -56,11 +56,11 @@ async def _(event):
     if r["isUrl"]:
         nurl = f"https://del.dog/v/{r['key']}"
         rawurl = f"https://del.dog/raw/{r['key']}"
-        await webevent.edit(
+        await catevent.edit(
             f"**Pasted to dogbin : **[dog]({nurl}).\n**Raw url :** [raw link]({rawurl})\n**GoTo Original URL: **[link]({url})"
         )
     else:
-        await webevent.edit(
+        await catevent.edit(
             f"**Pasted to dogbin : **[dog]({url})\n**Raw url :** [raw link](https://del.dog/raw/{r['key']})"
         )
 
@@ -70,7 +70,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`pasting to neko bin.....`")
+    catevent = await edit_or_reply(event, "`pasting to neko bin.....`")
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     if input_str:
         message = input_str
@@ -120,7 +120,7 @@ async def _(event):
         )
         url = f"https://nekobin.com/{key}"
     reply_text = f"**Pasted to Nekobin : **[neko]({url})\n**Raw url : **[Raw](https://nekobin.com/raw/{key})"
-    await webevent.edit(reply_text)
+    await catevent.edit(reply_text)
 
 
 @bot.on(admin_cmd(pattern="iffuci( (.*)|$)", outgoing=True))
@@ -128,7 +128,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`pasting to del dog.....`")
+    catevent = await edit_or_reply(event, "`pasting to del dog.....`")
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     if input_str:
         message = input_str
@@ -158,11 +158,11 @@ async def _(event):
     url = f"https://iffuci.tk/{r['key']}"
     if r["isUrl"]:
         nurl = f"https://iffuci.tk/v/{r['key']}"
-        await webevent.edit(
+        await catevent.edit(
             "code is pasted to {}. GoTo Original URL: {}".format(nurl, url)
         )
     else:
-        await webevent.edit("code is pasted to {}".format(url))
+        await catevent.edit("code is pasted to {}".format(url))
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="getpaste( (.*)|$)"))
@@ -170,7 +170,7 @@ async def _(event):
 async def get_dogbin_content(dog_url):
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
-    webevent = await edit_or_reply(dog_url, "`Getting dogbin content...`")
+    catevent = await edit_or_reply(dog_url, "`Getting dogbin content...`")
     if not message and textx:
         message = str(textx.message)
     format_normal = f"{DOGBIN_URL}"
@@ -182,27 +182,27 @@ async def get_dogbin_content(dog_url):
     elif message.startswith("del.dog/"):
         message = message[len("del.dog/") :]
     else:
-        await webevent.edit("`Is that even a dogbin url?`")
+        await catevent.edit("`Is that even a dogbin url?`")
         return
     resp = get(f"{DOGBIN_URL}raw/{message}")
     try:
         resp.raise_for_status()
     except exceptions.HTTPError as HTTPErr:
-        await webevent.edit(
+        await catevent.edit(
             "Request returned an unsuccessful status code.\n\n" + str(HTTPErr)
         )
         return
     except exceptions.Timeout as TimeoutErr:
-        await webevent.edit("Request timed out." + str(TimeoutErr))
+        await catevent.edit("Request timed out." + str(TimeoutErr))
         return
     except exceptions.TooManyRedirects as RedirectsErr:
-        await webevent.edit(
+        await catevent.edit(
             "Request exceeded the configured number of maximum redirections."
             + str(RedirectsErr)
         )
         return
     reply_text = "`Fetched dogbin URL content successfully!`\n\n`Content:` " + resp.text
-    await webevent.edit(reply_text)
+    await catevent.edit(reply_text)
 
 
 @bot.on(admin_cmd(pattern="paster( (.*)|$)", outgoing=True))
@@ -210,7 +210,7 @@ async def get_dogbin_content(dog_url):
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`pasting to del dog.....`")
+    catevent = await edit_or_reply(event, "`pasting to del dog.....`")
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     previous_message = None
     if input_str:
@@ -241,7 +241,7 @@ async def _(event):
     url = f"https://del.dog/{r['key']}"
     chat = "@chotamreaderbot"
     # This module is modded by @ViperAdnan #KeepCredit
-    await webevent.edit("**Making instant view...**")
+    await catevent.edit("**Making instant view...**")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -250,9 +250,9 @@ async def _(event):
             await event.client.send_message(chat, url)
             response = await response
         except YouBlockedUserError:
-            await webevent.edit("```Please unblock me (@chotamreaderbot) u Nigga```")
+            await catevent.edit("```Please unblock me (@chotamreaderbot) u Nigga```")
             return
-        await webevent.delete()
+        await catevent.delete()
         await event.client.send_message(
             event.chat_id, response.message, reply_to=previous_message
         )

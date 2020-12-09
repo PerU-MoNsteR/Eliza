@@ -10,7 +10,7 @@
     "productivity"
   ],
   "repository": "https://github.com/PerU-MoNsteR/Eliza/",
-  "website": "https://github.com/PerU-MoNsteR/",
+  "catsite": "https://github.com/PerU-MoNsteR/",
   "success_url": "https://t.me/Eliza_userbot_support",
   "env": {
     "ENV": {

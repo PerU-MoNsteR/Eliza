@@ -60,10 +60,10 @@ if Config.SPAMWATCH_API:
 else:
     spamwatch = None
 
-web_users = [bot.uid]
+cat_users = [bot.uid]
 if Config.SUDO_USERS:
     for user in Config.SUDO_USERS:
-        web_users.append(user)
+        cat_users.append(user)
 
 
 # ================================================
@@ -83,11 +83,11 @@ if Config.THUMB_IMAGE != None:
             pass
 
 
-def check(web):
-    if "/start" in web:
+def check(cat):
+    if "/start" in cat:
         return True
     try:
-        hi = re.search(web.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
+        hi = re.search(cat.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
     except:
         hi = False
     return bool(hi)
@@ -124,7 +124,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def webalive():
+async def catalive():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
@@ -138,7 +138,7 @@ async def webalive():
         headers = {
             "User-Agent": useragent,
             "Authorization": f"Bearer {Config.HEROKU_API_KEY}",
-            "Accept": "appliwebion/vnd.heroku+json; version=3.account-quotas",
+            "Accept": "application/vnd.heroku+json; version=3.account-quotas",
         }
         path = "/accounts/" + user_id + "/actions/get-quota"
         r = requests.get(heroku_api + path, headers=headers)

@@ -83,17 +83,17 @@ async def get_readable_time(seconds: int) -> str:
 # gban
 
 
-async def admin_groups(web):
-    webgroups = []
-    async for dialog in web.client.iter_dialogs():
+async def admin_groups(cat):
+    catgroups = []
+    async for dialog in cat.client.iter_dialogs():
         entity = dialog.entity
         if (
             isinstance(entity, Channel)
             and entity.megagroup
             and (entity.creator or entity.admin_rights)
         ):
-            webgroups.append(entity.id)
-    return webgroups
+            catgroups.append(entity.id)
+    return catgroups
 
 
 # for getmusic
@@ -141,12 +141,12 @@ async def unzip(downloaded_file_name):
 # https://github.com/pokurt/LyndaRobot/blob/7556ca0efafd357008131fa88401a8bb8057006f/lynda/modules/helper_funcs/string_handling.py#L238
 
 
-async def extract_time(web, time_val):
+async def extract_time(cat, time_val):
     if any(time_val.endswith(unit) for unit in ("m", "h", "d", "w")):
         unit = time_val[-1]
         time_num = time_val[:-1]  # type: str
         if not time_num.isdigit():
-            web.edit("Invalid time amount specified.")
+            cat.edit("Invalid time amount specified.")
             return ""
         if unit == "m":
             bantime = int(time.time() + int(time_num) * 60)
@@ -160,7 +160,7 @@ async def extract_time(web, time_val):
             # how even...?
             return ""
         return bantime
-    web.edit(
+    cat.edit(
         "Invalid time type specified. Expected m , h , d or w but got: {}".format(
             time_val[-1]
         )
@@ -217,9 +217,9 @@ async def convert_tosticker(image):
     img = Image.open(image)
     if img.mode != "RGB":
         img = img.convert("RGB")
-    img.save("./temp/temp.webp", "webp")
+    img.save("./temp/temp.catp", "catp")
     os.remove(image)
-    return "./temp/temp.webp"
+    return "./temp/temp.catp"
 
 
 # covid india data
@@ -258,14 +258,14 @@ async def trumptweet(text):
         f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.webp", "webp")
-    return "temp.webp"
+    img.save("temp.catp", "catp")
+    return "temp.catp"
 
 
 async def changemymind(text):
@@ -273,8 +273,8 @@ async def changemymind(text):
         f"https://nekobot.xyz/api/imagegen?type=changemymind&text={text}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -288,14 +288,14 @@ async def kannagen(text):
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.webp", "webp")
-    return "temp.webp"
+    img.save("temp.catp", "catp")
+    return "temp.catp"
 
 
 async def moditweet(text):
@@ -303,14 +303,14 @@ async def moditweet(text):
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=narendramodi"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.webp", "webp")
-    return "temp.webp"
+    img.save("temp.catp", "catp")
+    return "temp.catp"
 
 
 async def tweets(text1, text2):
@@ -318,21 +318,21 @@ async def tweets(text1, text2):
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text1}&username={text2}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.webp", "webp")
-    return "temp.webp"
+    img.save("temp.catp", "catp")
+    return "temp.catp"
 
 
 async def iphonex(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=iphonex&url={text}").json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -346,8 +346,8 @@ async def baguette(text):
         f"https://nekobot.xyz/api/imagegen?type=baguette&url={text}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -359,8 +359,8 @@ async def baguette(text):
 async def threats(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=threats&url={text}").json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -374,8 +374,8 @@ async def threats(text):
 async def lolice(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=lolice&url={text}").json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -389,8 +389,8 @@ async def lolice(text):
 async def trash(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=trash&url={text}").json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -404,8 +404,8 @@ async def trash(text):
 async def awooify(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=awooify&url={text}").json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -421,8 +421,8 @@ async def trap(text1, text2, text3):
         f"https://nekobot.xyz/api/imagegen?type=trap&name={text1}&author={text2}&image={text3}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
@@ -438,8 +438,8 @@ async def phcomment(text1, text2, text3):
         f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
     ).json()
     peru = r.get("message")
-    weburl = url(peru)
-    if not weburl:
+    caturl = url(peru)
+    if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)

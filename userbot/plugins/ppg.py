@@ -6,7 +6,7 @@ import html
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_lowebion
+from telethon.utils import get_input_location
 
 from userbot.utils import admin_cmd
 
@@ -43,7 +43,7 @@ async def _(event):
         user_bio = html.escape(replied_user.about)
     common_chats = replied_user.common_chats_count
     try:
-        dc_id, lowebion = get_input_lowebion(replied_user.profile_photo)
+        dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         str(e)

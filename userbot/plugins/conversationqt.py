@@ -119,7 +119,7 @@ async def _(event):
     if x == 17:
 
         await event.edit(
-            '`"What would be in your web history that you’d be embarrassed if someone saw?"`'
+            '`"What would be in your cat history that you’d be embarrassed if someone saw?"`'
         )
 
     if x == 18:
@@ -175,12 +175,12 @@ async def _(event):
     if x == 28:
 
         await event.edit(
-            '`"What are some good and bad things about the eduwebion system in your country?"`'
+            '`"What are some good and bad things about the education system in your country?"`'
         )
 
     if x == 29:
 
-        await event.edit('`"What do you think of online eduwebion?"`')
+        await event.edit('`"What do you think of online education?"`')
 
     if x == 30:
 
@@ -249,7 +249,7 @@ async def _(event):
     if x == 44:
 
         await event.edit(
-            '`"What website or app has completely changed your life for better or for worse?"`'
+            '`"What catsite or app has completely changed your life for better or for worse?"`'
         )
 
     if x == 45:
@@ -303,7 +303,7 @@ async def _(event):
     if x == 55:
 
         await event.edit(
-            '`"What is the most important change that should be made to your country’s eduwebion system?"`'
+            '`"What is the most important change that should be made to your country’s education system?"`'
         )
 
     if x == 56:

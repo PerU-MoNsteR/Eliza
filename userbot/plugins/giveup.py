@@ -94,7 +94,7 @@ async def _(event):
         ):  # Written by @HeisenbergTheDanger
             await event.edit("Not supported. Try .forward")
             return
-        if not previous_message.web_preview and previous_message.photo:
+        if not previous_message.cat_preview and previous_message.photo:
             file = await borg.download_file(previous_message.media)
             uploaded_doc = await borg.upload_file(file, file_name="img.png")
             raw_text = previous_message.text

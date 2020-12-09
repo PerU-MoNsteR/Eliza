@@ -120,7 +120,7 @@ async def _(event):
     if x == 18:
 
         await event.edit(
-            '`"When researching things to do for your next leisure travel. Include \<lowebion\> tourism scam into your search. All tourist heavy areas will have their own scams. This should not dampen your excitement but heighten your knowledge so your vawebion will be more enjoyable."`'
+            '`"When researching things to do for your next leisure travel. Include \<location\> tourism scam into your search. All tourist heavy areas will have their own scams. This should not dampen your excitement but heighten your knowledge so your vacation will be more enjoyable."`'
         )
 
     if x == 19:
@@ -162,7 +162,7 @@ async def _(event):
     if x == 25:
 
         await event.edit(
-            "`\"If you're a student planning on your career, look up postings of your dream job, find the skills and qualifiwebions you'll need, then work backwards from there.\"`"
+            "`\"If you're a student planning on your career, look up postings of your dream job, find the skills and qualifications you'll need, then work backwards from there.\"`"
         )
 
     if x == 26:
@@ -342,7 +342,7 @@ async def _(event):
     if x == 55:
 
         await event.edit(
-            '`"Buy a small bottle of perfume you have never tried on before going for a vawebion and use it for while you\'re there. At any point after your vawebion, you get a sniff of it, it brings back those memories instantly. Because scents are among the most powerful memory triggers."`'
+            '`"Buy a small bottle of perfume you have never tried on before going for a vacation and use it for while you\'re there. At any point after your vacation, you get a sniff of it, it brings back those memories instantly. Because scents are among the most powerful memory triggers."`'
         )
 
     if x == 56:
@@ -498,7 +498,7 @@ async def _(event):
     if x == 80:
 
         await event.edit(
-            '`"When filling out appliwebions online, make sure you copy responses which typically take a long time to write, and paste them to a text file. You never know when you could get a server timeout."`'
+            '`"When filling out applications online, make sure you copy responses which typically take a long time to write, and paste them to a text file. You never know when you could get a server timeout."`'
         )
 
     if x == 81:

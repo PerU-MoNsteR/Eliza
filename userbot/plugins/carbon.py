@@ -14,8 +14,8 @@ import os
 from time import sleep
 from urllib.parse import quote_plus
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium import catdriver
+from selenium.catdriver.chrome.options import Options
 
 from userbot import CHROME_DRIVER, GOOGLE_CHROME_BIN
 from userbot.utils import register
@@ -60,7 +60,7 @@ async def carbon_api(e):
 
         chrome_options.add_argument("--headless")
 
-        chrome_options.binary_lowebion = GOOGLE_CHROME_BIN
+        chrome_options.binary_location = GOOGLE_CHROME_BIN
 
         chrome_options.add_argument("--window-size=1920x1080")
 
@@ -74,7 +74,7 @@ async def carbon_api(e):
 
         chrome_options.add_experimental_option("prefs", prefs)
 
-        driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
+        driver = catdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
 
         driver.get(url)
 

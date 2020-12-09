@@ -317,7 +317,7 @@ async def _(event):
     if x == 13:
 
         await event.edit(
-            "[A perfect justifiwebion for breaking a promise...](https://telegra.ph/file/0b8fb8fb729d157844ac9.jpg)",
+            "[A perfect justification for breaking a promise...](https://telegra.ph/file/0b8fb8fb729d157844ac9.jpg)",
             link_preview=True,
         )
 
@@ -415,7 +415,7 @@ async def _(event):
     if x == 27:
 
         await event.edit(
-            "[A justifiwebion for not voting!](https://telegra.ph/file/87d475a8f9a8350d2450e.jpg)",
+            "[A justification for not voting!](https://telegra.ph/file/87d475a8f9a8350d2450e.jpg)",
             link_preview=True,
         )
 

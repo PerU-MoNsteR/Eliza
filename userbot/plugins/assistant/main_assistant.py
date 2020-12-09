@@ -118,7 +118,7 @@ async def users(event):
 
 # Bot Permit.
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
-async def all_messages_webcher(event):
+async def all_messages_catcher(event):
     if is_he_added(event.sender_id):
         return
     if event.raw_text.startswith("/"):

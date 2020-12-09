@@ -200,5 +200,5 @@ async def pressf(f):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**telethon.errors.rpcerrorlist.AuthKeyDupliwebedError: The authorization key (session file) was used under two different IP addresses simultaneously, and can no longer be used. Use the same session exclusively, or use different sessions (caused by GetMessagesRequest)**"
+    mentions = "**telethon.errors.rpcerrorlist.AuthKeyDuplicatedError: The authorization key (session file) was used under two different IP addresses simultaneously, and can no longer be used. Use the same session exclusively, or use different sessions (caused by GetMessagesRequest)**"
     await event.edit(mentions)

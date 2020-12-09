@@ -21,7 +21,7 @@ async def _(event):
         required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(
             yyyy, mm, dd, "en"
         )
-        headers = {"Accept": "appliwebion/json"}
+        headers = {"Accept": "application/json"}
         response_content = requests.get(required_url, headers=headers).json()
         a = ""
         if "error" not in response_content:

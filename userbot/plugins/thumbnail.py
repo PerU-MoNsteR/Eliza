@@ -16,7 +16,7 @@ thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "Processing ...")
+    catevent = await edit_or_reply(event, "Processing ...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -34,11 +34,11 @@ async def _(event):
         Image.open(downloaded_file_name).convert("RGB").save(thumb_image_path, "JPEG")
         # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
         os.remove(downloaded_file_name)
-        await webevent.edit(
+        await catevent.edit(
             "Custom video/file thumbnail saved. This image will be used in the upload, till `.clearthumb`."
         )
     else:
-        await webevent.edit("Reply to a photo to save custom thumbnail")
+        await catevent.edit("Reply to a photo to save custom thumbnail")
 
 
 @bot.on(admin_cmd(pattern="clearthumb$"))

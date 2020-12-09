@@ -87,7 +87,7 @@ def gdrive(url: str) -> str:
     cookies = download.cookies
     try:
         # In case of small file size, Google downloads directly
-        dl_url = download.headers["lowebion"]
+        dl_url = download.headers["location"]
         if "accounts.google.com" in dl_url:  # non-public file
             reply += "`Link is not public!`\n"
             return reply
@@ -100,7 +100,7 @@ def gdrive(url: str) -> str:
         response = requests.get(
             export, stream=True, allow_redirects=False, cookies=cookies
         )
-        dl_url = response.headers["lowebion"]
+        dl_url = response.headers["location"]
         if "accounts.google.com" in dl_url:
             reply += "`Link is not public!`\n"
             return reply
@@ -281,7 +281,7 @@ def github(url: str) -> str:
     dl_url = ""
     download = requests.get(url, stream=True, allow_redirects=False)
     try:
-        dl_url = download.headers["lowebion"]
+        dl_url = download.headers["location"]
     except KeyError:
         reply += "`Error: Can't extract the link`\n"
     name = link.split("/")[-1]
@@ -306,7 +306,7 @@ def androidfilehost(url: str) -> str:
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.9",
         "user-agent": user_agent,
-        "content-type": "appliwebion/x-www-form-urlencoded; charset=UTF-8",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
         "x-mod-sbb-ctype": "xhr",
         "accept": "*/*",
         "referer": f"https://androidfilehost.com/?fid={fid}",

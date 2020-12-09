@@ -17,7 +17,7 @@ from telethon.tl.functions.channels import (
 )
 from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
-from telethon.utils import get_input_lowebion
+from telethon.utils import get_input_location
 
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd, errors_handler
@@ -136,7 +136,7 @@ async def fetch_info(chat, event):
         else None
     )
     try:
-        dc_id, lowebion = get_input_lowebion(chat.full_chat.chat_photo)
+        dc_id, location = get_input_location(chat.full_chat.chat_photo)
     except Exception as e:
         dc_id = "Unknown"
         str(e)

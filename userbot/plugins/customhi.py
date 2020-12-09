@@ -4,12 +4,12 @@ from userbot.utils import admin_cmd
 @borg.on(admin_cmd(pattern=r"hhi ?(.*)"))
 async def hhi(event):
     giveVar = event.text
-    web = giveVar[5:6]
-    if not web:
-        web = "🌺"
+    cat = giveVar[5:6]
+    if not cat:
+        cat = "🌺"
     ct = giveVar[7:8]
     if not ct:
         ct = "✨"
     await event.edit(
-        f"{web}{ct}{ct}{web}{ct}{web}{web}{web}\n{web}{ct}{ct}{web}{ct}{ct}{web}{ct}\n{web}{web}{web}{web}{ct}{ct}{web}{ct}\n{web}{ct}{ct}{web}{ct}{ct}{web}{ct}\n{web}{ct}{ct}{web}{ct}{web}{web}{web}\n☁☁☁☁☁☁☁☁"
+        f"{cat}{ct}{ct}{cat}{ct}{cat}{cat}{cat}\n{cat}{ct}{ct}{cat}{ct}{ct}{cat}{ct}\n{cat}{cat}{cat}{cat}{ct}{ct}{cat}{ct}\n{cat}{ct}{ct}{cat}{ct}{ct}{cat}{ct}\n{cat}{ct}{ct}{cat}{ct}{cat}{cat}{cat}\n☁☁☁☁☁☁☁☁"
     )

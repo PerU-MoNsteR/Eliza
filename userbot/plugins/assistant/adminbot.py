@@ -217,7 +217,7 @@ async def demote(event):
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
 
-    # If we webch BadRequestError from Telethon
+    # If we catch BadRequestError from Telethon
     # Assume we don't have permission to demote
     except BadRequestError:
         await event.reply("i have no permission")

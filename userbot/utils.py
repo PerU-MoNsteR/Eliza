@@ -38,7 +38,7 @@ def load_module(shortname):
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_lowebion(name, path)
+        spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info("Successfully imported " + shortname)
@@ -47,7 +47,7 @@ def load_module(shortname):
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_lowebion(name, path)
+        spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
         mod.tgbot = bot.tgbot
@@ -107,12 +107,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                webreg = "^" + Config.COMMAND_HAND_LER
+                catreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                webreg = "^\\" + Config.COMMAND_HAND_LER
+                catreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(webreg + pattern)
+            args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -173,12 +173,12 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                webreg = "^" + Config.SUDO_COMMAND_HAND_LER
+                catreg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                webreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                catreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(webreg + pattern)
+            args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -249,7 +249,7 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        webevent = (
+        catevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
@@ -257,11 +257,11 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
             )
         )
     else:
-        webevent = await event.edit(
+        catevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await webevent.delete()
+    return await catevent.delete()
 
 
 def errors_handler(func):
@@ -302,7 +302,7 @@ def errors_handler(func):
             process = await asyncio.create_subprocess_shell(
                 command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
             )
-            stdout, stderr = await process.communiwebe()
+            stdout, stderr = await process.communicate()
             result = str(stdout.decode().strip()) + str(stderr.decode().strip())
             ftext += result
             file = open("error.log", "w+")
@@ -557,7 +557,7 @@ def start_assistant(shortname):
 
         path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_lowebion(name, path)
+        spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         # print("Starting Your Assistant Bot.")
@@ -568,7 +568,7 @@ def start_assistant(shortname):
 
         path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_lowebion(name, path)
+        spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)

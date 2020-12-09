@@ -31,7 +31,7 @@ OAUTH_SCOPE = "https://www.googleapis.com/auth/drive.file"
 # Redirect URI for installed apps, can be left as is
 REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 parent_id = Var.GDRIVE_FOLDER_ID
-G_DRIVE_DIR_MIME_TYPE = "appliwebion/vnd.google-apps.folder"
+G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
 #@command(pattern="^.ugdrive ?(.*)")
@@ -140,7 +140,7 @@ async def gsearch(http,query,filename):
                                           fields='nextPageToken, items(id, title, mimeType)',
                                           pageToken=page_token).execute()
         for file in response.get('items',[]):
-            if file.get('mimeType') == "appliwebion/vnd.google-apps.folder":
+            if file.get('mimeType') == "application/vnd.google-apps.folder":
                 msg +="⁍ [{}](https://drive.google.com/drive/folders/{}) (folder)".format(file.get('title'),file.get('id'))+"\n"
             # Process change
             else:
@@ -317,7 +317,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     drive_service.permissions().insert(fileId=file_id, body=permissions).execute()
     # Define file instance and get url for download
     file = drive_service.files().get(fileId=file_id).execute()
-    download_url = file.get("webContentLink")
+    download_url = file.get("catContentLink")
     return download_url
 
 

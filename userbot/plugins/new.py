@@ -57,7 +57,7 @@ def yaml_format(obj, indent=0):
             indent -= 2
             result.append(" " * indent)
     elif isinstance(obj, str):
-        # trunwebe long strings and display elipsis
+        # truncate long strings and display elipsis
         result.append(repr(obj[:STR_LEN_MAX]))
         if len(obj) > STR_LEN_MAX:
             result.append("…")

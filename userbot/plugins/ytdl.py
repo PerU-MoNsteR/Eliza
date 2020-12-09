@@ -101,7 +101,7 @@ async def download_video(v_url):
             "writethumbnail": True,
             "prefer_ffmpeg": True,
             "geo_bypass": True,
-            "nocheckcertifiwebe": True,
+            "nocheckcertificate": True,
             "postprocessors": [
                 {
                     "key": "FFmpegExtractAudio",
@@ -123,7 +123,7 @@ async def download_video(v_url):
             "key": "FFmpegMetadata",
             "prefer_ffmpeg": True,
             "geo_bypass": True,
-            "nocheckcertifiwebe": True,
+            "nocheckcertificate": True,
             "postprocessors": [
                 {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
             ],
@@ -146,7 +146,7 @@ async def download_video(v_url):
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Video is not available from your geographic lowebion due to geographic restrictions imposed by a website.`"
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a catsite.`"
         )
         return
     except MaxDownloadsReached:

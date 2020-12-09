@@ -75,7 +75,7 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
@@ -92,7 +92,7 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-    elif persticker.endswith(".webp"):
+    elif persticker.endswith(".catp"):
         await per.edit("```working...!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -160,11 +160,11 @@ async def memes(per):
     per = await edit_or_reply(per, "`Downloading media......`")
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working...```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -176,8 +176,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working...```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -185,7 +185,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -194,12 +194,12 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```working...```")
         meme_file = persticker
     meme_file = convert_toimage(meme_file)
-    outputfile = "ascii_file.webp" if webidea else "ascii_file.jpg"
+    outputfile = "ascii_file.catp" if catidea else "ascii_file.jpg"
     c_list = random_color()
     color1 = c_list[0]
     color2 = c_list[1]
@@ -227,13 +227,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working...```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -245,8 +245,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -254,7 +254,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -263,7 +263,7 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```working....```")
         meme_file = persticker
@@ -274,7 +274,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "invert.webp" if webidea else "invert.jpg"
+    outputfile = "invert.catp" if catidea else "invert.jpg"
     await invert_colors(meme_file, outputfile)
     await per.client.send_file(
         per.chat_id, outputfile, force_document=False, reply_to=perid
@@ -300,26 +300,26 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
         )
-        stdout, stderr = (await runcmd(webcmd))[:2]
-        if not os.path.lexists(webfile):
-            await web.edit("`Template not found...`")
+        stdout, stderr = (await runcmd(catcmd))[:2]
+        if not os.path.lexists(catfile):
+            await cat.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -327,7 +327,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -336,7 +336,7 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         meme_file = persticker
@@ -347,7 +347,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "solarize.webp" if webidea else "solarize.jpg"
+    outputfile = "solarize.catp" if catidea else "solarize.jpg"
     await solarize(meme_file, outputfile)
     await per.client.send_file(
         per.chat_id, outputfile, force_document=False, reply_to=perid
@@ -373,13 +373,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -391,8 +391,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -400,7 +400,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -409,7 +409,7 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```hip hip hurrah  gonna finish my work on this image!```")
         meme_file = persticker
@@ -420,7 +420,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "mirror_file.webp" if webidea else "mirror_file.jpg"
+    outputfile = "mirror_file.catp" if catidea else "mirror_file.jpg"
     await mirror_file(meme_file, outputfile)
     await per.client.send_file(
         per.chat_id, outputfile, force_document=False, reply_to=perid
@@ -446,13 +446,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
-        os.remove(websticker)
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
+        os.remove(catsticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -464,8 +464,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -473,7 +473,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```Transfiguration Time! Mwahaha fliping this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -482,7 +482,7 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```Transfiguration Time! Mwahaha fliping this image!```")
         meme_file = persticker
@@ -493,7 +493,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "flip_image.webp" if webidea else "flip_image.jpg"
+    outputfile = "flip_image.catp" if catidea else "flip_image.jpg"
     await flip_image(meme_file, outputfile)
     await per.client.send_file(
         per.chat_id, outputfile, force_document=False, reply_to=perid
@@ -519,13 +519,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -537,8 +537,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -546,7 +546,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
             "```Transfiguration Time! Mwahaha changing to black-and-white this video! (」ﾟﾛﾟ)｣```"
@@ -557,7 +557,7 @@ async def memes(per):
             await per.edit("```Template not found...```")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     else:
         await per.edit("```working....```")
         meme_file = persticker
@@ -568,7 +568,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "grayscale.webp" if webidea else "grayscale.jpg"
+    outputfile = "grayscale.catp" if catidea else "grayscale.jpg"
     await grayscale(meme_file, outputfile)
     await per.client.send_file(
         per.chat_id, outputfile, force_document=False, reply_to=perid
@@ -596,13 +596,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -614,8 +614,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -623,7 +623,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -642,7 +642,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "grayscale.webp" if webidea else "grayscale.jpg"
+    outputfile = "grayscale.catp" if catidea else "grayscale.jpg"
     try:
         await crop(meme_file, outputfile, perinput)
     except Exception as e:
@@ -683,13 +683,13 @@ async def memes(per):
 
     await asyncio.sleep(2)
     persticker = await reply.download_media(file="./temp/")
-    if not persticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
+    if not persticker.endswith((".mp4", ".catp", ".tgs", ".png", ".jpg", ".mov")):
         os.remove(persticker)
         await edit_or_reply(per, "```Supported Media not found...```")
         return
     import pybase64
 
-    webidea = None
+    catidea = None
     if persticker.endswith(".tgs"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
@@ -701,8 +701,8 @@ async def memes(per):
             await per.edit("`Template not found...`")
             LOGS.info(stdout + stderr)
         meme_file = perfile
-        webidea = True
-    elif persticker.endswith(".webp"):
+        catidea = True
+    elif persticker.endswith(".catp"):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -710,7 +710,7 @@ async def memes(per):
             await per.edit("`Template not found... `")
             return
         meme_file = perfile
-        webidea = True
+        catidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
@@ -729,7 +729,7 @@ async def memes(per):
     except BaseException:
         pass
     meme_file = convert_toimage(meme_file)
-    outputfile = "framed.webp" if webidea else "framed.jpg"
+    outputfile = "framed.catp" if catidea else "framed.jpg"
     try:
         await add_frame(meme_file, outputfile, perinput, colr)
     except Exception as e:

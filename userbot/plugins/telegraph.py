@@ -23,7 +23,7 @@ auth_url = r["auth_url"]
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`processing........`")
+    catevent = await edit_or_reply(event, "`processing........`")
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
     if BOTLOG:
@@ -44,22 +44,22 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await webevent.edit(
+            await catevent.edit(
                 f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
             )
-            if downloaded_file_name.endswith((".webp")):
+            if downloaded_file_name.endswith((".catp")):
                 resize_image(downloaded_file_name)
             try:
                 start = datetime.now()
                 media_urls = upload_file(downloaded_file_name)
             except exceptions.TelegraphException as exc:
-                await webevent.edit("**Error : **" + str(exc))
+                await catevent.edit("**Error : **" + str(exc))
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await webevent.edit(
+                await catevent.edit(
                     "**Uploaded  [here](https://telegra.ph{})\
                     \n** In {} seconds **.\n**Uploaded by :-** {}".format(
                         media_urls[0], (ms + ms_two), (mention)
@@ -89,14 +89,14 @@ async def _(event):
             response = telegraph.create_page(title_of_page, html_content=page_content)
             end = datetime.now()
             ms = (end - start).seconds
-            web = f"https://telegra.ph/{response['path']}"
-            await webevent.edit(
-                f"**➥ Pasted to :-** [Telegraph]({web})\
+            cat = f"https://telegra.ph/{response['path']}"
+            await catevent.edit(
+                f"**➥ Pasted to :-** [Telegraph]({cat})\
                  \n**➥ Pasted in {ms} seconds .**",
                 link_preview=True,
             )
     else:
-        await webevent.edit(
+        await catevent.edit(
             "`Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)`",
         )
 

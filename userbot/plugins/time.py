@@ -28,7 +28,7 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     # pylint:disable=E0602
     required_file_name = (
-        Config.TMP_DOWNLOAD_DIRECTORY + " " + str(datetime.now()) + ".webp"
+        Config.TMP_DOWNLOAD_DIRECTORY + " " + str(datetime.now()) + ".catp"
     )
     img = Image.new("RGBA", (350, 220), color=(0, 0, 0, 115))
     fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)

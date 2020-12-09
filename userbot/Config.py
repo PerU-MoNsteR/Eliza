@@ -27,7 +27,7 @@ if ENV:
         # string session for running on Heroku
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         # some people upload their session files on GitHub or other third party hosting
-        # websites, this might prevent the un-authorized use of the
+        # catsites, this might prevent the un-authorized use of the
         # confidential session files
         # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
         OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)

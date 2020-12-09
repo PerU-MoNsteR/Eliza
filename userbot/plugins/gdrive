@@ -135,7 +135,7 @@ async def generate_credentials(gdrive):
         configs, SCOPES, redirect_uri=REDIRECT_URI
     )
     auth_url, _ = flow.authorization_url(access_type="offline", prompt="consent")
-    msg = await gdrive.respond("`Go to your BOTLOG group to authentiwebe token...`")
+    msg = await gdrive.respond("`Go to your BOTLOG group to authenticate token...`")
     async with gdrive.client.conversation(BOTLOG_CHATID) as conv:
         url_msg = await conv.send_message(
             "Please go to this URL:\n" f"{auth_url}\nauthorize then reply the code"
@@ -314,7 +314,7 @@ async def download(event, gdrive, service, uri=None):
             global parent_Id
             folder = await create_dir(service, file_name)
             parent_Id = folder.get("id")
-            webViewURL = "https://drive.google.com/drive/folders/" + parent_Id
+            catViewURL = "https://drive.google.com/drive/folders/" + parent_Id
             try:
                 await task_directory(gdrive, service, required_file_name)
             except CancelProcess:
@@ -329,7 +329,7 @@ async def download(event, gdrive, service, uri=None):
             else:
                 reply += (
                     f"**{status}**\n\n"
-                    f"[{file_name}]({webViewURL})\n"
+                    f"[{file_name}]({catViewURL})\n"
                     "**Status : **`OK - Successfully uploaded.`\n\n"
                 )
                 await reset_parentId()
@@ -392,10 +392,10 @@ async def copy_dir(service, file_id, dir_id):
         return dir_id
     new_id = None
     for file in files:
-        if file["mimeType"] == "appliwebion/vnd.google-apps.folder":
+        if file["mimeType"] == "application/vnd.google-apps.folder":
             folder = await create_dir(service, file["name"], dir_id)
-            webdir_id = folder.get("id")
-            new_id = await copy_dir(service, file["id"], webdir_id)
+            catdir_id = folder.get("id")
+            new_id = await copy_dir(service, file["id"], catdir_id)
         else:
             await copy_file(service, file["id"], dir_id)
             await asyncio.sleep(0.5)
@@ -441,7 +441,7 @@ async def download_gdrive(gdrive, service, uri):
             .get(fileId=file_Id, fields="name, mimeType", supportsTeamDrives=True)
             .execute()
         )
-        if file["mimeType"] == "appliwebion/vnd.google-apps.folder":
+        if file["mimeType"] == "application/vnd.google-apps.folder":
             folder = await create_dir(service, file["name"])
             dir_id = folder.get("id")
             await copy_dir(service, file_Id, dir_id)
@@ -449,7 +449,7 @@ async def download_gdrive(gdrive, service, uri):
             ms = (end - start).seconds
             reply = (
                 f"**Folder successfully copied in** `{ms} seconds`\n\n"
-                f"**Link : **[{file['name']}]({folder['webViewLink']})"
+                f"**Link : **[{file['name']}]({folder['catViewLink']})"
             )
         else:
             ret_id = await copy_file(service, file_Id, dir_id)
@@ -486,7 +486,7 @@ async def get_information(service, Id):
         .get(
             fileId=Id,
             fields="name, id, size, mimeType, "
-            "webViewLink, webContentLink,"
+            "catViewLink, catContentLink,"
             "description",
             supportsAllDrives=True,
         )
@@ -497,7 +497,7 @@ async def get_information(service, Id):
 async def create_dir(service, folder_name, dir_id=None):
     metadata = {
         "name": folder_name,
-        "mimeType": "appliwebion/vnd.google-apps.folder",
+        "mimeType": "application/vnd.google-apps.folder",
     }
     if not dir_id:
         try:
@@ -514,7 +514,7 @@ async def create_dir(service, folder_name, dir_id=None):
         metadata["parents"] = [dir_id]
     folder = (
         service.files()
-        .create(body=metadata, fields="id, webViewLink", supportsAllDrives=True)
+        .create(body=metadata, fields="id, catViewLink", supportsAllDrives=True)
         .execute()
     )
     await change_permission(service, folder.get("id"))
@@ -546,7 +546,7 @@ async def upload(gdrive, service, file_path, file_name, mimeType):
     file = service.files().create(
         body=body,
         media_body=media_body,
-        fields="id, size, webContentLink",
+        fields="id, size, catContentLink",
         supportsAllDrives=True,
     )
     global is_cancelled
@@ -583,7 +583,7 @@ async def upload(gdrive, service, file_path, file_name, mimeType):
                 display_message = current_message
     file_id = response.get("id")
     file_size = response.get("size")
-    downloadURL = response.get("webContentLink")
+    downloadURL = response.get("catContentLink")
     """ - Change permission - """
     await change_permission(service, file_id)
     return int(file_size), downloadURL
@@ -674,7 +674,7 @@ async def lists(gdrive):
     if service is False:
         return False
     message = ""
-    fields = "nextPageToken, files(name, id, " "mimeType, webViewLink, webContentLink)"
+    fields = "nextPageToken, files(name, id, " "mimeType, catViewLink, catContentLink)"
     page_token = None
     result = []
     while True:
@@ -707,11 +707,11 @@ async def lists(gdrive):
                 break
 
             file_name = files.get("name")
-            if files.get("mimeType") == "appliwebion/vnd.google-apps.folder":
-                link = files.get("webViewLink")
+            if files.get("mimeType") == "application/vnd.google-apps.folder":
+                link = files.get("catViewLink")
                 message += f"📁️ • [{file_name}]({link})\n"
             else:
-                link = files.get("webContentLink")
+                link = files.get("catContentLink")
                 message += f"📄️ • [{file_name}]({link})\n"
             result.append(files)
         if len(result) >= page_size:
@@ -750,7 +750,7 @@ async def lists(gdrive):
         outgoing=True,
     )
 )
-async def weblists(gdrive):
+async def catlists(gdrive):
     await lists(gdrive)
 
 
@@ -783,7 +783,7 @@ async def google_drive_managers(gdrive):
             name_or_id, _ = (name_or_id, "unknown")
         metadata = {
             "name": name_or_id,
-            "mimeType": "appliwebion/vnd.google-apps.folder",
+            "mimeType": "application/vnd.google-apps.folder",
         }
         try:
             if parent_Id is not None:
@@ -803,7 +803,7 @@ async def google_drive_managers(gdrive):
                 spaces="drive",
                 fields=(
                     "nextPageToken, files(parents, name, id, size, "
-                    "mimeType, webViewLink, webContentLink, description)"
+                    "mimeType, catViewLink, catContentLink, description)"
                 ),
                 supportsAllDrives=True,
                 pageToken=page_token,
@@ -821,7 +821,7 @@ async def google_drive_managers(gdrive):
                 folder = await create_dir(service, name_or_id)
                 status = status.replace("EXIST", "CREATED")
             folder_id = folder.get("id")
-            webViewURL = folder.get("webViewLink")
+            catViewURL = folder.get("catViewLink")
             if "CREATED" in status:
                 """ - Change permission - """
                 await change_permission(service, folder_id)
@@ -829,7 +829,7 @@ async def google_drive_managers(gdrive):
                 f"**{status}**\n\n"
                 f"**Folder Name : **`{name_or_id}`\n"
                 f"**ID  :** `{folder_id}`\n"
-                f"**URL :** [Open]({webViewURL})\n\n"
+                f"**URL :** [Open]({catViewURL})\n\n"
             )
         elif exe == "rm":
             """ - Permanently delete, skipping the trash - """
@@ -851,7 +851,7 @@ async def google_drive_managers(gdrive):
                     continue
             name = f.get("name")
             mimeType = f.get("mimeType")
-            if mimeType == "appliwebion/vnd.google-apps.folder":
+            if mimeType == "application/vnd.google-apps.folder":
                 status = "FOLDER - DELETION"
             else:
                 status = "FILE - DELETION"
@@ -890,10 +890,10 @@ async def google_drive_managers(gdrive):
             f_id = f.get("id")
             f_size = f.get("size")
             mimeType = f.get("mimeType")
-            webViewLink = f.get("webViewLink")
-            downloadURL = f.get("webContentLink")
+            catViewLink = f.get("catViewLink")
+            downloadURL = f.get("catContentLink")
             description = f.get("description")
-            if mimeType == "appliwebion/vnd.google-apps.folder":
+            if mimeType == "application/vnd.google-apps.folder":
                 status = "**FOLDER - EXIST **"
             else:
                 status = "**FILE - EXIST **"
@@ -902,11 +902,11 @@ async def google_drive_managers(gdrive):
                 f"**Name  : **`{name_or_id}`\n"
                 f"**ID    :** `{f_id}`\n"
             )
-            if mimeType != "appliwebion/vnd.google-apps.folder":
+            if mimeType != "application/vnd.google-apps.folder":
                 msg += f"**Size  :** `{humanbytes(f_size)}`\n"
                 msg += f"**Link  :** [{name_or_id}]({downloadURL})\n\n"
             else:
-                msg += f"**URL   :** [Open]({webViewLink})\n\n"
+                msg += f"**URL   :** [Open]({catViewLink})\n\n"
             if description:
                 msg += f"**About :**\n`{description}`\n\n"
             reply += msg
@@ -964,7 +964,7 @@ async def google_drive(gdrive):
         folder_name = await get_raw_name(folder_path)
         folder = await create_dir(service, folder_name)
         parent_Id = folder.get("id")
-        webViewURL = "https://drive.google.com/drive/folders/" + parent_Id
+        catViewURL = "https://drive.google.com/drive/folders/" + parent_Id
         try:
             await task_directory(gdrive, service, folder_path)
         except CancelProcess:
@@ -987,7 +987,7 @@ async def google_drive(gdrive):
         else:
             await gdrive.edit(
                 "**[FOLDER - UPLOAD]**\n\n"
-                f"[{folder_name}]({webViewURL})\n"
+                f"[{folder_name}]({catViewURL})\n"
                 "**Status : **`OK - Successfully uploaded.`\n\n"
             )
             await reset_parentId()
@@ -1168,7 +1168,7 @@ async def set_upload_folder(gdrive):
         try:
             parent_Id = ext_id.split("folders/")[1]
         except IndexError:
-            """ - Try webch again if URL open?id= - """
+            """ - Try catch again if URL open?id= - """
             try:
                 parent_Id = ext_id.split("open?id=")[1]
             except IndexError:
@@ -1328,12 +1328,12 @@ async def g_download(event):
     cmd = event.pattern_match.group(1)
     drive_link = event.pattern_match.group(2)
     file_id = await get_id(drive_link)
-    webevent = await edit_or_reply(event, "Downloading Requested File from G-Drive...")
+    catevent = await edit_or_reply(event, "Downloading Requested File from G-Drive...")
     file_name = await download_file_from_google_drive(file_id)
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
     if not cmd:
-        await webevent.edit("**File Downloaded.\nName : **`" + str(file_name) + "`")
+        await catevent.edit("**File Downloaded.\nName : **`" + str(file_name) + "`")
     else:
         c_time = time.time()
         await event.client.send_file(
@@ -1344,12 +1344,12 @@ async def g_download(event):
             force_document=False,
             supports_streaming=True,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, webevent, c_time, "Uploading...", file_name)
+                progress(d, t, catevent, c_time, "Uploading...", file_name)
             ),
         )
         os.remove(file_name)
         await edit_delete(
-            webevent,
+            catevent,
             "**File Downloaded and uploaded.\nName : **`" + str(file_name) + "`",
             5,
         )

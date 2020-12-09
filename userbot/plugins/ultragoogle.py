@@ -27,7 +27,7 @@ opener.addheaders = [("User-agent", useragent)]
 
 @bot.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
 async def gsearch(q_event):
-    webevent = await edit_or_reply(q_event, "`searching........`")
+    catevent = await edit_or_reply(q_event, "`searching........`")
     match = q_event.pattern_match.group(1)
     page = re.findall(r"page=\d+", match)
     try:
@@ -48,7 +48,7 @@ async def gsearch(q_event):
             msg += f"👉[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await webevent.edit(
+    await catevent.edit(
         "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
     )
     if BOTLOG:
@@ -65,7 +65,7 @@ async def _(event):
     start = datetime.now()
     OUTPUT_STR = "Reply to an image to do Google Reverse Search"
     if event.reply_to_msg_id:
-        webevent = await edit_or_reply(event, "Pre Processing Media")
+        catevent = await edit_or_reply(event, "Pre Processing Media")
         previous_message = await event.get_reply_message()
         previous_message_text = previous_message.message
         BASE_URL = "http://www.google.com"
@@ -85,19 +85,19 @@ async def _(event):
             google_rs_response = requests.post(
                 SEARCH_URL, files=multipart, allow_redirects=False
             )
-            the_lowebion = google_rs_response.headers.get("Lowebion")
+            the_location = google_rs_response.headers.get("Location")
             os.remove(downloaded_file_name)
         else:
             previous_message_text = previous_message.message
             SEARCH_URL = "{}/searchbyimage?image_url={}"
             request_url = SEARCH_URL.format(BASE_URL, previous_message_text)
             google_rs_response = requests.get(request_url, allow_redirects=False)
-            the_lowebion = google_rs_response.headers.get("Lowebion")
-        await webevent.edit("Found Google Result. Pouring some soup on it!")
+            the_location = google_rs_response.headers.get("Location")
+        await catevent.edit("Found Google Result. Pouring some soup on it!")
         headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
         }
-        response = requests.get(the_lowebion, headers=headers)
+        response = requests.get(the_location, headers=headers)
         soup = BeautifulSoup(response.text, "html.parser")
         # document.getElementsByClassName("r5a77d"): PRS
         prs_div = soup.find_all("div", {"class": "r5a77d"})[0]
@@ -111,11 +111,11 @@ async def _(event):
         ms = (end - start).seconds
         OUTPUT_STR = """{img_size}
 <b>Possible Related Search : </b> <a href="{prs_url}">{prs_text}</a> 
-<b>More Info : </b> Open this <a href="{the_lowebion}">Link</a> 
+<b>More Info : </b> Open this <a href="{the_location}">Link</a> 
 <i>fetched in {ms} seconds</i>""".format(
             **locals()
         )
-    await webevent.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
+    await catevent.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
 @bot.on(admin_cmd(pattern=r"reverse(?: |$)(\d*)", outgoing=True))
@@ -131,11 +131,11 @@ async def _(img):
         await edit_or_reply(img, "`Reply to photo or sticker nigger.`")
         return
     if photo:
-        webevent = await edit_or_reply(img, "`Processing...`")
+        catevent = await edit_or_reply(img, "`Processing...`")
         try:
             image = Image.open(photo)
         except OSError:
-            await webevent.edit("`Unsupported , most likely.`")
+            await catevent.edit("`Unsupported , most likely.`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -144,23 +144,23 @@ async def _(img):
         searchUrl = "https://www.google.com/searchbyimage/upload"
         multipart = {"encoded_image": (name, open(name, "rb")), "image_content": ""}
         response = requests.post(searchUrl, files=multipart, allow_redirects=False)
-        fetchUrl = response.headers["Lowebion"]
+        fetchUrl = response.headers["Location"]
         if response != 400:
             await img.edit(
                 "`Image successfully uploaded to Google. Maybe.`"
                 "\n`Parsing source now. Maybe.`"
             )
         else:
-            await webevent.edit("`Google told me to fuck off.`")
+            await catevent.edit("`Google told me to fuck off.`")
             return
         os.remove(name)
         match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
         guess = match["best_guess"]
         imgspage = match["similar_images"]
         if guess and imgspage:
-            await webevent.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
+            await catevent.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
         else:
-            await webevent.edit("`Can't find this piece of shit.`")
+            await catevent.edit("`Can't find this piece of shit.`")
             return
 
         lim = img.pattern_match.group(1) or 3
@@ -177,7 +177,7 @@ async def _(img):
             )
         except TypeError:
             pass
-        await webevent.edit(
+        await catevent.edit(
             f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})"
         )
 

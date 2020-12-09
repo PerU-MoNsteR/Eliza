@@ -36,7 +36,7 @@ def add_to_blacklist(chat_id, trigger):
     with BLACKLIST_FILTER_INSERTION_LOCK:
         blacklist_filt = BlackListFilters(str(chat_id), trigger)
 
-        SESSION.merge(blacklist_filt)  # merge to avoid dupliwebe key issues
+        SESSION.merge(blacklist_filt)  # merge to avoid duplicate key issues
         SESSION.commit()
         CHAT_BLACKLISTS.setdefault(str(chat_id), set()).add(trigger)
 

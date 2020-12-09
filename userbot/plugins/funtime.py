@@ -5,16 +5,16 @@ from userbot.utils import admin_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="why$"))
-async def hmm(web):
-    if web.fwd_from:
+async def hmm(cat):
+    if cat.fwd_from:
         return
-    whyweb = nekos.why()
-    await edit_or_reply(web, whyweb)
+    whycat = nekos.why()
+    await edit_or_reply(cat, whycat)
 
 
 @borg.on(admin_cmd(pattern="fact$"))
-async def hmm(web):
-    if web.fwd_from:
+async def hmm(cat):
+    if cat.fwd_from:
         return
-    factweb = nekos.fact()
-    await edit_or_reply(web, factweb)
+    factcat = nekos.fact()
+    await edit_or_reply(cat, factcat)

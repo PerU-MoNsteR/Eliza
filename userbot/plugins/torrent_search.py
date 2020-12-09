@@ -40,7 +40,7 @@ async def tor_search(event):
         search_str = search_str.replace(" ", "+")
         print(search_str)
         res = requests.get(
-            "https://www.torrentdownloads.me/search/?new=1&s_web=0&search="
+            "https://www.torrentdownloads.me/search/?new=1&s_cat=0&search="
             + search_str,
             headers,
         )

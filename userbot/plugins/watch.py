@@ -43,8 +43,8 @@ def get_stream_data(query):
 
     available_streams = {}
     for provider in movie["offers"]:
-        provider_ = get_provider(provider["urls"]["standard_web"])
-        available_streams[provider_] = provider["urls"]["standard_web"]
+        provider_ = get_provider(provider["urls"]["standard_cat"])
+        available_streams[provider_] = provider["urls"]["standard_cat"]
 
     stream_data["providers"] = available_streams
 

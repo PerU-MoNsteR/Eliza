@@ -144,7 +144,7 @@ async def reparse(event):
             peer=await event.get_input_chat(),
             id=event.message.id,
             message=message,
-            no_webpage=not bool(event.message.media),
+            no_catpage=not bool(event.message.media),
             entities=msg_entities,
         )
     )

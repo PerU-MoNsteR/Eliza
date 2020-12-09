@@ -30,7 +30,7 @@ async def pipcheck(pip):
             stderr=asyncPIPE,
         )
 
-        stdout, stderr = await pipc.communiwebe()
+        stdout, stderr = await pipc.communicate()
         pipout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         if pipout:
@@ -81,7 +81,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"**[Sᴜʀᴠɪᴠᴏʀ's](tg://need_update_for_some_feature/) SUICIDE BOMB:**\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -117,7 +117,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"**[PerU_MonSteR](https://t.me/PeRu_MonSteR) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit__ @peru_monster __for assistance.__"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -153,7 +153,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"**Date & Time Of India:**\n\n\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -189,7 +189,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = (
         f"**[PerU_MonSteR](https://t.me/PeRu_MonSteR) Environment Module:**\n\n\n{o}"
@@ -228,7 +228,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = (
         f"**[PeRu_MonsteR](https://t.me/PeRu_MonSteR) , Server Speed Calculated:**\n{o}"
@@ -266,7 +266,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -302,7 +302,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -338,7 +338,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -374,7 +374,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -410,7 +410,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = f"{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:

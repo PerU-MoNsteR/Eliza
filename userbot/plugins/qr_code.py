@@ -31,7 +31,7 @@ async def _(event):
         Config.TMP_DOWNLOAD_DIRECTORY,
         progress_callback=progress,
     )
-    # parse the Official ZXing webpage to decode the QR
+    # parse the Official ZXing catpage to decode the QR
     command_to_exec = [
         "curl",
         "-X",
@@ -47,7 +47,7 @@ async def _(event):
         stderr=asyncio.subprocess.PIPE,
     )
     # Wait for the subprocess to finish
-    stdout, stderr = await process.communiwebe()
+    stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
     os.remove(downloaded_file_name)
@@ -106,15 +106,15 @@ async def _(event):
     qr.add_data(message)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
-    img.save("img_file.webp", "PNG")
+    img.save("img_file.catp", "PNG")
     await borg.send_file(
         event.chat_id,
-        "img_file.webp",
+        "img_file.catp",
         caption=message,
         reply_to=reply_msg_id,
         progress_callback=progress,
     )
-    os.remove("img_file.webp")
+    os.remove("img_file.catp")
     end = datetime.now()
     ms = (end - start).seconds
     await event.edit("Created QRCode in {} seconds".format(ms))
