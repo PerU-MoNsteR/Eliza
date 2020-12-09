@@ -3,15 +3,15 @@
 .tele t as reply to a large text"""
 
 
-from userbot.utils import admin_cmd
 import os
 from datetime import datetime
 
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, mention
+from userbot.utils import admin_cmd, edit_or_reply
+
+from . import BOTLOG, BOTLOG_CHATID, mention
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -104,4 +104,3 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
-
