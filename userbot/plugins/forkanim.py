@@ -91,7 +91,8 @@ async def payf(event):
         paytext * 2,
     )
     await event.edit(pay)
-    
+
+
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 
@@ -116,4 +117,3 @@ async def _(event):
         await borg.forward_messages(event.chat_id, fwd_message)
         await fwd_message.delete()
         await event.delete()
-
