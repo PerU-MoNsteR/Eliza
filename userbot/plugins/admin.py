@@ -126,7 +126,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    catevent = await edit_or_reply(promt, "`Promoting...`")
+    webevent = await edit_or_reply(promt, "`Promoting...`")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Admin"
@@ -134,9 +134,9 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await catevent.edit("`Promoted Successfully! Now gib Party`")
+        await webevent.edit("`Promoted Successfully! Now gib Party`")
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await webevent.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -158,7 +158,7 @@ async def demote(dmod):
     if not admin and not creator:
         await edit_or_reply(dmod, NO_ADMIN)
         return
-    catevent = await edit_or_reply(dmod, "`Demoting...`")
+    webevent = await edit_or_reply(dmod, "`Demoting...`")
     rank = "admeme"
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -175,9 +175,9 @@ async def demote(dmod):
     try:
         await dmod.client(EditAdminRequest(dmod.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await webevent.edit(NO_PERM)
         return
-    await catevent.edit("`Demoted Successfully! Betterluck next time`")
+    await webevent.edit("`Demoted Successfully! Betterluck next time`")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -201,25 +201,25 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    catevent = await edit_or_reply(bon, "`Whacking the pest!`")
+    webevent = await edit_or_reply(bon, "`Whacking the pest!`")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await webevent.edit(NO_PERM)
         return
     try:
         reply = await bon.get_reply_message()
         if reply:
             await reply.delete()
     except BadRequestError:
-        await catevent.edit(
+        await webevent.edit(
             "`I dont have message nuking rights! But still he is banned!`"
         )
         return
     if reason:
-        await catevent.edit(f"`{str(user.id)}` is banned !!\nReason: {reason}")
+        await webevent.edit(f"`{str(user.id)}` is banned !!\nReason: {reason}")
     else:
-        await catevent.edit(f"`{str(user.id)}` is banned !!")
+        await webevent.edit(f"`{str(user.id)}` is banned !!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -240,14 +240,14 @@ async def nothanos(unbon):
     if not admin and not creator:
         await edit_or_reply(unbon, NO_ADMIN)
         return
-    catevent = await edit_or_reply(unbon, "`Unbanning...`")
+    webevent = await edit_or_reply(unbon, "`Unbanning...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await catevent.edit("Unbanned Successfully.")
+        await webevent.edit("Unbanned Successfully.")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -256,7 +256,7 @@ async def nothanos(unbon):
                 f"CHAT: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await catevent.edit("`Uh oh my unban logic broke!`")
+        await webevent.edit("`Uh oh my unban logic broke!`")
 
 
 @bot.on(admin_cmd(incoming=True))
@@ -533,19 +533,19 @@ async def kick(usr):
     if not user:
         await edit_or_reply(usr, "`Couldn't fetch user.`")
         return
-    catevent = await edit_or_reply(usr, "`Kicking...`")
+    webevent = await edit_or_reply(usr, "`Kicking...`")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        await catevent.edit(NO_PERM + f"\n{str(e)}")
+        await webevent.edit(NO_PERM + f"\n{str(e)}")
         return
     if reason:
-        await catevent.edit(
+        await webevent.edit(
             f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await catevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+        await webevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
