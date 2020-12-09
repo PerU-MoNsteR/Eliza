@@ -9,8 +9,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "catevent"
-          replace: "webevent"
+          find: "cat"
+          replace: "web"
       - name: Create Pull Request
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
