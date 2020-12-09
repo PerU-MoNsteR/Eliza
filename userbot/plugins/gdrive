@@ -1328,12 +1328,12 @@ async def g_download(event):
     cmd = event.pattern_match.group(1)
     drive_link = event.pattern_match.group(2)
     file_id = await get_id(drive_link)
-    catevent = await edit_or_reply(event, "Downloading Requested File from G-Drive...")
+    webevent = await edit_or_reply(event, "Downloading Requested File from G-Drive...")
     file_name = await download_file_from_google_drive(file_id)
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
     if not cmd:
-        await catevent.edit("**File Downloaded.\nName : **`" + str(file_name) + "`")
+        await webevent.edit("**File Downloaded.\nName : **`" + str(file_name) + "`")
     else:
         c_time = time.time()
         await event.client.send_file(
@@ -1344,12 +1344,12 @@ async def g_download(event):
             force_document=False,
             supports_streaming=True,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, catevent, c_time, "Uploading...", file_name)
+                progress(d, t, webevent, c_time, "Uploading...", file_name)
             ),
         )
         os.remove(file_name)
         await edit_delete(
-            catevent,
+            webevent,
             "**File Downloaded and uploaded.\nName : **`" + str(file_name) + "`",
             5,
         )
