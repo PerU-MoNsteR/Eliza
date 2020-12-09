@@ -82,9 +82,7 @@ async def memes(per):
     import pybase64
 
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working.....!```"
-        )
+        await per.edit("```working.....!```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -95,9 +93,7 @@ async def memes(per):
             LOGS.info(stdout + stderr)
         meme_file = perfile
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working...!```"
-        )
+        await per.edit("```working...!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -105,9 +101,7 @@ async def memes(per):
             return
         meme_file = perfile
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```working...!```"
-        )
+        await per.edit("```working...!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -115,9 +109,7 @@ async def memes(per):
             return
         meme_file = perfile
     else:
-        await per.edit(
-            "```working.....!```"
-        )
+        await per.edit("```working.....!```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -174,9 +166,7 @@ async def memes(per):
         return
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working...```"
-        )
+        await per.edit("```working...```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -188,9 +178,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working...```"
-        )
+        await per.edit("```working...```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -199,9 +187,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -210,9 +196,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```working...```"
-        )
+        await per.edit("```working...```")
         meme_file = persticker
     meme_file = convert_toimage(meme_file)
     outputfile = "ascii_file.webp" if webidea else "ascii_file.jpg"
@@ -251,9 +235,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working...```"
-        )
+        await per.edit("```working...```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -265,9 +247,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -276,9 +256,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -287,9 +265,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -332,9 +308,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -346,9 +320,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -357,9 +329,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -368,9 +338,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -413,9 +381,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -427,9 +393,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -438,9 +402,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -449,9 +411,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this image!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this image!```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -494,9 +454,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -508,9 +466,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker!```"
-        )
+        await per.edit("```hip hip hurrah  gonna finish my work on this sticker!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -519,9 +475,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this video!```"
-        )
+        await per.edit("```Transfiguration Time! Mwahaha fliping this video!```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -530,9 +484,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this image!```"
-        )
+        await per.edit("```Transfiguration Time! Mwahaha fliping this image!```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -575,9 +527,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -589,9 +539,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -611,9 +559,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     else:
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -658,9 +604,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -672,9 +616,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -683,9 +625,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -693,9 +633,7 @@ async def memes(per):
             return
         meme_file = perfile
     else:
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -753,9 +691,7 @@ async def memes(per):
 
     webidea = None
     if persticker.endswith(".tgs"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
             f"lottie_convert.py --frame 0 -if lottie -of png {persticker} {perfile}"
@@ -767,9 +703,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith(".webp"):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
         if not os.path.lexists(perfile):
@@ -778,9 +712,7 @@ async def memes(per):
         meme_file = perfile
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
         if not os.path.lexists(perfile):
@@ -788,9 +720,7 @@ async def memes(per):
             return
         meme_file = perfile
     else:
-        await per.edit(
-            "```working....```"
-        )
+        await per.edit("```working....```")
         meme_file = persticker
     try:
         san = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
