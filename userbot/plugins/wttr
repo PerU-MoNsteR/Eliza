@@ -1,0 +1,87 @@
+
+from telethon.tl.types import MessageMediaPhoto
+import os, urllib, requests, re, asyncio
+from userbot.utils import admin_cmd
+from userbot import CMD_HELP, ALIVE_NAME
+
+DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
+
+
+KANG_KAREGA_MC = str(ALIVE_NAME) if ALIVE_NAME else "THIS NOOB"
+@bot.on(admin_cmd(pattern="enc ?(.*)", outgoing=True))#hehe
+async def _(event):                   
+    reply = await event.get_reply_message()
+    if not reply:
+
+        return await event.edit(
+           "Reply to any image or non animated sticker !"
+        )
+
+    input_str = event.pattern_match.group(1)
+    hm = input_str 
+    devent = await event.edit("yo let me downlaoad it....")
+    media = await event.client.download_media(reply)
+    if not media.endswith(("png", "jpg", "webp")):
+        return await event.edit(
+             "Reply to any image or non animated sticker !"
+        )
+    
+    if input_str:
+        devent = await event.edit("styling the image sar...")
+        r = requests.post(
+          "https://api.deepai.org/api/neural-style",
+        files={
+            'style': f"{hm}",
+            'content': open(media, "rb"),
+            },
+        headers={"api-key": DARKCOBRA},
+    )
+
+        os.remove(media)
+        if "status" in r.json():
+            return await devent.edit( r.json()["status"])
+        r_json = r.json()['output_ur# Made for DARK COBRA
+
+
+from telethon.tl.types import MessageMediaPhoto
+import os, urllib, requests, re, asyncio
+from userbot.utils import admin_cmd
+from userbot import CMD_HELP, ALIVE_NAME
+
+DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
+
+
+KANG_KAREGA_MC = str(ALIVE_NAME) if ALIVE_NAME else "THIS NOOB"
+@bot.on(admin_cmd(pattern="enc ?(.*)", outgoing=True))#hehe
+async def _(event):                   
+    reply = await event.get_reply_message()
+    if not reply:
+
+        return await event.edit(
+           "Reply to any image or non animated sticker !"
+        )
+
+    input_str = event.pattern_match.group(1)
+    hm = input_str 
+    devent = await event.edit("yo let me downlaoad it....")
+    media = await event.client.download_media(reply)
+    if not media.endswith(("png", "jpg", "webp")):
+        return await event.edit(
+             "Reply to any image or non animated sticker !"
+        )
+    
+    if input_str:
+        devent = await event.edit("styling the image sar...")
+        r = requests.post(
+          "https://api.deepai.org/api/neural-style",
+        files={
+            'style': f"{hm}",
+            'content': open(media, "rb"),
+            },
+        headers={"api-key": DARKCOBRA},
+    )
+
+        os.remove(media)
+        if "status" in r.json():
+            return await devent.edit( r.json()["status"])
+        r_json = r.json()['output_ur
