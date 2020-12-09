@@ -31,7 +31,7 @@ async def _(event):
         Config.TMP_DOWNLOAD_DIRECTORY,
         progress_callback=progress,
     )
-    # parse the Official ZXing catpage to decode the QR
+    # parse the Official ZXing webpage to decode the QR
     command_to_exec = [
         "curl",
         "-X",
@@ -106,15 +106,15 @@ async def _(event):
     qr.add_data(message)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
-    img.save("img_file.catp", "PNG")
+    img.save("img_file.webp", "PNG")
     await borg.send_file(
         event.chat_id,
-        "img_file.catp",
+        "img_file.webp",
         caption=message,
         reply_to=reply_msg_id,
         progress_callback=progress,
     )
-    os.remove("img_file.catp")
+    os.remove("img_file.webp")
     end = datetime.now()
     ms = (end - start).seconds
     await event.edit("Created QRCode in {} seconds".format(ms))

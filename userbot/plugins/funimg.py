@@ -215,8 +215,8 @@ async def hehe(event):
     imglink = f"https://telegra.ph{url_s[0]}"
     nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
     r = requests.get(nikal)
-    open("peru.catp", "wb").write(r.content)
-    chutiya = "peru.catp"
+    open("peru.webp", "wb").write(r.content)
+    chutiya = "peru.webp"
     await borg.send_file(event.chat_id, chutiya, reply_to=dc)
     for files in (chutiya, img):
         if files and os.path.exists(files):

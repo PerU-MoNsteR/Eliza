@@ -47,7 +47,7 @@ async def _(event):
             await catevent.edit(
                 f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
             )
-            if downloaded_file_name.endswith((".catp")):
+            if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
             try:
                 start = datetime.now()

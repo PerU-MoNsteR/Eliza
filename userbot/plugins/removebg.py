@@ -77,7 +77,7 @@ async def remove_background(event):
             await event.delete()
         elif cmd == "srmbg":
             with io.BytesIO(output_file_name.content) as remove_bg_image:
-                remove_bg_image.name = "ELIZABG_less.catp"
+                remove_bg_image.name = "ELIZABG_less.webp"
                 await event.client.send_file(
                     event.chat_id,
                     remove_bg_image,

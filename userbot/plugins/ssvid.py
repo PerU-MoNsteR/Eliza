@@ -28,7 +28,7 @@ async def ssvideo(framecap):
             in reply_message.media.document.attributes
         )
         or (
-            DocumentAttributeFilename(file_name="sticker.catp")
+            DocumentAttributeFilename(file_name="sticker.webp")
             in reply_message.media.document.attributes
         )
     ):

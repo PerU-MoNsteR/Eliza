@@ -21,7 +21,7 @@ async def on_file_to_photo(event):
         return
     if not image.mime_type.startswith("image/"):
         return  # This isn't an image
-    if image.mime_type == "image/catp":
+    if image.mime_type == "image/webp":
         return  # Telegram doesn't let you directly send stickers as photos
     if image.size > 10 * 1024 * 1024:
         return  # We'd get PhotoSaveFileInvalidError otherwise

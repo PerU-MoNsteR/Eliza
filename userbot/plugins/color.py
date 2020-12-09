@@ -19,7 +19,7 @@ async def detect(event):
         return await event.edit("Reply to any image or non animated sticker !")
     await event.edit("Downloading the file to check...")
     media = await event.client.download_media(reply)
-    if not media.endswith(("png", "jpg", "catp")):
+    if not media.endswith(("png", "jpg", "webp")):
         return await event.edit("Reply to any image or non animated sticker !")
     devent = await event.edit("coloring image sar...")
     r = requests.post(

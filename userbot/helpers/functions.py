@@ -217,9 +217,9 @@ async def convert_tosticker(image):
     img = Image.open(image)
     if img.mode != "RGB":
         img = img.convert("RGB")
-    img.save("./temp/temp.catp", "catp")
+    img.save("./temp/temp.webp", "webp")
     os.remove(image)
-    return "./temp/temp.catp"
+    return "./temp/temp.webp"
 
 
 # covid india data
@@ -264,8 +264,8 @@ async def trumptweet(text):
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.catp", "catp")
-    return "temp.catp"
+    img.save("temp.webp", "webp")
+    return "temp.webp"
 
 
 async def changemymind(text):
@@ -294,8 +294,8 @@ async def kannagen(text):
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.catp", "catp")
-    return "temp.catp"
+    img.save("temp.webp", "webp")
+    return "temp.webp"
 
 
 async def moditweet(text):
@@ -309,8 +309,8 @@ async def moditweet(text):
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.catp", "catp")
-    return "temp.catp"
+    img.save("temp.webp", "webp")
+    return "temp.webp"
 
 
 async def tweets(text1, text2):
@@ -324,8 +324,8 @@ async def tweets(text1, text2):
     with open("temp.png", "wb") as f:
         f.write(requests.get(peru).content)
     img = Image.open("temp.png").convert("RGB")
-    img.save("temp.catp", "catp")
-    return "temp.catp"
+    img.save("temp.webp", "webp")
+    return "temp.webp"
 
 
 async def iphonex(text):

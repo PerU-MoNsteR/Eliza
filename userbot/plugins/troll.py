@@ -30,7 +30,7 @@ async def perbot(permemes):
     except BaseException:
         pass
     download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".catp")):
+    if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
@@ -78,7 +78,7 @@ async def perbot(permemes):
     except BaseException:
         pass
     download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".catp")):
+    if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
@@ -136,7 +136,7 @@ async def perbot(permemes):
     except BaseException:
         pass
     download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".catp")):
+    if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
@@ -194,7 +194,7 @@ async def perbot(permemes):
     except BaseException:
         pass
     download_location = await permemes.client.download_media(replied, "./temp/")
-    if download_location.endswith((".catp")):
+    if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):

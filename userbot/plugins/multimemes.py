@@ -175,13 +175,13 @@ async def mim(event):
     )
     await asyncio.sleep(5)
     text = event.pattern_match.group(1)
-    catp_file = await draw_meme_text(dls_loc, text)
+    webp_file = await draw_meme_text(dls_loc, text)
     await event.client.send_file(
-        event.chat_id, catp_file, reply_to=event.reply_to_msg_id
+        event.chat_id, webp_file, reply_to=event.reply_to_msg_id
     )
     await event.delete()
     os.system("rm *.tgs *.mp4 *.png")
-    os.remove(catp_file)
+    os.remove(webp_file)
 
 
 async def draw_meme_text(image_path, text):
@@ -286,10 +286,10 @@ async def draw_meme_text(image_path, text):
             )
             current_h += u_height + pad
 
-    image_name = "memify.catp"
-    catp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
-    img.save(catp_file, "WebP")
-    return catp_file
+    image_name = "memify.webp"
+    webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
+    img.save(webp_file, "WebP")
+    return webp_file
 
 
 @register(outgoing=True, pattern=r"^\.q(?: |$)(.*)")

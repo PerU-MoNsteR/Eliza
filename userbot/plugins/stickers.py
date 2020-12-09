@@ -59,7 +59,7 @@ async def kang(args):
             photo = io.BytesIO()
             await bot.download_file(message.media.document, photo)
             if (
-                DocumentAttributeFilename(file_name="sticker.catp")
+                DocumentAttributeFilename(file_name="sticker.webp")
                 in message.media.document.attributes
             ):
                 emoji = message.media.document.attributes[1].alt

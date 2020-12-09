@@ -49,7 +49,7 @@ async def _(event):
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.catp")
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
     if thumbperu:
         peruthumb = thumbperu[0]
     else:
@@ -68,7 +68,7 @@ async def _(event):
     await event.delete()
     os.system("rm -rf ./temp/*.mp3")
     os.system("rm -rf ./temp/*.jpg")
-    os.system("rm -rf ./temp/*.catp")
+    os.system("rm -rf ./temp/*.webp")
 
 
 @borg.on(admin_cmd(pattern="song320( (.*)|$)"))
@@ -99,7 +99,7 @@ async def _(event):
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.catp")
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
     if thumbperu:
         peruthumb = thumbperu[0]
     else:
@@ -118,7 +118,7 @@ async def _(event):
     await event.delete()
     os.system("rm -rf ./temp/*.mp3")
     os.system("rm -rf ./temp/*.jpg")
-    os.system("rm -rf ./temp/*.catp")
+    os.system("rm -rf ./temp/*.webp")
 
 
 @borg.on(admin_cmd(pattern="vs( (.*)|$)"))
@@ -149,7 +149,7 @@ async def _(event):
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
         return
-    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.catp")
+    thumbperu = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
     if thumbperu:
         peruthumb = thumbperu[0]
     else:
@@ -166,7 +166,7 @@ async def _(event):
     await event.delete()
     os.system("rm -rf ./temp/*.mp4")
     os.system("rm -rf ./temp/*.jpg")
-    os.system("rm -rf ./temp/*.catp")
+    os.system("rm -rf ./temp/*.webp")
 
 
 CMD_HELP.update(

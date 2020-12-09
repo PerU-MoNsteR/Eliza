@@ -145,7 +145,7 @@ def user_input():
             help="download images with specific format",
             type=str,
             required=False,
-            choices=["jpg", "gif", "png", "bmp", "svg", "catp", "ico"],
+            choices=["jpg", "gif", "png", "bmp", "svg", "webp", "ico"],
         )
         parser.add_argument(
             "-u", "--url", help="search with google image URL", type=str, required=False
@@ -660,7 +660,7 @@ class googleimagesdownload:
     # function to download single image
     def single_image(self, image_url):
         main_directory = "downloads"
-        extensions = (".jpg", ".gif", ".png", ".bmp", ".svg", ".catp", ".ico")
+        extensions = (".jpg", ".gif", ".png", ".bmp", ".svg", ".webp", ".ico")
         url = image_url
         try:
             os.makedirs(main_directory)
@@ -681,7 +681,7 @@ class googleimagesdownload:
         image_name = str(url[(url.rfind("/")) + 1 :])
         if "?" in image_name:
             image_name = image_name[: image_name.find("?")]
-        # if ".jpg" in image_name or ".gif" in image_name or ".png" in image_name or ".bmp" in image_name or ".svg" in image_name or ".catp" in image_name or ".ico" in image_name:
+        # if ".jpg" in image_name or ".gif" in image_name or ".png" in image_name or ".bmp" in image_name or ".svg" in image_name or ".webp" in image_name or ".ico" in image_name:
         if any(map(lambda extension: extension in image_name, extensions)):
             file_name = main_directory + "/" + image_name
         else:
@@ -914,7 +914,7 @@ class googleimagesdownload:
                     "png": "ift:png",
                     "bmp": "ift:bmp",
                     "svg": "ift:svg",
-                    "catp": "catp",
+                    "webp": "webp",
                     "ico": "ift:ico",
                     "raw": "ift:craw",
                 },
@@ -1220,7 +1220,7 @@ class googleimagesdownload:
                     ".png",
                     ".bmp",
                     ".svg",
-                    ".catp",
+                    ".webp",
                     ".ico",
                 ]
                 # keep everything after the last '/'
