@@ -949,7 +949,7 @@ class googleimagesdownload:
             url = (
                 "https://www.google.com/search?q="
                 + keywordem
-                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
+                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
         elif specific_site:
             url = (
@@ -957,7 +957,7 @@ class googleimagesdownload:
                 + quote(search_term.encode("utf-8"))
                 + "&as_sitesearch="
                 + specific_site
-                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch"
+                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch"
                 + params
                 + "&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
@@ -965,7 +965,7 @@ class googleimagesdownload:
             url = (
                 "https://www.google.com/search?q="
                 + quote(search_term.encode("utf-8"))
-                + "&espv=2&biw=1366&bih=667&site=cathp&source=lnms&tbm=isch"
+                + "&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch"
                 + params
                 + "&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg"
             )
