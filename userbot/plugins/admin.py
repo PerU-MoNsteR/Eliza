@@ -19,7 +19,8 @@ from telethon.tl.functions.channels import (
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatAdminRights, ChatBannedRights, MessageMediaPhoto
 
-from userbot.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
+from userbot.utils import admin_cmd, edit_or_reply, errors_handler
+
 from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS, get_user_from_event
 from .sql_helper.mute_sql import is_muted, mute, unmute
 
@@ -418,9 +419,7 @@ async def endmute(event):
                     )
         except Exception as e:
             return await edit_or_reply(event, f"**Error : **`{str(e)}`")
-        await edit_or_reply(
-            event, "Successfully unmuted that person"
-        )
+        await edit_or_reply(event, "Successfully unmuted that person")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
