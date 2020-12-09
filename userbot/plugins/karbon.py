@@ -13,8 +13,8 @@ import random
 from time import sleep
 from urllib.parse import quote_plus
 
-from selenium import catdriver
-from selenium.catdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
@@ -47,7 +47,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔳🔳🔲🔲🔲")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -111,7 +111,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔘🔘📛📛📛")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -175,7 +175,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🔵🔵🎛🎛🎛")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -239,7 +239,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("🌝🌝🌚🌚🌚")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -307,7 +307,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("⬛⬛⬜⬜⬜")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -406,7 +406,7 @@ async def carbon_api(e):
     chrome_options.add_experimental_option("prefs", prefs)
     await e.edit("⬛⬛⬜⬜⬜")
 
-    driver = catdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
@@ -507,7 +507,7 @@ async def carbon_api(e):
      chrome_options.add_argument('--disable-gpu')
      prefs = {'download.default_directory' : './'}
      chrome_options.add_experimental_option('prefs', prefs)
-     driver = catdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+     driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
      driver.get(url)
      download_path = './'
      driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')

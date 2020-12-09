@@ -533,18 +533,18 @@ class googleimagesdownload:
 
     # Download Page for more than 100 images
     def download_extended_page(self, url, chromedriver):
-        from selenium import catdriver
-        from selenium.catdriver.common.keys import Keys
+        from selenium import webdriver
+        from selenium.webdriver.common.keys import Keys
 
         if sys.version_info[0] < 3:
             reload(sys)
             sys.setdefaultencoding("utf8")
-        options = catdriver.ChromeOptions()
+        options = webdriver.ChromeOptions()
         options.add_argument("--no-sandbox")
         options.add_argument("--headless")
 
         try:
-            browser = catdriver.Chrome(chromedriver, chrome_options=options)
+            browser = webdriver.Chrome(chromedriver, chrome_options=options)
         except Exception as e:
             print(
                 "Looks like we cannot locate the path the 'chromedriver' (use the '--chromedriver' "

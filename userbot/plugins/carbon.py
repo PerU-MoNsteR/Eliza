@@ -14,8 +14,8 @@ import os
 from time import sleep
 from urllib.parse import quote_plus
 
-from selenium import catdriver
-from selenium.catdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 from userbot import CHROME_DRIVER, GOOGLE_CHROME_BIN
 from userbot.utils import register
@@ -74,7 +74,7 @@ async def carbon_api(e):
 
         chrome_options.add_experimental_option("prefs", prefs)
 
-        driver = catdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
+        driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
 
         driver.get(url)
 

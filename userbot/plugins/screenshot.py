@@ -6,7 +6,7 @@ import io
 import traceback
 from datetime import datetime
 
-from selenium import catdriver
+from selenium import webdriver
 
 from userbot.utils import admin_cmd
 
@@ -21,7 +21,7 @@ async def _(event):
     await event.edit("Processing ...wait")
     start = datetime.now()
     try:
-        chrome_options = catdriver.ChromeOptions()
+        chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument("--test-type")
         chrome_options.add_argument("--headless")
@@ -30,7 +30,7 @@ async def _(event):
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
         await event.edit("Starting Google Chrome BIN")
-        driver = catdriver.Chrome(chrome_options=chrome_options)
+        driver = webdriver.Chrome(chrome_options=chrome_options)
         input_str = event.pattern_match.group(1)
         driver.get(input_str)
         await event.edit("Calculating Page Dimensions")
