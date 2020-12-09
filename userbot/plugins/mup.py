@@ -83,7 +83,7 @@ async def memes(per):
 
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha memifying this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working.....!```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -96,7 +96,7 @@ async def memes(per):
         meme_file = perfile
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha memifying this sticker! (」ﾟﾛﾟ)｣```"
+            "```working...!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -106,7 +106,7 @@ async def memes(per):
         meme_file = perfile
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha memifying this video! (」ﾟﾛﾟ)｣```"
+            "```working...!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -116,7 +116,7 @@ async def memes(per):
         meme_file = perfile
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha memifying this image! (」ﾟﾛﾟ)｣```"
+            "```working.....!```"
         )
         meme_file = persticker
     try:
@@ -175,7 +175,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to ascii image of this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working...```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -189,7 +189,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to ascii image of this sticker! (」ﾟﾛﾟ)｣```"
+            "```working...```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -200,7 +200,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to ascii image of this video! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -211,7 +211,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha converting to asci image of this image! (」ﾟﾛﾟ)｣```"
+            "```working...```"
         )
         meme_file = persticker
     meme_file = convert_toimage(meme_file)
@@ -252,7 +252,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha inverting colors of this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working...```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -266,7 +266,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha inverting colors of this sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -277,7 +277,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha inverting colors of this video! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -288,7 +288,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha inverting colors of this image! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         meme_file = persticker
     try:
@@ -333,7 +333,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha solarizeing this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -347,7 +347,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha solarizeing this sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -358,7 +358,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -369,7 +369,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video!! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video!```"
         )
         meme_file = persticker
     try:
@@ -414,7 +414,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker!```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -428,7 +428,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -439,7 +439,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this video! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this video!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -450,7 +450,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this image! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this image!```"
         )
         meme_file = persticker
     try:
@@ -495,7 +495,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker!```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -509,7 +509,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```hip hip hurrah  gonna finish my work on this sticker! (」ﾟﾛﾟ)｣```"
+            "```hip hip hurrah  gonna finish my work on this sticker!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -520,7 +520,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this video! (」ﾟﾛﾟ)｣```"
+            "```Transfiguration Time! Mwahaha fliping this video!```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -531,7 +531,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha fliping this image! (」ﾟﾛﾟ)｣```"
+            "```Transfiguration Time! Mwahaha fliping this image!```"
         )
         meme_file = persticker
     try:
@@ -576,7 +576,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha changing to black-and-white this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -590,7 +590,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha changing to black-and-white this sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -612,7 +612,7 @@ async def memes(per):
         webidea = True
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha changing to black-and-white this image! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         meme_file = persticker
     try:
@@ -659,7 +659,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha zooming this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -673,7 +673,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha zooming this sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -684,7 +684,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha zooming this video! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -694,7 +694,7 @@ async def memes(per):
         meme_file = perfile
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha zooming this image! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         meme_file = persticker
     try:
@@ -754,7 +754,7 @@ async def memes(per):
     webidea = None
     if persticker.endswith(".tgs"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha framing this animated sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "meme.png")
         percmd = (
@@ -768,7 +768,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith(".webp"):
         await per.edit(
-            "```Transfiguration Time! Mwahaha framing this sticker! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         os.rename(persticker, perfile)
@@ -779,7 +779,7 @@ async def memes(per):
         webidea = True
     elif persticker.endswith((".mp4", ".mov")):
         await per.edit(
-            "```Transfiguration Time! Mwahaha framing this video! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         perfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(persticker, 0, perfile)
@@ -789,7 +789,7 @@ async def memes(per):
         meme_file = perfile
     else:
         await per.edit(
-            "```Transfiguration Time! Mwahaha framing this image! (」ﾟﾛﾟ)｣```"
+            "```working....```"
         )
         meme_file = persticker
     try:
