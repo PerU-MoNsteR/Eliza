@@ -5,14 +5,13 @@ import os
 import time
 from datetime import datetime
 
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd
+from . import CMD_HELP, media_type, progress, reply_id
 
-from . import progress, reply_id
-
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/Eliza.media.ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/eliza.media.ffmpeg"
 
 
-@borg.on(admin_cmd(pattern="ffsave$"))
+@bot.on(admin_cmd(pattern="ffmpegsave$"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -23,22 +22,22 @@ async def ff_mpeg_trim_cmd(event):
             media = media_type(reply_message)
             if media not in ["Video", "Audio", "Voice", "Round Video", "Gif"]:
                 return await edit_delete(event, "`Only media files are supported`", 5)
-            noobevent = await edit_or_reply(event, "`Saving the file...`")
+            catevent = await edit_or_reply(event, "`Saving the file...`")
             try:
                 c_time = time.time()
                 downloaded_file_name = await event.client.download_media(
                     reply_message,
                     FF_MPEG_DOWN_LOAD_MEDIA_PATH,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, noobevent, c_time, "trying to download")
+                        progress(d, t, catevent, c_time, "trying to download")
                     ),
                 )
             except Exception as e:
-                await noobevent.edit(str(e))
+                await catevent.edit(str(e))
             else:
                 end = datetime.now()
                 ms = (end - start).seconds
-                await noobevent.edit(
+                await catevent.edit(
                     f"Saved file to `{downloaded_file_name}` in `{ms}` seconds."
                 )
         else:
@@ -46,11 +45,11 @@ async def ff_mpeg_trim_cmd(event):
     else:
         await edit_delete(
             event,
-            f"media already exists Please remove the media and try again!\n`.ffclear`",
+            f"A media file already exists in path. Please remove the media and try again!\n`.ffmpegclear`",
         )
 
 
-@borg.on(admin_cmd(pattern="vtrim"))
+@bot.on(admin_cmd(pattern="vtrim"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -61,7 +60,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    noobevent = await edit_or_reply(event, "`Triming the media......`")
+    catevent = await edit_or_reply(event, "`Triming the media......`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
@@ -76,7 +75,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                noobevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -89,12 +88,12 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, noobevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(noobevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Error : **`{e}`")
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
@@ -103,7 +102,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                noobevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -116,21 +115,21 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=event.message.id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, noobevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(noobevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(noobevent, "RTFM")
+        await edit_delete(catevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(noobevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(catevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@borg.on(admin_cmd(pattern="atrim"))
+@bot.on(admin_cmd(pattern="atrim"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -141,7 +140,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    noobevent = await edit_or_reply(event, "`Triming the media...........`")
+    catevent = await edit_or_reply(event, "`Triming the media...........`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
@@ -160,7 +159,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                noobevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -173,35 +172,36 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, noobevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(noobevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(noobevent, "RTFM")
+        await edit_delete(catevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(noobevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(catevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@borg.on(admin_cmd(pattern="ffclear$"))
+@bot.on(admin_cmd(pattern="ffmpegclear$"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
     if not os.path.exists(FF_MPEG_DOWN_LOAD_MEDIA_PATH):
-        await edit_delete(event, "`no media saved for triming`")
+        await edit_delete(event, "`There is no media saved in bot for triming`")
     else:
         os.remove(FF_MPEG_DOWN_LOAD_MEDIA_PATH)
         await edit_delete(
             event,
-            "`try to trim newly`",
+            "`The media saved in bot for triming is deleted `",
         )
 
 
 async def take_screen_shot(video_file, output_directory, ttl):
+    # https://stackoverflow.com/a/13891070/4723940
     out_put_file_name = os.path.join(output_directory, f"{str(time.time())}.jpg")
     file_genertor_command = [
         "ffmpeg",
@@ -262,3 +262,4 @@ async def cult_small_video(
     if os.path.lexists(out_put_file_name):
         return out_put_file_name
     return None
+
