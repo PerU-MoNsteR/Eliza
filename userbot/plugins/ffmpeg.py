@@ -5,8 +5,9 @@ import os
 import time
 from datetime import datetime
 
-from userbot.utils import admin_cmd, sudo_cmd
-from . import CMD_HELP, media_type, progress, reply_id
+from userbot.utils import admin_cmd
+
+from . import media_type, progress, reply_id
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/eliza.media.ffmpeg"
 
@@ -262,4 +263,3 @@ async def cult_small_video(
     if os.path.lexists(out_put_file_name):
         return out_put_file_name
     return None
-
