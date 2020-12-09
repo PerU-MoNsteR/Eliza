@@ -14,7 +14,8 @@ from hachoir.parser import createParser
 from pymediainfo import MediaInfo
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import admin_cmd, edit_or_reply
+
 from . import CMD_HELP, make_gif, progress, reply_id, runcmd, thumb_from_audio
 
 PATH = os.path.join("./temp", "temp_vid.mp4")
@@ -71,7 +72,7 @@ def sortthings(contents, path):
 
 async def upload(path, event, udir_event, catflag=None):
     global uploaded
-    webflag = webflag or False
+    webflag or False
     reply_to_id = await reply_id(event)
     if os.path.isdir(path):
         await event.client.send_message(
@@ -81,7 +82,7 @@ async def upload(path, event, udir_event, catflag=None):
         Files = os.listdir(path)
         Files = sortthings(Files, path)
         for file in Files:
-            catpath = os.path.join(path, file)
+            os.path.join(path, file)
             await upload(webpath, event, udir_event)
     elif os.path.isfile(path):
         caption_rts = os.path.basename(path)
