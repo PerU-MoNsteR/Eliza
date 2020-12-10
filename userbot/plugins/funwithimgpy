@@ -23,7 +23,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
     hm = input_str
-    devent = await event.edit("yo let me downlaoad it....")
+    devent = await event.edit("started working....")
     media = await event.client.download_media(reply)
     if not media.endswith(("png", "jpg", "webp")):
         return await event.edit("Reply to any image or non animated sticker !")
@@ -100,7 +100,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
     hm = input_str
-    devent = await event.edit("yo let me downlaoad it....")
+    devent = await event.edit("started working..")
     media = await event.client.download_media(reply)
     if not media.endswith(("png", "jpg", "webp")):
         return await event.edit("Reply to any image or non animated sticker !")
@@ -133,7 +133,7 @@ async def _(event):
         r = requests.post(
             "https://api.deepai.org/api/neural-style",
             files={
-                "style": "https://telegra.ph/file/6ee862bdc38f1b5c17319.jpg",
+                "style": "https://telegra.ph/file/4da39582f7c230ac71629.jpg",
                 "content": open(media, "rb"),
             },
             headers={"api-key": PERUMONSTER},
