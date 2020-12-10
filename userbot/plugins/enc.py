@@ -74,10 +74,80 @@ async def _(event):
         await devent.delete()
         await borg.send_message(event.chat_id, file=result)
 
+import os
 
-CMD_HELP.update(
-    {
-        "imgenc": ".enc <reply to any anime media> "
-        "\nIt enhancerize any anime pic (Note :-if its not working then go to deepai.org then get api and set var DEEP_AI nd key.)"
-    }
+import requests
+
+from userbot.utils import admin_cmd
+
+from . import ALIVE_NAME, CMD_HELP
+
+PERUMONSTER = (
+    Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
 )
+
+
+WEBO_IS_ALIVE = str(ALIVE_NAME) if ALIVE_NAME else "Eliza"
+
+
+@borg.on(admin_cmd(pattern="eng ?(.*)", outgoing=True))
+async def _(event):
+    reply = await event.get_reply_message()
+    if not reply:
+
+        return await event.edit("Reply to any image or non animated sticker !")
+
+    input_str = event.pattern_match.group(1)
+    hm = input_str
+    devent = await event.edit("yo let me downlaoad it....")
+    media = await event.client.download_media(reply)
+    if not media.endswith(("png", "jpg", "webp")):
+        return await event.edit("Reply to any image or non animated sticker !")
+
+    if input_str:
+        devent = await event.edit("styling...")
+        r = requests.post(
+            "https://api.deepai.org/api/neural-style",
+            files={
+                "style": f"{hm}",
+                "content": open(media, "rb"),
+            },
+            headers={"api-key": PERUMONSTER},
+        )
+
+        os.remove(media)
+        if "status" in r.json():
+            return await devent.edit(r.json()["status"])
+        r_json = r.json()["output_url"]
+        pic_id = r.json()["id"]
+
+        link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
+        result = f"{r_json}"
+
+        await devent.delete()
+        await borg.send_message(event.chat_id, file=result)
+
+    else:
+        devent = await event.edit("styling...")
+        r = requests.post(
+            "https://api.deepai.org/api/neural-style",
+            files={
+                "style": "https://telegra.ph/file/bc3f4e9707b5fd2a1e97e.jpg",
+                "content": open(media, "rb"),
+            },
+            headers={"api-key": PERUMONSTER},
+        )
+
+        os.remove(media)
+        if "status" in r.json():
+            return await devent.edit(r.json()["status"])
+        r_json = r.json()["output_url"]
+        pic_id = r.json()["id"]
+
+        link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
+        result = f"{r_json}"
+
+        await devent.delete()
+        await borg.send_message(event.chat_id, file=result)
+
+
