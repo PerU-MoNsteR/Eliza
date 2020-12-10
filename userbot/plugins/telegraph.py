@@ -1,7 +1,3 @@
-"""Available Commands:
-.tele m as reply to a media
-.tele t as reply to a large text"""
-
 
 import os
 from datetime import datetime
@@ -9,9 +5,8 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot.utils import admin_cmd, edit_or_reply
-
-from . import BOTLOG, BOTLOG_CHATID, mention
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, mention
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -19,11 +14,13 @@ auth_url = r["auth_url"]
 
 
 @bot.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
-@bot.on(admin_cmd(pattern="tele(m|t) ?(.*)"))
+@bot.on(sudo_cmd(pattern="telegraph (media|text) ?(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="tg(m|t) ?(.*)"))
+@bot.on(sudo_cmd(pattern="tg(m|t) ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`processing........`")
+    catevent = await edit_or_reply(event, "`processing........`")
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
     if BOTLOG:
@@ -44,7 +41,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await webevent.edit(
+            await catevent.edit(
                 f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
             )
             if downloaded_file_name.endswith((".webp")):
@@ -53,15 +50,15 @@ async def _(event):
                 start = datetime.now()
                 media_urls = upload_file(downloaded_file_name)
             except exceptions.TelegraphException as exc:
-                await webevent.edit("**Error : **" + str(exc))
+                await catevent.edit("**Error : **" + str(exc))
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await webevent.edit(
-                    "**Uploaded  [here](https://telegra.ph{})\
-                    \n** In {} seconds **.\n**Uploaded by :-** {}".format(
+                await catevent.edit(
+                    "**➥ Uploaded to :-** [Telegraph](https://telegra.ph{})\
+                    \n**➥ Uploaded in {} seconds **.\n**➥ Uploaded by :-** {}".format(
                         media_urls[0], (ms + ms_two), (mention)
                     ),
                     link_preview=True,
@@ -90,13 +87,13 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             cat = f"https://telegra.ph/{response['path']}"
-            await webevent.edit(
+            await catevent.edit(
                 f"**➥ Pasted to :-** [Telegraph]({cat})\
                  \n**➥ Pasted in {ms} seconds .**",
                 link_preview=True,
             )
     else:
-        await webevent.edit(
+        await catevent.edit(
             "`Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)`",
         )
 
@@ -104,3 +101,15 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
+
+
+CMD_HELP.update(
+    {
+        "telegraph": "__**PLUGIN NAME :** Telegraph__\
+     \n\n📌** CMD ➥** `.telegraph media`\
+     \n**USAGE   ➥  **Reply to any image or video to upload it to telgraph(video must be less than 5mb)\
+     \n\n📌** CMD ➥** `.telegraph text`\
+     \n**USAGE   ➥  **Reply to any text file or any message to paste it to telegraph\
+    "
+    }
+)
