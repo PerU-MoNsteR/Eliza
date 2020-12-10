@@ -4,7 +4,7 @@ import requests
 
 from userbot.utils import admin_cmd
 
-from . import ALIVE_NAME, CMD_HELP
+from . import ALIVE_NAME
 
 PERUMONSTER = (
     Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
@@ -74,13 +74,14 @@ async def _(event):
         await devent.delete()
         await borg.send_message(event.chat_id, file=result)
 
+
 import os
 
 import requests
 
 from userbot.utils import admin_cmd
 
-from . import ALIVE_NAME, CMD_HELP
+from . import ALIVE_NAME
 
 PERUMONSTER = (
     Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
@@ -149,5 +150,3 @@ async def _(event):
 
         await devent.delete()
         await borg.send_message(event.chat_id, file=result)
-
-
