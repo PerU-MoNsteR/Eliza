@@ -9,7 +9,7 @@ from googletrans import Translator
 from userbot.utils import admin_cmd, eor
 
 
-@borg.on(admin_cmd("tr ?(.*)"))
+@borg.on(admin_cmd("tl  ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
