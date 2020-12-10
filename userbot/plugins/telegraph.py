@@ -4,25 +4,21 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-
-from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, mention
+from . import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot.utils import admin_cmd, eor, sudo_cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
 
-@bot.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
-@bot.on(sudo_cmd(pattern="telegraph (media|text) ?(.*)", allow_sudo=True))
-@bot.on(admin_cmd(pattern="tg(m|t) ?(.*)"))
-@bot.on(sudo_cmd(pattern="tg(m|t) ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="telegraph (media|text) ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
-    webevent = await edit_or_reply(event, "`processing........`")
-    if not os.path.isdir(Config.TEMP_DIR):
-        os.makedirs(Config.TEMP_DIR)
+    jevent = await eor(event, "`processing........`")
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -35,14 +31,14 @@ async def _(event):
         start = datetime.now()
         r_message = await event.get_reply_message()
         input_str = event.pattern_match.group(1)
-        if input_str in ["media", "m"]:
+        if input_str == "media":
             downloaded_file_name = await event.client.download_media(
-                r_message, Config.TEMP_DIR
+                r_message, Config.TMP_DOWNLOAD_DIRECTORY
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await webevent.edit(
-                f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
+            await jevent.edit(
+                "Downloaded to {} in {} seconds.".format(downloaded_file_name, ms),
             )
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
@@ -50,20 +46,20 @@ async def _(event):
                 start = datetime.now()
                 media_urls = upload_file(downloaded_file_name)
             except exceptions.TelegraphException as exc:
-                await webevent.edit("**Error : **" + str(exc))
+                await jevent.edit("**Error : **" + str(exc))
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await webevent.edit(
-                    "**➥ Uploaded to :-** [Telegraph](https://telegra.ph{})\
-                    \n**➥ Uploaded in {} seconds **.\n**➥ Uploaded by :-** {}".format(
-                        media_urls[0], (ms + ms_two), (mention)
+                await jevent.edit(
+                    "**link : **[telegraph](https://telegra.ph{})\
+                    \n**Time Taken : **`{} seconds.`".format(
+                        media_urls[0], (ms + ms_two)
                     ),
                     link_preview=True,
                 )
-        elif input_str in ["text", "t"]:
+        elif input_str == "text":
             user_object = await event.client.get_entity(r_message.sender_id)
             title_of_page = user_object.first_name  # + " " + user_object.last_name
             # apparently, all Users do not have last_name field
@@ -74,7 +70,7 @@ async def _(event):
                 if page_content != "":
                     title_of_page = page_content
                 downloaded_file_name = await event.client.download_media(
-                    r_message, Config.TEMP_DIR
+                    r_message, Config.TMP_DOWNLOAD_DIRECTORY
                 )
                 m_list = None
                 with open(downloaded_file_name, "rb") as fd:
@@ -86,14 +82,14 @@ async def _(event):
             response = telegraph.create_page(title_of_page, html_content=page_content)
             end = datetime.now()
             ms = (end - start).seconds
-            cat = f"https://telegra.ph/{response['path']}"
-            await webevent.edit(
-                f"**➥ Pasted to :-** [Telegraph]({cat})\
-                 \n**➥ Pasted in {ms} seconds .**",
+            jeve = f"https://telegra.ph/{response['path']}"
+            await jevent.edit(
+                f"**link : ** [telegraph]({jeve})\
+                 \n**Time Taken : **`{ms} seconds.`",
                 link_preview=True,
             )
     else:
-        await webevent.edit(
+        await jevent.edit(
             "`Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)`",
         )
 
@@ -105,11 +101,11 @@ def resize_image(image):
 
 CMD_HELP.update(
     {
-        "telegraph": "__**PLUGIN NAME :** Telegraph__\
-     \n\n📌** CMD ➥** `.telegraph media`\
-     \n**USAGE   ➥  **Reply to any image or video to upload it to telgraph(video must be less than 5mb)\
-     \n\n📌** CMD ➥** `.telegraph text`\
-     \n**USAGE   ➥  **Reply to any text file or any message to paste it to telegraph\
+        "telegraph": "**Plugin :**`telegraph`\
+     \n\n**Syntax :** `.telegraph media`\
+     \n**Usage :** Reply to any image or video to upload it to telegraph (video must be less than 5mb)\
+     \n\n**Syntax :** `.telegraph text`\
+     \n**Usage :** reply to any text file or any message to paste it to telegraph\
     "
     }
 )
