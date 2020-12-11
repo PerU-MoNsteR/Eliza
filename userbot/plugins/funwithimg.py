@@ -133,7 +133,7 @@ async def _(event):
         r = requests.post(
             "https://api.deepai.org/api/neural-style",
             files={
-                "style": "https://telegra.ph/file/4da39582f7c230ac71629.jpg",
+                "style": "https://telegra.ph/file/ef8d177d2e3f433c651a5.jpg",
                 "content": open(media, "rb"),
             },
             headers={"api-key": PERUMONSTER},
