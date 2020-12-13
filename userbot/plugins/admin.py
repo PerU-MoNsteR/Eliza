@@ -609,3 +609,32 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
+
+    
+from asyncio import sleep
+from telethon.tl.types import ChatBannedRights, ChannelParticipantsAdmins, ChatAdminRights
+from telethon.tl.functions.channels import EditBannedRequest
+from userbot.utils import admin_cmd
+from userbot import bot
+
+
+@borg.on(admin_cmd(pattern=r"fullban", outgoing=True))
+async def testing(event):
+    webrock = await event.get_chat()
+    men = await event.client.get_me()
+    admin = webrock.admin_rights
+    creator = webrock.creator
+    if not admin and not creator:
+        await event.edit(" U Don't do this")
+        return
+    await event.edit("..")
+    everyone = await event.client.get_participants(event.chat_id)
+    for user in everyone:
+        if user.id == men.id:
+            pass
+        try:
+            await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None,view_messages=True)))
+        except Exception as e:
+            await event.edit(str(e))
+        await sleep(.5)
+    await event.edit("..")
