@@ -610,12 +610,18 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
-    
+
 from asyncio import sleep
-from telethon.tl.types import ChatBannedRights, ChannelParticipantsAdmins, ChatAdminRights
+
 from telethon.tl.functions.channels import EditBannedRequest
-from userbot.utils import admin_cmd
+from telethon.tl.types import (
+    ChannelParticipantsAdmins,
+    ChatAdminRights,
+    ChatBannedRights,
+)
+
 from userbot import bot
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"fullban", outgoing=True))
@@ -633,8 +639,14 @@ async def testing(event):
         if user.id == men.id:
             pass
         try:
-            await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None,view_messages=True)))
+            await event.client(
+                EditBannedRequest(
+                    event.chat_id,
+                    int(user.id),
+                    ChatBannedRights(until_date=None, view_messages=True),
+                )
+            )
         except Exception as e:
             await event.edit(str(e))
-        await sleep(.5)
+        await sleep(0.5)
     await event.edit("..")
