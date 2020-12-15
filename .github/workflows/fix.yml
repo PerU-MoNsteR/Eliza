@@ -9,8 +9,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "CAT_ID"
-          replace: "WEBO_ID"
+          find: "sandy"
+          replace: "webo"
       - name: Create Pull Request
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
