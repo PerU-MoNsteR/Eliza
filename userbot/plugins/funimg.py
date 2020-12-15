@@ -274,6 +274,7 @@ async def dc(event):
             os.remove(files)
     await event.delete()
 
+
 import os
 
 import requests
@@ -426,6 +427,7 @@ async def _(event):
 
         await devent.delete()
         await borg.send_message(event.chat_id, file=result)
+
 
 CMD_HELP.update(
     {
