@@ -526,7 +526,7 @@ async def animepp():
             "f.ttf",
         )
 
-    urllib.request.urlretrieve(fy, "friday.jpg")
+    urllib.request.urlretrieve(fy, "noobishere.jpg")
 
 
 @borg.on(admin_cmd(pattern="spacedp ?(.*)"))
