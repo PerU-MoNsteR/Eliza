@@ -53,7 +53,6 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-
 @borg.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
 async def _(event):
     if event.fwd_from:
