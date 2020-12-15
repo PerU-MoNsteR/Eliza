@@ -118,7 +118,6 @@ async def _(event):
         await fwd_message.delete()
         await event.delete()
 
-        
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
