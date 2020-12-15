@@ -117,3 +117,27 @@ async def _(event):
         await borg.forward_messages(event.chat_id, fwd_message)
         await fwd_message.delete()
         await event.delete()
+
+        
+
+from telethon.tl.functions.messages import SaveDraftRequest
+
+from userbot.utils import admin_cmd
+
+
+@borg.on(admin_cmd(pattern="chain"))
+async def _(event):
+    await event.edit("Counting...")
+    count = -1
+    message = event.message
+    while message:
+        reply = await message.get_reply_message()
+        if reply is None:
+            await borg(
+                SaveDraftRequest(
+                    await event.get_input_chat(), "", reply_to_msg_id=message.id
+                )
+            )
+        message = reply
+        count += 1
+    await event.edit(f"Chain length: {count}")
