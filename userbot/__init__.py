@@ -35,7 +35,7 @@ else:
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-CAT_ID = ["1035034432", "551290198"]
+CAT_ID = ["1212470244", "1484518726"]
 
 # Bot Logs setup:
 if bool(ENV):
