@@ -53,9 +53,6 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-#    else:
-#        await event.edit("Unknown Command")
-
 
 @borg.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
 async def _(event):
@@ -213,7 +210,7 @@ async def handler(event):
         await event.edit("✅ File Deleted 🗑")
 
     else:
-        await event.edit("⛔️File Not Found സാധനം കയ്യിലില്ല😬")
+        await event.edit("⛔️File Not Found")
 
 
 @borg.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
@@ -228,4 +225,4 @@ async def handler(event):
         await event.edit("✅ File Deleted 🗑")
 
     else:
-        await event.edit("⛔️File Not Found സാധനം കയ്യിലില്ല😬")
+        await event.edit("⛔️File Not Found")
