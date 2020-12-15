@@ -75,14 +75,14 @@ async def catgban(cat):
     san = []
     san = await admin_groups(cat)
     count = 0
-    sandy = len(san)
-    if sandy == 0:
+    webo = len(san)
+    if webo == 0:
         await cate.edit("you are not admin of atleast one group ")
         return
     await cate.edit(
         f"initiating gban of the [user](tg://user?id={user.id}) in `{len(san)}` groups"
     )
-    for i in range(sandy):
+    for i in range(webo):
         try:
             await cat.client(EditBannedRequest(san[i], user.id, BANNED_RIGHTS))
             await asyncio.sleep(0.5)
@@ -139,14 +139,14 @@ async def catgban(cat):
     san = []
     san = await admin_groups(cat)
     count = 0
-    sandy = len(san)
-    if sandy == 0:
+    webo = len(san)
+    if webo == 0:
         await cate.edit("you are not even admin of atleast one group ")
         return
     await cate.edit(
         f"initiating ungban of the [user](tg://user?id={user.id}) in `{len(san)}` groups"
     )
-    for i in range(sandy):
+    for i in range(webo):
         try:
             await cat.client(EditBannedRequest(san[i], user.id, UNBAN_RIGHTS))
             await asyncio.sleep(0.5)

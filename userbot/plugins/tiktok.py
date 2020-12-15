@@ -1,4 +1,4 @@
-""" tiktok downloaded plugin creted by @mrconfused and @sandy1709 
+""" tiktok downloaded plugin creted by @mrconfused and @webo1709 
 
 
 Dont edit credits """
