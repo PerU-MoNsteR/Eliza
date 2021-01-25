@@ -66,9 +66,7 @@ if ENV:
         TG_BOT_TOKEN_BF_HER = os.environ.get("TG_BOT_TOKEN_BF_HER", None)
         TG_BOT_USER_NAME_BF_HER = os.environ.get("TG_BOT_USER_NAME_BF_HER", None)
         NO_LOG_P_M_S = bool(os.environ.get("NO_LOG_P_M_S", True))
-        THUMB_IMAGE = os.environ.get(
-            "THUMB_IMAGE", ""
-        )
+        THUMB_IMAGE = os.environ.get("THUMB_IMAGE", "")
         # Genius lyrics get this value from https://genius.com/developers both has
         # same values
         GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
